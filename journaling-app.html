@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="X Journal">
+    <meta name="description" content="Journaling app with beautiful design and offline storage">
+    <title>X Journal — Capture Your Thoughts</title>
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%234f46e5' rx='20' width='100' height='100'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='60'>📓</text></svg>">
+    <link rel="manifest" id="manifestLink">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        /* Background Options */
+        body {
+            min-height: 100vh;
+            transition: background 0.5s ease;
+        }
+        
+        body.bg-gradient {
+            background-size: 200% 200%;
+            animation: gradientShift 25s ease infinite;
+        }
+        
+        body.bg-image {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* More subtle ambient for mature look */
+        .ambient-subtle {
+            opacity: 0.15 !important;
+            filter: blur(100px) !important;
+        }
+        
+        /* Gradient Variants - Mature & Sophisticated */
+        .gradient-purple {
+            background: linear-gradient(160deg, #1a1b3a 0%, #2d2b55 30%, #4a4068 60%, #6b5b7a 100%);
+        }
+        
+        .gradient-black-red {
+            background: linear-gradient(160deg, #0d0d0d 0%, #1a1418 25%, #2d1f24 50%, #4a2c33 75%, #6b3a42 100%);
+        }
+        
+        .gradient-ocean {
+            background: linear-gradient(160deg, #0f2027 0%, #203a43 35%, #2c5364 70%, #3d7a8c 100%);
+        }
+        
+        .gradient-sunset {
+            background: linear-gradient(160deg, #2c1810 0%, #4a2c24 30%, #6b4237 60%, #8b5a4d 100%);
+        }
+        
+        .gradient-forest {
+            background: linear-gradient(160deg, #0d1f12 0%, #1a3322 30%, #2d4a35 60%, #3d5f45 100%);
+        }
+        
+        .gradient-cosmic {
+            background: linear-gradient(160deg, #0f0c29 0%, #1a1a40 30%, #2d2b55 60%, #3d3b6b 100%);
+        }
+        
+        .gradient-midnight {
+            background: linear-gradient(160deg, #0a0a0f 0%, #151520 30%, #20202e 60%, #2d2d3d 100%);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 15, 20, 0.9);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .journal-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .journal-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .accordion-content.open {
+            max-height: 3000px;
+        }
+        
+        .entry-card {
+            animation: slideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 20px 10px rgba(99, 102, 241, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        }
+        
+        .emoji-btn {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .emoji-btn:hover {
+            transform: scale(1.25) rotate(5deg);
+        }
+        
+        .emoji-btn.selected {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            transform: scale(1.12);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35);
+        }
+        
+        .input-glass {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+        }
+        
+        .mood-indicator {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+        
+        .rotate-arrow {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .rotate-arrow.open {
+            transform: rotate(180deg);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.4);
+        }
+        
+        .badge {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+        
+        .entry-time {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .toast {
+            animation: toastSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes toastSlide {
+            from {
+                transform: translateX(100%) translateY(-50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0) translateY(-50%);
+                opacity: 1;
+            }
+        }
+        
+        /* Background Selector Styles */
+        .bg-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .bg-option:hover {
+            transform: scale(1.05);
+        }
+        
+        .bg-option.selected {
+            ring: 3px;
+            ring-color: #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .bg-selector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+        }
+        
+        /* Dropdown animations */
+        .dropdown-menu {
+            animation: dropdownFade 0.2s ease-out;
+            transform-origin: top right;
+        }
+        
+        @keyframes dropdownFade {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient antialiased gradient-purple">
+    <!-- Ambient Background Elements (hidden when using image bg) -->
+    <div id="ambientBg" class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-slate-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-duration: 8s;"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-zinc-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 3s; animation-duration: 10s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neutral-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 6s; animation-duration: 12s;"></div>
+    </div>
+
+    <!-- Analytics Modal -->
+    <div id="analyticsModal" class="fixed inset-0 z-[70] hidden modal-overlay items-center justify-center p-3" onclick="if(event.target === this) closeAnalyticsModal()">
+        <div class="glass rounded-3xl p-4 md:p-6 max-w-2xl w-full max-h-[95vh] md:max-h-[85vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+                <div class="flex items-center gap-2 md:gap-3">
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                        <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-slate-800">Statistik Journaling</h2>
+                        <p class="text-xs text-slate-500">Insight perjalananmu</p>
+                    </div>
+                </div>
+                <button onclick="closeAnalyticsModal()" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="analyticsContent" class="grid grid-cols-2 gap-2 md:gap-3 overflow-hidden">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            
+            <!-- Summary Footer -->
+            <div class="mt-4 p-3 bg-gradient-to-r from-violet-50 to-fuchsia-50 rounded-xl md:rounded-2xl border border-violet-100">
+                <p class="text-xs md:text-sm text-slate-600 text-center italic" id="analyticsQuote">
+                    "Konsistensi adalah kunci mastering."
+                </p>
+            </div>
+            
+            <!-- Install PWA -->
+            <div class="mt-4 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl md:rounded-2xl border border-blue-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-semibold text-slate-700">Install X Journal</p>
+                        <p class="text-xs text-slate-500">Akses lebih cepat dari home screen</p>
+                    </div>
+                    <button id="installPwaBtn" onclick="installPWA()" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition-colors flex-shrink-0">
+                        Install
+                    </button>
+                </div>
+                <div id="iosInstallHint" class="hidden mt-3 pt-3 border-t border-blue-100">
+                    <p class="text-xs text-slate-600">
+                        <span class="font-medium">iOS:</span> Tap <svg class="w-4 h-4 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg> lalu "Add to Home Screen"
+                    </p>
+                </div>
+                <div id="androidInstallHint" class="hidden mt-3 pt-3 border-t border-blue-100">
+                    <p class="text-xs text-slate-600">
+                        <span class="font-medium">Android:</span> Tap menu <span class="font-bold">⋮</span> di Chrome → "Install" atau "Add to Home screen"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Confirmation Modal -->
+    <div id="resetModal" class="fixed inset-0 z-[80] hidden modal-overlay items-center justify-center p-3" onclick="if(event.target === this) closeResetModal()">
+        <div class="glass rounded-3xl p-6 max-w-md w-full" onclick="event.stopPropagation()">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800 mb-2">Reset Semua Data</h2>
+                <p class="text-sm text-slate-500">Tindakan ini tidak dapat dibatalkan</p>
+            </div>
+            
+            <div class="space-y-4 mb-6">
+                <div class="flex items-start gap-3 p-3 bg-red-50 rounded-xl">
+                    <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    <p class="text-sm text-slate-700">Reset akan <span class="font-semibold text-red-600">menghapus semua jurnal dan entry</span> secara permanen</p>
+                </div>
+                
+                <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <p class="text-sm text-slate-700">Pastikan kamu sudah <span class="font-semibold">membackup (export)</span> data penting terlebih dahulu</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" id="resetConfirmCheckbox" class="w-5 h-5 rounded border-slate-300 text-red-600 focus:ring-red-500" onchange="toggleResetButton()">
+                    <span class="text-sm text-slate-700">Saya paham dan mengerti konsekuensinya</span>
+                </label>
+            </div>
+            
+            <div class="flex gap-3">
+                <button onclick="closeResetModal()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-xl transition-colors">
+                    Batal
+                </button>
+                <button id="resetConfirmBtn" onclick="resetAllData()" disabled class="flex-1 py-3 px-4 bg-red-500 text-white font-medium rounded-xl transition-all opacity-50 cursor-not-allowed">
+                    Reset Data
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Selector Modal -->
+    <div id="bgModal" class="fixed inset-0 z-[60] hidden modal-overlay items-center justify-center p-3 md:p-4" onclick="if(event.target === this) closeBgModal()">
+        <div class="glass rounded-3xl p-4 md:p-6 max-w-2xl w-full max-h-[85vh] flex flex-col" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between mb-4 md:mb-6 flex-shrink-0">
+                <div>
+                    <h2 class="text-lg md:text-xl font-bold text-slate-800">Choose Background</h2>
+                    <p class="text-xs md:text-sm text-slate-500 mt-0.5">Select a theme for your journaling experience</p>
+                </div>
+                <button onclick="closeBgModal()" class="p-2 hover:bg-slate-100 rounded-full transition-colors flex-shrink-0">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Scrollable Content -->
+            <div class="overflow-y-auto flex-1 pr-1 -mr-1" style="scrollbar-width: thin;">
+                <!-- Gradient Options -->
+                <div class="mb-4 md:mb-6">
+                    <h3 class="text-xs md:text-sm font-semibold text-slate-600 uppercase tracking-wider mb-2 md:mb-3">Gradient Themes</h3>
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-2">
+                        <div onclick="setBackground('gradient', 'purple', 'g-purple')" id="bg-g-purple" 
+                             class="bg-option selected h-12 sm:h-16 rounded-xl gradient-purple shadow-md cursor-pointer border border-slate-200" title="Deep Navy"></div>
+                        <div onclick="setBackground('gradient', 'black-red', 'g-black-red')" id="bg-g-black-red" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-black-red shadow-md cursor-pointer border border-slate-200" title="Dark Crimson"></div>
+                        <div onclick="setBackground('gradient', 'ocean', 'g-ocean')" id="bg-g-ocean" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-ocean shadow-md cursor-pointer border border-slate-200" title="Deep Ocean"></div>
+                        <div onclick="setBackground('gradient', 'sunset', 'g-sunset')" id="bg-g-sunset" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-sunset shadow-md cursor-pointer border border-slate-200" title="Burnt Sienna"></div>
+                        <div onclick="setBackground('gradient', 'forest', 'g-forest')" id="bg-g-forest" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-forest shadow-md cursor-pointer border border-slate-200" title="Deep Forest"></div>
+                        <div onclick="setBackground('gradient', 'cosmic', 'g-cosmic')" id="bg-g-cosmic" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-cosmic shadow-md cursor-pointer border border-slate-200" title="Royal Purple"></div>
+                        <div onclick="setBackground('gradient', 'midnight', 'g-midnight')" id="bg-g-midnight" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-midnight shadow-md cursor-pointer border border-slate-200" title="Charcoal"></div>
+                    </div>
+                </div>
+                
+                <!-- Nature Images -->
+                <div class="mb-4 md:mb-6">
+                    <h3 class="text-xs md:text-sm font-semibold text-slate-600 uppercase tracking-wider mb-2 md:mb-3">Nature</h3>
+                    <div class="bg-selector-grid" id="natureGrid"></div>
+                </div>
+                
+                <!-- Cityscape Images -->
+                <div>
+                    <h3 class="text-xs md:text-sm font-semibold text-slate-600 uppercase tracking-wider mb-2 md:mb-3">Cityscape</h3>
+                    <div class="bg-selector-grid" id="cityGrid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-3xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-slate-800 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-slate-800">X Journal</h1>
+                        <p class="text-xs text-slate-500 font-medium">Capture your thoughts</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-1">
+                    <!-- Background Toggle Button -->
+                    <button onclick="openBgModal()" class="p-2.5 rounded-xl hover:bg-slate-100/50 transition-all group" title="Change Background">
+                        <svg class="w-5 h-5 text-slate-600 group-hover:text-slate-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Data Menu Dropdown -->
+                    <div class="relative" id="dataMenuContainer">
+                        <button onclick="toggleDropdown('dataMenu')" class="p-2.5 rounded-xl hover:bg-slate-100/50 transition-all group" title="Data">
+                            <svg class="w-5 h-5 text-slate-600 group-hover:text-slate-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                            </svg>
+                        </button>
+                        <div id="dataMenu" class="hidden dropdown-menu absolute right-0 top-full mt-2 w-48 glass rounded-xl shadow-xl border border-white/20 overflow-hidden">
+                            <input type="file" id="importFile" accept=".json" class="hidden" onchange="importData(this)">
+                            <button onclick="document.getElementById('importFile').click(); closeDropdown('dataMenu')" class="w-full px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100/50 transition-colors flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                                </svg>
+                                Import
+                            </button>
+                            <button onclick="exportData(); closeDropdown('dataMenu')" class="w-full px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100/50 transition-colors flex items-center gap-2 border-t border-slate-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Export
+                            </button>
+                            <button onclick="openAnalyticsModal(); closeDropdown('dataMenu')" class="w-full px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100/50 transition-colors flex items-center gap-2 border-t border-slate-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                                Data Analysis
+                            </button>
+                            <button onclick="openResetModal(); closeDropdown('dataMenu')" class="w-full px-4 py-3 text-left text-sm text-red-600 hover:bg-red-50 transition-colors flex items-center gap-2 border-t border-slate-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                                Reset Data
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Love/About Menu Dropdown -->
+                    <div class="relative" id="loveMenuContainer">
+                        <button onclick="toggleDropdown('loveMenu')" class="p-2.5 rounded-xl hover:bg-slate-100/50 transition-all group" title="About">
+                            <svg class="w-5 h-5 text-slate-600 group-hover:text-slate-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </button>
+                        <div id="loveMenu" class="hidden dropdown-menu absolute right-0 top-full mt-2 w-72 glass rounded-xl shadow-xl border border-white/20 overflow-hidden">
+                            <div class="p-4 border-b border-slate-100">
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    Your journal is stored locally using <strong>IndexedDB</strong> — 
+                                    no data leaves your device. We recommend <strong>exporting regularly</strong> to keep your memories safe.
+                                </p>
+                            </div>
+                            <div class="p-4 bg-slate-50/50">
+                                <p class="text-xs text-slate-500 mb-3">Crafted with care by <strong class="text-slate-700">Arief Rachmansyah</strong></p>
+                                <div class="flex flex-col gap-2">
+                                    <a href="https://slugpost.com/arief-rachmansyah" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-white/60 px-2 py-2 rounded-lg transition-all">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                    <a href="https://instagram.com/arief.drip" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-white/60 px-2 py-2 rounded-lg transition-all">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://threads.net/arief.drip" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-white/60 px-2 py-2 rounded-lg transition-all">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.152 7.164 1.432 1.781 3.632 2.695 6.542 2.717 4.408-.03 7.202-2.055 8.305-6.016l2.04.57c-.651 2.337-1.832 4.177-3.51 5.467-1.783 1.373-4.08 2.078-6.826 2.098h-.097zm6.627-8.042l-.971-1.144 1.536-1.303.973 1.144-1.538 1.303zm-3.417 2.508l-1.038-1.09 1.467-1.396 1.037 1.089-1.466 1.397zm-4.186 1.312l-.924-1.193 1.605-1.242.924 1.192-1.605 1.243zm-3.465-2.102l-.825-1.261 1.698-1.111.825 1.261-1.698 1.111z"/>
+                                        </svg>
+                                        <span>Threads</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gradient-to-r from-emerald-50 to-teal-50 border-t border-emerald-100">
+                                <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                                    💚 I'd be super happy if you'd like to give a testimonial...
+                                </p>
+                                <a href="https://wa.me/628567892460?text=Mas%2C%20saya%20mau%20ngasi%20Testimoni%20X%20Journal.." 
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium rounded-xl transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                    </svg>
+                                    <span>Give Testimonial</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-3xl mx-auto px-4 pt-24 pb-32">
+        
+        <!-- Create New Journal Card -->
+        <div class="glass rounded-3xl p-6 mb-8 shadow-xl shadow-black/5">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </div>
+                <h2 class="font-semibold text-slate-800">New Journal</h2>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="text" id="newJournalTitle" placeholder="What's this journal about?" 
+                       class="flex-1 px-4 py-3.5 input-glass rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none text-sm">
+                <button onclick="addParent()" class="btn-primary px-6 py-3.5 text-white font-medium rounded-xl flex items-center justify-center gap-2 whitespace-nowrap">
+                    <span>Create</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Journals List -->
+        <div id="journalsList" class="space-y-4"></div>
+
+        <!-- Empty State / Onboarding -->
+        <div id="emptyState" class="hidden mt-20 mb-12">
+            <!-- Card Empty State -->
+            <div class="glass rounded-3xl p-6 md:p-8 shadow-xl shadow-black/5 text-center relative z-10">
+                <!-- Icon -->
+                <div class="w-20 h-20 mx-auto mb-5 relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-violet-400 to-fuchsia-400 rounded-full opacity-20 blur-xl"></div>
+                    <div class="relative w-full h-full bg-gradient-to-br from-violet-100 to-fuchsia-100 rounded-2xl flex items-center justify-center">
+                        <span class="text-4xl">📖</span>
+                    </div>
+                </div>
+                
+                <!-- Title & Subtitle -->
+                <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Mulai Perjalananmu</h3>
+                <p class="text-slate-500 max-w-sm mx-auto mb-6">Catat momen, pikiran, dan perjalanan hidupmu dalam satu aplikasi yang aman & privat.</p>
+                
+                <!-- Quick Tips Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 text-left">
+                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
+                        <div class="text-xl mb-1">📝</div>
+                        <p class="text-xs font-semibold text-slate-700">Buat Jurnal</p>
+                        <p class="text-[10px] text-slate-500">Kategori untuk setiap aspek hidup</p>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
+                        <div class="text-xl mb-1">😊</div>
+                        <p class="text-xs font-semibold text-slate-700">Pilih Mood</p>
+                        <p class="text-[10px] text-slate-500">Tracking emosi harianmu</p>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
+                        <div class="text-xl mb-1">📊</div>
+                        <p class="text-xs font-semibold text-slate-700">Lihat Statistik</p>
+                        <p class="text-[10px] text-slate-500">Analisis pola journaling</p>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
+                        <div class="text-xl mb-1">🔒</div>
+                        <p class="text-xs font-semibold text-slate-700">100% Privat</p>
+                        <p class="text-[10px] text-slate-500">Data tersimpan lokal</p>
+                    </div>
+                </div>
+                
+                <!-- Divider -->
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="flex-1 h-px bg-slate-200"></div>
+                    <span class="text-xs text-slate-400 font-medium">ATAU MULAI DENGAN TEMPLATE</span>
+                    <div class="flex-1 h-px bg-slate-200"></div>
+                </div>
+                
+                <!-- CTA Button -->
+                <button onclick="showOnboardingModal()" class="w-full sm:w-auto btn-primary px-8 py-3.5 text-white font-semibold rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/40 transition-all hover:-translate-y-0.5">
+                    <span class="text-lg">📦</span>
+                    <span>Pilih Template Jurnal</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </button>
+                
+                <!-- Subtle hint -->
+                <p class="text-[11px] text-slate-400 mt-4">Bisa di-reset kapan saja via Menu Database</p>
+            </div>
+        </div>
+
+        <!-- Onboarding Modal -->
+        <div id="onboardingModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);" onclick="if(event.target === this) closeOnboardingModal()">
+            <div class="glass rounded-3xl p-5 md:p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative z-[101]" onclick="event.stopPropagation()">
+                <div class="text-center mb-6">
+                    <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                        <span class="text-2xl">📦</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800 mb-2">Pilih Template Jurnal</h2>
+                    <p class="text-sm text-slate-500">Pilih persona yang paling mirip denganmu untuk memulai</p>
+                </div>
+
+                <!-- Template Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                    <!-- Mahasiswa -->
+                    <div onclick="importTemplateData('https://www.jsonkeeper.com/b/MBAWW', 'Mahasiswa')" class="group cursor-pointer bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 border border-emerald-100 hover:border-emerald-300 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                🎓
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Mahasiswa</h3>
+                                <p class="text-xs text-slate-500">19-24 tahun</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Jurnal untuk anak kuliahan: skripsi, organisasi, hijrah, dan kehidupan kampus</p>
+                        <div class="flex items-center gap-2 text-xs text-emerald-600 font-medium">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            <span>5 Jurnal • 19 Entries</span>
+                        </div>
+                    </div>
+
+                    <!-- Profesional -->
+                    <div onclick="importTemplateData('https://www.jsonkeeper.com/b/NUNKS', 'Profesional')" class="group cursor-pointer bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                💼
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Profesional</h3>
+                                <p class="text-xs text-slate-500">25-35 tahun</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Jurnal pekerja: karir, keluarga, investasi syariah, dan work-life balance</p>
+                        <div class="flex items-center gap-2 text-xs text-blue-600 font-medium">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            <span>5 Jurnal • 24 Entries</span>
+                        </div>
+                    </div>
+
+                    <!-- Emak2 Olshop -->
+                    <div onclick="importTemplateData('https://www.jsonkeeper.com/b/YAINI', 'Emak Olshop')" class="group cursor-pointer bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-4 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                🛍️
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Emak-emak Olshop</h3>
+                                <p class="text-xs text-slate-500">Pejuang rupiah</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Jurnal pengusaha online: operasional, parenting, supplier, dan komunitas</p>
+                        <div class="flex items-center gap-2 text-xs text-rose-600 font-medium">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            <span>7 Jurnal • 56 Entries</span>
+                        </div>
+                    </div>
+
+                    <!-- Emak2 Lynk -->
+                    <div onclick="importTemplateData('https://www.jsonkeeper.com/b/1PORR', 'Emak Lynk')" class="group cursor-pointer bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 border border-amber-100 hover:border-amber-300 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                💻
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Emak Digital Creator</h3>
+                                <p class="text-xs text-slate-500">Lynk.id Seller</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Jurnal creator: produk digital, marketing, analytics, dan komunitas</p>
+                        <div class="flex items-center gap-2 text-xs text-amber-600 font-medium">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            <span>7 Jurnal • 56 Entries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Box -->
+                <div class="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-4 border border-violet-100 mb-5">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-4 h-4 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-700 font-medium mb-1">Tips Penting</p>
+                            <p class="text-xs text-slate-600">Kamu bisa menghapus data template ini kapan saja melalui menu <span class="font-semibold text-slate-800">Database → Reset</span> jika ingin memulai dari nol.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skip Button -->
+                <button onclick="closeOnboardingModal()" class="w-full py-3 text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors">
+                    Lewati, buat jurnal sendiri →
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-24 right-4 z-50 transform translate-x-full opacity-0 transition-all duration-300">
+        <div class="glass-dark text-slate-100 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <span id="toastMessage" class="text-sm font-medium">Notification</span>
+        </div>
+    </div>
+
+    <script>
+        // ==================== BACKGROUND IMAGES (27 Pexels Images) ====================
+        const NATURE_IMAGES = [
+            { id: 'n1', url: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Mountain Lake' },
+            { id: 'n2', url: 'https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Alpine Lake' },
+            { id: 'n3', url: 'https://images.pexels.com/photos/1547813/pexels-photo-1547813.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Forest Path' },
+            { id: 'n4', url: 'https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Sunset Beach' },
+            { id: 'n5', url: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Moraine Lake' },
+            { id: 'n6', url: 'https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Northern Lights' },
+            { id: 'n7', url: 'https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Desert Dunes' },
+            { id: 'n8', url: 'https://images.pexels.com/photos/1647972/pexels-photo-1647972.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Starry Night' },
+            { id: 'n9', url: 'https://images.pexels.com/photos/2258536/pexels-photo-2258536.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Waterfall' },
+            { id: 'n10', url: 'https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Ocean Waves' },
+            { id: 'n11', url: 'https://images.pexels.com/photos/1327373/pexels-photo-1327373.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Bamboo Forest' },
+            { id: 'n12', url: 'https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Cherry Blossom' },
+            { id: 'n13', url: 'https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Palm Trees' },
+            { id: 'n14', url: 'https://images.pexels.com/photos/1028225/pexels-photo-1028225.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Green Hills' }
+        ];
+        
+        const CITY_IMAGES = [
+            { id: 'c1', url: 'https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'New York Skyline' },
+            { id: 'c2', url: 'https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Tokyo Night' },
+            { id: 'c3', url: 'https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'City Architecture' },
+            { id: 'c4', url: 'https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'City at Night' },
+            { id: 'c5', url: 'https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Skyscrapers' },
+            { id: 'c6', url: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Modern Building' },
+            { id: 'c7', url: 'https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Bridge View' },
+            { id: 'c8', url: 'https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Urban Night' },
+            { id: 'c9', url: 'https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'City Skyline' },
+            { id: 'c10', url: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Downtown' },
+            { id: 'c11', url: 'https://images.pexels.com/photos/219692/pexels-photo-219692.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'City Lights' },
+            { id: 'c12', url: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Empire State' },
+            { id: 'c13', url: 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&w=1920', name: 'Building Detail' }
+        ];
+        
+        let currentBgType = 'gradient';
+        let currentBgImage = null;
+        
+        // Initialize background selector
+        function initBackgroundSelector() {
+            const natureGrid = document.getElementById('natureGrid');
+            const cityGrid = document.getElementById('cityGrid');
+            
+            NATURE_IMAGES.forEach(img => {
+                const div = document.createElement('div');
+                div.className = 'bg-option w-full aspect-square rounded-xl overflow-hidden shadow-md border border-slate-200';
+                div.style.backgroundImage = `url(${img.url})`;
+                div.style.backgroundSize = 'cover';
+                div.style.backgroundPosition = 'center';
+                div.id = `bg-${img.id}`;
+                div.onclick = () => setBackground('image', img.url, img.id);
+                div.title = img.name;
+                natureGrid.appendChild(div);
+            });
+            
+            CITY_IMAGES.forEach(img => {
+                const div = document.createElement('div');
+                div.className = 'bg-option w-full aspect-square rounded-xl overflow-hidden shadow-md border border-slate-200';
+                div.style.backgroundImage = `url(${img.url})`;
+                div.style.backgroundSize = 'cover';
+                div.style.backgroundPosition = 'center';
+                div.id = `bg-${img.id}`;
+                div.onclick = () => setBackground('image', img.url, img.id);
+                div.title = img.name;
+                cityGrid.appendChild(div);
+            });
+        }
+        
+        function openBgModal() {
+            document.getElementById('bgModal').classList.remove('hidden');
+            document.getElementById('bgModal').classList.add('flex');
+        }
+        
+        function closeBgModal() {
+            document.getElementById('bgModal').classList.add('hidden');
+            document.getElementById('bgModal').classList.remove('flex');
+        }
+        
+        // ==================== ANALYTICS ====================
+        function openAnalyticsModal() {
+            document.getElementById('analyticsModal').classList.remove('hidden');
+            document.getElementById('analyticsModal').classList.add('flex');
+            calculateAnalytics();
+        }
+        
+        function closeAnalyticsModal() {
+            document.getElementById('analyticsModal').classList.add('hidden');
+            document.getElementById('analyticsModal').classList.remove('flex');
+        }
+        
+        // ==================== RESET DATA ====================
+        function openResetModal() {
+            document.getElementById('resetModal').classList.remove('hidden');
+            document.getElementById('resetModal').classList.add('flex');
+            // Reset checkbox state
+            document.getElementById('resetConfirmCheckbox').checked = false;
+            toggleResetButton();
+        }
+        
+        function closeResetModal() {
+            document.getElementById('resetModal').classList.add('hidden');
+            document.getElementById('resetModal').classList.remove('flex');
+        }
+        
+        function toggleResetButton() {
+            const checkbox = document.getElementById('resetConfirmCheckbox');
+            const btn = document.getElementById('resetConfirmBtn');
+            if (checkbox.checked) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                btn.classList.add('hover:bg-red-600');
+            } else {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                btn.classList.remove('hover:bg-red-600');
+            }
+        }
+        
+        async function resetAllData() {
+            try {
+                const transaction = db.transaction([PARENT_STORE, CHILD_STORE], 'readwrite');
+                const parentStore = transaction.objectStore(PARENT_STORE);
+                const childStore = transaction.objectStore(CHILD_STORE);
+                
+                await new Promise((resolve, reject) => {
+                    const r = parentStore.clear();
+                    r.onsuccess = () => resolve();
+                    r.onerror = () => reject(r.error);
+                });
+                
+                await new Promise((resolve, reject) => {
+                    const r = childStore.clear();
+                    r.onsuccess = () => resolve();
+                    r.onerror = () => reject(r.error);
+                });
+                
+                closeResetModal();
+                showToast('Semua data telah dihapus');
+                await renderJournals();
+            } catch (error) {
+                console.error('Error resetting data:', error);
+                showToast('Gagal menghapus data');
+            }
+        }
+        
+        // ==================== ONBOARDING ====================
+        function showOnboardingModal() {
+            document.getElementById('onboardingModal').classList.remove('hidden');
+            document.getElementById('onboardingModal').classList.add('flex');
+            // Hide header when modal is open
+            document.querySelector('header').classList.add('hidden');
+        }
+        
+        function closeOnboardingModal() {
+            document.getElementById('onboardingModal').classList.add('hidden');
+            document.getElementById('onboardingModal').classList.remove('flex');
+            // Show header when modal is closed
+            document.querySelector('header').classList.remove('hidden');
+        }
+        
+        async function importTemplateData(url, templateName) {
+            try {
+                showToast(`Mengambil data ${templateName}...`);
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Failed to fetch');
+                const data = await response.json();
+                
+                // Import parents
+                const transaction = db.transaction([PARENT_STORE, CHILD_STORE], 'readwrite');
+                const parentStore = transaction.objectStore(PARENT_STORE);
+                const childStore = transaction.objectStore(CHILD_STORE);
+                
+                // Clear existing data first
+                await new Promise((resolve, reject) => {
+                    const r = parentStore.clear();
+                    r.onsuccess = () => resolve();
+                    r.onerror = () => reject(r.error);
+                });
+                await new Promise((resolve, reject) => {
+                    const r = childStore.clear();
+                    r.onsuccess = () => resolve();
+                    r.onerror = () => reject(r.error);
+                });
+                
+                // Add parents
+                for (const parent of data.parents) {
+                    await new Promise((resolve, reject) => {
+                        const r = parentStore.add(parent);
+                        r.onsuccess = () => resolve();
+                        r.onerror = () => reject(r.error);
+                    });
+                }
+                
+                // Add children
+                for (const child of data.children) {
+                    await new Promise((resolve, reject) => {
+                        const r = childStore.add(child);
+                        r.onsuccess = () => resolve();
+                        r.onerror = () => reject(r.error);
+                    });
+                }
+                
+                closeOnboardingModal();
+                showToast(`Template ${templateName} berhasil diimport!`);
+                await renderJournals();
+            } catch (error) {
+                console.error('Error importing template:', error);
+                showToast('Gagal mengambil data. Cek koneksi internet.');
+            }
+        }
+        
+        // ==================== PWA INSTALL ====================
+        let deferredPrompt = null;
+        let pwaInstallReady = false;
+        
+        function initPWAInstall() {
+            const installBtn = document.getElementById('installPwaBtn');
+            const iosHint = document.getElementById('iosInstallHint');
+            const androidHint = document.getElementById('androidInstallHint');
+            
+            if (!installBtn) return;
+            
+            // Check if already installed
+            const isInstalled = window.matchMedia('(display-mode: standalone)').matches || 
+                               window.navigator.standalone === true;
+            
+            // Detect iOS
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            
+            // Hide button initially until we know it can be installed
+            installBtn.style.opacity = '0.5';
+            
+            // Listen for install prompt
+            window.addEventListener('beforeinstallprompt', (e) => {
+                console.log('beforeinstallprompt fired');
+                e.preventDefault();
+                deferredPrompt = e;
+                pwaInstallReady = true;
+                installBtn.style.opacity = '1';
+                installBtn.textContent = 'Install';
+                installBtn.classList.remove('bg-gray-400');
+                installBtn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+            });
+            
+            // If already installed
+            if (isInstalled) {
+                installBtn.style.display = 'none';
+                const subtitle = installBtn.parentElement.querySelector('p.text-xs');
+                if (subtitle) subtitle.textContent = 'X Journal terinstall';
+                return;
+            }
+            
+            window.installPWA = function() {
+                // Close analytics modal first so PWA prompt can be seen
+                closeAnalyticsModal();
+                
+                if (isIOS) {
+                    iosHint.classList.remove('hidden');
+                    if (androidHint) androidHint.classList.add('hidden');
+                    return;
+                }
+                
+                if (deferredPrompt) {
+                    // Small delay to let modal close animation finish
+                    setTimeout(() => {
+                        deferredPrompt.prompt();
+                        deferredPrompt.userChoice.then((choiceResult) => {
+                            if (choiceResult.outcome === 'accepted') {
+                                showToast('X Journal diinstall!');
+                            } else {
+                                showToast('Install dibatalkan');
+                            }
+                            deferredPrompt = null;
+                        }).catch((err) => {
+                            console.error('Install error:', err);
+                            showToast('Gagal install, coba lagi');
+                        });
+                    }, 300);
+                } else {
+                    // Hide iOS hint, show Android hint
+                    if (iosHint) iosHint.classList.add('hidden');
+                    if (androidHint) androidHint.classList.remove('hidden');
+                    
+                    // Check if running from file:// protocol
+                    const isFileProtocol = window.location.protocol === 'file:';
+                    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                    
+                    if (isFileProtocol) {
+                        // File opened locally - PWA install blocked by Chrome
+                        showToast('Install via menu Chrome ⋮ → Install');
+                    } else if (!isLocalhost && !window.location.protocol.includes('https')) {
+                        showToast('PWA membutuhkan HTTPS atau localhost');
+                    } else if (!pwaInstallReady) {
+                        showToast('Tap menu Chrome ⋮ → Install app');
+                    }
+                }
+            };
+            
+            // For browsers that don't fire beforeinstallprompt (like some Chrome versions)
+            // Show button after a delay with alternative instructions
+            setTimeout(() => {
+                if (!pwaInstallReady && !isInstalled) {
+                    installBtn.style.opacity = '1';
+                    installBtn.title = 'Tap untuk instruksi install';
+                }
+            }, 2000);
+        }
+        
+        function getDaysDiff(date1, date2) {
+            const d1 = new Date(date1);
+            const d2 = new Date(date2);
+            d1.setHours(0, 0, 0, 0);
+            d2.setHours(0, 0, 0, 0);
+            return Math.floor((d2 - d1) / (1000 * 60 * 60 * 24));
+        }
+        
+        function formatDaysAgo(days) {
+            if (days === 0) return 'Hari ini';
+            if (days === 1) return 'Kemarin';
+            return `${days} hari yang lalu`;
+        }
+        
+        async function calculateAnalytics() {
+            const transaction = db.transaction([CHILD_STORE, PARENT_STORE], 'readonly');
+            const childStore = transaction.objectStore(CHILD_STORE);
+            const parentStore = transaction.objectStore(PARENT_STORE);
+            
+            const allChildren = await new Promise((resolve, reject) => {
+                const request = childStore.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+            
+            const allParents = await new Promise((resolve, reject) => {
+                const request = parentStore.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+            
+            if (allChildren.length === 0) {
+                document.getElementById('analyticsContent').innerHTML = `
+                    <div class="col-span-2 text-center py-8">
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-slate-100 flex items-center justify-center">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <p class="text-slate-500 text-sm">Belum ada data</p>
+                        <p class="text-slate-400 text-xs mt-1">Mulai journaling untuk melihat statistik</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Sort by date descending
+            const sortedChildren = [...allChildren].sort((a, b) => b.dateAdded - a.dateAdded);
+            
+            // 1. Last Entry (Days ago)
+            const lastEntryDate = new Date(sortedChildren[0].dateAdded);
+            const today = new Date();
+            const daysSinceLastEntry = getDaysDiff(lastEntryDate, today);
+            
+            // 2. Current Streak
+            const entryDates = [...new Set(allChildren.map(c => {
+                const d = new Date(c.dateAdded);
+                d.setHours(0, 0, 0, 0);
+                return d.getTime();
+            }))].sort((a, b) => b - a);
+            
+            let currentStreak = 0;
+            let checkDate = new Date();
+            checkDate.setHours(0, 0, 0, 0);
+            
+            for (let i = 0; i < entryDates.length; i++) {
+                const entryDate = new Date(entryDates[i]);
+                const diff = getDaysDiff(entryDate, checkDate);
+                if (diff <= 1) {
+                    currentStreak++;
+                    checkDate = entryDate;
+                } else {
+                    break;
+                }
+            }
+            
+            // 3. Longest Streak
+            let longestStreak = 1;
+            let tempStreak = 1;
+            const sortedDatesAsc = [...entryDates].sort((a, b) => a - b);
+            
+            for (let i = 1; i < sortedDatesAsc.length; i++) {
+                const prev = new Date(sortedDatesAsc[i - 1]);
+                const curr = new Date(sortedDatesAsc[i]);
+                const diff = getDaysDiff(prev, curr);
+                if (diff === 1) {
+                    tempStreak++;
+                    longestStreak = Math.max(longestStreak, tempStreak);
+                } else {
+                    tempStreak = 1;
+                }
+            }
+            
+            // 4. Max entries in one day
+            const entriesPerDay = {};
+            allChildren.forEach(c => {
+                const d = new Date(c.dateAdded);
+                const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+                entriesPerDay[key] = (entriesPerDay[key] || 0) + 1;
+            });
+            const maxEntriesInDay = Math.max(...Object.values(entriesPerDay));
+            const maxEntriesDate = Object.entries(entriesPerDay)
+                .sort((a, b) => b[1] - a[1])[0];
+            
+            // 5. Total entries
+            const totalEntries = allChildren.length;
+            
+            // 6. Total journals
+            const totalJournals = allParents.length;
+            
+            // 7. Most active journal
+            const entriesPerJournal = {};
+            allChildren.forEach(c => {
+                entriesPerJournal[c.parentId] = (entriesPerJournal[c.parentId] || 0) + 1;
+            });
+            const mostActiveJournalId = Object.entries(entriesPerJournal)
+                .sort((a, b) => b[1] - a[1])[0]?.[0];
+            const mostActiveJournal = allParents.find(p => p.id === mostActiveJournalId);
+            
+            // 8. Most used mood
+            const moodCount = {};
+            allChildren.forEach(c => {
+                moodCount[c.emoticon] = (moodCount[c.emoticon] || 0) + 1;
+            });
+            const mostUsedMood = Object.entries(moodCount)
+                .sort((a, b) => b[1] - a[1])[0];
+            
+            // 9. Average entries per active day
+            const avgEntriesPerDay = (totalEntries / entryDates.length).toFixed(1);
+            
+            // 10. First entry date
+            const firstEntry = sortedChildren[sortedChildren.length - 1];
+            const firstEntryDate = new Date(firstEntry.dateAdded);
+            const daysSinceFirst = getDaysDiff(firstEntryDate, today);
+            
+            // 11. Activity rate (active days / total days since first entry)
+            const activityRate = Math.round((entryDates.length / (daysSinceFirst + 1)) * 100);
+            
+            // Generate HTML - Compact Grid Layout
+            const stats = [
+                {
+                    icon: '🔥',
+                    label: 'Streak',
+                    value: `${currentStreak}`,
+                    unit: 'hari',
+                    color: 'from-orange-500 to-red-500',
+                    bgColor: 'bg-orange-50'
+                },
+                {
+                    icon: '📅',
+                    label: 'Terakhir',
+                    value: daysSinceLastEntry === 0 ? 'Hari ini' : daysSinceLastEntry === 1 ? 'Kemarin' : `${daysSinceLastEntry}h`,
+                    unit: '',
+                    color: 'from-blue-500 to-cyan-500',
+                    bgColor: 'bg-blue-50'
+                },
+                {
+                    icon: '🏆',
+                    label: 'Rekor Streak',
+                    value: `${longestStreak}`,
+                    unit: 'hari',
+                    color: 'from-amber-500 to-yellow-500',
+                    bgColor: 'bg-amber-50'
+                },
+                {
+                    icon: '⚡',
+                    label: 'Max Entry/Hari',
+                    value: `${maxEntriesInDay}`,
+                    unit: 'entry',
+                    color: 'from-violet-500 to-purple-500',
+                    bgColor: 'bg-violet-50'
+                },
+                {
+                    icon: '📝',
+                    label: 'Total Entry',
+                    value: `${totalEntries}`,
+                    unit: '',
+                    color: 'from-emerald-500 to-teal-500',
+                    bgColor: 'bg-emerald-50'
+                },
+                {
+                    icon: '📊',
+                    label: 'Rata-rata',
+                    value: avgEntriesPerDay,
+                    unit: '/hari',
+                    color: 'from-indigo-500 to-blue-500',
+                    bgColor: 'bg-indigo-50'
+                },
+                {
+                    icon: '🎯',
+                    label: 'Aktivitas',
+                    value: `${activityRate}`,
+                    unit: '%',
+                    color: 'from-rose-500 to-pink-500',
+                    bgColor: 'bg-rose-50'
+                },
+                {
+                    icon: '📚',
+                    label: 'Jurnal Aktif',
+                    value: `${totalJournals}`,
+                    unit: '',
+                    color: 'from-cyan-500 to-sky-500',
+                    bgColor: 'bg-cyan-50'
+                },
+                {
+                    icon: mostUsedMood ? mostUsedMood[0] : '😊',
+                    label: 'Mood Top',
+                    value: mostUsedMood ? `${mostUsedMood[1]}` : '-',
+                    unit: 'x',
+                    color: 'from-fuchsia-500 to-pink-500',
+                    bgColor: 'bg-fuchsia-50'
+                },
+                {
+                    icon: '🚀',
+                    label: 'Mulai',
+                    value: `${daysSinceFirst}`,
+                    unit: 'h lalu',
+                    color: 'from-lime-500 to-green-500',
+                    bgColor: 'bg-lime-50'
+                }
+            ];
+            
+            document.getElementById('analyticsContent').innerHTML = stats.map((stat, i) => `
+                <div class="${stat.bgColor} rounded-2xl p-2 md:p-3 hover:scale-[1.03] transition-transform duration-200 border border-white/50 shadow-sm overflow-hidden" style="animation: slideUpFade 0.3s ease ${i * 0.03}s both; min-width: 0;">
+                    <div class="flex items-center gap-2 overflow-hidden">
+                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-lg md:text-xl shadow-md flex-shrink-0">
+                            ${stat.icon}
+                        </div>
+                        <div class="min-w-0 flex-1 overflow-hidden">
+                            <p class="text-[10px] md:text-xs text-slate-500 font-medium leading-tight truncate">${stat.label}</p>
+                            <p class="text-sm md:text-lg font-bold text-slate-800 leading-tight truncate">${stat.value}<span class="text-[10px] md:text-xs font-normal text-slate-500 ml-0.5">${stat.unit}</span></p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Update quote based on activity
+            const quotes = [
+                "Konsistensi adalah kunci mastering.",
+                "Setiap entry adalah langkah menuju pemahaman diri.",
+                "Journaling adalah investasi untuk masa depan.",
+                "Kebiasaan kecil menciptakan perubahan besar.",
+                "Dokumentasikan perjalananmu, hargai prosesnya."
+            ];
+            document.getElementById('analyticsQuote').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+        }
+        
+        const GRADIENT_CLASSES = ['gradient-purple', 'gradient-black-red', 'gradient-ocean', 'gradient-sunset', 'gradient-forest', 'gradient-cosmic', 'gradient-midnight'];
+        
+        function setBackground(type, gradientVariant, elementId) {
+            const body = document.body;
+            const ambientBg = document.getElementById('ambientBg');
+            
+            // Remove previous selections
+            document.querySelectorAll('.bg-option').forEach(el => el.classList.remove('selected'));
+            
+            // Remove all gradient classes
+            GRADIENT_CLASSES.forEach(cls => body.classList.remove(cls));
+            
+            if (type === 'gradient') {
+                const gradientClass = `gradient-${gradientVariant || 'purple'}`;
+                body.className = `bg-gradient antialiased ${gradientClass}`;
+                body.style.backgroundImage = '';
+                ambientBg.classList.remove('hidden');
+                
+                if (elementId) {
+                    document.getElementById(`bg-${elementId}`).classList.add('selected');
+                } else {
+                    document.getElementById('bg-g-purple').classList.add('selected');
+                }
+                
+                currentBgType = 'gradient';
+                currentBgImage = gradientVariant || 'purple';
+            } else {
+                body.className = 'bg-image antialiased';
+                body.style.backgroundImage = `url(${gradientVariant})`; // gradientVariant is imageUrl here
+                ambientBg.classList.add('hidden');
+                if (elementId) {
+                    document.getElementById(`bg-${elementId}`).classList.add('selected');
+                }
+                currentBgType = 'image';
+                currentBgImage = gradientVariant; // imageUrl
+            }
+            
+            // Save preference
+            localStorage.setItem('journalBgType', type);
+            localStorage.setItem('journalBgVariant', currentBgImage || '');
+        }
+        
+        // ==================== DATABASE (same as before) ====================
+        const DB_NAME = 'JournalingAppDB';
+        const DB_VERSION = 1;
+        const PARENT_STORE = 'parents';
+        const CHILD_STORE = 'children';
+        let db = null;
+        const EMOTICONS = ['😊', '😢', '😡', '😰', '🤔', '🥰', '😴', '🤩', '😎', '🤯'];
+        
+        function initDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => { db = request.result; resolve(db); };
+                request.onupgradeneeded = (event) => {
+                    const database = event.target.result;
+                    if (!database.objectStoreNames.contains(PARENT_STORE)) {
+                        const parentStore = database.createObjectStore(PARENT_STORE, { keyPath: 'id' });
+                        parentStore.createIndex('dateModified', 'dateModified', { unique: false });
+                    }
+                    if (!database.objectStoreNames.contains(CHILD_STORE)) {
+                        const childStore = database.createObjectStore(CHILD_STORE, { keyPath: 'id', autoIncrement: true });
+                        childStore.createIndex('parentId', 'parentId', { unique: false });
+                        childStore.createIndex('dateAdded', 'dateAdded', { unique: false });
+                    }
+                };
+            });
+        }
+        
+        async function addParent() {
+            const titleInput = document.getElementById('newJournalTitle');
+            const title = titleInput.value.trim();
+            if (!title) { showToast('Please enter a journal title'); return; }
+            
+            const now = Date.now();
+            const parent = { id: 'parent_' + now, title: title, dateModified: now, latestEmotion: null };
+            
+            const transaction = db.transaction([PARENT_STORE], 'readwrite');
+            const store = transaction.objectStore(PARENT_STORE);
+            await new Promise((resolve, reject) => {
+                const request = store.add(parent);
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject(request.error);
+            });
+            
+            titleInput.value = '';
+            showToast('Journal created successfully');
+            await renderJournals();
+        }
+        
+        function scrollToEntryForm(parentId) {
+            const content = document.getElementById(`content_${parentId}`);
+            const arrow = document.getElementById(`arrow_${parentId}`);
+            const entryForm = document.getElementById(`entryForm_${parentId}`);
+            
+            // Open accordion if closed
+            if (content && !content.classList.contains('open')) {
+                content.classList.add('open');
+                if (arrow) arrow.classList.add('open');
+            }
+            
+            // Scroll to form with smooth animation
+            setTimeout(() => {
+                if (entryForm) {
+                    entryForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Focus on textarea
+                    const textarea = document.getElementById(`notes_${parentId}`);
+                    if (textarea) textarea.focus();
+                }
+            }, 300);
+        }
+        
+        async function addChild(parentId) {
+            const notesInput = document.getElementById(`notes_${parentId}`);
+            const notes = notesInput.value.trim();
+            if (!notes) { showToast('Please write something'); return; }
+            
+            const selectedEmoticon = document.querySelector(`[data-parent="${parentId}"].selected`);
+            
+            // Validate emoji selection
+            if (!selectedEmoticon) {
+                const warningEl = document.getElementById(`emojiWarning_${parentId}`);
+                if (warningEl) {
+                    warningEl.classList.remove('hidden');
+                    warningEl.classList.add('flex');
+                    // Shake animation on emoji container
+                    const emojiContainer = document.getElementById(`emojiContainer_${parentId}`);
+                    if (emojiContainer) {
+                        emojiContainer.style.animation = 'shake 0.5s ease-in-out';
+                        setTimeout(() => {
+                            emojiContainer.style.animation = '';
+                        }, 500);
+                    }
+                }
+                showToast('Please select an emoji first');
+                return;
+            }
+            
+            // Hide warning if exists
+            const warningEl = document.getElementById(`emojiWarning_${parentId}`);
+            if (warningEl) {
+                warningEl.classList.add('hidden');
+                warningEl.classList.remove('flex');
+            }
+            
+            const emoticon = selectedEmoticon.textContent;
+            
+            const now = Date.now();
+            const child = { parentId: parentId, dateAdded: now, notes: notes, emoticon: emoticon };
+            
+            const transaction = db.transaction([CHILD_STORE, PARENT_STORE], 'readwrite');
+            const childStore = transaction.objectStore(CHILD_STORE);
+            const parentStore = transaction.objectStore(PARENT_STORE);
+            
+            await new Promise((resolve, reject) => {
+                const request = childStore.add(child);
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject(request.error);
+            });
+            
+            const parent = await new Promise((resolve, reject) => {
+                const request = parentStore.get(parentId);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+            
+            if (parent) {
+                parent.dateModified = now;
+                parent.latestEmotion = emoticon;
+                await new Promise((resolve, reject) => {
+                    const request = parentStore.put(parent);
+                    request.onsuccess = () => resolve();
+                    request.onerror = () => reject(request.error);
+                });
+            }
+            
+            notesInput.value = '';
+            document.querySelectorAll(`[data-parent="${parentId}"]`).forEach(btn => btn.classList.remove('selected'));
+            showToast('Entry added successfully');
+            await renderJournals();
+            
+            // Scroll to the newest entry with animation
+            setTimeout(() => {
+                const content = document.getElementById(`content_${parentId}`);
+                const arrow = document.getElementById(`arrow_${parentId}`);
+                if (content) content.classList.add('open');
+                if (arrow) arrow.classList.add('open');
+                
+                // Scroll to the newest entry (first one since we sort desc)
+                const entriesList = document.getElementById(`entriesList_${parentId}`);
+                if (entriesList) {
+                    const firstEntry = entriesList.firstElementChild;
+                    if (firstEntry) {
+                        firstEntry.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Add highlight animation
+                        firstEntry.style.animation = 'pulse 1s ease-in-out';
+                        setTimeout(() => {
+                            firstEntry.style.animation = '';
+                        }, 1000);
+                    }
+                }
+            }, 100);
+        }
+        
+        async function getAllParents() {
+            const transaction = db.transaction([PARENT_STORE], 'readonly');
+            const store = transaction.objectStore(PARENT_STORE);
+            const index = store.index('dateModified');
+            return new Promise((resolve, reject) => {
+                const request = index.openCursor(null, 'prev');
+                const parents = [];
+                request.onsuccess = (event) => {
+                    const cursor = event.target.result;
+                    if (cursor) { parents.push(cursor.value); cursor.continue(); }
+                    else { resolve(parents); }
+                };
+                request.onerror = () => reject(request.error);
+            });
+        }
+        
+        async function getChildrenByParent(parentId) {
+            const transaction = db.transaction([CHILD_STORE], 'readonly');
+            const store = transaction.objectStore(CHILD_STORE);
+            const index = store.index('parentId');
+            return new Promise((resolve, reject) => {
+                const request = index.openCursor(parentId);
+                const children = [];
+                request.onsuccess = (event) => {
+                    const cursor = event.target.result;
+                    if (cursor) { children.push(cursor.value); cursor.continue(); }
+                    else { children.sort((a, b) => b.dateAdded - a.dateAdded); resolve(children); }
+                };
+                request.onerror = () => reject(request.error);
+            });
+        }
+        
+        async function exportData() {
+            const parents = await getAllParents();
+            const transaction = db.transaction([CHILD_STORE], 'readonly');
+            const store = transaction.objectStore(CHILD_STORE);
+            const children = await new Promise((resolve, reject) => {
+                const request = store.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+            
+            const data = { exportDate: new Date().toISOString(), parents: parents, children: children };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `journal_backup_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('Backup downloaded successfully');
+        }
+        
+        async function importData(input) {
+            const file = input.files[0];
+            if (!file) return;
+            try {
+                const text = await file.text();
+                const data = JSON.parse(text);
+                if (!data.parents || !data.children) throw new Error('Invalid backup file format');
+                
+                const transaction = db.transaction([PARENT_STORE, CHILD_STORE], 'readwrite');
+                const parentStore = transaction.objectStore(PARENT_STORE);
+                const childStore = transaction.objectStore(CHILD_STORE);
+                
+                await new Promise((resolve, reject) => { const r = parentStore.clear(); r.onsuccess = () => resolve(); r.onerror = () => reject(r.error); });
+                await new Promise((resolve, reject) => { const r = childStore.clear(); r.onsuccess = () => resolve(); r.onerror = () => reject(r.error); });
+                
+                for (const parent of data.parents) await new Promise((resolve, reject) => { const r = parentStore.add(parent); r.onsuccess = () => resolve(); r.onerror = () => reject(r.error); });
+                for (const child of data.children) await new Promise((resolve, reject) => { const r = childStore.add(child); r.onsuccess = () => resolve(); r.onerror = () => reject(r.error); });
+                
+                showToast('Data imported successfully');
+                await renderJournals();
+            } catch (error) { showToast('Error importing file: ' + error.message); }
+            input.value = '';
+        }
+        
+        function formatDate(timestamp) {
+            const date = new Date(timestamp);
+            return `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getFullYear()).slice(-2)}`;
+        }
+        
+        function formatDateTime(timestamp) {
+            return new Date(timestamp).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        }
+        
+        async function renderJournals() {
+            const parents = await getAllParents();
+            const container = document.getElementById('journalsList');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (parents.length === 0) { container.innerHTML = ''; emptyState.classList.remove('hidden'); return; }
+            emptyState.classList.add('hidden');
+            
+            let html = '';
+            for (const parent of parents) {
+                const children = await getChildrenByParent(parent.id);
+                html += await renderParentCard(parent, children);
+            }
+            container.innerHTML = html;
+        }
+        
+        async function renderParentCard(parent, children) {
+            const entryCount = children.length;
+            const latestEmotion = parent.latestEmotion || '✍️';
+            
+            let childrenHtml = '';
+            if (children.length > 0) {
+                childrenHtml = children.map(child => `
+                    <div class="entry-card bg-white/70 backdrop-blur-sm rounded-2xl p-5 mb-3 border border-white/40 shadow-sm">
+                        <div class="flex gap-4">
+                            <div class="mood-indicator text-3xl">${child.emoticon}</div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${linkifyText(child.notes)}</p>
+                                <p class="entry-time text-xs text-slate-400 mt-3 font-medium">${formatDateTime(child.dateAdded)}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                childrenHtml = `
+                    <div class="text-center py-10">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-slate-100 flex items-center justify-center">
+                            <span class="text-2xl">📝</span>
+                        </div>
+                        <p class="text-slate-400 text-sm">No entries yet</p>
+                        <p class="text-slate-300 text-xs mt-1">Add your first thought below</p>
+                    </div>
+                `;
+            }
+            
+            const emoticonButtons = EMOTICONS.map(emoji => `
+                <button onclick="selectEmoticon('${parent.id}', '${emoji}', this)" data-parent="${parent.id}"
+                    class="emoji-btn w-11 h-11 text-xl rounded-xl bg-white/50 hover:bg-white flex items-center justify-center shadow-sm">${emoji}</button>
+            `).join('');
+            
+            return `
+                <div class="journal-card glass rounded-3xl overflow-hidden shadow-xl shadow-black/5" id="journal_${parent.id}">
+                    <div onclick="toggleAccordion('${parent.id}')" class="p-5 cursor-pointer hover:bg-white/40 transition-all group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <div class="mood-indicator w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-2xl flex-shrink-0">${latestEmotion}</div>
+                                <div class="min-w-0">
+                                    <h3 class="font-semibold text-slate-800 text-base truncate">${escapeHtml(parent.title)}</h3>
+                                    <div class="flex items-center gap-2 mt-0.5">
+                                        <span class="text-xs text-slate-500">${formatDate(parent.dateModified)}</span>
+                                        <span class="badge px-2 py-0.5 rounded-full text-xs font-medium text-slate-600">${entryCount} ${entryCount === 1 ? 'entry' : 'entries'}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="event.stopPropagation(); scrollToEntryForm('${parent.id}')" 
+                                    class="flex items-center justify-center w-8 h-8 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-all shadow-sm hover:shadow-md"
+                                    title="Add new entry">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                                <svg id="arrow_${parent.id}" class="rotate-arrow w-5 h-5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="content_${parent.id}" class="accordion-content border-t border-white/30">
+                        <div class="p-5">
+                            <div id="entriesList_${parent.id}" class="mb-5">${childrenHtml}</div>
+                            <div id="entryForm_${parent.id}" class="bg-slate-50/80 rounded-2xl p-5 border border-slate-100">
+                                <p class="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-3">New Entry</p>
+                                <div class="flex flex-wrap gap-2 mb-3" id="emojiContainer_${parent.id}">${emoticonButtons}</div>
+                                <p id="emojiWarning_${parent.id}" class="hidden text-xs text-red-500 mb-2 flex items-center gap-1">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>Please select an emoji first</span>
+                                </p>
+                                <textarea id="notes_${parent.id}" placeholder="What's on your mind?" 
+                                    class="w-full px-4 py-3 bg-white/90 border border-slate-200 rounded-xl focus:outline-none focus:border-slate-400 focus:bg-white resize-none h-24 text-sm text-slate-700 placeholder-slate-400 transition-all mb-3"></textarea>
+                                <button onclick="addChild('${parent.id}')" 
+                                    class="w-full py-3 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-800/20 hover:shadow-slate-800/30">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span>Add Entry</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function toggleAccordion(parentId) {
+            const content = document.getElementById(`content_${parentId}`);
+            const arrow = document.getElementById(`arrow_${parentId}`);
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+            }
+        }
+        
+        function selectEmoticon(parentId, emoji, btn) {
+            document.querySelectorAll(`[data-parent="${parentId}"]`).forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function linkifyText(text) {
+            // URL regex pattern
+            const urlPattern = /(https?:\/\/[^\s]+)/g;
+            
+            // Escape HTML first
+            let escaped = escapeHtml(text);
+            
+            // Replace URLs with buttons
+            escaped = escaped.replace(urlPattern, (url) => {
+                // Create a short display text
+                let displayText = 'Link';
+                try {
+                    const urlObj = new URL(url);
+                    // If URL is short enough, show domain only
+                    if (url.length < 40) {
+                        displayText = urlObj.hostname;
+                    }
+                } catch (e) {
+                    // Invalid URL, just show "Link"
+                }
+                
+                return `<a href="${url}" target="_blank" rel="noopener noreferrer" 
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium rounded-lg transition-colors border border-slate-200">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    <span>${displayText}</span>
+                </a>`;
+            });
+            
+            return escaped;
+        }
+        
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            setTimeout(() => { toast.classList.add('translate-x-full', 'opacity-0'); }, 3000);
+        }
+        
+        // Dropdown menu functions
+        function toggleDropdown(menuId) {
+            const menu = document.getElementById(menuId);
+            const isOpen = !menu.classList.contains('hidden');
+            
+            // Close all dropdowns first
+            closeAllDropdowns();
+            
+            // Toggle current
+            if (!isOpen) {
+                menu.classList.remove('hidden');
+            }
+        }
+        
+        function closeDropdown(menuId) {
+            document.getElementById(menuId).classList.add('hidden');
+        }
+        
+        function closeAllDropdowns() {
+            document.getElementById('dataMenu').classList.add('hidden');
+            document.getElementById('loveMenu').classList.add('hidden');
+        }
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            const dataContainer = document.getElementById('dataMenuContainer');
+            const loveContainer = document.getElementById('loveMenuContainer');
+            
+            if (!dataContainer.contains(e.target) && !loveContainer.contains(e.target)) {
+                closeAllDropdowns();
+            }
+        });
+        
+        // Create and inject manifest dynamically
+        const manifest = {
+            name: "X Journal",
+            short_name: "XJournal",
+            start_url: ".",
+            display: "standalone",
+            background_color: "#ffffff",
+            theme_color: "#6366f1",
+            orientation: "portrait-primary",
+            scope: ".",
+            icons: [
+                {
+                    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%234f46e5' rx='40' width='192' height='192'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='100'%3E📓%3C/text%3E%3C/svg%3E",
+                    sizes: "192x192",
+                    type: "image/svg+xml",
+                    purpose: "any maskable"
+                },
+                {
+                    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect fill='%234f46e5' rx='100' width='512' height='512'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='280'%3E📓%3C/text%3E%3C/svg%3E",
+                    sizes: "512x512",
+                    type: "image/svg+xml",
+                    purpose: "any maskable"
+                }
+            ]
+        };
+        
+        const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        document.getElementById('manifestLink').href = manifestURL;
+        
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            const swCode = `
+                const CACHE_NAME = 'x-journal-v1';
+                const urlsToCache = ['./'];
+                
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.addAll(urlsToCache))
+                            .then(() => self.skipWaiting())
+                    );
+                });
+                
+                self.addEventListener('activate', event => {
+                    event.waitUntil(self.clients.claim());
+                });
+                
+                self.addEventListener('fetch', event => {
+                    event.respondWith(
+                        caches.match(event.request).then(response => {
+                            if (response) return response;
+                            return fetch(event.request).catch(() => {
+                                return new Response('Offline - X Journal');
+                            });
+                        })
+                    );
+                });
+            `;
+            
+            const swBlob = new Blob([swCode], { type: 'text/javascript' });
+            const swURL = URL.createObjectURL(swBlob);
+            
+            navigator.serviceWorker.register(swURL)
+                .then(reg => console.log('SW registered:', reg))
+                .catch(err => console.log('SW registration failed:', err));
+        }
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await initDB();
+                initBackgroundSelector();
+                initPWAInstall();
+                
+                // Restore saved background
+                const savedBgType = localStorage.getItem('journalBgType');
+                const savedBgVariant = localStorage.getItem('journalBgVariant');
+                if (savedBgType === 'image' && savedBgVariant) {
+                    setBackground('image', savedBgVariant);
+                } else if (savedBgType === 'gradient' && savedBgVariant) {
+                    setBackground('gradient', savedBgVariant, `g-${savedBgVariant}`);
+                }
+                
+                await renderJournals();
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                showToast('Error initializing app');
+            }
+        });
+        
+        document.getElementById('newJournalTitle')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addParent();
+        });
+    </script>
+</body>
+</html>

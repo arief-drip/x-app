@@ -1,0 +1,151 @@
+{
+  "exportDate": "2026-02-13T10:00:00.000Z",
+  "parents": [
+    {
+      "id": "parent_1704067200000",
+      "title": "Refleksi Ramadan",
+      "dateModified": 1708473600000,
+      "latestEmotion": "🥰"
+    },
+    {
+      "id": "parent_1704153600000",
+      "title": "Catatan Kampus & Skripsi",
+      "dateModified": 1708905600000,
+      "latestEmotion": "😰"
+    },
+    {
+      "id": "parent_1704240000000",
+      "title": "Perjalanan Hijrah",
+      "dateModified": 1709251200000,
+      "latestEmotion": "🤔"
+    },
+    {
+      "id": "parent_1704326400000",
+      "title": "Uang Bulanan & Keuangan",
+      "dateModified": 1709510400000,
+      "latestEmotion": "😊"
+    },
+    {
+      "id": "parent_1704412800000",
+      "title": "Relasi & Sahabat Dakwah",
+      "dateModified": 1709769600000,
+      "latestEmotion": "🤩"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1704067200000,
+      "notes": "Hari pertama puasa di kosan sendiri. Rindu banget sama masakan mama. Tapi Alhamdulillah, tetap semangat! Target: khatam 1x selama Ramadan. Bismillah 💪",
+      "emoticon": "😊"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1704153600000,
+      "notes": "Tadi malam tarawih berjamaah di masjid kampus. Suasana ramai banget, cowok-cowok kosan pada kompak pergi bareng. Semoga istiqomah sampe akhir ya Allah",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1704240000000,
+      "notes": "Ngerjakan tugas DAA sampe imsak. Agak males sahur tapi tetep makan nasi goreng instan. Hari ini lemes banget di kelas, dosennya ngomong kayak gak ada puasanya 😂",
+      "emoticon": "😴"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1708473600000,
+      "notes": "Idul Fitri! Akhirnya pulang kampung. Mama nangis liat aku turun 3kg. Tapi yang penting hatimu bahagia kan ma? 😭🙏",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1704153600000,
+      "notes": "Dosen pembimbing bilang bab 2ku banyak revisi. Rasanya pengen nangis di perpustakaan. Tapi inget kata ustadz: sabar itu ada batasnya, tapi Allah gak pernah salah kasih ujian.",
+      "emoticon": "😢"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1704326400000,
+      "notes": "Progress skripsi 40%. Hari ini nemu jurnal yang pas banget buat referensi. Alhamdulillah, Allah kasih jalan pas lagi buntu. Semangat!!!",
+      "emoticon": "😊"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1708905600000,
+      "notes": "Sidang proposal besok. Udah prepare slide, baju, dan doa. Tapi tetep deg-degan. Ya Allah mudahkanlah, jadikan ini amal shaleh untuk masa depan hamba-Mu 🤲",
+      "emoticon": "😰"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1704240000000,
+      "notes": "Mulai konsisten sholat dhuha setelah subuh. Rasanya hati lebih tenang, walau tugas masih banyak. Kecintaan kepada Allah itu healing terbaik.",
+      "emoticon": "🤔"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1704412800000,
+      "notes": "Nonton ceramah Ustadz Adi Hidayat tentang hijrah. Ngenes banget nangis di kamar. Kayaknya aku harus lebih serius nih, gak bisa main-main sama agama lagi.",
+      "emoticon": "😢"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1708905600000,
+      "notes": "Berani nolak job part time yang riba. Temen pada bilang gak realistis, tapi aku percaya rezeki Allah lebih luas. Semoga Allah ganti dengan yang lebih baik.",
+      "emoticon": "🤔"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1709251200000,
+      "notes": "Satu semester berlalu. Banyak banget perubahan, dari yang dulu jarang masjid sekarang jadi pengurus rohis. Allah Maha Baik sama hamba-Nya yang mau berubah.",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1704326400000,
+      "notes": "Uang dari mama masuk! Langsung bagi-bagi: 50% kebutuhan, 30% tabungan, 20% sedekah. Jangan sampai boncos sebelum akhir bulan ya Allah 😅",
+      "emoticon": "😊"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1704672000000,
+      "notes": "Minggu ketiga: uang tinggal 200rb. Makan mie instan 3 hari berturut-turut. Tapi tetep bayar UKT tepat waktu. Prioritas itu penting! 💪",
+      "emoticon": "😰"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1706736000000,
+      "notes": "Coba jualan pulsa di kosan. Untung receh tapi lumayan buat jajan. Belajar entrepreneurship dari nol. Bismillah jadi pengusaha sukses yang soleh.",
+      "emoticon": "😎"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1709510400000,
+      "notes": "Akhirnya bisa nabung 1jt! Target semester depan 2jt. Pengen beli laptop baru buat skripsi. Semoga Allah berikan kemudahan rezeki.",
+      "emoticon": "🤩"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1704412800000,
+      "notes": "Kenal temen baru di kajian akhwat. Namanya Aisyah, anak psikologi. Kita langsung klik karena sama-sama suka ngopi dan ngaji. Alhamdulillah Allah kirim sahabat shalehah 🤗",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1704844800000,
+      "notes": "Rohis kampus bagi-bagi takjil. Seru banget! Dari yang dulu cuma pengikut, sekarang jadi panitia. Rasanya beda banget ikut aktif dakwah.",
+      "emoticon": "🤩"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1709251200000,
+      "notes": "Dapet mentor baru dari alumni. Bang Arief, dia kerja di unicorn tapi tetep istiqomah ngaji. Role model banget! Aku juga pengen kayak dia suatu saat nanti.",
+      "emoticon": "🤩"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1709769600000,
+      "notes": "Ngobrol sampe pagi sama temen-temen rohis. Bahasanya mulai dari skripsi sampe akhirat. Kumpul sama orang-orang yang bikin kamu kangen surga itu nikmat banget.",
+      "emoticon": "🥰"
+    }
+  ]
+}

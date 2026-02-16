@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 DocsHub - Documentation Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-theme">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-hover: #f1f5f9;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --text-heading: #0f172a;
+            --border: #e2e8f0;
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --code-bg: #f4f4f5;
+            --sidebar-width: 280px;
+            --header-height: 64px;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --radius: 12px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-hover: #334155;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-heading: #f8fafc;
+            --border: #334155;
+            --code-bg: #1e293b;
+        }
+
+        [data-theme="dark"] #hljs-theme {
+            content: url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css');
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Layout */
+        .app {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            z-index: 100;
+            gap: 1rem;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .menu-btn:hover {
+            background: var(--surface-hover);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.625rem 1rem 0.625rem 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .icon-btn:hover {
+            background: var(--surface-hover);
+            color: var(--text);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--header-height));
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 1rem;
+            z-index: 90;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 80;
+        }
+
+        .nav-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            padding: 0 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.625rem 0.75rem;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .nav-link:hover {
+            background: var(--surface-hover);
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-link .icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.7;
+        }
+
+        .nav-link.active .icon {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            margin-top: var(--header-height);
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .content {
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Markdown Styles */
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .content ul, .content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content code {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.875em;
+            background: var(--code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            color: var(--primary);
+        }
+
+        .content pre {
+            background: var(--code-bg);
+            padding: 1.25rem;
+            border-radius: var(--radius);
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .content blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .content th, .content td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content th {
+            font-weight: 600;
+            color: var(--text-heading);
+            background: var(--surface-hover);
+        }
+
+        .content hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        /* Search Results */
+        .search-results {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 200;
+            display: none;
+        }
+
+        .search-results.active {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 0.875rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-item:hover {
+            background: var(--surface-hover);
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .search-result-preview {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .search-highlight {
+            background: var(--primary-light);
+            color: white;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .menu-btn {
+                display: flex;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-overlay.active {
+                display: block;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+
+            .content h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .search-box {
+                display: none;
+            }
+
+            .content h1 {
+                font-size: 1.75rem;
+            }
+
+            .content h2 {
+                font-size: 1.375rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-btn" onclick="toggleSidebar()">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            
+            <div class="logo">
+                <span>📚</span>
+                <span>DocsHub</span>
+            </div>
+
+            <div class="search-box">
+                <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Cari dokumentasi..." autocomplete="off">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" onclick="toggleTheme()" title="Ganti Tema">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav id="sidebarNav">
+                <!-- Navigation akan di-generate otomatis -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="breadcrumb" id="breadcrumb">
+                <a href="#" onclick="loadDoc('index')">Beranda</a>
+                <span>/</span>
+                <span id="currentPage">Pengantar</span>
+            </div>
+            <article class="content" id="content">
+                <!-- Konten akan dirender di sini -->
+            </article>
+        </main>
+
+        <!-- Scroll to Top -->
+        <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // ============================================
+        // DOKUMENTASI - EDIT DI SINI
+        // ============================================
+        const docs = {
+            'index': {
+                title: 'Pengantar',
+                category: 'Mulai',
+                icon: '🏠',
+                content: `
+# Selamat Datang di DocsHub
+
+DocsHub adalah template dokumentasi modern yang **ringan**, **responsif**, dan **mudah dikustomisasi**.
+
+## ✨ Fitur Utama
+
+| Fitur | Deskripsi |
+|-------|-----------|
+| 🔍 **Pencarian** | Cari cepat di seluruh dokumentasi |
+| 🌙 **Dark Mode** | Nyaman dibaca siang & malam |
+| 📱 **Responsive** | Optimal di desktop & mobile |
+| 🎨 **Syntax Highlight** | Kode dengan warna yang jelas |
+| ⚡ **Single File** | Satu file HTML, mudah di-deploy |
+
+## 🚀 Cara Menggunakan
+
+### 1. Edit Konten
+
+Tambahkan dokumen baru di bagian \`docs\` pada JavaScript:
+
+\`\`\`javascript
+const docs = {
+    'nama-file': {
+        title: 'Judul Halaman',
+        category: 'Kategori',
+        icon: '🔧',
+        content: \`
+# Konten Markdown di sini
+\`
+    }
+};
+\`\`\`
+
+### 2. Tambahkan ke Navigasi
+
+Tambahkan kategori dan item navigasi di bagian \`navStructure\`.
+
+### 3. Deploy
+
+Copy-paste file ini ke **Gemini Canvas**, **GitHub Pages**, atau hosting statis lainnya.
+
+## 📝 Format Markdown
+
+Dokumentasi mendukung semua format Markdown standar:
+
+- **Bold** dan *italic*
+- [Link](#) ke halaman lain
+- \`Inline code\`
+- Block code dengan syntax highlighting
+- List (ordered & unordered)
+- Tabel
+- Blockquote
+- Dan banyak lagi!
+
+> 💡 **Tip**: Gunakan \`---\` untuk membuat pemisah horizontal.
+
+---
+
+Selamat mendokumentasikan! 🎉
+                `
+            },
+            'instalasi': {
+                title: 'Instalasi',
+                category: 'Mulai',
+                icon: '⚡',
+                content: `
+# Instalasi
+
+Panduan lengkap untuk menginstall dan menjalankan proyek ini.
+
+## Prerequisites
+
+Sebelum memulai, pastikan kamu sudah menginstall:
+
+- **Node.js** v18 atau lebih baru
+- **npm** atau **yarn**
+- **Git**
+
+## Langkah Instalasi
+
+### 1. Clone Repository
+
+\`\`\`bash
+git clone https://github.com/username/repo.git
+cd repo
+\`\`\`
+
+### 2. Install Dependencies
+
+\`\`\`bash
+npm install
+# atau
+yarn install
+\`\`\`
+
+### 3. Konfigurasi Environment
+
+\`\`\`bash
+cp .env.example .env
+\`\`\`
+
+Edit file \`.env\` sesuai kebutuhan:
+
+\`\`\`env
+DATABASE_URL=postgresql://user:pass@localhost:5432/db
+API_KEY=your_api_key
+PORT=3000
+\`\`\`
+
+### 4. Jalankan Aplikasi
+
+\`\`\`bash
+npm run dev
+# atau
+yarn dev
+\`\`\`
+
+Aplikasi akan berjalan di \`http://localhost:3000\`.
+
+## Troubleshooting
+
+### Error: Port sudah digunakan
+
+\`\`\`bash
+# Cari proses yang menggunakan port 3000
+lsof -i :3000
+
+# Kill proses
+kill -9 <PID>
+\`\`\`
+
+### Error: Module not found
+
+\`\`\`bash
+# Hapus node_modules dan install ulang
+rm -rf node_modules package-lock.json
+npm install
+\`\`\`
+                `
+            },
+            'api-overview': {
+                title: 'Overview',
+                category: 'API Reference',
+                icon: '📡',
+                content: `
+# API Overview
+
+REST API untuk mengakses data aplikasi.
+
+## Base URL
+
+\`\`\`
+https://api.example.com/v1
+\`\`\`
+
+## Autentikasi
+
+Semua request memerlukan API Key di header:
+
+\`\`\`http
+Authorization: Bearer YOUR_API_KEY
+\`\`\`
+
+## Response Format
+
+Semua response menggunakan format JSON:
+
+\`\`\`json
+{
+  "success": true,
+  "data": { ... },
+  "message": "Operasi berhasil"
+}
+\`\`\`
+
+## HTTP Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | OK - Request berhasil |
+| 201 | Created - Resource berhasil dibuat |
+| 400 | Bad Request - Parameter salah |
+| 401 | Unauthorized - API key tidak valid |
+| 404 | Not Found - Resource tidak ditemukan |
+| 500 | Internal Server Error |
+
+## Rate Limiting
+
+- **Limit**: 100 requests per menit
+- **Header**: \`X-RateLimit-Remaining\`
+
+> ⚠️ Jika limit terlampaui, akan mendapat response **429 Too Many Requests**.
+                `
+            },
+            'api-users': {
+                title: 'Users API',
+                category: 'API Reference',
+                icon: '👤',
+                content: `
+# Users API
+
+Endpoint untuk mengelola data pengguna.
+
+## Get All Users
+
+\`\`\`http
+GET /users
+\`\`\`
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| page | integer | Nomor halaman (default: 1) |
+| limit | integer | Jumlah item per halaman (default: 10) |
+| search | string | Cari berdasarkan nama/email |
+
+### Response
+
+\`\`\`json
+{
+  "success": true,
+  "data": {
+    "users": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com",
+        "role": "admin",
+        "created_at": "2024-01-15T08:30:00Z"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 10,
+      "total": 50,
+      "total_pages": 5
+    }
+  }
+}
+\`\`\`
+
+## Get User by ID
+
+\`\`\`http
+GET /users/:id
+\`\`\`
+
+### Response
+
+\`\`\`json
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "role": "admin",
+    "profile": {
+      "avatar": "https://...",
+      "bio": "Software developer",
+      "location": "Jakarta"
+    }
+  }
+}
+\`\`\`
+
+## Create User
+
+\`\`\`http
+POST /users
+\`\`\`
+
+### Request Body
+
+\`\`\`json
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "password": "securepassword123",
+  "role": "user"
+}
+\`\`\`
+
+### Response
+
+\`\`\`json
+{
+  "success": true,
+  "data": {
+    "id": 2,
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "role": "user",
+    "created_at": "2024-01-20T10:00:00Z"
+  },
+  "message": "User berhasil dibuat"
+}
+\`\`\`
+
+## Update User
+
+\`\`\`http
+PUT /users/:id
+\`\`\`
+
+### Request Body
+
+\`\`\`json
+{
+  "name": "Jane Smith",
+  "email": "jane.smith@example.com"
+}
+\`\`\`
+
+## Delete User
+
+\`\`\`http
+DELETE /users/:id
+\`\`\`
+
+### Response
+
+\`\`\`json
+{
+  "success": true,
+  "message": "User berhasil dihapus"
+}
+\`\`\`
+                `
+            },
+            'komponen': {
+                title: 'Komponen',
+                category: 'Komponen UI',
+                icon: '🧩',
+                content: `
+# Komponen UI
+
+Dokumentasi komponen-komponen yang tersedia.
+
+## Button
+
+Tombol dengan berbagai variant.
+
+### Usage
+
+\`\`\`jsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="danger">Danger</Button>
+\`\`\`
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| variant | string | 'primary' | primary, secondary, danger, ghost |
+| size | string | 'md' | sm, md, lg |
+| disabled | boolean | false | Nonaktifkan tombol |
+| loading | boolean | false | Tampilkan spinner |
+| onClick | function | - | Handler klik |
+
+## Card
+
+Container untuk mengelompokkan konten.
+
+\`\`\`jsx
+<Card>
+  <CardHeader>
+    <CardTitle>Judul Card</CardTitle>
+  </CardHeader>
+  <CardBody>
+    Konten card di sini...
+  </CardBody>
+</Card>
+\`\`\`
+
+## Input
+
+Form input dengan label dan error message.
+
+\`\`\`jsx
+<Input
+  label="Email"
+  type="email"
+  placeholder="email@example.com"
+  error="Email tidak valid"
+/>
+\`\`\`
+
+## Modal
+
+Dialog popup untuk konfirmasi atau form.
+
+\`\`\`jsx
+<Modal isOpen={isOpen} onClose={onClose}>
+  <ModalHeader>Konfirmasi</ModalHeader>
+  <ModalBody>
+    Apakah Anda yakin ingin menghapus?
+  </ModalBody>
+  <ModalFooter>
+    <Button variant="ghost" onClick={onClose}>Batal</Button>
+    <Button variant="danger" onClick={onConfirm}>Hapus</Button>
+  </ModalFooter>
+</Modal>
+\`\`\`
+
+## Table
+
+Tabel dengan sorting dan pagination.
+
+\`\`\`jsx
+<Table
+  columns={columns}
+  data={data}
+  sortable
+  pagination
+/>
+\`\`\`
+
+## Alert
+
+Pesan notifikasi untuk user.
+
+\`\`\`jsx
+<Alert type="success">Operasi berhasil!</Alert>
+<Alert type="error">Terjadi kesalahan!</Alert>
+<Alert type="warning">Perhatian!</Alert>
+<Alert type="info">Informasi penting</Alert>
+\`\`\`
+                `
+            },
+            'faq': {
+                title: 'FAQ',
+                category: 'Lainnya',
+                icon: '❓',
+                content: `
+# Frequently Asked Questions
+
+Pertanyaan yang sering ditanyakan.
+
+## Umum
+
+### Bagaimana cara mengubah tema?
+
+Klik ikon 🌙 di header untuk beralih antara dark mode dan light mode.
+
+### Apakah bisa digunakan offline?
+
+Ya! Karena ini single-file HTML, bisa dibuka langsung di browser tanpa koneksi internet.
+
+### Bagaimana cara menambah halaman baru?
+
+1. Tambahkan entry baru di objek \`docs\`
+2. Isi properti: \`title\`, \`category\`, \`icon\`, \`content\`
+3. Secara otomatis akan muncul di sidebar
+
+## Teknis
+
+### Bagaimana cara custom styling?
+
+Edit bagian \`<style>\` di dalam file. Gunakan CSS variable untuk konsistensi:
+
+\`\`\`css
+:root {
+    --primary: #6366f1;  /* Ubah warna utama */
+    --bg: #f8fafc;       /* Ubah background */
+}
+\`\`\`
+
+### Apakah mendukung TypeScript?
+
+Untuk saat ini template ini menggunakan JavaScript vanilla. Tapi kamu bisa dengan mudah migrasi ke TypeScript jika diperlukan.
+
+### Bagaimana cara deploy?
+
+**GitHub Pages:**
+1. Push file ke repository
+2. Aktifkan GitHub Pages di settings
+3. Pilih branch \`main\`
+
+**Vercel/Netlify:**
+1. Drag & drop file HTML
+2. Selesai!
+
+**Gemini Canvas:**
+1. Copy seluruh kode
+2. Paste ke Gemini Canvas
+3. Canvas akan render preview secara otomatis
+
+## Kontribusi
+
+### Bagaimana cara berkontribusi?
+
+1. Fork repository
+2. Buat branch baru: \`git checkout -b feature/nama-fitur\`
+3. Commit perubahan: \`git commit -m 'Add: fitur baru'\`
+4. Push ke branch: \`git push origin feature/nama-fitur\`
+5. Buat Pull Request
+
+### Ada bug, lapor ke mana?
+
+Buat issue di GitHub repository dengan template yang tersedia.
+                `
+            }
+        };
+
+        // Struktur Navigasi
+        const navStructure = [
+            {
+                category: 'Mulai',
+                items: ['index', 'instalasi']
+            },
+            {
+                category: 'API Reference',
+                items: ['api-overview', 'api-users']
+            },
+            {
+                category: 'Komponen UI',
+                items: ['komponen']
+            },
+            {
+                category: 'Lainnya',
+                items: ['faq']
+            }
+        ];
+
+        // State
+        let currentDoc = 'index';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSidebar();
+            loadDoc('index');
+            loadTheme();
+            setupSearch();
+            setupScrollTop();
+        });
+
+        // Render Sidebar
+        function renderSidebar() {
+            const nav = document.getElementById('sidebarNav');
+            
+            nav.innerHTML = navStructure.map(section => `
+                <div class="nav-section">
+                    <div class="nav-title">${section.category}</div>
+                    <ul class="nav-list">
+                        ${section.items.map(key => {
+                            const doc = docs[key];
+                            return `
+                                <li class="nav-item">
+                                    <a class="nav-link ${key === currentDoc ? 'active' : ''}" 
+                                       onclick="loadDoc('${key}')">
+                                        <span class="icon">${doc.icon}</span>
+                                        <span>${doc.title}</span>
+                                    </a>
+                                </li>
+                            `;
+                        }).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        // Load Document
+        function loadDoc(key) {
+            currentDoc = key;
+            const doc = docs[key];
+            
+            if (!doc) return;
+
+            // Update content
+            document.getElementById('content').innerHTML = marked.parse(doc.content);
+            
+            // Update breadcrumb
+            document.getElementById('currentPage').textContent = doc.title;
+            
+            // Update sidebar active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`.nav-link[onclick="loadDoc('${key}')"]`)?.classList.add('active');
+            
+            // Re-render sidebar untuk update active state
+            renderSidebar();
+            
+            // Apply syntax highlighting
+            document.querySelectorAll('pre code').forEach(block => {
+                hljs.highlightElement(block);
+            });
+            
+            // Close sidebar on mobile
+            if (window.innerWidth <= 1024) {
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('sidebarOverlay').classList.remove('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Toggle Sidebar (Mobile)
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('active');
+        }
+
+        // Search Functionality
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                
+                if (!query) {
+                    searchResults.classList.remove('active');
+                    return;
+                }
+                
+                const results = [];
+                
+                Object.entries(docs).forEach(([key, doc]) => {
+                    // Search in title
+                    if (doc.title.toLowerCase().includes(query)) {
+                        results.push({ key, doc, match: 'title', preview: doc.title });
+                    }
+                    // Search in content
+                    else if (doc.content.toLowerCase().includes(query)) {
+                        const index = doc.content.toLowerCase().indexOf(query);
+                        const preview = doc.content.substring(Math.max(0, index - 30), index + query.length + 30);
+                        results.push({ key, doc, match: 'content', preview: '...' + preview + '...' });
+                    }
+                });
+                
+                if (results.length > 0) {
+                    searchResults.innerHTML = results.slice(0, 6).map(result => `
+                        <div class="search-result-item" onclick="loadDoc('${result.key}'); searchResults.classList.remove('active'); searchInput.value = '';">
+                            <div class="search-result-title">${result.doc.icon} ${highlightText(result.doc.title, query)}</div>
+                            ${result.match === 'content' ? `<div class="search-result-preview">${highlightText(result.preview, query)}</div>` : ''}
+                        </div>
+                    `).join('');
+                    searchResults.classList.add('active');
+                } else {
+                    searchResults.innerHTML = `
+                        <div class="search-result-item">
+                            <div class="search-result-title">Tidak ada hasil</div>
+                        </div>
+                    `;
+                    searchResults.classList.add('active');
+                }
+            });
+            
+            // Close search when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.search-box')) {
+                    searchResults.classList.remove('active');
+                }
+            });
+        }
+
+        // Highlight search text
+        function highlightText(text, query) {
+            const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Escape regex special characters
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('docs-theme', newTheme);
+            
+            // Update highlight.js theme
+            const hljsTheme = document.getElementById('hljs-theme');
+            if (newTheme === 'dark') {
+                hljsTheme.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css';
+            } else {
+                hljsTheme.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css';
+            }
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('docs-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            const hljsTheme = document.getElementById('hljs-theme');
+            if (savedTheme === 'dark') {
+                hljsTheme.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css';
+            }
+        }
+
+        // Scroll to Top
+        function setupScrollTop() {
+            const scrollTop = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTop.classList.add('visible');
+                } else {
+                    scrollTop.classList.remove('visible');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

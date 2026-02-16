@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Meeting - Versi Teks Lengkap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 16px;
+            padding: 45px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border-left: 5px solid #f59e0b;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .slide-number {
+            background: #f59e0b;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .slide-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .script-box {
+            background: #fefce8;
+            border: 1px solid #fde047;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 22px 0;
+        }
+
+        .script-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ca8a04;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .script-text {
+            font-size: 17px;
+            line-height: 2.1;
+            color: #422006;
+        }
+
+        .script-text p {
+            margin-bottom: 15px;
+        }
+
+        .pause {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px 0;
+        }
+
+        .emphasis {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #fef08a;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .key-point {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 22px;
+            margin: 22px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-point-label {
+            font-size: 12px;
+            color: #16a34a;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .tips-box {
+            background: #eff6ff;
+            border: 1px solid #93c5fd;
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 28px;
+        }
+
+        .tips-label {
+            font-size: 12px;
+            color: #2563eb;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tips-text {
+            color: #1e40af;
+            font-size: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #374151;
+            margin: 28px 0 18px 0;
+        }
+
+        ul {
+            margin: 18px 0;
+            padding-left: 28px;
+        }
+
+        ul li {
+            margin: 14px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #4b5563;
+            border-left: 3px solid #9ca3af;
+            padding-left: 22px;
+            margin: 22px 0;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 45px 0;
+            color: #cbd5e1;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 15px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .detail-box {
+            background: #fafafa;
+            border: 1px dashed #d1d5db;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        .detail-box p {
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+
+        .detail-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            .container {
+                padding: 0;
+            }
+            .slide {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- SLIDE 1 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 1: Pembukaan</div>
+                <div class="slide-number">1 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Al Abqary - Mulai Transisi 2024</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Assalamualaikum warahmatullahi wabarakatuh.</p>
+                    
+                    <p>Terima kasih banyak atas kesempatan yang diberikan kepada kami untuk hadir dan mempresentasikan proposal ini di hadapan Bapak dan jajaran pimpinan.</p>
+                    
+                    <p>Yang kami bawa hari ini <span class="emphasis">bukan sekadar aplikasi</span>. Ini juga <span class="emphasis">bukan eksperimen</span> yang masih perlu diuji coba. Sistem ini sudah teruji dan siap digunakan.</p>
+                    
+                    <p>Ini adalah <span class="highlight">sistem pengaman operasional dan keuangan</span> yang dirancang khusus untuk satu tujuan utama: membantu Pesantren Al Abqary mengurangi risiko kesalahan manusia, memperjelas tanggung jawab setiap staf, dan yang terpenting, memberikan Bapak sebagai pimpinan <span class="highlight">kendali nyata</span> atas seluruh aset lembaga.</p>
+                    
+                    <p>Pada sesi ini, kami akan membahas masalah-masalah yang umum terjadi di pesantren yang sedang berkembang pesat. Lalu kami akan menunjukkan bagaimana sistem ini menjadi solusi yang konkret dan terukur.</p>
+                    
+                    <p>Kami mohon izin untuk memulai.</p>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Buka dengan santun tapi percaya diri. Senyum dan kontak mata penting di sini. Pastikan suara terdengar jelas dan tidak terburu-buru.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Tunggu anggota rapat siap, lihat ke arah pimpinan, lalu lanjut ke slide berikutnya.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Buka dengan nada tenang dan meyakinkan. Jangan terburu-buru di bagian pembukaan ini. Pembukaan menentukan kesan pertama mereka terhadap presentasi ini.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 2: Masalah yang Terjadi</div>
+                <div class="slide-number">2 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Masalah Nyata di Pesantren Besar</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Setiap pesantren yang tumbuh besar menghadapi satu titik kritis yang sama: <span class="emphasis">kontrol manusia mulai kewalahan</span> menangani volume data dan transaksi yang semakin besar.</p>
+                    
+                    <p>Berdasarkan pengalaman kami dengan berbagai lembaga, ada tiga masalah utama yang biasanya muncul di fase ini:</p>
+                    
+                    <p><strong>Pertama, Ketidaktahuan Finansial.</strong> Pimpinan seringkali tidak mengetahui posisi kas riil harian secara akurat. Keputusan strategis diambil berdasarkan asumsi atau perkiraan kasar, bukan angka pasti yang valid. Ini berisiko besar karena keputusan bisa keliru.</p>
+                    
+                    <p><strong>Kedua, Single Point of Failure.</strong> Seluruh data penting bergantung pada ingatan atau catatan pribadi satu atau dua orang admin atau bendahara. Jika orang tersebut sakit, cuti, atau berhalangan, sistem bisa lumpuh total karena tidak ada yang tahu prosedurnya.</p>
+                    
+                    <p><strong>Ketiga, Audit yang Terlambat.</strong> Selisih uang, kesalahan input, atau inefisiensi operasional baru terdeteksi di akhir bulan atau bahkan akhir tahun. Pada saat itu, sudah terlambat untuk melakukan mitigasi atau menelusuri penyebabnya.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 KATA KUNCI WAJIB DIUCAPKAN:</div>
+                <div class="quote">
+                    "Ini bukan soal niat buruk staf Anda. Ini soal sistem yang terlalu bergantung pada manusia. Staf kita baik-baik saja, tapi manusia punya keterbatasan."
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Saat mengatakan "bukan soal niat buruk staf", lihat ke arah staf yang hadir dan senyum. Ini menunjukkan bahwa Anda memahami posisi mereka dan tidak menyalahkan individu.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Beri waktu 3-4 detik untuk mencerna. Lihat reaksi wajah audiens sebelum lanjut.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Ucapkan dengan empati yang tulus. Ini bukan menyalahkan staf, tapi mengakui realita yang terjadi di hampir semua lembaga yang berkembang. Pastikan staf yang hadir merasa difahami, bukan dikritik.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 3: Solusi Utama</div>
+                <div class="slide-number">3 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Memindahkan Kontrol ke Sistem</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Sistem yang kami bangun ini <strong>bukan</strong> untuk menghilangkan peran manusia. Tidak sama sekali.</p>
+                    
+                    <p>Sistem ini dibangun dengan tujuan memastikan <span class="highlight">setiap tindakan manusia terekam, terukur, dan dapat dipertanggungjawabkan dengan jelas</span>. Staf tetap bekerja seperti biasa, tapi sekarang ada "saksi digital" yang mencatat semuanya.</p>
+                    
+                    <p>Ada dua pilar utama yang menjadi fondasi sistem ini:</p>
+                    
+                    <p><strong>Pilar pertama: Otomasi Rekaman.</strong> Setiap rupiah yang masuk dan keluar tercatat otomatis detik itu juga dalam sistem. Tidak ada transaksi yang bisa lepas atau terlupakan. Begitu pembayaran masuk, langsung tercatat.</p>
+                    
+                    <p><strong>Pilar kedua: Jejak Audit Digital.</strong> Setiap perubahan data memiliki riwayat lengkap: siapa pengguna yang mengubah, kapan waktu perubahannya, dan apa alasan atau keterangan perubahan tersebut.</p>
+                    
+                    <p>Dengan dua pilar ini, transparansi menjadi bawaan sistem.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 TRANSFORMASI OPERASIONAL:</div>
+                <ul>
+                    <li>Pembayaran SPP → <strong>Langsung Tercatat otomatis</strong></li>
+                    <li>Absensi Guru → <strong>Real-time GPS, tidak bisa diwakilkan</strong></li>
+                    <li>Tunggakan Santri → <strong>Auto-Update setiap hari</strong></li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Contoh konkret: Kalau ada orang tua bayar SPP, begitu uang masuk ke rekening, sistem langsung tahu dan otomatis mengurangi tunggakan santri tersebut. Tidak perlu nunggu admin input manual.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Tunjukkan contoh sederhana di layar jika ada. Atau tanya: "Apakah Bapak pernah mengalami keterlambatan input data?"</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Tekankan kata "bukan untuk menghilangkan manusia" - ini sangat penting untuk meredam kekhawatiran staf bahwa mereka akan tergantikan. Sistem adalah alat bantu, bukan pengganti.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 4: Dampak Keuangan</div>
+                <div class="slide-number">4 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Keuangan & Pembayaran</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Mari kita lihat dampak langsung di bagian keuangan, yang seringkali menjadi concern utama pimpinan pesantren.</p>
+                    
+                    <p><strong>Yang berubah dengan sistem ini:</strong></p>
+                    
+                    <p>Pertama, tidak akan ada lagi uang tunai yang berpindah tangan tanpa jejak digital. Setiap transaksi tercatat dengan rapi.</p>
+                    
+                    <p>Kedua, jika di kemudian hari ditemukan ada selisih, kita bisa menelusurinya hingga ke transaksi terkecil. Tidak ada yang bisa disembunyikan.</p>
+                    
+                    <p><strong>Yang Bapak dapatkan sebagai pimpinan:</strong></p>
+                    
+                    <p class="emphasis">Posisi Kas Harian yang real-time dan Daftar Tunggakan yang selalu up-to-date.</p>
+                    
+                    <p>Bayangkan skenario ini: Setiap pagi Bapak buka sistem, dan langsung tahu kondisi keuangan lembaga. Misalnya: Total kas saat ini Rp 17,3 juta, tersinkron langsung dengan rekening Bank BNI. Piutang SPP yang masih outstanding Rp 4,1 juta, dan sistem sudah menandai santri mana saja yang perlu diberi notifikasi penagihan.</p>
+                    
+                    <p>Semua informasi ini tersedia dalam hitungan detik, tanpa Bapak harus menunggu laporan dari bendahara.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 KEUNTUNGAN UTAMA:</div>
+                <div class="quote">
+                    Keputusan keuangan strategis tidak lagi berdasarkan asumsi atau perkiraan, tapi berdasarkan angka pasti yang real-time ada di layar Bapak.
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Angka Rp 17,3 juta dan Rp 4,1 juta adalah contoh. Jika ada data nyata, ganti dengan angka yang relevan dengan kondisi Al Abqary saat ini.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Tanya dengan ramah, "Apakah kemampuan untuk melihat posisi kas real-time setiap pagi seperti ini yang Bapak butuhkan?"</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Sebutkan angka contoh dengan jelas dan pelan. Visualisasikan skenario pagi hari agar mereka bisa membayangkan manfaatnya. Jangan terlalu cepat di bagian angka.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 5: Dampak Akademik</div>
+                <div class="slide-number">5 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Akademik & SDM</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Selain keuangan, sistem ini juga mengubah cara kita mengelola sumber daya manusia dan akademik.</p>
+                    
+                    <p><strong>Yang berubah dengan sistem ini:</strong></p>
+                    
+                    <p>Pertama, absensi tidak bisa lagi dimanipulasi atau diwakilkan oleh orang lain. Sistem menggunakan verifikasi GPS, jadi guru harus benar-benar berada di lokasi untuk bisa absen.</p>
+                    
+                    <p>Kedua, rekap nilai dan penjadwalan berjalan otomatis. Tidak perlu lagi menghitung manual atau khawatir ada jadwal yang bentrok.</p>
+                    
+                    <p><strong>Yang Bapak dapatkan sebagai pimpinan:</strong></p>
+                    
+                    <p class="emphasis">Laporan Disiplin dan Produktivitas yang bisa diakses kapan saja, tanpa menunggu akhir bulan.</p>
+                    
+                    <p>Contohnya: Absensi guru terverifikasi dengan GPS yang akurat. Bapak bisa melihat presensi harian SDM mencapai 98,5%, dengan bukti lokasi yang valid dan tidak bisa dipalsukan.</p>
+                    
+                    <p>Tidak ada lagi cerita "saya sudah absen tapi tidak tercatat" atau "saya izin tapi belum diinput." Data adalah bukti yang tidak bisa dibantah.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 AKURASI SISTEM:</div>
+                <ul>
+                    <li>Presensi SDM: <strong>98.5% akurasi</strong></li>
+                    <li>Verifikasi: <strong>GPS Real-time yang valid</strong></li>
+                    <li>Laporan: <strong>Tersedia setiap saat, bukan hanya akhir bulan</strong></li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> GPS memastikan guru benar-benar di pesantren saat absen. Tidak bisa absen dari rumah atau minta tolong teman. Ini adil untuk semua pihak.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Tunggu reaksi audiens. Jika ada yang mengangguk, itu tanda mereka setuju. Siap jawab pertanyaan teknis jika ada.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Tekankan verifikasi GPS untuk menghilangkan keraguan tentang kecurangan absen. Ini menunjukkan sistem dirancang untuk keadilan, bukan untuk mengawasi dengan cara yang meresahkan.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 6: Dampak Kesantrian</div>
+                <div class="slide-number">6 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Kesantrian & Disiplin</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Bagian ketiga adalah manajemen kesantrian, yang sangat penting untuk pembentukan karakter santri.</p>
+                    
+                    <p><strong>Yang berubah dengan sistem ini:</strong></p>
+                    
+                    <p>Pertama, setiap perizinan keluar dan pelanggaran santri punya histori digital yang lengkap dan terstruktur. Bapak bisa melihat pola perilaku santri dari waktu ke waktu.</p>
+                    
+                    <p>Kedua, data kesehatan dan catatan konseling santri menjadi terpusat. Jika ada santri sakit atau butuh perhatian khusus, informasinya tidak tercecer.</p>
+                    
+                    <p><strong>Yang Bapak dapatkan sebagai pimpinan:</strong></p>
+                    
+                    <p class="emphasis">Profil Lengkap Santri yang berbasis data nyata, bukan hanya ingatan atau perasaan.</p>
+                    
+                    <p>Ada satu hal yang kami ingin Bapak ingat dari seluruh presentasi ini. Ini adalah intinya:</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 QUOTE UTAMA - UCAPKAN DENGAN TEGAS:</div>
+                <div class="quote" style="font-size: 22px; font-weight: 600; color: #dc2626;">
+                    "Tanpa Minta Laporan. Tanpa Menunggu Staf. Informasi ada di genggaman Bapak."
+                </div>
+            </div>
+
+            <div class="script-box" style="background: #f0fdf4; border-color: #22c55e;">
+                <div class="script-label" style="color: #16a34a;">📖 LANJUTKAN:</div>
+                <div class="script-text" style="color: #14532d;">
+                    <p>Perlu saya tekankan: Jika Bapak tidak membuka sistem ini, pesantren tetap akan berjalan. Tidak akan ada masalah besar.</p>
+                    
+                    <p>Tapi saat Bapak membukanya, Bapak langsung tahu apa yang sebenarnya terjadi di lapangan secara detail dan akurat.</p>
+                    
+                    <p>Perbedaannya adalah: <span class="emphasis">kontrol penuh dan kepastian data</span> yang sebelumnya tidak dimiliki.</p>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Quote ini adalah jantung dari presentasi. Ini yang harus mereka ingat setelah meeting selesai. Ucapkan dengan suara yang sedikit lebih keras dan jelas.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Ini poin penting. Beri jeda 5 detik setelah quote. Lihat ke arah pimpinan dan anggap sedikit mengangguk.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Quote ini adalah value proposition utama. Ucapkan dengan tegas, jelas, dan sedikit perlahan. Pastikan setiap orang di ruangan mendengarnya dengan baik.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 7: Ekspektasi yang Jujur</div>
+                <div class="slide-number">7 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Apa yang Sistem Tidak Janjikan</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Sebelum kita lanjut ke bagian teknis, ada hal penting yang harus kami sampaikan dengan jujur dan transparan.</p>
+                    
+                    <p>Sistem ini <strong>TIDAK</strong> menjanjikan hal-hal berikut:</p>
+                    
+                    <p>❌ <span class="emphasis">Tidak menghilangkan kesalahan manusia 100%.</span> Manusia tetap bisa salah input data, tapi sistem akan mencatat siapa yang melakukan kesalahan tersebut sehingga bisa segera diperbaiki.</p>
+                    
+                    <p>❌ <span class="emphasis">Tidak menggantikan amanah dan kepemimpinan Bapak.</span> Sistem adalah alat bantu, bukan pengganti keputusan strategis yang tetap ada di tangan pimpinan.</p>
+                    
+                    <p>❌ <span class="emphasis">Tidak berjalan tanpa disiplin penggunaan dari staf.</span> Staf tetap harus menggunakan sistem dengan konsisten dan disiplin agar data tetap akurat.</p>
+                    
+                    <p>Jadi sistem ini bukan sihir yang menyelesaikan semua masalah otomatis.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 TAPI SISTEM INI MEMASTIKAN:</div>
+                <div class="quote" style="font-size: 19px; font-weight: 600; color: #16a34a;">
+                    Setiap kesalahan yang terjadi akan terlihat dengan jelas, upaya manipulasi data menjadi sangat sulit, dan tanggung jawab setiap tindakan menjadi sangat jelas terukur.
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Kejujuran ini justru membangun kepercayaan. Mereka akan menghargai karena Anda tidak membuat janji yang berlebihan. Under-promise, over-deliver.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Jeda setelah ini, tunggu respons. Biasanya ada yang mengangguk setuju atau tersenyum karena kejujuran ini.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Kejujuran ini justru membangun kepercayaan yang kuat. Jangan skip bagian ini. Banyak vendor yang gagal karena janji berlebihan. Anda beda karena jujur.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 8: Keamanan Data</div>
+                <div class="slide-number">8 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Keamanan & Kepemilikan Data</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Kami yakin ada pertanyaan di benak Bapak tentang keamanan dan kepemilikan data. Izinkan kami menjawab tiga pertanyaan yang paling sering muncul dari calon mitra kami:</p>
+                    
+                    <p><strong>Pertanyaan pertama: Data ini milik siapa sebenarnya?</strong></p>
+                    
+                    <p>Jawabannya sangat jelas: <span class="highlight">Data sepenuhnya milik Pesantren Al Abqary.</span> Kami hanyalah penyedia brankas digitalnya. Bapak yang punya kuncinya, Bapak yang punya kontrol penuh.</p>
+                    
+                    <p><strong>Pertanyaan kedua: Jika suatu saat kerja sama dihentikan, apa yang terjadi dengan data kami?</strong></p>
+                    
+                    <p>Data dapat diekspor penuh dalam format standar yang bisa dibuka dengan software umum. Akses akan diserahkan sepenuhnya, dan yang paling penting: <span class="highlight">tidak ada penguncian data sepihak</span> dari pihak kami. Tidak ada yang kami sembunyikan.</p>
+                    
+                    <p><strong>Pertanyaan ketiga: Jika internet di pesantren bermasalah, apakah data kami hilang?</strong></p>
+                    
+                    <p>Sistem mencatat antrian data secara lokal di perangkat, dan begitu koneksi internet kembali stabil, data akan sinkron otomatis. Tidak ada data yang hilang karena masalah koneksi.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 TIGA JAMINAN UTAMA:</div>
+                <ul>
+                    <li>Kepemilikan: <strong>100% milik pesantren, bukan kami</strong></li>
+                    <li>Portabilitas: <strong>Data bisa diekspor kapan saja, tidak terkunci</strong></li>
+                    <li>Offline mode: <strong>Antrian auto-sinkron saat online kembali</strong></li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Penjelasan tambahan:</strong> Biasanya pimpinan pesantren khawatir data mereka diperjualbelikan atau disalahgunakan. Tekankan bahwa ini adalah data milik mereka 100%, kami hanya penyimpan.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Tanya dengan terbuka, "Ada pertanyaan soal keamanan data yang ingin Bapak tanyakan?" Tunjukkan Anda siap menjawab.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Biasanya ada kekhawatiran di sini. Jawab dengan sabar dan jelas. Jangan defensive atau terlihat tersinggung jika ditanya. Ini pertanyaan wajar dan penting.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 9: Investasi</div>
+                <div class="slide-number">9 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Rencana Biaya</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Mari kita bicara tentang investasi. Kami sengaja menyebutnya investasi, bukan biaya, karena ini adalah <span class="highlight">modal untuk keberlanjutan sistem jangka panjang</span> dan pencegahan kerugian yang bisa jauh lebih besar.</p>
+                    
+                    <p>Ada dua komponen investasi yang perlu Bapak ketahui:</p>
+                    
+                    <p><strong>Komponen pertama: Setup dan Integrasi.</strong></p>
+                    
+                    <p>Sebesar <span class="emphasis">Rp 25 juta, sekali bayar di awal</span>.</p>
+                    
+                    <p>Biaya ini sudah termasuk setup server cloud yang aman, integrasi payment gateway langsung dengan bank, migrasi data dari sistem lama jika ada, dan pelatihan staf intensif sampai benar-benar paham.</p>
+                    
+                    <p><strong>Komponen kedua: Managed Service.</strong></p>
+                    
+                    <p>Sebesar <span class="emphasis">Rp 20.000 per santri per bulan</span>.</p>
+                    
+                    <p>Dengan potensi 499 santri di Al Abqary saat ini, ini adalah investasi yang sangat terukur dan proporsional dengan manfaat yang didapat.</p>
+                    
+                    <p>Biaya bulanan ini memastikan data Bapak tetap aman, server tetap hidup 24 jam sehari, dan tim teknis kami tetap siaga kapan pun dibutuhkan.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <div class="key-point-label">📌 YANG DIDAPAT DARI MANAGED SERVICE:</div>
+                <ul>
+                    <li>Tim teknis standby 24/7, siap bantu kapan saja</li>
+                    <li>Backup data otomatis dan update fitur berkala tanpa biaya tambahan</li>
+                    <li>Keamanan level enterprise standar perbankan</li>
+                    <li>Audit trail otomatis untuk setiap transaksi</li>
+                </ul>
+            </div>
+
+            <div class="script-box" style="background: #fefce8;">
+                <div class="script-label">📖 LANJUTKAN:</div>
+                <div class="script-text">
+                    <p>Investasi bulanan ini sangat terukur dibandingkan potensi kerugian akibat kebocoran dana manual, kesalahan pencatatan, atau inefisiensi yang tidak terdeteksi.</p>
+                    
+                    <p>Bayangkan jika ada selisih Rp 5 juta per bulan karena kesalahan pencatatan. Dalam setahun sudah Rp 60 juta. Investasi ini justru mencegah hal tersebut.</p>
+                </div>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Beri jeda sejenak. Biarkan mereka hitung sendiri dan menimbang di benak mereka. Jangan buru-buru isi keheningan.</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Sampaikan dengan percaya diri tapi tidak arogan. Ini adalah investasi untuk mencegah kerugian yang bisa jauh lebih besar. Gunakan perbandingan selisih Rp 5 juta untuk membantu mereka membayangkan ROI-nya.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-title">SLIDE 10: Penutup</div>
+                <div class="slide-number">10 / 10</div>
+            </div>
+
+            <h3>🎯 Topik: Komitmen Kami</h3>
+
+            <div class="script-box">
+                <div class="script-label">📖 BACA INI:</div>
+                <div class="script-text">
+                    <p>Sebagai penutup presentasi ini, kami ingin Bapak tahu satu hal yang menjadi beda kami dengan vendor lain:</p>
+                    
+                    <p class="emphasis">Kami tidak menjual aplikasi lalu pergi begitu saja.</p>
+                    
+                    <p>Kami ikut bertanggung jawab atas kelancaran sistem ini di lembaga Bapak. Kami adalah mitra, bukan sekadar penjual.</p>
+                    
+                    <p><strong>Jika suatu saat ada selisih uang yang tidak jelas</strong> - kami bantu telusuri bersama sampai ditemukan penyebab digitalnya. Kami tidak tinggal diam.</p>
+                    
+                    <p><strong>Jika sistem mengalami error atau gangguan</strong> - tim IT kami menangani secara prioritas tanpa biaya tambahan. Kami tahu ini sistem krusial untuk Bapak.</p>
+                    
+                    <p><strong>Jika staf merasa bingung atau kesulitan</strong> - dukungan teknis dan pendampingan tersedia setiap saat. Kami tidak meninggalkan staf Anda dalam kebingungan.</p>
+                    
+                    <p>Kami percaya bahwa kesuksesan sistem ini adalah kesuksesan bersama. Kalau sistem tidak berjalan dengan baik di Al Abqary, itu juga nama kami yang tercemar.</p>
+                    
+                    <p>Itulah mengapa kami serius dengan komitmen ini.</p>
+                </div>
+            </div>
+
+            <div class="key-point" style="background: #eff6ff; border-left-color: #3b82f6;">
+                <div class="key-point-label" style="color: #2563eb;">📌 TUTUP DENGAN KALIMAT INI:</div>
+                <div class="script-text" style="color: #1e40af;">
+                    <p>Terima kasih banyak atas waktu dan perhatian yang Bapak berikan hari ini. Kami sangat menghargai kesempatan ini.</p>
+                    
+                    <p>Kami siap untuk diskusi lebih lanjut dan menjawab pertanyaan apa pun yang Bapak miliki.</p>
+                    
+                    <p style="font-size: 19px; font-weight: 600; margin-top: 15px;">Wassalamualaikum warahmatullahi wabarakatuh.</p>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>💡 Setelah penutup:</strong> Buka tangan Anda sebagai tanda siap menerima pertanyaan. Senyum dan lihat ke seluruh audiens. Tunjukkan ketersediaan Anda untuk diskusi.</p>
+            </div>
+
+            <span class="pause">⏸️ JEDA: Buka sesi Q&A dengan senyum yang ramah. Katakan: "Silakan jika ada yang ingin ditanyakan."</span>
+
+            <div class="tips-box">
+                <div class="tips-label">💡 TIPS BACA:</div>
+                <div class="tips-text">Tutup dengan yakin dan ramah. Siapkan diri untuk Q&A yang bisa berlangsung 15-30 menit. Jangan buru-buru pulang setelah presentasi. Kesepakatan sering terjadi di sesi tanya jawab.</div>
+            </div>
+        </div>
+
+        <div class="divider">***</div>
+
+        <!-- RINGKASAN -->
+        <div class="slide" style="border-left-color: #22c55e;">
+            <div class="slide-header">
+                <div class="slide-title">📋 RINGKASAN CEPAT</div>
+            </div>
+
+            <h3>Point-point yang harus diingat:</h3>
+            
+            <div style="background: #f9fafb; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <p style="margin-bottom: 15px;"><strong>1. Pembuka:</strong> Bukan aplikasi biasa, ini sistem pengaman. Jujur dari awal.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>2. Masalah:</strong> 3 masalah besar - finansial tidak jelas, single point of failure, audit terlambat. Ini bukan salah staf, tapi sistem yang lemah.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>3. Solusi:</strong> Otomasi rekam + jejak audit digital. Setiap tindakan terekam.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>4. Dampak Keuangan:</strong> Kas real-time, selisih bisa ditelusuri, keputusan berdasarkan data bukan asumsi.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>5. Dampak SDM:</strong> Absen GPS tidak bisa dipalsu, laporan disiplin kapan saja.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>6. Dampak Kesantrian:</strong> Profil lengkap berbasis data.</p>
+                
+                <p style="margin-bottom: 15px; color: #dc2626; font-weight: 600;"><strong>7. Quote utama:</strong> "Tanpa minta laporan, tanpa menunggu staf" - INI YANG PALING PENTING DIINGAT.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>8. Jujur:</strong> Tidak janji 100% sempurna, tapi kesalahan akan terlihat jelas.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>9. Keamanan:</strong> Data 100% milik pesantren, bisa diekspor kapan saja, tidak terkunci.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>10. Harga:</strong> Rp 25 juta setup + Rp 20rb/santri/bulan. Terukur dan lebih murah dari potensi kerugian.</p>
+                
+                <p style="margin-bottom: 0;"><strong>11. Komitmen:</strong> Kami mitra yang bertanggung jawab, bukan vendor yang lari setelah jualan.</p>
+            </div>
+
+            <div style="background: #fef3c7; padding: 20px; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                <p style="font-weight: 600; color: #92400e; margin-bottom: 10px;">🎯 KUNCI SUKSES PRESENTASI:</p>
+                <ul style="margin: 0; color: #78350f;">
+                    <li>Buka dengan percaya diri</li>
+                    <li>Jelaskan masalah dengan empati</li>
+                    <li>Ucapkan quote utama dengan tegas</li>
+                    <li>Jujur soal keterbatasan sistem</li>
+                    <li>Tutup dengan komitmen yang kuat</li>
+                    <li>Siap untuk Q&A yang panjang</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Simpan PDF</button>
+
+</body>
+</html>

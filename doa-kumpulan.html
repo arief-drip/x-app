@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Doa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf9f6;
+            --bg-card: #ffffff;
+            --bg-warm: #f5f0e8;
+            --text: #2c2416;
+            --text-muted: #6b5d4d;
+            --primary: #1e4d2b;
+            --primary-light: #2d6a3e;
+            --primary-dark: #153620;
+            --gold: #b8860b;
+            --gold-light: #d4a574;
+            --gold-pale: #e8d5c4;
+            --success: #4a7c59;
+            --border: #e8e0d5;
+            --shadow: rgba(30, 77, 43, 0.08);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-warm) 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem 1.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(184, 134, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header-section::after {
+            content: '۞';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: rgba(184, 134, 11, 0.3);
+            font-family: 'Amiri', serif;
+        }
+        
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 0.05em;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .latin-title {
+            font-size: 0.9375rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .progress-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(184, 134, 11, 0.3);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .progress-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .progress-bar-bg {
+            height: 8px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+            background-size: 200% 100%;
+            border-radius: 100px;
+            transition: width 0.8s ease;
+            animation: shimmer 2s infinite;
+            box-shadow: 0 0 10px rgba(184, 134, 11, 0.4);
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .progress-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1rem;
+            font-size: 0.8125rem;
+            opacity: 0.9;
+        }
+        
+        .progress-stats strong {
+            color: var(--gold-light);
+            font-size: 1.125rem;
+        }
+        
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1.25rem;
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            scrollbar-width: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+        
+        .tab-nav::-webkit-scrollbar { display: none; }
+        
+        .tab-btn {
+            flex: 0 0 auto;
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: 1.5px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.8125rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tab-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-1px);
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(30, 77, 43, 0.3);
+        }
+        
+        .content-container {
+            padding: 2rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active { display: block; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .tab-title::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 0.75rem;
+        }
+        
+        .tab-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--gold);
+            padding-left: 1rem;
+        }
+        
+        .doa-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .doa-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold), var(--gold-pale));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .doa-card:hover {
+            border-color: var(--gold-light);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .doa-card:hover::before {
+            opacity: 1;
+        }
+        
+        .doa-card.completed {
+            background: linear-gradient(135deg, #f8faf8 0%, #f0f7f0 100%);
+            border-color: var(--success);
+        }
+        
+        .doa-card.completed::before {
+            opacity: 1;
+            background: linear-gradient(180deg, var(--success), #7fb88a);
+        }
+        
+        .doa-header {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .checkbox {
+            width: 26px;
+            height: 26px;
+            border: 2px solid var(--gold-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 3px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .doa-card:hover .checkbox {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+        
+        .doa-card.completed .checkbox {
+            background: linear-gradient(135deg, var(--success), #5a9668);
+            border-color: var(--success);
+            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+        }
+        
+        .checkbox svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+            opacity: 0;
+            transform: scale(0) rotate(-45deg);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .doa-card.completed .checkbox svg {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+        
+        .doa-content {
+            flex: 1;
+        }
+        
+        .doa-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+            line-height: 1.5;
+            transition: all 0.3s;
+        }
+        
+        .doa-card.completed .doa-title {
+            color: var(--success);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .doa-detail {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .doa-card.completed .doa-detail {
+            opacity: 0.6;
+        }
+        
+        .child-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #fffbf5 100%);
+            border: 1.5px solid var(--gold-pale);
+        }
+        
+        .child-card::before {
+            opacity: 1;
+            background: linear-gradient(180deg, var(--gold), var(--gold-light));
+        }
+        
+        .child-name {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.9375rem;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .reset-section {
+            padding: 2.5rem 1.5rem 5rem;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, var(--bg-warm) 100%);
+        }
+        
+        .btn-reset {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 1.5px solid #c9a8a8;
+            color: #9b6b6b;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-reset:hover {
+            background: rgba(155, 107, 107, 0.1);
+            border-color: #9b6b6b;
+            color: #7a4f4f;
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gold-pale);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Password Protection */
+        .login-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 1.5rem;
+        }
+        
+        .login-overlay.hidden {
+            display: none;
+        }
+        
+        .login-box {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35);
+            border: 1px solid var(--gold-pale);
+        }
+        
+        .login-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .login-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .login-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            background: var(--bg);
+        }
+        
+        .password-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+        
+        .password-input.error {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 77, 43, 0.3);
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        @media (max-width: 640px) {
+            .arabic-title {
+                font-size: 2rem;
+            }
+            .content-container {
+                padding: 1.5rem 1rem;
+            }
+            .doa-card {
+                padding: 1.25rem;
+            }
+            .login-box {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Protection -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <div class="login-icon">🔒</div>
+            <div class="login-title">Akses Terproteksi</div>
+            <div class="login-subtitle">Masukkan password untuk mengakses Kumpulan Doa</div>
+            <input type="password" class="password-input" id="passwordInput" placeholder="Masukkan password..." onkeypress="if(event.key==='Enter')checkPassword()">
+            <button class="login-btn" onclick="checkPassword()">Masuk</button>
+            <div class="error-message" id="errorMessage">Password salah. Silakan coba lagi.</div>
+        </div>
+    </div>
+
+    <div class="loading" id="loading"><div class="spinner"></div></div>
+
+    <div class="header-section">
+        <div class="arabic-title" dir="rtl">سَأُقْبِلُ يَا خَالِقِيْ مِنْ جَدِيْد</div>
+        <div class="latin-title">Ya Allah, Aku Kembali Kepada-Mu dengan Lembaran Baru.</div>
+        
+        <div class="progress-container">
+            <div class="progress-header">
+                <span>Pencapaian Pembacaan Doa</span>
+                <span class="progress-value" id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div class="progress-stats">
+                <span><strong id="completedCount">0</strong> Doa Terbaca</span>
+                <span><strong id="totalCount">0</strong> Total Doa</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab(0)">🧎 Saya Sendiri</button>
+        <button class="tab-btn" onclick="switchTab(1)">❤️ Istri</button>
+        <button class="tab-btn" onclick="switchTab(2)">👶 Anak</button>
+        <button class="tab-btn" onclick="switchTab(3)">👨‍👩‍👧 Ortu</button>
+        <button class="tab-btn" onclick="switchTab(4)">💰 Rizqi</button>
+    </div>
+
+    <div class="content-container">
+        <!-- Tab 1: Saya Sendiri -->
+        <div class="tab-content active" id="tab-0">
+            <div class="tab-title">🧎 Munajat untuk Diri Sendiri</div>
+            <div class="tab-subtitle">Memelas memohon kasih sayang dan perhatian Allah SWT</div>
+            
+            <div class="doa-card" data-id="saya-1" onclick="toggleDoa('saya-1')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Jangan Biarkan Hamba-Mu Ini Sesat</div>
+                        <div class="doa-detail">Ya Allah, hamba-Mu ini lemah dan buta tanpa petunjuk-Mu. Aku memohon dengan kerendahan hati, janganlah biarkan aku tersesat. Cabutlah kebutaan hatiku, berikanlah cahaya hidayah-Mu. Aku tidak sanggup berjalan tanpa arahan-Mu. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="saya-2" onclick="toggleDoa('saya-2')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Jadikanlah Aku Hamba yang Bersyukur</div>
+                        <div class="doa-detail">Ya Allah, aku sering lupa mensyukuri nikmat-Mu. Aku memohon, jadikanlah aku hamba yang selalu ingat akan kebaikan-Mu. Dalam suka maupun duka, tetapkanlah lidahku untuk selalu mengucap syukur. Lembutkan hatiku agar selalu melihat nikmat-Mu. (199 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="saya-3" onclick="toggleDoa('saya-3')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Lindungi Aku dari Godaan Syaitan yang Jahat</div>
+                        <div class="doa-detail">Ya Allah, aku merasa rapuh dan rentan. Setiap hari syaitan membisikkan godaan. Aku memohon, jauhkanlah aku dari bisikan jahat itu. Berikanlah aku perisai iman yang kuat. Aku takut akan murka-Mu. Lindungilah aku, karena tidak ada pelindung selain Engkau. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="saya-4" onclick="toggleDoa('saya-4')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Kuatkanlah Iman Hambamu yang Rapuh Ini</div>
+                        <div class="doa-detail">Ya Allah, hatiku lemah, imanku rapuh. Kadang naik, kadang turun. Aku sangat malu kepada-Mu. Aku memohon, teguhkanlah hatiku di atas iman. Jangan biarkan aku berpaling sedetik pun dari-Mu. Isilah hatiku dengan cinta dan takut akan-Mu. (185 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="saya-5" onclick="toggleDoa('saya-5')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Berkahi Umurku dan Jadikan Amalku Diterima</div>
+                        <div class="doa-detail">Ya Allah, aku tidak tahu berapa lama lagi aku hidup. Jangan biarkan detikku terbuang sia-sia. Berkahi setiap napasku. Jadikanlah amalku diterima di sisi-Mu. Aku takut mati dalam keadaan yang tidak Engkau ridhai. Ampuni dosaku dan berikanlah umur yang berkah. (199 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="saya-6" onclick="toggleDoa('saya-6')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Pertahankan Aku di Jalan-Mu Hingga Akhir Hayat</div>
+                        <div class="doa-detail">Ya Allah, aku takut akan perubahan hati. Aku takut hari ini baik, esok jadi buruk. Aku memohon, pertahankanlah aku di jalan-Mu. Jadikanlah aku istiqomah hingga akhir hidup. Jangan biarkan aku tergoda meninggalkan agama-Mu. Tetaplah bersamaku, Ya Allah. (195 karakter)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Istri -->
+        <div class="tab-content" id="tab-1">
+            <div class="tab-title">❤️ Munajat untuk Istriku Tercinta</div>
+            <div class="tab-subtitle">Memohon kasih sayang Allah untuk memperkuat ikatan cinta karena-Mu</div>
+            
+            <div class="doa-card" data-id="istri-1" onclick="toggleDoa('istri-1')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Jadikan Cinta Kami Karena-Mu, Bukan Karena Dunia</div>
+                        <div class="doa-detail">Ya Allah, jadikanlah cintaku kepada istriku karena Engkau. Jangan biarkan cinta kami hanya pada hal duniawi yang fana. Lembutkan hati kami, isilah dengan cinta tulus karena ridha-Mu. Berikanlah keberkahan rumah tangga kami di dunia dan akhirat. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="istri-2" onclick="toggleDoa('istri-2')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Jadikanlah Istriku Wanita Shalihah yang Engkau Ridhai</div>
+                        <div class="doa-detail">Ya Allah, jadikanlah istriku hamba perempuan yang Engkau cintai. Jadikanlah dia wanita shalihah yang taat kepada-Mu. Berikanlah dia kekuatan untuk taat kepadaku dalam hal yang ma'ruf. Jadikanlah dia penyejuk hatiku di dunia dan penolongku di akhirat. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="istri-3" onclick="toggleDoa('istri-3')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Berikanlah Dia Kesehatan dan Kecantikan Batin yang Abadi</div>
+                        <div class="doa-detail">Ya Allah, jagalah istriku dalam kesehatan jasmani dan rohaninya. Jangan biarkan penyakit menyentuhnya. Berikanlah dia kecantikan batin yang tak pudar oleh waktu, kecantikan akhlak dan iman. Lembutkan hatinya, jadikanlah dia cantik di Mata-Mu. (196 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="istri-4" onclick="toggleDoa('istri-4')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Karuniakanlah Kami Keturunan yang Shalih dan Shalihah</div>
+                        <div class="doa-detail">Ya Allah, berikanlah kami keturunan yang shalih dan shalihah, yang menjadi penyejuk mata di dunia dan penolong di akhirat. Anak-anak yang bertakwa dan berbakti. Jadikanlah mereka qurrota a'yun, pewaris kebaikan kami. (182 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="istri-5" onclick="toggleDoa('istri-5')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Berikanlah Keberkahan dalam Setiap Urusan yang Dia Kerjakan</div>
+                        <div class="doa-detail">Ya Allah, berikanlah keberkahan dalam setiap tangan istriku. Berkahi setiap usahanya mengurus rumah, mendidik anak, memasak, dan membersihkan. Jadikanlah dia pengatur rumah tangga yang bijaksana. Balaslah setiap lelahnya dengan pahala berlipat. (194 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="istri-6" onclick="toggleDoa('istri-6')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Lindungi Istriku dari Segala Fitnah dan Marabahaya</div>
+                        <div class="doa-detail">Ya Allah, lindungilah istriku dari segala fitnah zaman. Jadikanlah dia sulit tersentuh keburukan karena Engkau menjaganya. Jaga kehormatan, kesucian, dan kelembutannya. Aku titipkan dia kepada-Mu, tidak ada penjaga lebih baik daripada Engkau. (194 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="istri-7" onclick="toggleDoa('istri-7')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Berikanlah Dia Kesabaran dan Ikhlas yang Melimpah</div>
+                        <div class="doa-detail">Ya Allah, berikanlah istriku kesabaran menghadapi kesulitan hidup, kelemahanku, dan mendidik anak. Berikanlah dia keikhlasan tulus dan ketawakalan kepada-Mu. Kuatkanlah hatinya, jadikanlah dia perempuan sabar dan ikhlas seperti istri-istri Rasulullah. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Anak -->
+        <div class="tab-content" id="tab-2">
+            <div class="tab-title">👶 Munajat untuk Buah Hatiku</div>
+            <div class="tab-subtitle">Memelas memohon perlindungan dan petunjuk Allah untuk anak-anakku tercinta</div>
+            
+            <div class="doa-card" data-id="anak-1" onclick="toggleDoa('anak-1')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Jadikanlah Anak-anakku Sukses di Dunia dan Akhirat</div>
+                        <div class="doa-detail">Ya Allah, berikanlah anak-anakku kesuksesan yang sebenarnya, bukan hanya duniawi tapi abadi di akhirat. Aku ingin bertemu mereka di surga-Mu. Jagalah mereka dari celaka dan kesesatan. Jadikanlah mereka anak yang membawaku ke surga, bukan ke neraka. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="anak-2" onclick="toggleDoa('anak-2')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Jadikanlah Mereka Pemimpin yang Bertaqwa</div>
+                        <div class="doa-detail">Ya Allah, jadikanlah anak-anakku pemimpin yang bertaqwa, adil, dan bijaksana. Berikanlah mereka kekuatan mengendalikan nafsu dan menolak godaan. Jadikanlah mereka pemimpin untuk keluarga dan umat dengan panduan Islam. (186 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card child-card" data-id="azdah" onclick="toggleDoa('azdah')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="child-name">🌸 Azdah Izzati Rachmansyah</div>
+                        <div class="doa-title">Kelas 2 SMP Mahad Syaraful Haramain</div>
+                        <div class="doa-detail">Ya Allah, jaga putriku Azdah di kelas 2 SMP. Lindungi kesucian dan kehormatannya, jangan biarkan mata dan tangan jahat mendekatinya. Berikanlah dia kekuatan muhasabah diri. Jadikanlah dia perempuan shalihah yang Engkau cintai, cahaya keluarga kami. (199 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card child-card" data-id="nuruddin" onclick="toggleDoa('nuruddin')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="child-name">⚡ Muhammad Nuruddin al-Qosam</div>
+                        <div class="doa-title">Kelas 1 SMP Mahad Syaraful Haramain</div>
+                        <div class="doa-detail">Ya Allah, jaga anakku Nuruddin di kelas 1 SMP. Jauhkanlah dari pergaulan bebas dan kenakalan remaja. Lindungi kesucian, akhlak, dan imannya. Berikanlah dia teman-teman yang shalih. Kuatkanlah imannya, jadikanlah dia anak yang shalih dan berbakti. (195 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card child-card" data-id="miqdad" onclick="toggleDoa('miqdad')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="child-name">🌟 Muhammad Miqdad Al-Faruq</div>
+                        <div class="doa-title">Kelas Qonuni 2 (Setara 4 SD) Kuttab Al-Fatih</div>
+                        <div class="doa-detail">Ya Allah, lembutkanlah hati Miqdad di kelas Qonuni 2 yang keras kepala dan sulit diatur. Cabutlah sifat pembangkangnya, ganti dengan kelembutan. Jadikanlah dia anak penurut dan mudah menerima nasihat. Berikanlah aku kesabaran mendidiknya. (197 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="anak-3" onclick="toggleDoa('anak-3')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Berikanlah Mereka Ilmu yang Bermanfaat dan Amal yang Diterima</div>
+                        <div class="doa-detail">Ya Allah, berikanlah anak-anakku ilmu yang bermanfaat, yang mengisi hati dengan cinta kepada-Mu. Jadikanlah mereka anak yang mengharumkan nama keluarga dan membahagiakan orang tua di dunia dan akhirat. Berikanlah keberkahan dalam belajar dan hidup mereka. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="anak-4" onclick="toggleDoa('anak-4')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Jauhkanlah Mereka dari Teman-teman yang Buruk dan Jahat</div>
+                        <div class="doa-detail">Ya Allah, jauhkanlah anak-anakku dari teman yang buruk yang merusak akhlak. Berikanlah mereka teman-teman yang shalih, yang saling mengingatkan untuk shalat dan mengaji. Aku titipkan mereka dalam lindungan-Mu dari pengaruh jahat yang tak kulihat. (194 karakter)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Ortu -->
+        <div class="tab-content" id="tab-3">
+            <div class="tab-title">👨‍👩‍👧 Munajat untuk Kedua Orang Tua dan Mertua</div>
+            <div class="tab-subtitle">Memelas memohon ampunan dan keberkahan untuk mereka yang telah membesarkanku</div>
+            
+            <div class="doa-card" data-id="ortu-1" onclick="toggleDoa('ortu-1')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Berikanlah Kesehatan Sempurna untuk Orang Tuaku yang Telah Tua</div>
+                        <div class="doa-detail">Ya Allah, berikanlah orang tuaku kesehatan sempurna. Kesehatan jasmani agar masih bisa beribadah dan menikmati hidup. Kesehatan rohani agar hati tenang dan dekat dengan-Mu. Jangan biarkan penyakit merusak hari-hari mereka. Aku tak sanggup melihat mereka menderita. (199 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="ortu-2" onclick="toggleDoa('ortu-2')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Panjangkan Umur Mereka dalam Ketaatan dan Keberkahan</div>
+                        <div class="doa-detail">Ya Allah, panjangkanlah umur orang tuaku dalam ketaatan dan keberkahan. Umur yang setiap detiknya untuk ibadah dan semakin cinta kepada-Mu. Aku masih butuh mereka, butuh senyum dan doa mereka. Berikanlah aku kesempatan berbakti dan membalas budi mereka. (197 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="ortu-3" onclick="toggleDoa('ortu-3')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Ampuni Dosa-dosa Mereka yang Telah Membesarkanku</div>
+                        <div class="doa-detail">Ya Allah, ampunilah dosa-dosa orang tuaku yang diketahui dan tidak kulihat. Gantilah dengan pahala dan berikanlah husnul khatimah. Jangan biarkan aku menyesal tidak sempat meminta ampun untuk mereka. Ampunilah mereka saat aku masih bisa memeluk mereka. (196 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="ortu-4" onclick="toggleDoa('ortu-4')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Berikanlah Kebahagiaan dan Ketenangan di Hari Tua Mereka</div>
+                        <div class="doa-detail">Ya Allah, berikanlah kebahagiaan sejati untuk orang tuaku di masa tua. Kebahagiaan dari kedekatan dengan-Mu, bukan dari harta. Hilangkan kegelisahan dan kesedihan. Gantikan dengan ketenangan dan rida. Jadikanlah hari tua mereka masa terindah. (192 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="ortu-5" onclick="toggleDoa('ortu-5')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Terimalah Amal Shalih Mereka dan Tempatkan di Surga-Mu</div>
+                        <div class="doa-detail">Ya Allah, terimalah amal shalih orang tuaku. Setiap keringat, setiap malam begadang, setiap doa dan pengorbanan mereka. Tempatkan mereka di surga Firdaus dengan derajat tinggi. Jangan biarkan satu amal pun sia-sia. Hanya Engkau yang bisa membalas kebaikan mereka. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="ortu-6" onclick="toggleDoa('ortu-6')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Berikanlah Mereka Kesempatan Berziarah ke Baitullah</div>
+                        <div class="doa-detail">Ya Allah, berikanlah orang tuaku kesempatan berziarah ke Baitullah. Jangan biarkan mereka meninggal sebelum Haji dan Umrah. Berikanlah rezeki, kesehatan, dan kesempatan mengunjungi Makam Rasul-Mu. Jadikanlah perjalanan mereka diterima, menghapus dosa dan meningkatkan derajat. (198 karakter)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 5: Rizqi -->
+        <div class="tab-content" id="tab-4">
+            <div class="tab-title">💰 Munajat untuk Rizqi dan Kesejahteraan</div>
+            <div class="tab-subtitle">Memohon pertolongan Allah dalam kesulitan ekonomi dan hutang</div>
+            
+            <div class="doa-card" data-id="rizqi-1" onclick="toggleDoa('rizqi-1')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Bebaskan Aku dari Beban Hutang 80 Juta yang Menekan</div>
+                        <div class="doa-detail">Ya Allah, aku berhutang sekitar 80 juta yang sangat berat di pundakku. Berikanlah aku jalan keluar dan rezeki untuk melunasinya. Aku tidak ingin mati dalam keadaan berhutang atau meninggalkan beban untuk keluargaku. Tolonglah aku, Ya Allah. (197 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="rizqi-2" onclick="toggleDoa('rizqi-2')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Mudahkanlah Aku Memiliki Tanah 12×15m untuk Keluargaku</div>
+                        <div class="doa-detail">Ya Allah, berikanlah kami tanah 12×15 meter seharga 390 juta. Impian untuk tempat tinggal layak bagi keluargaku. Aku lelah pindah-pindah dan menyewa. Mudahkanlah urusan ini dan berikanlah rezeki untuk membelinya. Jadikanlah tanah ini penuh keberkahan. (195 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="rizqi-3" onclick="toggleDoa('rizqi-3')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Izinkan Aku Membeli Mobil untuk Kemudahan Keluargaku</div>
+                        <div class="doa-detail">Ya Allah, berikanlah kemudahan membeli mobil sekitar 350 juta untuk kemudahan keluargaku. Untuk mengantar anak sekolah, istri, dan orang tua berobat. Bukan untuk gaya-gayaan. Berikanlah kendaraan yang aman, nyaman, dan berkah. (187 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="rizqi-4" onclick="toggleDoa('rizqi-4')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Penuhilah Kerinduanku untuk Berziarah ke Tanah Suci</div>
+                        <div class="doa-detail">Ya Allah, berikanlah kesempatan berziarah ke tanah suci bersama keluargaku. Aku ingin melihat Ka'bah dan mengunjungi Makam Rasul-Mu. Ini impian terbesarku. Berikanlah rezeki dan kesehatan untuk melaksanakannya sebelum ajal menjemput. (195 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="rizqi-5" onclick="toggleDoa('rizqi-5')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Curahkanlah Rezeki Halal yang Berlimpah dan Penuh Berkah</div>
+                        <div class="doa-detail">Ya Allah, curahkanlah rezeki halal, berlimpah, dan berkah untuk keluargaku. Rezeki yang mendekatkanku kepada-Mu dan membuatku bersyukur. Bukakanlah pintu rezeki dari arah tak kuduga. Jadikanlah setiap usahaku diberkahi. (192 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="rizqi-6" onclick="toggleDoa('rizqi-6')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Rabb, Jadikanlah Aku Hamba yang Merasa Cukup dan Selalu Bersyukur</div>
+                        <div class="doa-detail">Ya Allah, jadikanlah aku hamba yang qana'ah, merasa cukup dengan apa yang Engkau berikan. Hancurkanlah sifat tamak dan iri dalam hatiku. Gantikan dengan rasa syukur mendalam. Aku ingin menjadi hamba yang bersyukur dalam sedikit maupun banyak. (197 karakter)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doa-card" data-id="rizqi-7" onclick="toggleDoa('rizqi-7')">
+                <div class="doa-header">
+                    <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="doa-content">
+                        <div class="doa-title">Ya Allah, Lancarkanlah Segala Urusanku dan Jangan Engkau Biarkan Aku Sendirian</div>
+                        <div class="doa-detail">Ya Allah, lancarkanlah segala urusanku - pekerjaan, bisnis, keluarga, dan agama. Jangan biarkan aku stuck atau frustrasi. Aku butuh kemajuan dan perubahan lebih baik. Genggamlah tanganku, bimbinglah langkahku. Aku lelah berusaha sendirian. (197 karakter)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="reset-section">
+        <button class="btn-reset" onclick="resetAll()">🗑️ Reset Semua Pembacaan Doa</button>
+    </div>
+
+    <script>
+        const DB_NAME = 'DoaKumpulanDB';
+        const STORE_NAME = 'doa_progress';
+        let checkedDoa = {};
+
+        function initDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, 1);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME);
+                    }
+                };
+            });
+        }
+
+        async function saveProgress() {
+            try {
+                const db = await initDB();
+                const transaction = db.transaction(STORE_NAME, 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                store.put(checkedDoa, 'checkedItems');
+            } catch (error) {
+                localStorage.setItem('doa_progress', JSON.stringify(checkedDoa));
+            }
+        }
+
+        async function loadProgress() {
+            try {
+                const db = await initDB();
+                const transaction = db.transaction(STORE_NAME, 'readonly');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.get('checkedItems');
+                
+                return new Promise((resolve) => {
+                    request.onsuccess = () => {
+                        checkedDoa = request.result || {};
+                        resolve();
+                    };
+                    request.onerror = () => {
+                        const saved = localStorage.getItem('doa_progress');
+                        if (saved) checkedDoa = JSON.parse(saved);
+                        resolve();
+                    };
+                });
+            } catch (error) {
+                const saved = localStorage.getItem('doa_progress');
+                if (saved) checkedDoa = JSON.parse(saved);
+            }
+        }
+
+        function switchTab(index) {
+            document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+            document.querySelectorAll('.tab-content').forEach((content, i) => {
+                content.classList.toggle('active', i === index);
+            });
+        }
+
+        function toggleDoa(id) {
+            checkedDoa[id] = !checkedDoa[id];
+            const card = document.querySelector(`[data-id="${id}"]`);
+            if (card) {
+                card.classList.toggle('completed', checkedDoa[id]);
+            }
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const totalCards = document.querySelectorAll('.doa-card').length;
+            const completedCards = Object.values(checkedDoa).filter(v => v).length;
+            const percentage = totalCards > 0 ? Math.round((completedCards / totalCards) * 100) : 0;
+
+            document.getElementById('progressPercent').textContent = percentage + '%';
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('completedCount').textContent = completedCards;
+            document.getElementById('totalCount').textContent = totalCards;
+        }
+
+        function resetAll() {
+            if (confirm('Apakah Anda yakin ingin mereset semua pembacaan doa?')) {
+                checkedDoa = {};
+                document.querySelectorAll('.doa-card').forEach(card => {
+                    card.classList.remove('completed');
+                });
+                updateProgress();
+                saveProgress();
+            }
+        }
+
+        // Password Protection
+        const CORRECT_PASSWORD = 'Q00s44mm!';
+        
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const errorMsg = document.getElementById('errorMessage');
+            const overlay = document.getElementById('loginOverlay');
+            
+            if (input.value === CORRECT_PASSWORD) {
+                overlay.classList.add('hidden');
+                sessionStorage.setItem('doa_authenticated', 'true');
+                initApp();
+            } else {
+                input.classList.add('error');
+                errorMsg.classList.add('show');
+                input.value = '';
+                input.focus();
+                
+                setTimeout(() => {
+                    input.classList.remove('error');
+                    errorMsg.classList.remove('show');
+                }, 3000);
+            }
+        }
+        
+        async function initApp() {
+            await loadProgress();
+            document.querySelectorAll('.doa-card').forEach(card => {
+                const id = card.getAttribute('data-id');
+                if (checkedDoa[id]) {
+                    card.classList.add('completed');
+                }
+            });
+            updateProgress();
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 300);
+        }
+        
+        // Check if already authenticated
+        function init() {
+            if (sessionStorage.getItem('doa_authenticated') === 'true') {
+                document.getElementById('loginOverlay').classList.add('hidden');
+                initApp();
+            }
+            // Otherwise show login screen and wait for password
+        }
+
+        init();
+    </script>
+</body>
+</html>

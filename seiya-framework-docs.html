@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEIYA FRAMEWORK v2.0 - Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Checkbox Styles */
+        .custom-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(52, 211, 153, 0.4);
+            border-radius: 6px;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .custom-checkbox:checked {
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            border-color: #34d399;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        .checklist-item {
+            transition: all 0.2s ease;
+        }
+        
+        .checklist-item:hover {
+            background: rgba(52, 211, 153, 0.05);
+        }
+        
+        .checklist-item.checked {
+            opacity: 0.6;
+        }
+        
+        .checklist-item.checked .checklist-text {
+            text-decoration: line-through;
+            color: #64748b;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+            transition: width 0.5s ease;
+        }
+        
+        .phase-progress {
+            transition: all 0.3s ease;
+        }
+        
+        .completion-badge {
+            animation: pop-in 0.3s ease;
+        }
+        
+        @keyframes pop-in {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(52, 211, 153, 0.1);
+        }
+        
+        .glow-border {
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.1);
+        }
+        
+        .phase-card {
+            transition: all 0.3s ease;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(52, 211, 153, 0.15);
+            border-color: rgba(52, 211, 153, 0.3);
+        }
+        
+        .copy-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(52, 211, 153, 0.2);
+        }
+        
+        .copy-btn.copied {
+            background: rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+        }
+        
+        .truth-mirror {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+        }
+        
+        .flow-line {
+            background: linear-gradient(90deg, transparent 0%, #34d399 50%, transparent 100%);
+        }
+        
+        .pulse-dot {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+        
+        .number-badge {
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 min-h-screen">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/3 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10">
+        <!-- Header -->
+        <header class="border-b border-slate-800/50 bg-slate-900/80 backdrop-blur-xl sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-6 py-5">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                            <i data-lucide="layers" class="w-6 h-6 text-slate-900"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-white tracking-tight">
+                                SEIYA <span class="gradient-text">FRAMEWORK</span> v2.0
+                            </h1>
+                            <p class="text-slate-400 text-sm">Strategic Implementation Documentation</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+                            Project: Social Reply Generator
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-6 py-10">
+            <!-- Overview Section -->
+            <section class="mb-12">
+                <div class="glass-card rounded-2xl p-8 glow-border">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="target" class="w-8 h-8 text-emerald-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-semibold text-white mb-3">Framework Overview</h2>
+                            <p class="text-slate-400 leading-relaxed mb-4">
+                                Seiya Framework adalah sistem dokumentasi strategis untuk Social Reply Generator yang beroperasi melalui 
+                                <span class="text-emerald-400 font-medium">3 fase utama</span>: Attraction (Hook), Automation & Conversion (Bridge), 
+                                dan Scaling & Optimization (Fuel). Framework ini dirancang untuk mencapai 
+                                <span class="text-emerald-400 font-semibold">ROAS 1:4</span> dengan CPC di bawah Rp1.000.
+                            </p>
+                            <div class="flex gap-6 text-sm">
+                                <div class="flex items-center gap-2 text-slate-300">
+                                    <i data-lucide="zap" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>5-Second Reply Speed</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-300">
+                                    <i data-lucide="bot" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Auto DM Integration</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-300">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Conversion Rate &gt; 5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Grid - 3 Phases -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Phase 1: The Trigger -->
+                <div class="phase-card glass-card rounded-2xl p-6 border border-slate-700/50">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="number-badge w-10 h-10 rounded-xl flex items-center justify-center text-slate-900 font-bold text-lg">1</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">The Trigger</h3>
+                            <p class="text-emerald-400 text-sm">Attraction Phase</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="video" class="w-4 h-4 text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-white">Input Source</p>
+                                <p class="text-xs text-slate-400">Video Reels / Social Post</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-white">Mechanism</p>
+                                <p class="text-xs text-slate-400">Comment-to-DM Engagement</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="key" class="w-4 h-4 text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-white">Trigger Keyword</p>
+                                <p class="text-xs text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded">$REPLY</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Psychology Elements -->
+                    <div class="bg-slate-800/50 rounded-xl p-4 mb-4">
+                        <h4 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i data-lucide="brain" class="w-3 h-3"></i>
+                            Psychological Hook
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="cloud" class="w-3 h-3 text-emerald-400"></i>
+                                <span class="text-xs text-slate-300"><span class="text-emerald-400 font-medium">Dream:</span> 5-second reply speed</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-3 h-3 text-rose-400"></i>
+                                <span class="text-xs text-slate-300"><span class="text-rose-400 font-medium">Pain:</span> Burnout, creative fatigue</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="heart" class="w-3 h-3 text-pink-400"></i>
+                                <span class="text-xs text-slate-300"><span class="text-pink-400 font-medium">Relatability:</span> Personal connection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="copyPrompt('phase1')" class="copy-btn w-full py-2.5 rounded-lg border border-emerald-500/30 text-emerald-400 text-sm font-medium flex items-center justify-center gap-2" id="btn-phase1">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                        <span>Copy Prompt</span>
+                    </button>
+
+                    <textarea id="prompt-phase1" class="hidden">Buatkan hook psychological untuk Social Reply Generator dengan fokus pada:
+- Pain point: burnout dan fatigue dalam membalas komentar
+- Dream: balasan instan dalam 5 detik
+- Trigger keyword: $REPLY
+- Relatability yang kuat untuk audience creator
+Tone: empatik, urgent, solution-oriented</textarea>
+                </div>
+
+                <!-- Phase 2: The Machine -->
+                <div class="phase-card glass-card rounded-2xl p-6 border border-slate-700/50">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="number-badge w-10 h-10 rounded-xl flex items-center justify-center text-slate-900 font-bold text-lg">2</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">The Machine</h3>
+                            <p class="text-emerald-400 text-sm">Automation Phase</p>
+                        </div>
+                    </div>
+
+                    <!-- Automation Flow -->
+                    <div class="space-y-3 mb-6">
+                        <div class="relative">
+                            <div class="flex items-center gap-3 bg-slate-800/50 rounded-xl p-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                                    <span class="text-emerald-400 font-bold text-sm">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-white">Auto-Reply Comment</p>
+                                    <p class="text-xs text-slate-400 italic">"Cek DM ya kak!"</p>
+                                </div>
+                                <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+                            </div>
+                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0.5 h-3 bg-emerald-500/30"></div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="flex items-center gap-3 bg-slate-800/50 rounded-xl p-3">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                                    <span class="text-emerald-400 font-bold text-sm">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-white">Auto-DM Delivery</p>
+                                    <p class="text-xs text-slate-400">Bridge copywriting</p>
+                                </div>
+                                <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
+                            </div>
+                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0.5 h-3 bg-emerald-500/30"></div>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/30 flex items-center justify-center">
+                                <span class="text-emerald-400 font-bold text-sm">3</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-emerald-400">CTA Destination</p>
+                                <p class="text-xs text-emerald-400/70">Gemini Canvas Landing</p>
+                            </div>
+                            <i data-lucide="external-link" class="w-4 h-4 text-emerald-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tool Integration -->
+                    <div class="bg-slate-800/50 rounded-xl p-4 mb-4">
+                        <h4 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i data-lucide="cpu" class="w-3 h-3"></i>
+                            Tool Integration
+                        </h4>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                                <i data-lucide="bot" class="w-5 h-5 text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-white">dibales.ai</p>
+                                <p class="text-xs text-slate-400">Auto-reply & DM automation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Magnet -->
+                    <div class="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-xl p-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-white">Lead Magnet</p>
+                                <p class="text-xs text-indigo-400">Gemini Canvas Mini-App</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="copyPrompt('phase2')" class="copy-btn w-full py-2.5 rounded-lg border border-emerald-500/30 text-emerald-400 text-sm font-medium flex items-center justify-center gap-2" id="btn-phase2">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                        <span>Copy Prompt</span>
+                    </button>
+
+                    <textarea id="prompt-phase2" class="hidden">Buatkan automation flow sequence untuk Social Reply Generator dengan struktur:
+1. Auto-reply komentar: "Cek DM ya kak!"
+2. Auto-DM dengan copywriting yang bridge curiosity ke mini-app
+3. CTA menuju Gemini Canvas landing page
+Tool: dibales.ai integration
+Tone: friendly, helpful, conversion-focused</textarea>
+                </div>
+
+                <!-- Phase 3: The Scaling -->
+                <div class="phase-card glass-card rounded-2xl p-6 border border-slate-700/50">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="number-badge w-10 h-10 rounded-xl flex items-center justify-center text-slate-900 font-bold text-lg">3</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">The Scaling</h3>
+                            <p class="text-emerald-400 text-sm">Optimization Phase</p>
+                        </div>
+                    </div>
+
+                    <!-- KPI Cards -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="metric-card rounded-xl p-3 text-center">
+                            <p class="text-2xl font-bold text-emerald-400">1:4</p>
+                            <p class="text-xs text-slate-400">Target ROAS</p>
+                        </div>
+                        <div class="metric-card rounded-xl p-3 text-center">
+                            <p class="text-2xl font-bold text-emerald-400">&lt;1K</p>
+                            <p class="text-xs text-slate-400">Target CPC (Rp)</p>
+                        </div>
+                        <div class="metric-card rounded-xl p-3 text-center">
+                            <p class="text-2xl font-bold text-emerald-400">&gt;5%</p>
+                            <p class="text-xs text-slate-400">Conversion Rate</p>
+                        </div>
+                        <div class="metric-card rounded-xl p-3 text-center">
+                            <p class="text-2xl font-bold text-emerald-400">BEP</p>
+                            <p class="text-xs text-slate-400">Break Even</p>
+                        </div>
+                    </div>
+
+                    <!-- ROAS Table -->
+                    <div class="bg-slate-800/50 rounded-xl p-4 mb-4">
+                        <h4 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i data-lucide="calculator" class="w-3 h-3"></i>
+                            ROAS Calculation
+                        </h4>
+                        <table class="w-full text-xs">
+                            <thead>
+                                <tr class="text-slate-400 border-b border-slate-700">
+                                    <th class="text-left py-2">Metric</th>
+                                    <th class="text-right py-2">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-slate-300">
+                                <tr class="border-b border-slate-700/50">
+                                    <td class="py-2">Ad Spend</td>
+                                    <td class="text-right">Rp 1.000.000</td>
+                                </tr>
+                                <tr class="border-b border-slate-700/50">
+                                    <td class="py-2">Target Revenue</td>
+                                    <td class="text-right text-emerald-400">Rp 4.000.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">ROAS</td>
+                                    <td class="text-right font-bold text-emerald-400">4x</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ads Manager -->
+                    <div class="bg-slate-800/50 rounded-xl p-4 mb-4">
+                        <h4 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i data-lucide="settings" class="w-3 h-3"></i>
+                            Ads Manager Config
+                        </h4>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Platform</span>
+                                <span class="text-white">Meta Ads (FB/IG)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Objective</span>
+                                <span class="text-white">Conversions / Leads</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Placement</span>
+                                <span class="text-white">Reels, Stories, Feed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="copyPrompt('phase3')" class="copy-btn w-full py-2.5 rounded-lg border border-emerald-500/30 text-emerald-400 text-sm font-medium flex items-center justify-center gap-2" id="btn-phase3">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                        <span>Copy Prompt</span>
+                    </button>
+
+                    <textarea id="prompt-phase3" class="hidden">Buatkan strategi scaling untuk Social Reply Generator dengan target:
+- ROAS 1:4 (spend 1jt, revenue 4jt)
+- CPC < Rp 1.000
+- Conversion rate > 5%
+- Break-even point analysis
+Platform: Meta Ads Manager
+Fokus pada targeting, bidding strategy, dan creative testing</textarea>
+                </div>
+            </div>
+
+            <!-- The Truth Mirror Section -->
+            <section class="mb-12">
+                <div class="truth-mirror rounded-2xl p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
+                    
+                    <div class="flex items-start gap-6 relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="alert-triangle" class="w-8 h-8 text-amber-400"></i>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                The Truth Mirror
+                                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-xs">Advisor Notes</span>
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                                <div class="bg-slate-900/50 rounded-xl p-5 border border-amber-500/20">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <i data-lucide="alert-circle" class="w-5 h-5 text-rose-400"></i>
+                                        <h3 class="font-semibold text-rose-400">Warning</h3>
+                                    </div>
+                                    <p class="text-slate-300 italic">
+                                        "If you are <span class="text-rose-400 font-medium">bored</span> with your own product, 
+                                        the ads will <span class="text-rose-400 font-medium">fail</span>."
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-3">
+                                        Kejenuhan terhadap produk sendiri akan tercermin dalam setiap aspek marketing.
+                                    </p>
+                                </div>
+
+                                <div class="bg-slate-900/50 rounded-xl p-5 border border-emerald-500/20">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <i data-lucide="key-round" class="w-5 h-5 text-emerald-400"></i>
+                                        <h3 class="font-semibold text-emerald-400">The Key</h3>
+                                    </div>
+                                    <p class="text-slate-300 italic">
+                                        "Focus on <span class="text-emerald-400 font-medium">Utility</span> over Theory."
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-3">
+                                        Prioritaskan nilai praktis yang bisa langsung dirasakan user, bukan konsep abstrak.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Checklist Section -->
+            <section class="mb-12">
+                <div class="glass-card rounded-2xl p-8 glow-border">
+                    <!-- Section Header -->
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                                <i data-lucide="clipboard-check" class="w-7 h-7 text-slate-900"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">Implementation Checklist</h2>
+                                <p class="text-slate-400 text-sm">Track your progress for each phase</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Overall Progress -->
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-emerald-400" id="overall-percentage">0%</div>
+                            <div class="text-xs text-slate-400">Complete</div>
+                        </div>
+                    </div>
+
+                    <!-- Overall Progress Bar -->
+                    <div class="w-full h-3 bg-slate-800 rounded-full mb-8 overflow-hidden">
+                        <div class="progress-bar h-full rounded-full" id="overall-progress" style="width: 0%"></div>
+                    </div>
+
+                    <!-- Checklist Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Phase 1 Checklist -->
+                        <div class="phase-checklist bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center">1</span>
+                                    <h3 class="font-semibold text-white">Phase 1: Attraction</h3>
+                                </div>
+                                <span class="phase-progress text-xs font-medium text-slate-400" data-phase="1">0/6</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-slate-700 rounded-full mb-4 overflow-hidden">
+                                <div class="phase-bar h-full bg-emerald-400 rounded-full transition-all duration-300" data-phase="1" style="width: 0%"></div>
+                            </div>
+                            <div class="space-y-2" id="checklist-phase-1">
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="1-1">
+                                    <span class="checklist-text text-sm text-slate-300">Create video hooks (Reels/Post)</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="1-2">
+                                    <span class="checklist-text text-sm text-slate-300">Define pain points & dream state</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="1-3">
+                                    <span class="checklist-text text-sm text-slate-300">Set up trigger keyword ($REPLY)</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="1-4">
+                                    <span class="checklist-text text-sm text-slate-300">Test 5-second reply speed</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="1-5">
+                                    <span class="checklist-text text-sm text-slate-300">Validate relatability with audience</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="1-6">
+                                    <span class="checklist-text text-sm text-slate-300">Optimize content for engagement</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2 Checklist -->
+                        <div class="phase-checklist bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center">2</span>
+                                    <h3 class="font-semibold text-white">Phase 2: Automation</h3>
+                                </div>
+                                <span class="phase-progress text-xs font-medium text-slate-400" data-phase="2">0/6</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-slate-700 rounded-full mb-4 overflow-hidden">
+                                <div class="phase-bar h-full bg-emerald-400 rounded-full transition-all duration-300" data-phase="2" style="width: 0%"></div>
+                            </div>
+                            <div class="space-y-2" id="checklist-phase-2">
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="2-1">
+                                    <span class="checklist-text text-sm text-slate-300">Setup dibales.ai account</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="2-2">
+                                    <span class="checklist-text text-sm text-slate-300">Configure auto-reply comment</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="2-3">
+                                    <span class="checklist-text text-sm text-slate-300">Craft auto-DM copywriting</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="2-4">
+                                    <span class="checklist-text text-sm text-slate-300">Build Gemini Canvas landing page</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="2-5">
+                                    <span class="checklist-text text-sm text-slate-300">Test DM-to-landing flow</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="2-6">
+                                    <span class="checklist-text text-sm text-slate-300">Set up lead capture system</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Phase 3 Checklist -->
+                        <div class="phase-checklist bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center">3</span>
+                                    <h3 class="font-semibold text-white">Phase 3: Scaling</h3>
+                                </div>
+                                <span class="phase-progress text-xs font-medium text-slate-400" data-phase="3">0/7</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-slate-700 rounded-full mb-4 overflow-hidden">
+                                <div class="phase-bar h-full bg-emerald-400 rounded-full transition-all duration-300" data-phase="3" style="width: 0%"></div>
+                            </div>
+                            <div class="space-y-2" id="checklist-phase-3">
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-1">
+                                    <span class="checklist-text text-sm text-slate-300">Setup Meta Ads Manager</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-2">
+                                    <span class="checklist-text text-sm text-slate-300">Define target audience segments</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-3">
+                                    <span class="checklist-text text-sm text-slate-300">Create ad creatives (3+ variants)</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-4">
+                                    <span class="checklist-text text-sm text-slate-300">Set initial budget (Rp 1jt test)</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-5">
+                                    <span class="checklist-text text-sm text-slate-300">Monitor CPC < Rp 1.000</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-6">
+                                    <span class="checklist-text text-sm text-slate-300">Track conversion rate > 5%</span>
+                                </label>
+                                <label class="checklist-item flex items-center gap-3 p-2.5 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="custom-checkbox" data-check="3-7">
+                                    <span class="checklist-text text-sm text-slate-300">Achieve ROAS 1:4 target</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="mt-6 pt-6 border-t border-slate-700/50 flex justify-end">
+                        <button onclick="resetChecklist()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 text-sm flex items-center gap-2 transition-colors">
+                            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                            Reset Progress
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center text-slate-500 text-sm py-8 border-t border-slate-800/50">
+                <p>SEIYA FRAMEWORK v2.0 &copy; 2025 Social Reply Architects</p>
+                <p class="mt-2 text-xs">Strategic Documentation Dashboard</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Copy prompt function
+        function copyPrompt(phase) {
+            const textarea = document.getElementById(`prompt-${phase}`);
+            const btn = document.getElementById(`btn-${phase}`);
+            
+            navigator.clipboard.writeText(textarea.value).then(() => {
+                // Visual feedback
+                btn.classList.add('copied');
+                btn.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i><span>Copied!</span>`;
+                lucide.createIcons();
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = `<i data-lucide="copy" class="w-4 h-4"></i><span>Copy Prompt</span>`;
+                    lucide.createIcons();
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                // Fallback
+                textarea.select();
+                document.execCommand('copy');
+            });
+        }
+
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // ============================================
+        // CHECKLIST FUNCTIONALITY
+        // ============================================
+        
+        const STORAGE_KEY = 'seiya-framework-checklist';
+        
+        // Checklist configuration
+        const checklistConfig = {
+            1: { total: 6 },
+            2: { total: 6 },
+            3: { total: 7 }
+        };
+
+        // Load saved state from localStorage
+        function loadChecklistState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                return saved ? JSON.parse(saved) : {};
+            } catch (e) {
+                console.error('Error loading checklist state:', e);
+                return {};
+            }
+        }
+
+        // Save state to localStorage
+        function saveChecklistState(state) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            } catch (e) {
+                console.error('Error saving checklist state:', e);
+            }
+        }
+
+        // Update visual state of checklist item
+        function updateItemVisual(checkbox) {
+            const item = checkbox.closest('.checklist-item');
+            if (checkbox.checked) {
+                item.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+            }
+        }
+
+        // Calculate and update phase progress
+        function updatePhaseProgress(phaseNum) {
+            const checkboxes = document.querySelectorAll(`[data-check^="${phaseNum}-"]`);
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const total = checklistConfig[phaseNum].total;
+            const percentage = Math.round((checked / total) * 100);
+            
+            // Update text
+            const progressText = document.querySelector(`.phase-progress[data-phase="${phaseNum}"]`);
+            if (progressText) {
+                progressText.textContent = `${checked}/${total}`;
+                if (checked === total) {
+                    progressText.classList.add('text-emerald-400');
+                    progressText.classList.remove('text-slate-400');
+                } else {
+                    progressText.classList.remove('text-emerald-400');
+                    progressText.classList.add('text-slate-400');
+                }
+            }
+            
+            // Update bar
+            const progressBar = document.querySelector(`.phase-bar[data-phase="${phaseNum}"]`);
+            if (progressBar) {
+                progressBar.style.width = `${percentage}%`;
+                if (checked === total) {
+                    progressBar.classList.add('shadow-lg', 'shadow-emerald-500/50');
+                } else {
+                    progressBar.classList.remove('shadow-lg', 'shadow-emerald-500/50');
+                }
+            }
+        }
+
+        // Update overall progress
+        function updateOverallProgress() {
+            const allCheckboxes = document.querySelectorAll('.custom-checkbox[data-check]');
+            const total = allCheckboxes.length;
+            const checked = Array.from(allCheckboxes).filter(cb => cb.checked).length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            // Update percentage text
+            const percentageEl = document.getElementById('overall-percentage');
+            if (percentageEl) {
+                percentageEl.textContent = `${percentage}%`;
+                if (percentage === 100) {
+                    percentageEl.classList.add('text-emerald-400');
+                    percentageEl.classList.remove('text-slate-400');
+                }
+            }
+            
+            // Update progress bar
+            const progressBar = document.getElementById('overall-progress');
+            if (progressBar) {
+                progressBar.style.width = `${percentage}%`;
+                if (percentage === 100) {
+                    progressBar.classList.add('shadow-lg', 'shadow-emerald-500/50');
+                }
+            }
+        }
+
+        // Handle checkbox change
+        function handleCheckboxChange(e) {
+            const checkbox = e.target;
+            const checkId = checkbox.dataset.check;
+            
+            // Update visual
+            updateItemVisual(checkbox);
+            
+            // Save state
+            const state = loadChecklistState();
+            state[checkId] = checkbox.checked;
+            saveChecklistState(state);
+            
+            // Get phase number
+            const phaseNum = checkId.split('-')[0];
+            
+            // Update progress
+            updatePhaseProgress(phaseNum);
+            updateOverallProgress();
+        }
+
+        // Initialize checklist
+        function initChecklist() {
+            const state = loadChecklistState();
+            const checkboxes = document.querySelectorAll('.custom-checkbox[data-check]');
+            
+            checkboxes.forEach(checkbox => {
+                const checkId = checkbox.dataset.check;
+                
+                // Set initial state
+                if (state[checkId]) {
+                    checkbox.checked = true;
+                    updateItemVisual(checkbox);
+                }
+                
+                // Add event listener
+                checkbox.addEventListener('change', handleCheckboxChange);
+            });
+            
+            // Update all progress displays
+            Object.keys(checklistConfig).forEach(phaseNum => {
+                updatePhaseProgress(phaseNum);
+            });
+            updateOverallProgress();
+        }
+
+        // Reset checklist
+        function resetChecklist() {
+            if (confirm('Reset all progress? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                
+                const checkboxes = document.querySelectorAll('.custom-checkbox[data-check]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    updateItemVisual(checkbox);
+                });
+                
+                Object.keys(checklistConfig).forEach(phaseNum => {
+                    updatePhaseProgress(phaseNum);
+                });
+                updateOverallProgress();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initChecklist);
+    </script>
+</body>
+</html>

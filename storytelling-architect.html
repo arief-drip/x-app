@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storytelling Architect - Rancang Cerita yang Mengonversi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>h1, h2 {line-height : 1.2!important}</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px rgba(245, 158, 11, 0.5)' },
+                            '100%': { boxShadow: '0 0 20px rgba(245, 158, 11, 0.8), 0 0 40px rgba(245, 158, 11, 0.4)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(251, 191, 36, 0.1);
+        }
+        .architectural-line {
+            background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+            height: 1px;
+        }
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(251, 191, 36, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(251, 191, 36, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-gold-500 to-gold-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-drafting-compass text-slate-950 text-lg"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">Storytelling<span class="text-gold-500">Architect</span></span>
+                </div>
+                <a href="#pricing" class="hidden sm:inline-flex bg-gold-500 hover:bg-gold-600 text-slate-950 font-semibold px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                    Dapatkan Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden grid-pattern">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold-600/5 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gold-500/10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-gold-500/5 rounded-full"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 bg-slate-800/50 border border-gold-500/20 rounded-full px-4 py-2 mb-8 animate-float">
+                <span class="w-2 h-2 bg-gold-500 rounded-full animate-pulse"></span>
+                <span class="text-sm text-slate-300">Framework Three-Act Structure yang Terbukti</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                Rancang Cerita yang
+                <span class="block gradient-text">Mengonversi</span>
+            </h1>
+
+            <!-- Sub-headline -->
+            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Ubah ide mentah menjadi narasi sistematis dengan framework <span class="text-gold-400 font-semibold">Three-Act Structure</span>. 
+                Tanpa writer's block. Tanpa konten yang diabaikan. Hanya cerita yang bekerja.
+            </p>
+
+            <!-- CTA Button -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pricing" class="group relative inline-flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 text-slate-950 font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/25 animate-glow">
+                    <span>Mulai Membangun Cerita</span>
+                    <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#how-it-works" class="inline-flex items-center text-slate-400 hover:text-gold-400 transition-colors">
+                    <i class="fas fa-play-circle mr-2 text-xl"></i>
+                    <span>Lihat Cara Kerja</span>
+                </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="mt-16 pt-8 border-t border-slate-800/50">
+                <p class="text-sm text-slate-500 mb-4">Dipercaya oleh content creator & copywriter</p>
+                <div class="flex items-center justify-center space-x-8 text-slate-600">
+                    <i class="fab fa-tiktok text-2xl hover:text-gold-500 transition-colors"></i>
+                    <i class="fab fa-instagram text-2xl hover:text-gold-500 transition-colors"></i>
+                    <i class="fab fa-youtube text-2xl hover:text-gold-500 transition-colors"></i>
+                    <i class="fab fa-linkedin text-2xl hover:text-gold-500 transition-colors"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-gold-500/50 text-xl"></i>
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section 2: The Problem -->
+    <section class="py-20 sm:py-32 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-semibold text-sm tracking-wider uppercase">The Problem</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Stuck di <span class="text-red-400">Writer's Block</span>?
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Setiap hari, jutaan konten dibuat. Tapi hanya sedikit yang benar-benar dilihat, dibaca, dan diingat.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Problem 1 -->
+                <div class="glass-card rounded-2xl p-8 text-center group hover:border-gold-500/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Writer's Block</h3>
+                    <p class="text-slate-400">
+                        Ide ada di kepala, tapi tidak tahu cara menyusunnya. Staring at blank page selama berjam-jam.
+                    </p>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="glass-card rounded-2xl p-8 text-center group hover:border-gold-500/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-eye-slash text-orange-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Konten Dihindari</h3>
+                    <p class="text-slate-400">
+                        Konten yang membosankan, tidak terstruktur, dan di-scroll tanpa dihiraukan oleh audiens.
+                    </p>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="glass-card rounded-2xl p-8 text-center group hover:border-gold-500/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-arrow-trend-down text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Konversi Rendah</h3>
+                    <p class="text-slate-400">
+                        Tidak ada yang bertindak setelah membaca. Storytelling yang lemah = conversion yang nol.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visual Metaphor -->
+            <div class="mt-16 text-center">
+                <div class="inline-flex items-center space-x-4 bg-slate-900/50 border border-slate-800 rounded-full px-6 py-3">
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                    <span class="text-slate-300">Tanpa struktur, cerita Anda hanya menjadi <span class="text-red-400 font-semibold">noise</span> di tengah keramaian</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section 3: The Solution -->
+    <section class="py-20 sm:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-950/50"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div>
+                    <span class="text-gold-500 font-semibold text-sm tracking-wider uppercase">The Solution</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        Perkenalkan<br>
+                        <span class="gradient-text">Storytelling Architect</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Sistem cerdas yang mengubah ide mentah Anda menjadi narasi yang terstruktur, engaging, dan siap mengonversi. 
+                        Dibangun di atas fondasi <span class="text-gold-400">Three-Act Structure</span> yang telah teruji puluhan tahun.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-gold-500 text-xs"></i>
+                            </div>
+                            <span class="text-slate-300">Transformasi ide → struktur dalam hitungan menit</span>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-gold-500 text-xs"></i>
+                            </div>
+                            <span class="text-slate-300">Framework yang terbukti meningkatkan engagement</span>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-gold-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-gold-500 text-xs"></i>
+                            </div>
+                            <span class="text-slate-300">Tingkatkan konversi dengan storytelling yang kuat</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-gold-500/20 to-gold-600/20 rounded-3xl blur-3xl"></div>
+                    <div class="relative glass-card rounded-3xl p-8 border border-gold-500/20">
+                        <!-- Mockup Interface -->
+                        <div class="bg-slate-900 rounded-2xl p-6 space-y-4">
+                            <div class="flex items-center space-x-2 mb-4">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            
+                            <!-- Input -->
+                            <div class="bg-slate-800 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-2">Input Ide Anda:</p>
+                                <p class="text-slate-300 text-sm">"Produk skincare untuk kulit sensitif"</p>
+                            </div>
+
+                            <!-- Arrow -->
+                            <div class="flex justify-center">
+                                <i class="fas fa-arrow-down text-gold-500"></i>
+                            </div>
+
+                            <!-- Output Structure -->
+                            <div class="space-y-3">
+                                <div class="bg-gold-500/10 border border-gold-500/30 rounded-lg p-3">
+                                    <p class="text-gold-400 text-xs font-semibold">ACT I: SETUP</p>
+                                    <p class="text-slate-300 text-sm mt-1">Problem kulit sensitif yang sering dialami...</p>
+                                </div>
+                                <div class="bg-gold-500/10 border border-gold-500/30 rounded-lg p-3">
+                                    <p class="text-gold-400 text-xs font-semibold">ACT II: CONFRONTATION</p>
+                                    <p class="text-slate-300 text-sm mt-1">Perjalanan mencari solusi yang tepat...</p>
+                                </div>
+                                <div class="bg-gold-500/10 border border-gold-500/30 rounded-lg p-3">
+                                    <p class="text-gold-400 text-xs font-semibold">ACT III: RESOLUTION</p>
+                                    <p class="text-slate-300 text-sm mt-1">Transformasi dengan produk yang tepat...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section 4: Features & Benefits -->
+    <section class="py-20 sm:py-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-semibold text-sm tracking-wider uppercase">Features & Benefits</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Tiga Pilar <span class="gradient-text">Arsitektur Cerita</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Sistematis. Efisien. Efektif. Hemat waktu hingga 70% dalam proses kreasi konten.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1: Blueprint -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative glass-card rounded-2xl p-8 h-full border border-slate-800 group-hover:border-gold-500/30 transition-all">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-gold-500/20">
+                            <i class="fas fa-drafting-compass text-slate-950 text-xl"></i>
+                        </div>
+                        <div class="text-gold-500 text-sm font-semibold mb-2">PILAR 1</div>
+                        <h3 class="text-2xl font-bold mb-4">Blueprint</h3>
+                        <p class="text-slate-400 mb-6">
+                            Struktur cerita yang solid menggunakan framework Three-Act Structure yang terbukti.
+                        </p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Setup yang kuat
+                            </li>
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Konflik yang engaging
+                            </li>
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Resolusi memuaskan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Konstruksi -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative glass-card rounded-2xl p-8 h-full border border-slate-800 group-hover:border-gold-500/30 transition-all">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-gold-500/20">
+                            <i class="fas fa-hammer text-slate-950 text-xl"></i>
+                        </div>
+                        <div class="text-gold-500 text-sm font-semibold mb-2">PILAR 2</div>
+                        <h3 class="text-2xl font-bold mb-4">Konstruksi</h3>
+                        <p class="text-slate-400 mb-6">
+                            Proses penulisan yang terarah dengan template dan guidance di setiap akt.
+                        </p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Template siap pakai
+                            </li>
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Guidance langkah demi langkah
+                            </li>
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                AI-powered suggestions
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Finishing -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative glass-card rounded-2xl p-8 h-full border border-slate-800 group-hover:border-gold-500/30 transition-all">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-gold-500/20">
+                            <i class="fas fa-magic text-slate-950 text-xl"></i>
+                        </div>
+                        <div class="text-gold-500 text-sm font-semibold mb-2">PILAR 3</div>
+                        <h3 class="text-2xl font-bold mb-4">Finishing</h3>
+                        <p class="text-slate-400 mb-6">
+                            Polesan akhir untuk memastikan cerita Anda siap mengonversi audiens.
+                        </p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Hook optimization
+                            </li>
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                CTA yang powerful
+                            </li>
+                            <li class="flex items-center text-slate-300">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Engagement boosters
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Saving Highlight -->
+            <div class="mt-16 text-center">
+                <div class="inline-flex items-center space-x-3 bg-gold-500/10 border border-gold-500/30 rounded-full px-8 py-4">
+                    <i class="fas fa-clock text-gold-500 text-xl"></i>
+                    <span class="text-slate-200 font-semibold">Hemat waktu hingga <span class="text-gold-400 text-xl">70%</span> dalam proses kreasi konten</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section 5: How It Works -->
+    <section id="how-it-works" class="py-20 sm:py-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-semibold text-sm tracking-wider uppercase">How It Works</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Cukup <span class="gradient-text">3 Langkah</span> Sederhana
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Tidak perlu skill menulis yang mahir. Tidak perlu waktu berjam-jam. Cukup ikuti alur ini.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-24 left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-gold-500/30 via-gold-500 to-gold-500/30"></div>
+
+                <!-- Step 1 -->
+                <div class="relative text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-500 to-gold-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gold-500/30 relative z-10">
+                        <span class="text-slate-950 font-bold text-2xl">1</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lightbulb text-gold-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Input Ide</h3>
+                        <p class="text-slate-400 text-sm">
+                            Masukkan ide mentah, produk, atau pesan yang ingin Anda sampaikan. Bisa satu kalimat saja.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-500 to-gold-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gold-500/30 relative z-10">
+                        <span class="text-slate-950 font-bold text-2xl">2</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-robot text-gold-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Membangun Struktur</h3>
+                        <p class="text-slate-400 text-sm">
+                            Sistem AI kami akan mengubah ide Anda menjadi struktur Three-Act yang solid dan engaging.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-500 to-gold-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gold-500/30 relative z-10">
+                        <span class="text-slate-950 font-bold text-2xl">3</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-copy text-gold-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Copy & Post</h3>
+                        <p class="text-slate-400 text-sm">
+                            Salin hasilnya, sesuaikan sedikit jika perlu, dan posting ke platform pilihan Anda. Siap mengonversi!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section: Testimonials -->
+    <section class="py-20 sm:py-32 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 grid-pattern opacity-50"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-semibold text-sm tracking-wider uppercase">Testimonials</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Apa Kata Mereka yang Sudah <span class="gradient-text">Membangun Cerita</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Bergabung dengan ratusan content creator dan copywriter yang sudah merasakan transformasi storytelling mereka.
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 - Agung -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-gold-500/30 transition-all duration-300 group">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-500 text-sm"></i>
+                        <i class="fas fa-star text-gold-500 text-sm"></i>
+                        <i class="fas fa-star text-gold-500 text-sm"></i>
+                        <i class="fas fa-star text-gold-500 text-sm"></i>
+                        <i class="fas fa-star text-gold-500 text-sm"></i>
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        "Story Telling adalah salah satu teknik konten yang paling menarik, bahkan si Raditya Dika juga membuat kelas tentang story telling. Saya juga pengen membuat konten story telling, tapi selalu stuck, susah mau bikin kata-katanya. Alhamdulillah ketemu sama tools "StorytellingArchitect", yang udah bantu saya bikin konten cerita yang menarik, fleksibel, apapun latar belakang kita. Cuma perlu beberapa detik buat dapet narasi story telling keren... udah gak usah diedit lagi, udah secanggih ini ya. Jadi pekerjaan bikin narasi story telling untuk konten, nggak lagi jadi masalah! Mantab!!"
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gold-500/30 to-gold-600/30 rounded-full flex items-center justify-center">
+                            <span class="text-gold-500 font-bold">AG</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Agung</h4>
+                            <p class="text-slate-500 text-sm">Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder 2 -->
+                <div class="glass-card rounded-2xl p-6 border border-dashed border-slate-700 bg-slate-900/30">
+                    <div class="space-y-3">
+                        <div class="h-4 bg-slate-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                        <div class="h-4 bg-slate-800 rounded w-5/6"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div class="space-y-2">
+                            <div class="h-4 bg-slate-800 rounded w-24"></div>
+                            <div class="h-3 bg-slate-800 rounded w-32"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder 3 -->
+                <div class="glass-card rounded-2xl p-6 border border-dashed border-slate-700 bg-slate-900/30">
+                    <div class="space-y-3">
+                        <div class="h-4 bg-slate-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                        <div class="h-4 bg-slate-800 rounded w-5/6"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div class="space-y-2">
+                            <div class="h-4 bg-slate-800 rounded w-24"></div>
+                            <div class="h-3 bg-slate-800 rounded w-32"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder 4 -->
+                <div class="glass-card rounded-2xl p-6 border border-dashed border-slate-700 bg-slate-900/30">
+                    <div class="space-y-3">
+                        <div class="h-4 bg-slate-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                        <div class="h-4 bg-slate-800 rounded w-5/6"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div class="space-y-2">
+                            <div class="h-4 bg-slate-800 rounded w-24"></div>
+                            <div class="h-3 bg-slate-800 rounded w-32"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder 5 -->
+                <div class="glass-card rounded-2xl p-6 border border-dashed border-slate-700 bg-slate-900/30">
+                    <div class="space-y-3">
+                        <div class="h-4 bg-slate-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                        <div class="h-4 bg-slate-800 rounded w-5/6"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div class="space-y-2">
+                            <div class="h-4 bg-slate-800 rounded w-24"></div>
+                            <div class="h-3 bg-slate-800 rounded w-32"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder 6 -->
+                <div class="glass-card rounded-2xl p-6 border border-dashed border-slate-700 bg-slate-900/30">
+                    <div class="space-y-3">
+                        <div class="h-4 bg-slate-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                        <div class="h-4 bg-slate-800 rounded w-5/6"></div>
+                        <div class="h-4 bg-slate-800 rounded w-full"></div>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div class="space-y-2">
+                            <div class="h-4 bg-slate-800 rounded w-24"></div>
+                            <div class="h-3 bg-slate-800 rounded w-32"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Free Review CTA -->
+            <div class="mt-12 text-center">
+                <p class="text-slate-400 mb-4">belum ada testimoni ya? berarti kamu mungkin berkesempatan untuk dapetin Free Review!</p>
+                <a href="https://wa.me/628567892460?text=Halo%20mas%2C%20saya%20boleh%20dapetin%20FR%20untuk%20Storytelling%20Architect%3F" target="_blank" class="inline-flex items-center space-x-2 bg-gradient-to-r from-gold-500/20 to-gold-600/20 border border-gold-500/50 text-gold-400 hover:text-gold-300 hover:border-gold-400 px-6 py-3 rounded-full transition-all">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span class="font-semibold">klik disini untuk dapetin FR!</span>
+                </a>
+            </div>
+
+            <!-- 
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold gradient-text">500+</div>
+                    <div class="text-slate-500 text-sm mt-1">User Aktif</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold gradient-text">10K+</div>
+                    <div class="text-slate-500 text-sm mt-1">Cerita Dibuat</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold gradient-text">4.9/5</div>
+                    <div class="text-slate-500 text-sm mt-1">Rating Rata-rata</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold gradient-text">70%</div>
+                    <div class="text-slate-500 text-sm mt-1">Lebih Efisien</div>
+                </div>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section 6: Pricing (URGENT) -->
+    <section id="pricing" class="py-20 sm:py-32 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-gold-500 font-semibold text-sm tracking-wider uppercase">Limited Offer</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Investasi untuk Skill <span class="gradient-text">Seumur Hidup</span>
+                </h2>
+            </div>
+
+            <!-- Promo Badge -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex items-center space-x-2 bg-red-500/20 border border-red-500/50 rounded-full px-6 py-3 animate-pulse">
+                    <i class="fas fa-fire text-red-500"></i>
+                    <span class="text-red-400 font-bold">PROMO LAUNCHING: Terbatas untuk 20 pembeli pertama saja!</span>
+                </div>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border-2 border-gold-500/50 relative overflow-hidden">
+                <!-- Popular Badge -->
+                <div class="absolute top-0 right-0 bg-gradient-to-l from-gold-500 to-gold-600 text-slate-950 font-bold px-6 py-2 rounded-bl-2xl text-sm">
+                    BEST VALUE
+                </div>
+
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-2">Storytelling Architect</h3>
+
+                    <!-- Price -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-center space-x-4">
+                            <span class="text-slate-500 text-2xl line-through decoration-red-500">Rp 149.000</span>
+                            <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">-87%</span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-5xl sm:text-6xl font-bold gradient-text">Rp 19.000</span>
+                        </div>
+                        <p class="text-slate-400 mt-2">Sekali bayar, akses selamanya</p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="max-w-md mx-auto mb-8">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-400">sebelum harga naik Rp.</span>
+                            <span class="text-red-400 font-semibold">29.000</span>
+                        </div>
+                        <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-gold-500 to-gold-600 rounded-full transition-all duration-1000" style="width: 85%;"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">17 dari 20 slot telah terjual</p>
+                    </div>
+
+                    <!-- Features List -->
+                    <ul class="text-left max-w-md mx-auto space-y-3 mb-10">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-gold-500"></i>
+                            <span class="text-slate-300">Akses ke Storytelling Architect Tool</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-gold-500"></i>
+                            <span class="text-slate-300">Template Three-Act Structure Premium</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-gold-500"></i>
+                            <span class="text-slate-300">AI Story Builder (Unlimited)</span>
+                        </li>
+
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-gold-500"></i>
+                            <span class="text-slate-300">Komunitas eksklusif</span>
+                        </li>
+                    </ul>
+
+                    <!-- CTA Button -->
+                    <a href="#" class="group relative inline-flex items-center justify-center w-full bg-gradient-to-r from-gold-500 to-gold-600 text-slate-950 font-bold text-lg px-8 py-5 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold-500/30 animate-glow">
+                        <span class="mr-3">Beli Sekarang - Rp 19.000</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+
+                    <!-- Guarantee -->
+                    <!--
+                    <div class="mt-6 flex items-center justify-center space-x-2 text-sm text-slate-500">
+                        <i class="fas fa-shield-alt text-gold-500"></i>
+                        <span>Garansi 7 hari uang kembali</span>
+                    </div>
+                    -->
+                </div>
+            </div>
+
+            <!-- Urgency Timer -->
+            <div class="mt-8 text-center">
+                <p class="text-slate-400 text-sm mb-3">Harga promo berakhir dalam:</p>
+                <div class="flex justify-center space-x-4" id="countdown">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center text-2xl font-bold text-gold-500" id="hours">23</div>
+                        <span class="text-xs text-slate-500 mt-1">Jam</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center text-2xl font-bold text-gold-500" id="minutes">59</div>
+                        <span class="text-xs text-slate-500 mt-1">Menit</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center text-2xl font-bold text-gold-500" id="seconds">59</div>
+                        <span class="text-xs text-slate-500 mt-1">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="architectural-line max-w-4xl mx-auto"></div>
+
+    <!-- Section 7: Final CTA -->
+    <section class="py-20 sm:py-32 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                Siap Membangun Cerita yang
+                <span class="gradient-text block mt-2">Mengubah Audiens Jadi Pelanggan?</span>
+            </h2>
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+                Jangan biarkan ide-ide brilian Anda terbuang karena tidak tahu cara menyusunnya. 
+                Mulai arsitektur cerita Anda hari ini.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pricing" class="group inline-flex items-center justify-center bg-gradient-to-r from-gold-500 to-gold-600 text-slate-950 font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/30 animate-glow">
+                    <span>Ya, Saya Mau Mulai Sekarang!</span>
+                    <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Last Chance Notice -->
+            <div class="mt-8 inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/30 rounded-full px-6 py-3">
+                <i class="fas fa-exclamation-circle text-red-400"></i>
+                <span class="text-red-400 text-sm font-medium">Hanya tersedia untuk 3 orang lagi. Jangan sampai kehabisan!</span>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 pt-8 border-t border-slate-800/50">
+                <div class="flex flex-wrap justify-center items-center gap-8 text-slate-500">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-lock text-gold-500"></i>
+                        <span class="text-sm">Pembayaran Aman</span>
+                    </div>
+                    <!--
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-undo text-gold-500"></i>
+                        <span class="text-sm">Garansi 7 Hari</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-headset text-gold-500"></i>
+                        <span class="text-sm">Support 24/7</span>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-br from-gold-500 to-gold-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-drafting-compass text-slate-950 text-sm"></i>
+                    </div>
+                    <span class="font-bold">Storytelling<span class="text-gold-500">Architect</span></span>
+                </div>
+                <p class="text-slate-500 text-sm">
+                    © 2025 Storytelling Architect. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        function updateCountdown() {
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+            
+            let h = parseInt(hours.textContent);
+            let m = parseInt(minutes.textContent);
+            let s = parseInt(seconds.textContent);
+            
+            if (s > 0) {
+                s--;
+            } else {
+                s = 59;
+                if (m > 0) {
+                    m--;
+                } else {
+                    m = 59;
+                    if (h > 0) {
+                        h--;
+                    } else {
+                        h = 23;
+                    }
+                }
+            }
+            
+            hours.textContent = h.toString().padStart(2, '0');
+            minutes.textContent = m.toString().padStart(2, '0');
+            seconds.textContent = s.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

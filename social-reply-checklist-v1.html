@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Reply Architect - Launch Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-elevated: #1a1a25;
+            --text: #fafafa;
+            --text-muted: #a0a0b0;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-dark: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gradient-1: #6366f1;
+            --gradient-2: #8b5cf6;
+            --gradient-3: #ec4899;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139,92,246,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(236,72,153,0.05) 0%, transparent 40%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0,0) rotate(0deg); }
+            33% { transform: translate(30px,-30px) rotate(120deg); }
+            66% { transform: translate(-20px,20px) rotate(240deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.1));
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--gradient-2), var(--gradient-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-title {
+            font-weight: 700;
+            font-size: 0.9375rem;
+        }
+
+        .progress-percentage {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--accent-light);
+        }
+
+        .progress-bar-container {
+            height: 12px;
+            background: var(--bg-elevated);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--gradient-2), var(--gradient-3));
+            border-radius: 100px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .progress-stats span {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* Phase Navigation */
+        .phase-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: none;
+        }
+
+        .phase-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .phase-tab {
+            flex-shrink: 0;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phase-tab:hover {
+            border-color: rgba(99,102,241,0.3);
+            transform: translateY(-2px);
+        }
+
+        .phase-tab.active {
+            background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.1));
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .phase-tab.completed {
+            background: rgba(16,185,129,0.1);
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        .phase-tab .badge {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--bg-elevated);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.625rem;
+            font-weight: 800;
+        }
+
+        .phase-tab.active .badge {
+            background: var(--accent);
+            color: white;
+        }
+
+        .phase-tab.completed .badge {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            padding: 0 0.5rem;
+        }
+
+        /* Phase Card */
+        .phase-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2rem;
+            min-height: 500px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .phase-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), var(--gradient-2));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .phase-title-group h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .phase-focus {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        .phase-progress {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .phase-progress-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-light);
+        }
+
+        .phase-progress-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Checklist */
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checklist-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .checklist-category-title {
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .checklist-item:hover {
+            border-color: rgba(99,102,241,0.2);
+            transform: translateX(4px);
+        }
+
+        .checklist-item.completed {
+            background: rgba(16,185,129,0.05);
+            border-color: rgba(16,185,129,0.2);
+        }
+
+        .checklist-item.completed .checklist-text {
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            margin-top: 2px;
+        }
+
+        .checklist-item:hover .checkbox {
+            border-color: var(--accent);
+        }
+
+        .checklist-item.completed .checkbox {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .checkbox svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item.completed .checkbox svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .checklist-content {
+            flex: 1;
+        }
+
+        .checklist-text {
+            font-weight: 600;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-hint {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            line-height: 1.4;
+        }
+
+        /* Action Buttons */
+        .slide-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .btn-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover:not(:disabled) {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--gradient-2));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+        }
+
+        /* Reset Button */
+        .reset-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .btn-reset {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 12px;
+            color: var(--danger);
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-reset:hover {
+            background: rgba(239,68,68,0.1);
+            border-color: var(--danger);
+        }
+
+        /* Success Animation */
+        .celebration {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+
+        .celebration.active {
+            display: block;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .phase-card {
+                padding: 1.5rem;
+            }
+
+            .phase-header {
+                flex-wrap: wrap;
+            }
+
+            .phase-progress {
+                width: 100%;
+                text-align: left;
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .phase-progress-number {
+                font-size: 1.5rem;
+            }
+
+            .slide-nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .btn-nav, .btn-primary {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(99,102,241,0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="bg-animation"></div>
+    <div class="celebration" id="celebration"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-badge">🚀 Launch Checklist</div>
+            <h1>Social Reply Architect</h1>
+            <p class="subtitle">Checklist eksekusi lengkap untuk meluncurkan produk</p>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span class="progress-title">Progress Keseluruhan</span>
+                <span class="progress-percentage" id="totalPercentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="totalProgress" style="width: 0%"></div>
+            </div>
+            <div class="progress-stats">
+                <div><span id="completedCount">0</span> Selesai</div>
+                <div><span id="remainingCount">0</span> Tersisa</div>
+                <div><span id="totalCount">0</span> Total</div>
+            </div>
+        </div>
+
+        <div class="phase-nav" id="phaseNav">
+            <!-- Generated by JS -->
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <!-- Slides generated by JS -->
+            </div>
+        </div>
+
+        <div class="reset-section">
+            <button class="btn-reset" onclick="resetAll()">🗑️ Reset Semua Progress</button>
+        </div>
+    </div>
+
+    <script>
+        // Data Checklist
+        const phases = [
+            {
+                id: 'fase1',
+                icon: '🎬',
+                title: 'Fase 1: Persiapan "Umpan"',
+                subtitle: 'Video Demo',
+                focus: 'Tunjukkan masalah (bingung balas apa) dan solusi instan (Canvas bekerja)',
+                items: [
+                    {
+                        category: 'Perencanaan Skenario',
+                        tasks: [
+                            { id: 'f1_1', text: 'Tentukan skenario masalah yang relate', hint: 'Contoh: "Ada yang komen harganya mahal banget" atau "Customer komplain pengiriman lambat"' },
+                            { id: 'f1_2', text: 'Siapkan 3-5 variasi skenario berbeda', hint: 'Skenario negatif, pertanyaan teknis, dan komplain' },
+                            { id: 'f1_3', text: 'Uji coba input di Canvas Social Reply Architect', hint: 'Pastikan output sesuai ekspektasi dan tone yang diinginkan' }
+                        ]
+                    },
+                    {
+                        category: 'Setup Rekaman',
+                        tasks: [
+                            { id: 'f1_4', text: 'Bersihkan desktop & tutup tab yang tidak perlu', hint: 'Minimalisir distraction agar fokus pada demo' },
+                            { id: 'f1_5', text: 'Atur resolusi layar ke format HP (9:16)', hint: 'Atau 1080x1920 untuk kualitas maksimal Threads' },
+                            { id: 'f1_6', text: 'Pastikan teks terbaca jelas (zoom 125-150%)', hint: 'Test preview sebelum rekam' },
+                            { id: 'f1_7', text: 'Cek pencahayaan dan kualitas layar', hint: 'Hindari glare dan pastikan contrast cukup' }
+                        ]
+                    },
+                    {
+                        category: 'Proses Rekaman',
+                        tasks: [
+                            { id: 'f1_8', text: 'Rekam proses input skenario ke Canvas', hint: 'Tunjukkan ketikan realtime tanpa edit' },
+                            { id: 'f1_9', text: 'Tunggu AI generate jawaban sepenuhnya', hint: 'Biarkan audience lihat prosesnya, bukan langsung hasil' },
+                            { id: 'f1_10', text: 'Rekam close-up hasil output', hint: 'Tunjukkan kualitas jawaban yang dihasilkan' }
+                        ]
+                    },
+                    {
+                        category: 'Editing Video',
+                        tasks: [
+                            { id: 'f1_11', text: 'Import footage ke software editing', hint: 'CapCut, Premiere, atau DaVinci Resolve' },
+                            { id: 'f1_12', text: 'Speed up bagian loading AI (2-3x)', hint: 'Target durasi: 15-30 detik total' },
+                            { id: 'f1_13', text: 'Tambahkan text overlay hook', hint: '"Bingung balas komen netizen?"' },
+                            { id: 'f1_14', text: 'Tambahkan text overlay benefit', hint: '"Pakai Canvas ini, sekali klik beres"' },
+                            { id: 'f1_15', text: 'Tambahkan text overlay CTA', hint: '"Gratis. Cek caption."' },
+                            { id: 'f1_16', text: 'Tambahkan background music (no copyright)', hint: 'Pilih yang upbeat tapi tidak mengganggu' },
+                            { id: 'f1_17', text: 'Export dengan kualitas HD minimum', hint: '1080p, format MP4, file size < 50MB' }
+                        ]
+                    },
+                    {
+                        category: 'Review & Optimasi',
+                        tasks: [
+                            { id: 'f1_18', text: 'Review video hasil edit', hint: 'Pastikan text overlay terbaca di HP' },
+                            { id: 'f1_19', text: 'Test play di berbagai device', hint: 'Cek di Android dan iOS' },
+                            { id: 'f1_20', text: 'Simpan backup video di cloud', hint: 'Google Drive atau Dropbox' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'fase2',
+                icon: '📱',
+                title: 'Fase 2: Setup "Jaring"',
+                subtitle: 'WhatsApp',
+                focus: 'Meminimalisir ketikan manual saat banjir lead masuk',
+                items: [
+                    {
+                        category: 'Persiapan WhatsApp Business',
+                        tasks: [
+                            { id: 'f2_1', text: 'Pastikan menggunakan WhatsApp Business', hint: 'Bukan WA personal, untuk akses fitur bisnis' },
+                            { id: 'f2_2', text: 'Update profile bisnis (foto, deskripsi, jam)', hint: 'Tampilkan profesional dan terpercaya' },
+                            { id: 'f2_3', text: 'Setup greeting message (opsional)', hint: 'Auto-reply saat pertama kali chat' },
+                            { id: 'f2_4', text: 'Test fitur quick reply', hint: 'Pastikan berfungsi dengan baik' }
+                        ]
+                    },
+                    {
+                        category: 'Quick Reply #1: Instruksi Save',
+                        tasks: [
+                            { id: 'f2_5', text: 'Buka pengaturan Quick Reply/Auto Text', hint: 'Menu Settings > Business Tools > Quick Replies' },
+                            { id: 'f2_6', text: 'Buat shortcut "/save" atau "/start"', hint: 'Pilih yang mudah diingat dan ketik' },
+                            { id: 'f2_7', text: 'Tulis pesan instruksi save nomor', hint: 'Mintalah mereka save dengan nama spesifik' },
+                            { id: 'f2_8', text: 'Tambahkan emoji yang relevan di pesan', hint: '📱, ✅, atau 🤝' },
+                            { id: 'f2_9', text: 'Test quick reply berfungsi dengan benar', hint: 'Ketik shortcut dan pastikan pesan muncul' }
+                        ]
+                    },
+                    {
+                        category: 'Quick Reply #2: Delivery Link',
+                        tasks: [
+                            { id: 'f2_10', text: 'Buat shortcut "/link" atau "/kirim"', hint: 'Untuk pengiriman link setelah verifikasi' },
+                            { id: 'f2_11', text: 'Tulis pesan ucapan terima kasih', hint: 'Mantap, makasih udah save! 🔥' },
+                            { id: 'f2_12', text: 'Generate link share Gemini Canvas', hint: 'Pastikan link bisa diakses publik' },
+                            { id: 'f2_13', text: 'Paste link Canvas ke quick reply', hint: 'Double-check link benar dan aktif' },
+                            { id: 'f2_14', text: 'Tambahkan link IG/profile (CTA follow)', hint: 'https://instagram.com/arief.drip atau link lain' },
+                            { id: 'f2_15', text: 'Tambahkan closing yang ramah', hint: 'Semoga bermanfaat! atau Jangan lupa follow!' },
+                            { id: 'f2_16', text: 'Test pengiriman quick reply #2', hint: 'Pastikan semua link bisa diklik' }
+                        ]
+                    },
+                    {
+                        category: 'Optimasi & Backup',
+                        tasks: [
+                            { id: 'f2_17', text: 'Backup isi quick reply di notes', hint: 'Simpan di Notion, Google Keep, atau Notes HP' },
+                            { id: 'f2_18', text: 'Buat variasi pesan cadangan', hint: 'Alternatif jika perlu A/B testing' },
+                            { id: 'f2_19', text: 'Setup label untuk lead yang masuk', hint: 'Label "SRA Lead" atau "Prospect"' },
+                            { id: 'f2_20', text: 'Test alur lengkap dari awal sampai akhir', hint: 'Simulasikan jadi customer' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'fase3',
+                icon: '📝',
+                title: 'Fase 3: Eksekusi Posting',
+                subtitle: 'Threads',
+                focus: 'Hook yang kuat dan instruksi yang jelas tanpa ribet',
+                items: [
+                    {
+                        category: 'Persiapan Konten',
+                        tasks: [
+                            { id: 'f3_1', text: 'Siapkan video demo yang sudah diedit', hint: 'Pastikan sudah melalui review internal' },
+                            { id: 'f3_2', text: 'Buat thumbnail menarik (jika perlu)', hint: 'Frame terbaik dari video atau design custom' },
+                            { id: 'f3_3', text: 'Siapkan caption dalam format notes', hint: 'Untuk memudahkan copy-paste' }
+                        ]
+                    },
+                    {
+                        category: 'Crafting Caption',
+                        tasks: [
+                            { id: 'f3_4', text: 'Tulis headline yang kuat', hint: 'GRATIS: Canvas Social Reply Architect' },
+                            { id: 'f3_5', text: 'Tulis opening yang identify masalah', hint: 'Sering stuck mau balas apa ke klien...' },
+                            { id: 'f3_6', text: 'Presentasikan solusi (Canvas)', hint: 'Saya bikin tools di Gemini buat generate balasan...' },
+                            { id: 'f3_7', text: 'Tambahkan social proof (jika ada)', hint: 'Testimonial atau jumlah pengguna' },
+                            { id: 'f3_8', text: 'Tulis instruksi cara klaim yang jelas', hint: 'WA ke nomor... Chat: saya mau komen arsitek' },
+                            { id: 'f3_9', text: 'Tambahkan urgency (opsional)', hint: 'Untuk 50 orang pertama atau Terbatas' },
+                            { id: 'f3_10', text: 'Proofread caption tanpa error', hint: 'Cek typo dan readability' }
+                        ]
+                    },
+                    {
+                        category: 'Hashtag & Optimasi',
+                        tasks: [
+                            { id: 'f3_11', text: 'Research hashtag relevan', hint: '#SocialMediaTips #ContentCreator #AI' },
+                            { id: 'f3_12', text: 'Pilih 5-10 hashtag yang sesuai', hint: 'Mix antara popular dan niche' },
+                            { id: 'f3_13', text: 'Tambahkan hashtag di caption', hint: 'Bisa di akhir atau tersebar' }
+                        ]
+                    },
+                    {
+                        category: 'Posting & Scheduling',
+                        tasks: [
+                            { id: 'f3_14', text: 'Pilih waktu posting optimal', hint: 'Biasanya malam hari 7-9 PM' },
+                            { id: 'f3_15', text: 'Upload video ke Threads', hint: 'Pastikan kualitas tetap HD' },
+                            { id: 'f3_16', text: 'Paste caption yang sudah disiapkan', hint: 'Cek ulang sebelum publish' },
+                            { id: 'f3_17', text: 'Tambahkan alt text untuk accessibility', hint: 'Deskripsi video untuk yang visually impaired' },
+                            { id: 'f3_18', text: 'Preview post sebelum publish', hint: 'Cek tampilan di mobile dan desktop' },
+                            { id: 'f3_19', text: 'Klik Post/Publish', hint: 'Jangan lupa double-check!' },
+                            { id: 'f3_20', text: 'Simpan link post untuk tracking', hint: 'Copy URL post untuk laporan' }
+                        ]
+                    },
+                    {
+                        category: 'Engagement Strategy',
+                        tasks: [
+                            { id: 'f3_21', text: 'Pin post di profil (jika ada)', hint: 'Agar mudah ditemukan newcomer' },
+                            { id: 'f3_22', text: 'Siapkan template reply untuk komen', hint: 'Jawaban cepat untuk FAQ di komen' },
+                            { id: 'f3_23', text: 'Monitor engagement 1 jam pertama', hint: 'Reply komen secepat mungkin' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'fase4',
+                icon: '🎯',
+                title: 'Fase 4: Panen & Filter',
+                subtitle: 'Manajemen WA',
+                focus: 'Memastikan mereka benar-benar save nomor (aset jangka panjang)',
+                items: [
+                    {
+                        category: 'Monitoring & Respons',
+                        tasks: [
+                            { id: 'f4_1', text: 'Aktifkan notifikasi WA Business', hint: 'Jangan sampai ketinggalan pesan masuk' },
+                            { id: 'f4_2', text: 'Siapkan jam respons yang jelas', hint: 'Balas dalam 5-15 menit saat aktif' },
+                            { id: 'f4_3', text: 'Pantau pesan dengan keyword yang masuk', hint: '"saya mau komen arsitek" atau variannya' }
+                        ]
+                    },
+                    {
+                        category: 'Proses Verifikasi',
+                        tasks: [
+                            { id: 'f4_4', text: 'Kirim Quick Reply #1 (instruksi save)', hint: 'Langsung setelah mereka chat' },
+                            { id: 'f4_5', text: 'Tunggu screenshot bukti save', hint: 'Biasanya 1-5 menit jika mereka serius' },
+                            { id: 'f4_6', text: 'Verifikasi screenshot valid', hint: 'Pastikan nama dan nomor terlihat' },
+                            { id: 'f4_7', text: 'Save nomor kontak ke phonebook', hint: 'Dengan nama yang mudah diidentifikasi' },
+                            { id: 'f4_8', text: 'Beri label "SRA Lead - [Tanggal]"', hint: 'Untuk tracking dan follow up' }
+                        ]
+                    },
+                    {
+                        category: 'Delivery & Follow-up',
+                        tasks: [
+                            { id: 'f4_9', text: 'Kirim Quick Reply #2 (link Canvas)', hint: 'Setelah verifikasi berhasil' },
+                            { id: 'f4_10', text: 'Konfirmasi link bisa diakses', hint: 'Tanyakan apakah link berfungsi' },
+                            { id: 'f4_11', text: 'Tambahkan ke broadcast list (jika ada)', hint: 'Untuk update di masa depan' },
+                            { id: 'f4_12', text: 'Catat data lead di spreadsheet', hint: 'Nama, nomor, tanggal, sumber' }
+                        ]
+                    },
+                    {
+                        category: 'Engagement Jangka Panjang',
+                        tasks: [
+                            { id: 'f4_13', text: 'Buat konten status WA edukatif', hint: 'Tips social media, AI, atau copywriting' },
+                            { id: 'f4_14', text: 'Schedule status 24 jam setelah delivery', hint: 'Untuk test apakah mereka masih save nomor' },
+                            { id: 'f4_15', text: 'Monitor siapa yang view status', hint: 'List kontak yang masih engage' },
+                            { id: 'f4_16', text: 'Catat kontak yang tidak view status', hint: 'Mungkin sudah hapus atau tidak aktif' }
+                        ]
+                    },
+                    {
+                        category: 'Optimasi & Analisis',
+                        tasks: [
+                            { id: 'f4_17', text: 'Hitung conversion rate', hint: 'Lead masuk vs yang verifikasi' },
+                            { id: 'f4_18', text: 'Identifikasi bottleneck', hint: 'Di mana banyak drop-off?' },
+                            { id: 'f4_19', text: 'Kumpulkan feedback dari user', hint: 'Apakah Canvas membantu mereka?' },
+                            { id: 'f4_20', text: 'Dokumentasikan lesson learned', hint: 'Untuk iterasi campaign berikutnya' }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // State Management
+        let currentSlide = 0;
+        let checkedItems = {};
+        const DB_NAME = 'SRA_Checklist_DB';
+        const STORE_NAME = 'checklist_state';
+        const DB_VERSION = 1;
+
+        // Initialize IndexedDB
+        function initDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME);
+                    }
+                };
+            });
+        }
+
+        // Save state to IndexedDB
+        async function saveState() {
+            try {
+                const db = await initDB();
+                const transaction = db.transaction(STORE_NAME, 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                store.put(checkedItems, 'checkedItems');
+                store.put(currentSlide, 'currentSlide');
+            } catch (error) {
+                console.error('Error saving state:', error);
+                localStorage.setItem('sra_checklist', JSON.stringify(checkedItems));
+            }
+        }
+
+        // Load state from IndexedDB
+        async function loadState() {
+            try {
+                const db = await initDB();
+                const transaction = db.transaction(STORE_NAME, 'readonly');
+                const store = transaction.objectStore(STORE_NAME);
+
+                const checkedRequest = store.get('checkedItems');
+                const slideRequest = store.get('currentSlide');
+
+                return new Promise((resolve) => {
+                    checkedRequest.onsuccess = () => {
+                        slideRequest.onsuccess = () => {
+                            checkedItems = checkedRequest.result || {};
+                            currentSlide = slideRequest.result || 0;
+                            resolve();
+                        };
+                    };
+
+                    checkedRequest.onerror = () => {
+                        // Fallback to localStorage
+                        const saved = localStorage.getItem('sra_checklist');
+                        if (saved) {
+                            checkedItems = JSON.parse(saved);
+                        }
+                        resolve();
+                    };
+                });
+            } catch (error) {
+                // Fallback to localStorage
+                const saved = localStorage.getItem('sra_checklist');
+                if (saved) {
+                    checkedItems = JSON.parse(saved);
+                }
+            }
+        }
+
+        // Render Functions
+        function renderPhaseNav() {
+            const nav = document.getElementById('phaseNav');
+            nav.innerHTML = phases.map((phase, index) => {
+                const phaseItems = phase.items.flatMap(cat => cat.tasks);
+                const phaseCompleted = phaseItems.filter(item => checkedItems[item.id]).length;
+                const phaseTotal = phaseItems.length;
+                const isCompleted = phaseCompleted === phaseTotal && phaseTotal > 0;
+                const isActive = index === currentSlide;
+
+                return `
+                    <button class="phase-tab ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}" 
+                            onclick="goToSlide(${index})">
+                        <span class="badge">${isCompleted ? '✓' : index + 1}</span>
+                        <span>${phase.subtitle}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function renderSlides() {
+            const wrapper = document.getElementById('sliderWrapper');
+            wrapper.innerHTML = phases.map((phase, phaseIndex) => {
+                const phaseItems = phase.items.flatMap(cat => cat.tasks);
+                const phaseCompleted = phaseItems.filter(item => checkedItems[item.id]).length;
+                const phaseTotal = phaseItems.length;
+                const phasePercentage = Math.round((phaseCompleted / phaseTotal) * 100);
+
+                return `
+                    <div class="slide" data-phase="${phase.id}">
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-icon">${phase.icon}</div>
+                                <div class="phase-title-group">
+                                    <h2>${phase.title}</h2>
+                                    <p class="phase-focus">${phase.focus}</p>
+                                </div>
+                                <div class="phase-progress">
+                                    <div class="phase-progress-number">${phasePercentage}%</div>
+                                    <div class="phase-progress-label">${phaseCompleted}/${phaseTotal} Done</div>
+                                </div>
+                            </div>
+
+                            <div class="checklist">
+                                ${phase.items.map(category => `
+                                    <div class="checklist-category">
+                                        <div class="checklist-category-title">
+                                            <span>▸</span> ${category.category}
+                                        </div>
+                                        ${category.tasks.map(task => `
+                                            <div class="checklist-item ${checkedItems[task.id] ? 'completed' : ''}" 
+                                                 onclick="toggleItem('${task.id}')">
+                                                <div class="checkbox">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                                    </svg>
+                                                </div>
+                                                <div class="checklist-content">
+                                                    <div class="checklist-text">${task.text}</div>
+                                                    <div class="checklist-hint">${task.hint}</div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                `).join('')}
+                            </div>
+
+                            <div class="slide-nav">
+                                <button class="btn-nav" onclick="prevSlide()" ${phaseIndex === 0 ? 'disabled' : ''}>
+                                    ← Sebelumnya
+                                </button>
+                                ${phaseIndex === phases.length - 1 ? `
+                                    <button class="btn-primary" onclick="celebrate()">
+                                        🎉 Selesai!
+                                    </button>
+                                ` : `
+                                    <button class="btn-primary" onclick="nextSlide()">
+                                        Selanjutnya →
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Navigation Functions
+        function goToSlide(index) {
+            if (index < 0 || index >= phases.length) return;
+            currentSlide = index;
+            updateSlider();
+            saveState();
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function updateSlider() {
+            const wrapper = document.getElementById('sliderWrapper');
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            renderPhaseNav();
+            
+            // Scroll to top of slider
+            document.querySelector('.slider-container').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest' 
+            });
+        }
+
+        // Toggle Item
+        function toggleItem(id) {
+            checkedItems[id] = !checkedItems[id];
+            
+            // Update UI
+            const item = document.querySelector(`[onclick="toggleItem('${id}')"]`);
+            if (item) {
+                item.classList.toggle('completed', checkedItems[id]);
+            }
+
+            // Update progress
+            updateProgress();
+            renderPhaseNav();
+            saveState();
+
+            // Check if all completed
+            const allItems = phases.flatMap(p => p.items.flatMap(c => c.tasks));
+            const allCompleted = allItems.every(item => checkedItems[item.id]);
+            
+            if (allCompleted && checkedItems[id]) {
+                setTimeout(celebrate, 300);
+            }
+        }
+
+        // Update Progress
+        function updateProgress() {
+            const allItems = phases.flatMap(p => p.items.flatMap(c => c.tasks));
+            const totalCount = allItems.length;
+            const completedCount = allItems.filter(item => checkedItems[item.id]).length;
+            const remainingCount = totalCount - completedCount;
+            const percentage = Math.round((completedCount / totalCount) * 100);
+
+            document.getElementById('totalPercentage').textContent = percentage + '%';
+            document.getElementById('totalProgress').style.width = percentage + '%';
+            document.getElementById('completedCount').textContent = completedCount;
+            document.getElementById('remainingCount').textContent = remainingCount;
+            document.getElementById('totalCount').textContent = totalCount;
+
+            // Update current slide progress
+            renderSlides();
+            updateSlider();
+        }
+
+        // Celebration
+        function celebrate() {
+            const celebration = document.getElementById('celebration');
+            celebration.innerHTML = '';
+            celebration.classList.add('active');
+
+            const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                celebration.appendChild(confetti);
+            }
+
+            setTimeout(() => {
+                celebration.classList.remove('active');
+            }, 3000);
+        }
+
+        // Reset All
+        function resetAll() {
+            if (confirm('Yakin ingin mereset semua progress?')) {
+                checkedItems = {};
+                currentSlide = 0;
+                saveState();
+                updateProgress();
+            }
+        }
+
+        // Initialize
+        async function init() {
+            await loadState();
+            renderSlides();
+            renderPhaseNav();
+            updateProgress();
+            
+            // Hide loading
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 500);
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>

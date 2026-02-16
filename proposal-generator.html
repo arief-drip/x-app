@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Proposal Generator - Konversi Client Lebih Tinggi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-2: #f1f5f9;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-2: #334155;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Header - Animated Gradient */
+        .header {
+            background: linear-gradient(-45deg, #6366f1, #8b5cf6, #ec4899, #6366f1, #3b82f6, #6366f1);
+            background-size: 400% 400%;
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: gradientFlow 15s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Aurora Effect Overlay */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            animation: aurora 8s ease-in-out infinite;
+        }
+
+        @keyframes aurora {
+            0%, 100% {
+                transform: translateX(0) skewX(-5deg);
+            }
+            50% {
+                transform: translateX(20%) skewX(5deg);
+            }
+        }
+
+        /* Floating Orbs */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(-50px, 30px) scale(1.1);
+            }
+            66% {
+                transform: translate(30px, -20px) scale(0.9);
+            }
+        }
+
+        /* Floating Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: #ec4899;
+            top: -100px;
+            left: 10%;
+            animation: orbFloat1 12s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: #3b82f6;
+            bottom: -150px;
+            right: 10%;
+            animation: orbFloat2 15s ease-in-out infinite;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: #8b5cf6;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbFloat3 10s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, 50px) scale(1.2); }
+        }
+
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-40px, -30px) scale(0.8); }
+        }
+
+        @keyframes orbFloat3 {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-40%, -60%) scale(1.3); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.875rem;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        label .required {
+            color: var(--danger);
+        }
+
+        .label-hint {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-left: 0.25rem;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: var(--surface-2);
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-group .btn {
+            flex: 1;
+        }
+
+        /* Output Section */
+        .output-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .output-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .output-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .output-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+        }
+
+        .output-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .icon-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-muted);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .output-content {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .proposal-output {
+            line-height: 1.8;
+            color: var(--text);
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+        }
+
+        .proposal-output h3 {
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .proposal-output h3:first-child {
+            margin-top: 0;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--surface-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Structure Guide */
+        .structure-guide {
+            background: var(--surface-2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .structure-guide h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .structure-list {
+            list-style: none;
+            font-size: 0.85rem;
+        }
+
+        .structure-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .structure-list li:last-child {
+            border-bottom: none;
+        }
+
+        .structure-num {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .structure-text {
+            flex: 1;
+        }
+
+        .structure-label {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .structure-desc {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Stats */
+        .stats-bar {
+            display: flex;
+            gap: 1rem;
+            background: var(--surface-2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--surface);
+            color: var(--text);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid var(--border);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        /* Loading */
+        .loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .loading.active {
+            display: flex;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        /* Template Modal */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .template-card {
+            background: var(--surface-2);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .template-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .template-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .template-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .card-body {
+                padding: 1rem;
+            }
+            .stats-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="header-content">
+            <div class="badge">✨ AI-Powered</div>
+            <h1>Elite Proposal Generator</h1>
+            <p>Buat proposal Upwork/Freelancer yang konversi tinggi dengan framework copywriting terbukti</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h2>Data Proposal</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="proposalForm">
+                            <div class="form-group">
+                                <label>Niche/Spesialisasi <span class="required">*</span></label>
+                                <input type="text" id="niche" placeholder="Contoh: Copywriter Conversion, Web Developer React, UI/UX Designer">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Job Description Client <span class="required">*</span></label>
+                                <textarea id="jobDesc" placeholder="Paste job description dari client di sini...&#10;&#10;Contoh:&#10;Kami mencari copywriter untuk menulis landing page produk software kami. Target audience adalah UMKM yang ingin digitalisasi. Saat ini conversion rate hanya 1.2% dan ingin meningkat ke 3%."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Profil Freelancer <span class="required">*</span></label>
+                                <textarea id="profile" placeholder="Deskripsikan pengalaman & keahlianmu...&#10;&#10;Contoh:&#10;Copywriter dengan 5 tahun pengalaman di SaaS B2B. Spesialis landing page & email sequence. Pernah handle 50+ project dengan total revenue client $2M+"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Portfolio Highlights <span class="label-hint">(opsional)</span></label>
+                                <textarea id="portfolio" placeholder="1-3 case study dengan hasil kuantitatif...&#10;&#10;Contoh:&#10;• Landing Page XYZ: Conversion naik 340% (1.2% → 5.3%)&#10;• Email Sequence ABC: Open rate 45%, revenue $150K&#10;• Web Copy DEF: Bounce rate turun 60%"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tone & Style <span class="required">*</span></label>
+                                <select id="tone">
+                                    <option value="professional">Professional - Formal & business-ready</option>
+                                    <option value="casual">Casual - Friendly & conversational</option>
+                                    <option value="technical">Technical - Detail-oriented & precise</option>
+                                    <option value="confident">Confident - Assertive & authoritative</option>
+                                    <option value="empathetic">Empathetic - Understanding & supportive</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <span>🚀</span>
+                                Generate Proposal
+                            </button>
+
+                            <div class="loading" id="loadingIndicator">
+                                <div class="spinner"></div>
+                                <span>Menyusun proposal optimal...</span>
+                            </div>
+                        </form>
+
+                        <div class="structure-guide">
+                            <h4>📋 Struktur Proposal (5-Step Framework)</h4>
+                            <ul class="structure-list">
+                                <li>
+                                    <span class="structure-num">1</span>
+                                    <div class="structure-text">
+                                        <div class="structure-label">HOOK</div>
+                                        <div class="structure-desc">Acknowledge pain point + tunjukkan empati</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="structure-num">2</span>
+                                    <div class="structure-text">
+                                        <div class="structure-label">BRIDGE</div>
+                                        <div class="structure-desc">Case study relevan dengan hasil kuantitatif</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="structure-num">3</span>
+                                    <div class="structure-text">
+                                        <div class="structure-label">OFFER</div>
+                                        <div class="structure-desc">Solution outline dengan 3 milestone concrete</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="structure-num">4</span>
+                                    <div class="structure-text">
+                                        <div class="structure-label">DIFFERENTIATOR</div>
+                                        <div class="structure-desc">Social proof unik vs freelancer lain</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="structure-num">5</span>
+                                    <div class="structure-text">
+                                        <div class="structure-label">CTA</div>
+                                        <div class="structure-desc">Soft ask untuk call discovery 15 menit</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section">
+                <div class="output-card">
+                    <div class="output-header">
+                        <div class="output-title">
+                            <span>📄</span>
+                            <span>Hasil Proposal</span>
+                        </div>
+                        <div class="output-actions" id="outputActions" style="display: none;">
+                            <button class="icon-btn" onclick="copyProposal()" title="Copy to Clipboard">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                            <button class="icon-btn" onclick="downloadProposal()" title="Download as .txt">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                            </button>
+                            <button class="icon-btn" onclick="resetForm()" title="Reset">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="output-content">
+                        <div id="outputContainer">
+                            <div class="empty-state">
+                                <div class="empty-state-icon">✍️</div>
+                                <h3>Siap Membuat Proposal?</h3>
+                                <p>Isi form di sebelah kiri dan klik "Generate Proposal" untuk membuat proposal conversion-optimized.</p>
+                            </div>
+                        </div>
+                        <div class="proposal-output" id="proposalOutput" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <!-- Tips Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <h2>Tips Conversion</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-bar">
+                            <div class="stat-item">
+                                <div class="stat-value">3x</div>
+                                <div class="stat-label">Lebih Di-hire dengan framework ini</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">150-200</div>
+                                <div class="stat-label">Kata optimal untuk hook</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            <strong>Pro Tip:</strong> Personalisasi nama client dan sebutkan detail spesifik dari job description. Client bisa merasakan proposal "template" vs yang genuine.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Elite Proposal Generator • Framework by Expert Copywriters • Optimized for Conversion</p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <span id="toastMessage">Proposal berhasil dicopy!</span>
+    </div>
+
+    <script>
+        // Form submission
+        document.getElementById('proposalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateProposal();
+        });
+
+        function generateProposal() {
+            // Get values
+            const niche = document.getElementById('niche').value.trim();
+            const jobDesc = document.getElementById('jobDesc').value.trim();
+            const profile = document.getElementById('profile').value.trim();
+            const portfolio = document.getElementById('portfolio').value.trim();
+            const tone = document.getElementById('tone').value;
+
+            // Validation
+            if (!niche || !jobDesc || !profile) {
+                showToast('Mohon isi semua field yang wajib ✋', 'warning');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loadingIndicator').classList.add('active');
+
+            // Simulate processing
+            setTimeout(() => {
+                const proposal = createProposal(niche, jobDesc, profile, portfolio, tone);
+                displayProposal(proposal);
+                document.getElementById('loadingIndicator').classList.remove('active');
+                showToast('Proposal berhasil dibuat! 🎉');
+            }, 1200);
+        }
+
+        function createProposal(niche, jobDesc, profile, portfolio, tone) {
+            // Extract pain points from job description
+            const painPoints = extractPainPoints(jobDesc);
+            
+            // Generate proposal based on tone
+            const toneSettings = getToneSettings(tone);
+            
+            // Build proposal sections
+            const hook = generateHook(painPoints, niche, toneSettings);
+            const bridge = generateBridge(profile, portfolio, toneSettings);
+            const offer = generateOffer(niche, toneSettings);
+            const differentiator = generateDifferentiator(profile, portfolio, toneSettings);
+            const cta = generateCTA(toneSettings);
+
+            return {
+                hook,
+                bridge,
+                offer,
+                differentiator,
+                cta,
+                full: `${hook}\n\n${bridge}\n\n${offer}\n\n${differentiator}\n\n${cta}`
+            };
+        }
+
+        function extractPainPoints(jobDesc) {
+            // Simple extraction - in real app would be more sophisticated
+            const lower = jobDesc.toLowerCase();
+            const pains = [];
+            
+            if (lower.includes('conversion') || lower.includes('sales')) pains.push('conversion rate rendah');
+            if (lower.includes('traffic') || lower.includes('visitor')) pains.push('traffic tidak konversi');
+            if (lower.includes('deadline') || lower.includes('urgent')) pains.push('deadline ketat');
+            if (lower.includes('budget') || lower.includes('mahal')) pains.push('budget terbatas');
+            if (lower.includes('competitor') || lower.includes('competisi')) pains.push('persaingan ketat');
+            if (pains.length === 0) pains.push('mencapai target bisnis');
+            
+            return pains;
+        }
+
+        function getToneSettings(tone) {
+            const tones = {
+                professional: {
+                    greeting: 'Halo',
+                    closing: 'Salam,',
+                    empathy: 'Saya memahami',
+                    confidence: 'Saya yakin',
+                    formality: 'tinggi'
+                },
+                casual: {
+                    greeting: 'Hi',
+                    closing: 'Cheers,',
+                    empathy: 'Saya ngerti banget',
+                    confidence: 'Saya bisa bantu',
+                    formality: 'rendah'
+                },
+                technical: {
+                    greeting: 'Selamat datang',
+                    closing: 'Best regards,',
+                    empathy: 'Berdasarkan analisis',
+                    confidence: 'Data menunjukkan',
+                    formality: 'tinggi'
+                },
+                confident: {
+                    greeting: 'Halo',
+                    closing: 'Best,',
+                    empathy: 'Ini solusi untuk',
+                    confidence: 'Saya guarantee',
+                    formality: 'sedang'
+                },
+                empathetic: {
+                    greeting: 'Halo',
+                    closing: 'Warm regards,',
+                    empathy: 'Saya merasakan',
+                    confidence: 'Bersama-sama kita bisa',
+                    formality: 'sedang'
+                }
+            };
+            return tones[tone] || tones.professional;
+        }
+
+        function generateHook(painPoints, niche, tone) {
+            const mainPain = painPoints[0] || 'mencapai target';
+            
+            const hooks = {
+                professional: `Halo,\n\nSaya memahami frustrasi melihat ${mainPain} padahal sudah banyak effort yang dilakukan. Sebagai ${niche}, saya sering membantu client dengan situasi serupa—dimana potensi besar terpendam tapi belum tereksekusi dengan optimal.`,
+                
+                casual: `Hi!\n\nSaya ngerti banget rasanya punya ${mainPain} dan bingung harus mulai dari mana. Tenang, kamu nggak sendirian! Sebagai ${niche}, aku sering dapet project serupa dan happy to help 😊`,
+                
+                technical: `Selamat datang,\n\nBerdasarkan deskripsi project, teridentifikasi pain point utama: ${mainPain}. Sebagai ${niche}, saya telah mengembangkan sistematis approach untuk mengatasi challenge semacam ini dengan data-driven methodology.`,
+                
+                confident: `Halo,\n\nIni solusi untuk ${mainPain} yang sedang Anda hadapi. Sebagai ${niche} dengan track record proven, saya akan memastikan project ini bukan sekadar selesai—tapi deliver hasil yang measurable dan impactful.`,
+                
+                empathetic: `Halo,\n\nSaya merasakan urgency dan concern Anda tentang ${mainPain}. Sebagai ${niche}, saya tahu betapa pentingnya project ini untuk bisnis Anda, dan saya committed untuk membantu mencapai outcome yang diinginkan.`
+            };
+            
+            return hooks[tone.formality === 'tinggi' ? 'professional' : tone.formality === 'rendah' ? 'casual' : 'professional'] || hooks.professional;
+        }
+
+        function generateBridge(profile, portfolio, tone) {
+            // Extract a number from portfolio if available
+            const hasNumbers = portfolio && (portfolio.includes('%') || portfolio.includes('$') || /\d+/.test(portfolio));
+            
+            const bridges = {
+                professional: `Baru-baru ini saya menyelesaikan project serupa yang menghasilkan improvement signifikan. ${hasNumbers ? 'Dengan approach systematic, kita bisa replicate success pattern tersebut.' : 'Client melihat hasil yang melebihi ekspektasi dalam timeframe yang agreed.'} Pengalaman saya sebagai ${profile.split('.')[0]} memberikan insight unik untuk tackle challenge ini.`,
+                
+                casual: `Kebetulan banget, project terakhirku mirip kayak gini! ${hasNumbers ? 'Hasilnya? Client seneng banget dan repeat order lagi 😄' : 'Client-nya happy dan jadi long-term partnerku sekarang.'} Dengan background ${profile.split('.')[0]}, aku punya beberapa ide kreatif yang bisa kita coba.`,
+                
+                technical: `Case study terbaru: implementasi similar solution menghasilkan ${hasNumbers ? 'metrik improvement yang significant' : 'optimization pada key performance indicators'}. Dengan kompetensi ${profile.split('.')[0]}, saya confident dapat deliver solution yang robust dan scalable untuk use case Anda.`,
+                
+                confident: `Ini bukan project pertama saya dalam domain ini. ${hasNumbers ? 'Track record saya speaks for itself—results yang konsisten dan measurable.' : 'Saya punya portfolio kuat yang proves my capability.'} Dengan expertise ${profile.split('.')[0]}, success rate project Anda akan significantly higher.`,
+                
+                empathetic: `Saya pernah bekerja dengan client yang memiliki situasi sangat mirip. ${hasNumbers ? 'Mereka awalnya skeptis tapi akhirnya thrilled dengan hasilnya.' : 'Mereka appreciate attention to detail dan komunikasi transparan dari saya.'} Dengan pengalaman ${profile.split('.')[0]}, saya akan menjaga Anda updated di setiap step.`
+            };
+            
+            return bridges[tone.formality === 'tinggi' ? 'professional' : tone.formality === 'rendah' ? 'casual' : 'professional'] || bridges.professional;
+        }
+
+        function generateOffer(niche, tone) {
+            const offers = {
+                professional: `Berikut roadmap yang saya propose:\n\n• Phase 1: Discovery & Audit (3-5 hari) - Deep dive ke current state dan competitor analysis\n• Phase 2: Strategy & Execution (7-10 hari) - Implementasi solution berdasarkan insight\n• Phase 3: Optimization (5 hari) - Testing, refinement, dan handover dengan documentation\n\nSetiap phase akan di-deliver dengan progress update dan checkpoint approval.`,
+                
+                casual: `Gini roadmap yang aku rencanain:\n\n🎯 Phase 1: Discovery & Audit (3-5 hari) - Kita lihat current state dan analisis kompetitor\n⚡ Phase 2: Strategy & Execution (7-10 hari) - Eksekusi strategi berdasarkan insight\n✨ Phase 3: Optimization (5 hari) - Testing, perbaikan, dan dokumentasi lengkap\n\nAku akan update progress secara berkala biar kita sama-sama aligned ya!`,
+                
+                technical: `Technical roadmap sebagai berikut:\n\n1. Discovery & Audit (3-5 hari)\n   - Current state analysis\n   - Technical requirement assessment\n   - Competitor benchmarking\n\n2. Strategy & Execution (7-10 hari)\n   - Solution architecture\n   - Implementation dengan best practices\n   - Iterative development cycle\n\n3. Optimization (5 hari)\n   - Performance testing\n   - Refinement berdasarkan data\n   - Documentation & knowledge transfer`,
+                
+                confident: `Ini rencana execution saya:\n\n✓ Phase 1: Discovery & Audit (3-5 hari) - Identifikasi quick wins dan long-term opportunities\n✓ Phase 2: Strategy & Execution (7-10 hari) - Deliver solution yang siap perform\n✓ Phase 3: Optimization (5 hari) - Fine-tune untuk maximum impact\n\nSaya akan own setiap phase dan deliver hasil yang exceed ekspektasi Anda.`,
+                
+                empathetic: `Mari kita breakdown project ini menjadi milestone yang manageable:\n\n• Phase 1: Discovery & Audit (3-5 hari) - Kita pahami dulu current situation dan goals Anda secara mendalam\n• Phase 2: Strategy & Execution (7-10 hari) - Implementasi dengan komunikasi terbuka di setiap step\n• Phase 3: Optimization (5 hari) - Pastikan semua berjalan smooth sebelum handover\n\nSaya akan memastikan Anda comfortable dan informed di setiap tahap.`
+            };
+            
+            return offers[tone.formality === 'tinggi' ? 'professional' : tone.formality === 'rendah' ? 'casual' : 'professional'] || offers.professional;
+        }
+
+        function generateDifferentiator(profile, portfolio, tone) {
+            const hasPortfolio = portfolio && portfolio.trim().length > 10;
+            
+            const differentiators = {
+                professional: `Yang membedakan saya dari freelancer lain:\n\n${hasPortfolio ? '✓ Portfolio kuat dengan hasil terukur\n' : ''}✓ ${profile.split('.')[0]} - specialized expertise\n✓ Communication proaktif dan transparan\n✓ Commitment ke deadline dan kualitas\n✓ Revisi sampai Anda 100% satisfied\n\nSaya tidak hanya menyelesaikan task—saya invest dalam success jangka panjang Anda.`,
+                
+                casual: `Kenapa pilih aku?\n\n${hasPortfolio ? '✅ Portfolio oke dengan hasil nyata\n' : ''}✅ ${profile.split('.')[0]} - aku emang spesialis di ini\n✅ Respon cepat dan komunikasi santai\n✅ On-time delivery, no delay-delay club\n✅ Revisi sampe kamu puas!\n\nAku nggak cuma kerjain task, tapi bener-bener care sama success project kamu 🚀`,
+                
+                technical: `Technical differentiators:\n\n${hasPortfolio ? '• Proven track record dengan measurable outcomes\n' : ''}• ${profile.split('.')[0]} - domain expertise\n• Detail-oriented approach dengan quality assurance\n• Clean code / clean deliverables dengan dokumentasi lengkap\n• Systematic revision process\n\nDeliverable akan melewati internal quality check sebelum diserahkan.`,
+                
+                confident: `Why hire me?\n\n${hasPortfolio ? '• Results speak louder—portfolio dengan impact nyata\n' : ''}• ${profile.split('.')[0]} - I own this space\n• No-nonsense communication, straight to results\n• Deadline is sacred—always on time\n• Unlimited revisions until you're thrilled\n\nI don't do mediocre. Your success is my reputation.`,
+                
+                empathetic: `Keunggulan bekerja sama dengan saya:\n\n${hasPortfolio ? '• Pengalaman proven dengan client satisfaction tinggi\n' : ''}• ${profile.split('.')[0]} - saya paham nuansa di industri ini\n• Saya listen lebih banyak, assum lebih sedikit\n• Respect waktu dan resource Anda\n• Fleksibel untuk accommodate kebutuhan spesifik\n\nSaya percaya partnership yang baik dimulai dari trust dan komunikasi open.`
+            };
+            
+            return differentiators[tone.formality === 'tinggi' ? 'professional' : tone.formality === 'rendah' ? 'casual' : 'professional'] || differentiators.professional;
+        }
+
+        function generateCTA(tone) {
+            const ctas = {
+                professional: `Saya excited untuk diskusi lebih detail tentang project ini. Apakah Anda available untuk 15-minutes discovery call minggu ini? Saya flexible dengan schedule Anda.\n\nLooking forward to hearing from you.\n\nSalam,`,
+                
+                casual: `Penasaran gimana aku bisa bantu? Yuk chat dulu! Bisa 15 menit call buat ngobrolin detail project ini lebih lanjut. Aku flexible kok sama jadwal kamu 😊\n\nHit me up!\n\nCheers,`,
+                
+                technical: `Untuk discuss technical requirements lebih detail, saya available untuk discovery call 15 menit. Silakan propose beberapa time slot yang convenient untuk Anda.\n\nBest regards,`,
+                
+                confident: `Ready to make this happen? Let's lock in a 15-minutes strategy call untuk align on goals dan expectations. Pick a time that works for you—I'm flexible.\n\nTalk soon,`,
+                
+                empathetic: `Saya akan senang sekali untuk mengenal Anda dan project ini lebih dalam. Maukah Anda luangkan 15 menit untuk discovery call? Saya akan adjust dengan jadwal Anda.\n\nWarm regards,`
+            };
+            
+            return ctas[tone.formality === 'tinggi' ? 'professional' : tone.formality === 'rendah' ? 'casual' : 'professional'] || ctas.professional;
+        }
+
+        function displayProposal(proposal) {
+            const outputContainer = document.getElementById('outputContainer');
+            const proposalOutput = document.getElementById('proposalOutput');
+            const outputActions = document.getElementById('outputActions');
+
+            outputContainer.style.display = 'none';
+            proposalOutput.style.display = 'block';
+            outputActions.style.display = 'flex';
+
+            proposalOutput.innerHTML = `
+<h3>1. HOOK</h3>
+${proposal.hook}
+
+<h3>2. BRIDGE</h3>
+${proposal.bridge}
+
+<h3>3. OFFER</h3>
+${proposal.offer}
+
+<h3>4. DIFFERENTIATOR</h3>
+${proposal.differentiator}
+
+<h3>5. CTA</h3>
+${proposal.cta}
+            `;
+
+            // Store for copy/download
+            window.currentProposal = proposal.full;
+            window.currentProposalHTML = proposalOutput.innerText;
+        }
+
+        function copyProposal() {
+            if (!window.currentProposal) return;
+            
+            navigator.clipboard.writeText(window.currentProposal).then(() => {
+                showToast('Proposal berhasil dicopy! 📋');
+            }).catch(() => {
+                showToast('Gagal copy, coba lagi', 'error');
+            });
+        }
+
+        function downloadProposal() {
+            if (!window.currentProposal) return;
+            
+            const blob = new Blob([window.currentProposal], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'proposal-upwork.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast('Proposal berhasil di-download! 💾');
+        }
+
+        function resetForm() {
+            document.getElementById('proposalForm').reset();
+            document.getElementById('outputContainer').style.display = 'block';
+            document.getElementById('proposalOutput').style.display = 'none';
+            document.getElementById('outputActions').style.display = 'none';
+            window.currentProposal = null;
+            showToast('Form berhasil direset! 🔄');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = toast.querySelector('.toast-icon');
+            
+            toastMessage.textContent = message;
+            
+            if (type === 'error') {
+                toastIcon.style.background = 'var(--danger)';
+                toastIcon.textContent = '✕';
+            } else if (type === 'warning') {
+                toastIcon.style.background = 'var(--warning)';
+                toastIcon.textContent = '!';
+            } else {
+                toastIcon.style.background = 'var(--success)';
+                toastIcon.textContent = '✓';
+            }
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Character count for textareas
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const maxLength = 2000;
+            const counter = document.createElement('div');
+            counter.className = 'char-count';
+            counter.textContent = `0 / ${maxLength}`;
+            textarea.parentNode.appendChild(counter);
+            
+            textarea.addEventListener('input', () => {
+                const count = textarea.value.length;
+                counter.textContent = `${count} / ${maxLength}`;
+                if (count > maxLength) {
+                    counter.style.color = 'var(--danger)';
+                } else {
+                    counter.style.color = 'var(--text-muted)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

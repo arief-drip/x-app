@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Socmed DS - Social Media Deployment System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .check-item {
+            transition: all 0.2s ease;
+            background: rgba(30, 41, 59, 0.5);
+        }
+        
+        .check-item:hover {
+            background: rgba(51, 65, 85, 0.7);
+            border-color: rgba(100, 116, 139, 0.4);
+        }
+        
+        .check-item.checked {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+        
+        .check-item.checked .check-text {
+            text-decoration: line-through;
+            color: #64748b;
+        }
+        
+        .check-item.checked h3.check-text {
+            color: #10b981;
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #475569;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+        
+        .custom-checkbox:checked {
+            background: #10b981;
+            border-color: #10b981;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+        }
+        
+        .phase-header {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .phase-header:hover {
+            background: rgba(51, 65, 85, 0.5);
+        }
+        
+        .phase-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .phase-content.collapsed {
+            max-height: 0;
+        }
+        
+        .phase-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .phase-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .progress-fill {
+            transition: width 0.5s ease;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+        }
+        
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen grid-pattern">
+    
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-clipboard-check text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg sm:text-xl">Checklist <span class="gradient-text">Socmed DS</span></h1>
+                        <p class="text-slate-500 text-xs sm:text-sm">Social Media Deployment System</p>
+                    </div>
+                </div>
+                <button onclick="resetAll()" class="text-slate-500 hover:text-red-400 transition-colors text-sm flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-slate-800">
+                    <i class="fas fa-rotate-left"></i>
+                    <span class="hidden sm:inline">Reset</span>
+                </button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div id="progressBar" class="progress-fill bg-gradient-to-r from-emerald-500 to-emerald-400 h-full" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between mt-2 text-xs sm:text-sm">
+                <span class="text-slate-500">Progress</span>
+                <span id="progressText" class="text-emerald-400 font-semibold">0%</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 pb-32">
+        
+        <!-- Phase A -->
+        <div class="glass-card rounded-2xl mb-4 overflow-hidden">
+            <div class="phase-header p-4 sm:p-6 flex items-center justify-between" onclick="togglePhase('phaseA')">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        A
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-lg">Fase Strategi & Konten (IG)</h2>
+                        <p class="text-slate-500 text-sm">Persiapan konten Instagram</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-slate-500"><span id="countA">0</span>/4</span>
+                    <i id="arrowA" class="fas fa-chevron-down text-slate-500 phase-arrow"></i>
+                </div>
+            </div>
+            <div id="phaseA" class="phase-content">
+                <div class="p-4 sm:p-6 pt-0 space-y-3">
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="a1" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Define Hook & Angle</h3>
+                            <p class="check-text text-slate-400 text-sm">Tentukan 1 masalah spesifik yang ingin diselesaikan hari ini.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="a2" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Blueprint Konten</h3>
+                            <p class="check-text text-slate-400 text-sm">Susun alur visual (Hook -> Story/Value -> Call to Action).</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="a3" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Produksi Asset</h3>
+                            <p class="check-text text-slate-400 text-sm">Buat grafis/video dengan teks yang scannable.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="a4" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Caption Engineering</h3>
+                            <p class="check-text text-slate-400 text-sm">Tulis caption yang menggiring orang untuk mengetik $keyword. Pastikan instruksinya "nggak pake mikir".</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase B -->
+        <div class="glass-card rounded-2xl mb-4 overflow-hidden">
+            <div class="phase-header p-4 sm:p-6 flex items-center justify-between" onclick="togglePhase('phaseB')">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        B
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-lg">Infrastruktur Konversi (Dripsender)</h2>
+                        <p class="text-slate-500 text-sm">Setup landing page & tracking</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-slate-500"><span id="countB">0</span>/3</span>
+                    <i id="arrowB" class="fas fa-chevron-down text-slate-500 phase-arrow"></i>
+                </div>
+            </div>
+            <div id="phaseB" class="phase-content">
+                <div class="p-4 sm:p-6 pt-0 space-y-3">
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="b1" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Optimization LP</h3>
+                            <p class="check-text text-slate-400 text-sm">Pastikan loading speed HTML ringan dan mobile-friendly.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="b2" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Offer Clarity</h3>
+                            <p class="check-text text-slate-400 text-sm">Pastikan CTA di LP sinkron dengan janji di IG. (Jangan janjikan A di IG, tapi di LP isinya B).</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="b3" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Tracking Setup</h3>
+                            <p class="check-text text-slate-400 text-sm">Pasang parameter tracking di tombol CTA WA/Checkout untuk tahu sumber trafik.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase C -->
+        <div class="glass-card rounded-2xl mb-4 overflow-hidden">
+            <div class="phase-header p-4 sm:p-6 flex items-center justify-between" onclick="togglePhase('phaseC')">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        C
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-lg">Automasi & Jembatan (Dibales.ai)</h2>
+                        <p class="text-slate-500 text-sm">Setup automation & auto-reply</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-slate-500"><span id="countC">0</span>/3</span>
+                    <i id="arrowC" class="fas fa-chevron-down text-slate-500 phase-arrow"></i>
+                </div>
+            </div>
+            <div id="phaseC" class="phase-content">
+                <div class="p-4 sm:p-6 pt-0 space-y-3">
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="c1" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Trigger Setup</h3>
+                            <p class="check-text text-slate-400 text-sm">Masukkan $keyword (dan variasi typo-nya jika perlu).</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="c2" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">DM Funneling</h3>
+                            <p class="check-text text-slate-400 text-sm">Buat copy DM tipe tombol. Penting: Tambahkan 1 kalimat "Kenapa mereka harus klik link ini sekarang" sebelum tombol link.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="c3" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Auto-Reply Comment</h3>
+                            <p class="check-text text-slate-400 text-sm">Set variasi jawaban komen agar tidak dianggap spam oleh algoritma IG.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase D -->
+        <div class="glass-card rounded-2xl mb-4 overflow-hidden">
+            <div class="phase-header p-4 sm:p-6 flex items-center justify-between" onclick="togglePhase('phaseD')">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        D
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-lg">Quality Assurance (The "Pre-Flight" Check)</h2>
+                        <p class="text-slate-500 text-sm">Testing sebelum deployment</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-slate-500"><span id="countD">0</span>/2</span>
+                    <i id="arrowD" class="fas fa-chevron-down text-slate-500 phase-arrow"></i>
+                </div>
+            </div>
+            <div id="phaseD" class="phase-content">
+                <div class="p-4 sm:p-6 pt-0 space-y-3">
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="d1" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">The Real User Test</h3>
+                            <p class="check-text text-slate-400 text-sm">Gunakan akun lain untuk komen di postingan tersebut. Cek apakah DM masuk? Apakah link bisa diklik? Apakah landing page terbuka sempurna?</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="d2" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Link Validation</h3>
+                            <p class="check-text text-slate-400 text-sm">Pastikan semua tombol di LP mengarah ke nomor WA atau checkout yang benar (bukan link mati).</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase E -->
+        <div class="glass-card rounded-2xl mb-4 overflow-hidden">
+            <div class="phase-header p-4 sm:p-6 flex items-center justify-between" onclick="togglePhase('phaseE')">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white font-bold">
+                        E
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-lg">Deployment</h2>
+                        <p class="text-slate-500 text-sm">Go live & engagement</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-slate-500"><span id="countE">0</span>/2</span>
+                    <i id="arrowE" class="fas fa-chevron-down text-slate-500 phase-arrow"></i>
+                </div>
+            </div>
+            <div id="phaseE" class="phase-content">
+                <div class="p-4 sm:p-6 pt-0 space-y-3">
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="e1" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Publishing</h3>
+                            <p class="check-text text-slate-400 text-sm">Post di jam aktif audiens.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="check-item flex items-start space-x-4 p-4 rounded-xl border border-slate-800 cursor-pointer">
+                        <input type="checkbox" class="custom-checkbox" data-id="e2" onchange="toggleCheck(this)">
+                        <div class="flex-1">
+                            <h3 class="check-text font-semibold text-slate-200 mb-1">Golden Hour Engagement</h3>
+                            <p class="check-text text-slate-400 text-sm">Balas 5-10 komen pertama secara manual untuk memancing engagement awal sebelum automation mengambil alih sepenuhnya.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Completion Modal -->
+    <div id="completionModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div class="glass-card rounded-2xl p-8 max-w-md w-full text-center border-2 border-emerald-500/50">
+            <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 pulse-green">
+                <i class="fas fa-check text-white text-3xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-3">Semua Selesai! 🎉</h2>
+            <p class="text-slate-400 mb-6">Selamat! Kamu sudah siap untuk deployment. Semua checklist telah terpenuhi.</p>
+            <button onclick="closeModal()" class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-emerald-500/30 transition-all">
+                Siap Deploy!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Database setup
+        const DB_NAME = 'SocmedDS_Checklist';
+        const DB_VERSION = 1;
+        const STORE_NAME = 'checklist';
+        
+        let db;
+        
+        // Initialize IndexedDB
+        function initDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => {
+                    db = request.result;
+                    resolve(db);
+                };
+                
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+                    }
+                };
+            });
+        }
+        
+        // Save checkbox state
+        function saveState(id, checked) {
+            const transaction = db.transaction([STORE_NAME], 'readwrite');
+            const store = transaction.objectStore(STORE_NAME);
+            store.put({ id, checked, timestamp: Date.now() });
+        }
+        
+        // Load checkbox states
+        function loadStates() {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([STORE_NAME], 'readonly');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.getAll();
+                
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+        
+        // Toggle checkbox
+        function toggleCheck(checkbox) {
+            const id = checkbox.dataset.id;
+            const checked = checkbox.checked;
+            
+            saveState(id, checked);
+            
+            // Update visual state
+            const label = checkbox.closest('.check-item');
+            if (checked) {
+                label.classList.add('checked');
+            } else {
+                label.classList.remove('checked');
+            }
+            
+            updateProgress();
+        }
+        
+        // Toggle phase collapse
+        function togglePhase(phaseId) {
+            const content = document.getElementById(phaseId);
+            const arrow = document.getElementById('arrow' + phaseId.replace('phase', ''));
+            
+            content.classList.toggle('collapsed');
+            arrow.classList.toggle('rotated');
+        }
+        
+        // Calculate total items
+        const TOTAL_ITEMS = 14; // 4+3+3+2+2
+        
+        // Update progress
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.custom-checkbox');
+            const checked = document.querySelectorAll('.custom-checkbox:checked');
+            const checkedCount = checked.length;
+            const percentage = Math.round((checkedCount / TOTAL_ITEMS) * 100);
+            
+            // Update progress bar width
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = percentage + '%';
+            
+            // Update progress text
+            const progressText = document.getElementById('progressText');
+            progressText.textContent = percentage + '%';
+            
+            // Update phase counts
+            updatePhaseCount('A', ['a1', 'a2', 'a3', 'a4']);
+            updatePhaseCount('B', ['b1', 'b2', 'b3']);
+            updatePhaseCount('C', ['c1', 'c2', 'c3']);
+            updatePhaseCount('D', ['d1', 'd2']);
+            updatePhaseCount('E', ['e1', 'e2']);
+            
+            // Show completion modal when all checked
+            if (checkedCount === TOTAL_ITEMS) {
+                setTimeout(() => {
+                    document.getElementById('completionModal').classList.remove('hidden');
+                    document.getElementById('completionModal').classList.add('flex');
+                }, 500);
+            }
+        }
+        
+        function updatePhaseCount(phase, ids) {
+            const checked = ids.filter(id => {
+                const checkbox = document.querySelector(`[data-id="${id}"]`);
+                return checkbox && checkbox.checked;
+            }).length;
+            document.getElementById('count' + phase).textContent = checked;
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('completionModal').classList.add('hidden');
+            document.getElementById('completionModal').classList.remove('flex');
+        }
+        
+        // Reset all
+        function resetAll() {
+            if (confirm('Yakin ingin reset semua checklist?')) {
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                store.clear();
+                
+                document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+                    checkbox.checked = false;
+                    checkbox.closest('.check-item').classList.remove('checked');
+                });
+                
+                updateProgress();
+            }
+        }
+        
+        // Initialize
+        async function init() {
+            await initDB();
+            const states = await loadStates();
+            
+            // Restore states
+            states.forEach(state => {
+                const checkbox = document.querySelector(`[data-id="${state.id}"]`);
+                if (checkbox) {
+                    checkbox.checked = state.checked;
+                    if (state.checked) {
+                        checkbox.closest('.check-item').classList.add('checked');
+                    }
+                }
+            });
+            
+            updateProgress();
+        }
+        
+        // Run on load
+        init();
+    </script>
+</body>
+</html>

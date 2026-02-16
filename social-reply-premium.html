@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Reply Architect Premium — AI-Powered Response Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050508;
+            --bg-card: #0c0c12;
+            --bg-elevated: #13131a;
+            --bg-glass: rgba(19, 19, 26, 0.8);
+            --text: #ffffff;
+            --text-muted: #888899;
+            --accent: #a855f7;
+            --accent-light: #c084fc;
+            --accent-dark: #7c3aed;
+            --gold: #fbbf24;
+            --gold-light: #fcd34d;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --creator: #ec4899;
+            --smm: #8b5cf6;
+            --seller: #10b981;
+            --personal: #3b82f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Effects */
+        .bg-effects {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .bg-gradient {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+        .bg-gradient-2 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, 30px) scale(1.1); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(5,5,8,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+        .logo-badge {
+            font-size: 0.625rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(251,191,36,0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .btn-premium {
+            background: linear-gradient(135deg, var(--gold), var(--warning));
+            color: var(--bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(251,191,36,0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(168,85,247,0.1));
+            border: 1px solid rgba(251,191,36,0.3);
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gold), var(--accent-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--gold), var(--warning));
+            color: var(--bg);
+            padding: 1.125rem 2.5rem;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(251,191,36,0.3);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 1.125rem 2.5rem;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: rgba(168,85,247,0.1);
+        }
+
+        /* Persona Selector */
+        .persona-section {
+            padding: 4rem 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        /* Mobile: Horizontal scroll for persona cards */
+        .persona-grid {
+            display: flex;
+            gap: 0.75rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.5rem 0.25rem 1.5rem;
+            margin: 0 -0.5rem;
+            scrollbar-width: none;
+        }
+        
+        .persona-grid::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .persona-card {
+            flex: 0 0 auto;
+            width: 140px;
+            scroll-snap-align: start;
+            background: var(--bg-card);
+            border: 2px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.25rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .persona-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.1);
+        }
+        
+        .persona-card.active {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(251,191,36,0.1), rgba(168,85,247,0.05));
+        }
+        
+        .persona-card.active.creator { border-color: var(--creator); }
+        .persona-card.active.smm { border-color: var(--smm); }
+        .persona-card.active.seller { border-color: var(--seller); }
+        .persona-card.active.personal { border-color: var(--personal); }
+        
+        .persona-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 0.75rem;
+            background: var(--bg-elevated);
+        }
+        .persona-card.creator .persona-icon { background: rgba(236,72,153,0.15); }
+        .persona-card.smm .persona-icon { background: rgba(139,92,246,0.15); }
+        .persona-card.seller .persona-icon { background: rgba(16,185,129,0.15); }
+        .persona-card.personal .persona-icon { background: rgba(59,130,246,0.15); }
+        
+        .persona-card h3 {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            margin-bottom: 0.375rem;
+            line-height: 1.3;
+        }
+        
+        .persona-card p {
+            font-size: 0.6875rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .section-tag {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            background: rgba(168,85,247,0.1);
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+
+        /* Interface Demo */
+        .interface-demo {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2rem;
+            display: none;
+        }
+        .interface-demo.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .interface-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .interface-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .interface-title-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        .interface-title h3 {
+            font-size: 1.25rem;
+        }
+        .interface-title p {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+        .preset-tag {
+            padding: 0.375rem 0.875rem;
+            background: rgba(168,85,247,0.15);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-light);
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .input-group.full-width {
+            grid-column: 1 / -1;
+        }
+        .input-group label {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            background: var(--bg-elevated);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 0.875rem 1rem;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9375rem;
+            transition: all 0.3s;
+        }
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .output-preview {
+            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.05));
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+        .output-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        .output-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+        .output-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .btn-action {
+            padding: 0.625rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-action:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Features Comparison - Swipeable Cards */
+        .comparison {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-card), var(--bg));
+        }
+        
+        /* Swipeable Container */
+        .pricing-swipe-container {
+            position: relative;
+            margin-top: 2rem;
+            padding: 0 0.5rem;
+        }
+        
+        .pricing-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem 0.5rem 2rem;
+            margin: 0 -0.5rem;
+            scrollbar-width: none;
+        }
+        
+        .pricing-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .pricing-card-swipe {
+            flex: 0 0 85%;
+            max-width: 340px;
+            scroll-snap-align: center;
+            background: var(--bg-card);
+            border: 2px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 1.75rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card-swipe.featured {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(168,85,247,0.05));
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(251,191,36,0.15);
+        }
+        
+        .pricing-card-swipe.mrr {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(236,72,153,0.05));
+        }
+        
+        .pricing-badge-swipe {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.375rem 1rem;
+            font-size: 0.6875rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+        
+        .pricing-badge-swipe.popular {
+            background: linear-gradient(135deg, var(--gold), var(--warning));
+            color: var(--bg);
+        }
+        
+        .pricing-badge-swipe.mrr {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+        }
+        
+        .pricing-header-swipe {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .pricing-name-swipe {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-card-swipe.featured .pricing-name-swipe {
+            color: var(--gold);
+        }
+        
+        .pricing-card-swipe.mrr .pricing-name-swipe {
+            color: var(--accent-light);
+        }
+        
+        .pricing-desc-swipe {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-price-swipe {
+            font-size: 2.75rem;
+            font-weight: 800;
+        }
+        
+        .pricing-card-swipe.featured .pricing-price-swipe {
+            background: linear-gradient(135deg, var(--gold), var(--warning));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pricing-card-swipe.mrr .pricing-price-swipe {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pricing-price-swipe span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            -webkit-text-fill-color: var(--text-muted);
+        }
+        
+        .pricing-period-swipe {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        
+        .pricing-features-swipe {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-features-swipe li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.625rem 0;
+            font-size: 0.9375rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        
+        .pricing-features-swipe li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon-swipe {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.625rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .feature-icon-swipe.yes {
+            background: rgba(34,197,94,0.2);
+            color: var(--success);
+        }
+        
+        .feature-icon-swipe.no {
+            background: rgba(136,136,153,0.1);
+            color: var(--text-muted);
+        }
+        
+        .feature-text-swipe .muted {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 0.125rem;
+        }
+        
+        .pricing-btn-swipe {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 0.9375rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .pricing-btn-swipe:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .pricing-card-swipe.featured .pricing-btn-swipe {
+            background: linear-gradient(135deg, var(--gold), var(--warning));
+            color: var(--bg);
+            border-color: transparent;
+        }
+        
+        .pricing-card-swipe.mrr .pricing-btn-swipe {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border-color: transparent;
+        }
+        
+        /* Swipe Indicators */
+        .swipe-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .swipe-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .swipe-dot.active {
+            width: 24px;
+            border-radius: 100px;
+            background: var(--gold);
+        }
+        
+        .swipe-hint {
+            text-align: center;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        /* Desktop comparison table (hidden on mobile) */
+        .comparison-table-desktop {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            overflow: hidden;
+            margin-top: 3rem;
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        .comparison-row.header {
+            background: var(--bg-elevated);
+            font-weight: 700;
+        }
+        .comparison-cell {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .comparison-cell.feature {
+            font-weight: 500;
+        }
+        .comparison-cell.price {
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+        .comparison-cell.price.premium {
+            background: linear-gradient(135deg, rgba(251,191,36,0.1), rgba(168,85,247,0.1));
+            color: var(--gold);
+        }
+        .comparison-cell.price.mrr {
+            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(236,72,153,0.1));
+            color: var(--accent-light);
+        }
+        .check { color: var(--success); font-weight: 700; }
+        .cross { color: var(--text-muted); }
+        .highlight-text {
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
+        /* Responsive breakpoints */
+        @media (min-width: 900px) {
+            .pricing-swipe-container,
+            .swipe-indicators,
+            .swipe-hint {
+                display: none;
+            }
+            .comparison-table-desktop {
+                display: block;
+            }
+            
+            /* Desktop: Grid layout for persona */
+            .persona-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                overflow-x: visible;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .persona-card {
+                width: auto;
+                padding: 1.5rem;
+            }
+            
+            .persona-icon {
+                width: 64px;
+                height: 64px;
+                font-size: 2rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .persona-card h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .persona-card p {
+                font-size: 0.8125rem;
+                -webkit-line-clamp: 3;
+            }
+        }
+        
+        @media (max-width: 899px) and (min-width: 640px) {
+            /* Tablet: 2x2 grid for persona */
+            .persona-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                overflow-x: visible;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .persona-card {
+                width: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .pricing-card-swipe {
+                flex: 0 0 88%;
+                padding: 1.5rem;
+            }
+            .pricing-price-swipe {
+                font-size: 2.25rem;
+            }
+            
+            /* Mobile persona already handled by default styles above */
+            .persona-card {
+                width: 130px;
+                padding: 1rem 0.75rem;
+            }
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, rgba(251,191,36,0.1), rgba(168,85,247,0.1));
+            border: 2px solid rgba(251,191,36,0.2);
+            border-radius: 32px;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+        }
+        .cta-box h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .persona-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+            .comparison-cell {
+                padding: 0.75rem 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 8rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .persona-grid {
+                grid-template-columns: 1fr;
+            }
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-effects">
+        <div class="bg-gradient"></div>
+        <div class="bg-gradient-2"></div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">✨</div>
+                <div>
+                    <div class="logo-text">Social Reply</div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="logo-badge">Premium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Fitur</a>
+                <a href="#pricing">Harga</a>
+                <a href="#demo" class="btn-premium">Mulai Gratis →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">⚡ AI-Powered Response Engine</div>
+            <h1>
+                Respons Cerdas untuk<br>
+                <span class="gradient-text">Setiap Situasi Social</span>
+            </h1>
+            <p class="hero-subtitle">
+                Generate balasan yang tepat—dari handle haters sampai negosiasi client—
+                dengan persona AI yang disesuaikan untuk profesi kamu.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#demo" class="btn-primary">🚀 Coba Sekarang</a>
+                <a href="#features" class="btn-secondary">Lihat Fitur</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Persona Selector & Demo -->
+    <section class="persona-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Persona AI</span>
+                <h2>Pilih Mode yang Sesuai</h2>
+                <p>Setiap profesi punya kebutuhan berbeda. Kami sesuaikan AI-nya.</p>
+            </div>
+
+            <div class="persona-grid">
+                <div class="persona-card creator active" onclick="showPersona('creator')">
+                    <div class="persona-icon">🎥</div>
+                    <h3>Content Creator</h3>
+                    <p>Handle haters, FAQ, networking dengan engagement tinggi</p>
+                </div>
+                <div class="persona-card smm" onclick="showPersona('smm')">
+                    <div class="persona-icon">📱</div>
+                    <h3>Social Media Manager</h3>
+                    <p>Multi-brand voice, crisis management, approval-ready</p>
+                </div>
+                <div class="persona-card seller" onclick="showPersona('seller')">
+                    <div class="persona-icon">🛍️</div>
+                    <h3>Online Seller</h3>
+                    <p>Handle objeksi, negosiasi, convert inquiry jadi sales</p>
+                </div>
+                <div class="persona-card personal" onclick="showPersona('personal')">
+                    <div class="persona-icon">💼</div>
+                    <h3>Personal Brand</h3>
+                    <p>Professional networking, thought leadership, PR</p>
+                </div>
+            </div>
+
+            <!-- Creator Interface -->
+            <div class="interface-demo active" id="interface-creator">
+                <div class="interface-header">
+                    <div class="interface-title">
+                        <div class="interface-title-icon" style="background: rgba(236,72,153,0.2);">🎥</div>
+                        <div>
+                            <h3>Content Creator Mode</h3>
+                            <p>Engagement-focused • Authentic • Trend-aware</p>
+                        </div>
+                    </div>
+                    <span class="preset-tag">🎯 Hater Response Preset</span>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Platform</label>
+                        <select>
+                            <option>Threads</option>
+                            <option>Instagram</option>
+                            <option>TikTok</option>
+                            <option>YouTube</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Tone Style</label>
+                        <select>
+                            <option>Witty & Clever</option>
+                            <option>Calm & Mature</option>
+                            <option>Playful Roast</option>
+                            <option>Educational</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Komen/Context</label>
+                        <textarea placeholder="Contoh: 'Konten macam apa ini, gak jelas banget. Buang-buang waktu nontonnya.'">Konten macam apa ini, gak jelas banget. Buang-buang waktu nontonnya.</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Audience Size</label>
+                        <select>
+                            <option>10K-50K (Micro)</option>
+                            <option>50K-500K (Mid-tier)</option>
+                            <option>500K+ (Macro)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Goal</label>
+                        <select>
+                            <option>Turn to supporter</option>
+                            <option>Shut down elegantly</option>
+                            <option>Spark discussion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-preview">
+                    <div class="output-label">
+                        <span>✨</span> AI-Generated Response (Witty & Clever)
+                    </div>
+                    <div class="output-text">
+                        "Haha fair enough! 🙈 Memang konten ini bukan untuk semua orang sih—kalau bikin semua orang suka, berarti terlalu generic kan? 😅<br><br>
+                        Tapi thanks udah mampir & kasih feedback! Kalau ada topik spesifik yang mau dibahas, drop aja di komen. Who knows, maybe next content bakal lebih 'jelas' buat kamu 👀"
+                    </div>
+                    <div class="output-actions">
+                        <button class="btn-action">📋 Copy</button>
+                        <button class="btn-action">🔄 Regenerate</button>
+                        <button class="btn-action">✏️ Edit Tone</button>
+                        <button class="btn-action">💾 Save Template</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMM Interface -->
+            <div class="interface-demo" id="interface-smm">
+                <div class="interface-header">
+                    <div class="interface-title">
+                        <div class="interface-title-icon" style="background: rgba(139,92,246,0.2);">📱</div>
+                        <div>
+                            <h3>SMM Mode</h3>
+                            <p>Brand-safe • Scalable • Client-ready</p>
+                        </div>
+                    </div>
+                    <span class="preset-tag">🏢 Multi-Brand Management</span>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Brand Profile</label>
+                        <select>
+                            <option>F&B Casual</option>
+                            <option>Fashion Premium</option>
+                            <option>Tech Professional</option>
+                            <option>Beauty Friendly</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Urgency Level</label>
+                        <select>
+                            <option>🟢 Normal</option>
+                            <option>🟡 Attention</option>
+                            <option>🔴 Crisis</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Incoming Message / Issue</label>
+                        <textarea placeholder="Contoh customer complaint...">Ada customer komplain di IG story: 'Pesen nasi goreng tapi datangnya dingin dan kurang garam. Kecewa sama kualitasnya.' Replynya harus gimana ya?</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Response Type</label>
+                        <select>
+                            <option>Public Comment</option>
+                            <option>DM Resolution</option>
+                            <option>Story Reply</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Include Offer?</label>
+                        <select>
+                            <option>Yes - Compensation</option>
+                            <option>Yes - Voucher</option>
+                            <option>No - Just apology</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-preview">
+                    <div class="output-label">
+                        <span>✨</span> Brand-Safe Response (Crisis Protocol)
+                    </div>
+                    <div class="output-text">
+                        "Halo [Nama], terima kasih sudah menyampaikan masukan ini. 🙏<br><br>
+                        Kami sangat menyesal pengalaman pesanan kamu tidak sesuai standar kami. Tim kami ingin memastikan ini tidak terulang dan ingin memperbaiki keadaan.<br><br>
+                        Bisa tolong DM kami nomor order & kontak? Kami akan ganti pesanan baru + voucher kompensasi. Layanan kamu adalah prioritas kami.<br><br>
+                        Sekali lagi, maaf atas ketidaknyamanannya. 🙏"
+                    </div>
+                    <div class="output-actions">
+                        <button class="btn-action">📋 Copy</button>
+                        <button class="btn-action">👤 Switch Brand Voice</button>
+                        <button class="btn-action">📊 Sentiment Check</button>
+                        <button class="btn-action">✅ Client Approval Draft</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seller Interface -->
+            <div class="interface-demo" id="interface-seller">
+                <div class="interface-header">
+                    <div class="interface-title">
+                        <div class="interface-title-icon" style="background: rgba(16,185,129,0.2);">🛍️</div>
+                        <div>
+                            <h3>Online Seller Mode</h3>
+                            <p>Sales-focused • Objection handling • Conversion-optimized</p>
+                        </div>
+                    </div>
+                    <span class="preset-tag">💰 Objection Handler</span>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Product Category</label>
+                        <select>
+                            <option>Skincare</option>
+                            <option>Fashion</option>
+                            <option>Food & Beverage</option>
+                            <option>Digital Product</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Price Point</label>
+                        <select>
+                            <option>Premium (300K+)</option>
+                            <option>Mid-range (100-300K)</option>
+                            <option>Affordable (&lt;100K)</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Customer Message</label>
+                        <textarea placeholder="Contoh: customer bilang mahal...">Kak, harganya 450rb ya? Mahal banget sih, di toko sebelah cuma 200rb :(</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Objection Type</label>
+                        <select>
+                            <option>Price too high</option>
+                            <option>Compare competitor</option>
+                            <option>Want to think first</option>
+                            <option>Ask for discount</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Sales Goal</label>
+                        <select>
+                            <option>Convert now</option>
+                            <option>Educate value</option>
+                            <option>Offer alternative</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-preview">
+                    <div class="output-label">
+                        <span>✨</span> Conversion-Optimized Response (Value Education)
+                    </div>
+                    <div class="output-text">
+                        "Halo kak! Makasih udah jujur soal perbandingannya 😊🙏<br><br>
+                        Bener sih kalau dilihat harga doang, beda signifikan. Tapi kak, yang kita jual ini [ingredient USP: ex bahan premium grade A / original guarantee / hasil tahan 3x lebih lama].<br><br>
+                        Banyak customer awalnya juga mikir gini, tapi setelah coba, mereka balik lagi karena ngerti bedanya di mana. Malah lebih hemat jangka panjang karena gak perlu ganti-ganti.<br><br>
+                        Kalau kakak mau, kita ada versi starter-nya yang lebih affordable tapi kualitas tetap oke. Bisa DM aja ya biar aku bantu pilih yang cocok buat budget kakak! 💚"
+                    </div>
+                    <div class="output-actions">
+                        <button class="btn-action">📋 Copy</button>
+                        <button class="btn-action">🎯 Try Closing Variant</button>
+                        <button class="btn-action">💝 Add Testimonial</button>
+                        <button class="btn-action">📈 Track Conversion</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Brand Interface -->
+            <div class="interface-demo" id="interface-personal">
+                <div class="interface-header">
+                    <div class="interface-title">
+                        <div class="interface-title-icon" style="background: rgba(59,130,246,0.2);">💼</div>
+                        <div>
+                            <h3>Personal Brand Mode</h3>
+                            <p>Professional • Thoughtful • Authority-building</p>
+                        </div>
+                    </div>
+                    <span class="preset-tag">🤝 Networking & Outreach</span>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Context</label>
+                        <select>
+                            <option>LinkedIn Networking</option>
+                            <option>Collaboration Pitch</option>
+                            <option>Speaking Opportunity</option>
+                            <option>Media Interview</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Relationship Level</label>
+                        <select>
+                            <option>Cold (First contact)</option>
+                            <option>Warm (Mutual connection)</option>
+                            <option>Hot (Existing rapport)</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Situation / Incoming Message</label>
+                        <textarea placeholder="Contoh: pesan koneksi atau opportunity...">Ada event organizer yang DM: 'Halo Mas, kita lagi cari speaker untuk webinar tentang personal branding di era AI. Fee 5jt untuk 2 jam. Tertarik?'</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Your Position</label>
+                        <select>
+                            <option>Interested</option>
+                            <option>Need more info</option>
+                            <option>Negotiate terms</option>
+                            <option>Politely decline</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Tone Preference</label>
+                        <select>
+                            <option>Professional & Warm</option>
+                            <option>Direct & Efficient</option>
+                            <option>Humble & Grateful</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-preview">
+                    <div class="output-label">
+                        <span>✨</span> Professional Response (Negotiation)
+                    </div>
+                    <div class="output-text">
+                        "Halo [Nama], terima kasih atas undangannya! 🙏<br><br>
+                        Topik personal branding di era AI sangat menarik dan sangat relevan dengan komunitas yang saya ajak berbicara belakangan ini.<br><br>
+                        Sebelum saya konfirmasi, bisa tolong share detail sedikit:<br>
+                        • Jadwal pastinya kapan?<br>
+                    • Target audiens dan jumlah expected participants?<br>
+                    • Apakah ada recording yang akan digunakan untuk konten berikutnya?<br><br>
+                    Saya juga punya beberapa format yang biasanya works well untuk topik ini. Kalau ada waktu, happy to discuss supaya deliverable-nya maksimal untuk peserta.<br><br>
+                        Terima kasih, looking forward to hearing from you!"
+                    </div>
+                    <div class="output-actions">
+                        <button class="btn-action">📋 Copy</button>
+                        <button class="btn-action">💼 Save as Template</button>
+                        <button class="btn-action">📅 Schedule Follow-up</button>
+                        <button class="btn-action">📊 Track Opportunity</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section class="comparison" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Perbandingan</span>
+                <h2>Pilih Paket yang Sesuai</h2>
+                <p>Investasi kecil untuk efisiensi besar</p>
+            </div>
+
+            <!-- Swipeable Pricing Cards (Mobile) -->
+            <div class="pricing-swipe-container">
+                <div class="pricing-scroll" id="pricingScroll">
+                    <!-- Free Tier -->
+                    <div class="pricing-card-swipe" data-index="0">
+                        <div class="pricing-header-swipe">
+                            <div class="pricing-name-swipe">Free</div>
+                            <div class="pricing-desc-swipe">Coba dulu, upgrade kapan saja</div>
+                            <div class="pricing-price-swipe">Rp0<span>/bulan</span></div>
+                            <div class="pricing-period-swipe">Selamanya gratis</div>
+                        </div>
+                        <ul class="pricing-features-swipe">
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Basic Response Generator</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">10 generations/hari</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">3 basic tones</span></li>
+                            <li><span class="feature-icon-swipe no">—</span><span class="feature-text-swipe">Persona Modes <span class="muted">(4 profiles)</span></span></li>
+                            <li><span class="feature-icon-swipe no">—</span><span class="feature-text-swipe">Platform Optimization</span></li>
+                            <li><span class="feature-icon-swipe no">—</span><span class="feature-text-swipe">Saved Templates</span></li>
+                            <li><span class="feature-icon-swipe no">—</span><span class="feature-text-swipe">Sentiment Analysis</span></li>
+                            <li><span class="feature-icon-swipe no">—</span><span class="feature-text-swipe">Analytics</span></li>
+                        </ul>
+                        <a href="#" class="pricing-btn-swipe">Mulai Gratis</a>
+                    </div>
+
+                    <!-- Premium Tier (Featured) -->
+                    <div class="pricing-card-swipe featured" data-index="1">
+                        <span class="pricing-badge-swipe popular">⭐ Paling Populer</span>
+                        <div class="pricing-header-swipe">
+                            <div class="pricing-name-swipe">Premium</div>
+                            <div class="pricing-desc-swipe">Untuk creator & seller aktif</div>
+                            <div class="pricing-price-swipe">Rp99rb<span>/bulan</span></div>
+                            <div class="pricing-period-swipe">Bisa cancel kapan saja</div>
+                        </div>
+                        <ul class="pricing-features-swipe">
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Unlimited generations</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">4 Persona Modes<span class="muted">Creator, SMM, Seller, Personal</span></span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">15+ Advanced Tones</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Platform Optimization<span class="muted">IG, TikTok, Threads, LinkedIn, WA</span></span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Unlimited Saved Templates</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Sentiment Analysis</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Response History<span class="muted">30 days</span></span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Analytics Dashboard</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">⚡ Priority Speed</span></li>
+                        </ul>
+                        <a href="#" class="pricing-btn-swipe">Upgrade ke Premium</a>
+                    </div>
+
+                    <!-- MRR Tier -->
+                    <div class="pricing-card-swipe mrr" data-index="2">
+                        <span class="pricing-badge-swipe mrr">🏢 Agency & Team</span>
+                        <div class="pricing-header-swipe">
+                            <div class="pricing-name-swipe">MRR</div>
+                            <div class="pricing-desc-swipe">Untuk agency & tim besar</div>
+                            <div class="pricing-price-swipe">Rp299rb<span>/bulan</span></div>
+                            <div class="pricing-period-swipe">Per 5 team members</div>
+                        </div>
+                        <ul class="pricing-features-swipe">
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Semua fitur Premium</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Team Collaboration<span class="muted">5 members included</span></span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Brand Voice Library<span class="muted">Unlimited brand profiles</span></span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Client Approval Workflow</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">White-label Reports</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">API Access</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Dedicated Support</span></li>
+                            <li><span class="feature-icon-swipe yes">✓</span><span class="feature-text-swipe">Custom Integrations</span></li>
+                        </ul>
+                        <a href="#" class="pricing-btn-swipe">Hubungi Sales</a>
+                    </div>
+                </div>
+
+                <!-- Swipe Indicators -->
+                <div class="swipe-indicators">
+                    <div class="swipe-dot active" data-index="0"></div>
+                    <div class="swipe-dot" data-index="1"></div>
+                    <div class="swipe-dot" data-index="2"></div>
+                </div>
+
+                <!-- Swipe Hint -->
+                <div class="swipe-hint">
+                    <span>←</span> Swipe untuk lihat paket lain <span>→</span>
+                </div>
+            </div>
+
+            <!-- Desktop Table (hidden on mobile) -->
+            <div class="comparison-table-desktop">
+                <div class="comparison-row header">
+                    <div class="comparison-cell feature">Fitur</div>
+                    <div class="comparison-cell">Free</div>
+                    <div class="comparison-cell price premium">Premium</div>
+                    <div class="comparison-cell price mrr">MRR</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Basic Response Generator</div>
+                    <div class="comparison-cell check">✓</div>
+                    <div class="comparison-cell check">✓</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Persona Modes (4 profiles)</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">✓</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Advanced Tone Options</div>
+                    <div class="comparison-cell cross">3 tones</div>
+                    <div class="comparison-cell check">15+ tones</div>
+                    <div class="comparison-cell check">15+ tones</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Platform Optimization</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">✓</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Saved Templates</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">Unlimited</div>
+                    <div class="comparison-cell check">Unlimited</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Sentiment Analysis</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">✓</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Team Members</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">5 included</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Brand Voice Library</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">Client Approval Workflow</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell feature">API Access</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell cross">—</div>
+                    <div class="comparison-cell check">✓</div>
+                </div>
+                <div class="comparison-row" style="background: rgba(255,255,255,0.02);">
+                    <div class="comparison-cell feature highlight-text">Harga</div>
+                    <div class="comparison-cell">Gratis</div>
+                    <div class="comparison-cell price premium">Rp99rb/bulan</div>
+                    <div class="comparison-cell price mrr">Rp299rb/bulan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Siap Upgrade Cara Kamu Berkomunikasi?</h2>
+                <p>Join ribuan creator, seller, dan professional yang udah hemat waktu dan tingkatkan engagement dengan respons yang tepat.</p>
+                <a href="#" class="btn-primary" style="padding: 1.25rem 3rem; font-size: 1.25rem;">
+                    🚀 Mulai Gratis Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Social Reply Architect. Dibuat dengan ❤️ untuk komunikator digital.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPersona(type) {
+            // Update cards
+            document.querySelectorAll('.persona-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            document.querySelector('.persona-card.' + type).classList.add('active');
+
+            // Update interfaces
+            document.querySelectorAll('.interface-demo').forEach(demo => {
+                demo.classList.remove('active');
+            });
+            document.getElementById('interface-' + type).classList.add('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Pricing Swipe Indicators
+        const pricingScroll = document.getElementById('pricingScroll');
+        const swipeDots = document.querySelectorAll('.swipe-dot');
+        
+        if (pricingScroll) {
+            // Update dots on scroll
+            pricingScroll.addEventListener('scroll', () => {
+                const scrollLeft = pricingScroll.scrollLeft;
+                const cardWidth = pricingScroll.querySelector('.pricing-card-swipe').offsetWidth + 16; // including gap
+                const activeIndex = Math.round(scrollLeft / cardWidth);
+                
+                swipeDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            });
+            
+            // Click dots to scroll
+            swipeDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    const cardWidth = pricingScroll.querySelector('.pricing-card-swipe').offsetWidth + 16;
+                    pricingScroll.scrollTo({
+                        left: cardWidth * index,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Auto-center premium card on load (mobile)
+            if (window.innerWidth < 900) {
+                setTimeout(() => {
+                    const cardWidth = pricingScroll.querySelector('.pricing-card-swipe').offsetWidth + 16;
+                    pricingScroll.scrollTo({
+                        left: cardWidth * 1, // Center on Premium (index 1)
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    </script>
+</body>
+</html>

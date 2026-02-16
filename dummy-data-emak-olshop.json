@@ -1,0 +1,385 @@
+{
+  "exportDate": "2026-02-13T10:00:00.000Z",
+  "parents": [
+    {
+      "id": "parent_1704067200000",
+      "title": "Operasional Olshop Harian",
+      "dateModified": 1710288000000,
+      "latestEmotion": "\ud83d\ude0a"
+    },
+    {
+      "id": "parent_1704153600000",
+      "title": "Anak & Parenting",
+      "dateModified": 1710028800000,
+      "latestEmotion": "\ud83e\udd70"
+    },
+    {
+      "id": "parent_1704240000000",
+      "title": "Keuangan RT & Bisnis",
+      "dateModified": 1709769600000,
+      "latestEmotion": "\ud83e\udd14"
+    },
+    {
+      "id": "parent_1704326400000",
+      "title": "Relasi dengan Suami",
+      "dateModified": 1709510400000,
+      "latestEmotion": "\ud83e\udd70"
+    },
+    {
+      "id": "parent_1704412800000",
+      "title": "Supplier & Stok Barang",
+      "dateModified": 1709251200000,
+      "latestEmotion": "\ud83d\ude30"
+    },
+    {
+      "id": "parent_1704499200000",
+      "title": "Komunitas Emak-emak",
+      "dateModified": 1708905600000,
+      "latestEmotion": "\ud83e\udd29"
+    },
+    {
+      "id": "parent_1704585600000",
+      "title": "Me Time & Self Care",
+      "dateModified": 1708473600000,
+      "latestEmotion": "\ud83d\ude0a"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1704067200000,
+      "notes": "Hari ini cair 3 order! Dua dress gamis sama satu setelan anak. Alhamdulillah, makin lama makin rame. Tapi packing sampe tengah malem, pinggang udah gak kerasa.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1704153600000,
+      "notes": "Ada customer komplain barang beda warna. Duh pusing, tapi sabar aja deh. Akhirnya dituker sama yang bener, ongkir tanggung sendiri. Pelajaran: foto produk harus lebih jelas lightingnya.",
+      "emoticon": "\ud83d\ude30"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1704672000000,
+      "notes": "Ngonten di IG Reels, nyoba-nyoba filter baru. Viewnya 10k! Langsung banyak yang DM nanya produk. Ternyata konten lucu-lucuan lebih ngehits daripada yang formal-formalan.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1705104000000,
+      "notes": "Live shopping malem minggu. Dari jam 8 sampe jam 10, sold out 15 pieces. Seru banget interaksi sama viewer, kayak ngobrol sama temen. Tapi abis ini tidur udah jam 1.",
+      "emoticon": "\ud83d\ude34"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1707696000000,
+      "notes": "Ngurusin retur dari customer di luar kota. Ribet sih tapi yaudah demi nama baik toko. Moga-moga dia jadi langganan setelah liat pelayananku yang extra.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1708473600000,
+      "notes": "Update katalog produk baru. Fotoin 20 items, edit-edit di Canva sampe mata berkunang-kunang. Hasilnya bagus sih, worth it. Minggu depan ready buat launch.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1709251200000,
+      "notes": "Dapet reseller baru dari Surabaya! Order pertama 50pcs. Deg-degan kirim barang sebanyak itu. Doain lancar ya Allah, semoga jadi langganan tetap.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1710288000000,
+      "notes": "Hitung-hitungan omzet bulan ini. Alhamdulillah naik 30% dari bulan lalu. Bisa nabung lebih banyak buat sekolah anak. Semoga Allah berkahin usaha kecilku ini.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1704153600000,
+      "notes": "Anak pertama ulang tahun yang ke-7. Dikasih surprise sederhana di rumah, dia seneng banget. Ngeliat senyumnya itu bayar pahalanya. Cinta banget sama anak-anakku.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1704585600000,
+      "notes": "Hari ini anak sakit demam. Bolos sekolah, aku juga bolos ngurusin toko seharian. Diemin ponsel yang bunyi terus demi jagain anak. Prioritas nomor satu ya anak.",
+      "emoticon": "\ud83d\ude22"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1705104000000,
+      "notes": "Ngajarin anak ngaji setelah maghrib. Dia udah bisa Al-Fatihah lancar. Bangga banget! Target: khatam juz 30 sebelum masuk SD. Bismillah, sabar ngajarinnya.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1707696000000,
+      "notes": "Meeting sama guru TK anak. Dia bilang anakku aktif dan pinter bergaul. Lega dengernya. Kadang khawatir karena aku sibuk toko, ternyata dia baik-baik aja.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1708473600000,
+      "notes": "Anak nangis minta ditemani tidur. Padahal masih banyak yang harus dipacking. Akhirnya tidur bareng dulu, lanjut kerja jam 11 malem. Pengorbanan seorang ibu.",
+      "emoticon": "\ud83d\ude34"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1708905600000,
+      "notes": "Quality time weekend: bawa anak ke taman bermain. Ditinggalin toko sebentar demi dia. Seneng banget diajak main, mukanya glowing. Jangan sampai kelewatan masa kecilnya.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1710028800000,
+      "notes": "Anak tanya: 'Mama kerjanya apaan sih?' Dijelasin kalau mama jual baju biar bisa beliin dia sekolah. Dia bilang: 'Mama hebat!' Meleleh hatiku \ud83d\ude2d\u2764\ufe0f",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1704240000000,
+      "notes": "Ngatur cash flow bulanan. Uang dari toko langsung dibagi: 50% belanja, 20% tabungan, 20% sedekah, 10% buat jajan sendiri. Disiplin itu penting ya.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1704844800000,
+      "notes": "Suami transfer gaji, langsung masukin ke rekening bersama. Transparan soal uang itu penting biar gak ada gosip miring. Alhamdulillah suami supportif.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1705536000000,
+      "notes": "Bayar SPP sekolah anak 3 bulan langsung. Rasanya seneng bisa bayar tanpa ngutang. Dulu pas awal nikah sering pusing mikirin uang, sekarang udah lebih baik.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1707696000000,
+      "notes": "Nabung emas di aplikasi sharia. Tiap minggu auto debit 300rb. Udah 5 gram sekarang. Target: 100 gram buat mahar anak nanti. Lama tapi yakin.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1708905600000,
+      "notes": "Sedekah rutin ke tetangga yang kesusahan. Gak seberapa sih nominalnya, tapi semoga Allah berkahin. Ingat kata ustadz: sedekah itu jangan ditunda-tunda.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1709251200000,
+      "notes": "Hitung-hitungan akhir tahun: omzet naik 40% dari tahun lalu. Alhamdulillah, rezeki anak soleh. Semoga tahun depan bisa buka cabang toko fisik.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1709769600000,
+      "notes": "Ngatur budget Lebaran. Baju buat keluarga, THR buat ponakan, sedekah. Hampir 10jt keluar tapi yaudah namanya juga Lebaran. Yang penting semua seneng.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1704326400000,
+      "notes": "Date night sama suami! Ditinggal anak di rumah mertua. Nonton bioskop setelah sekian lama. Rasanya kayak pacaran lagi. Jaga api rumah tangga itu penting.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1704844800000,
+      "notes": "Suami bantu packing barang sampe tengah malem. Dia bilang: 'Istriku kerja keras, aku bangga.' Langsung semangat lagi padahal udah ngantuk. Dukungan suami itu everything.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1705536000000,
+      "notes": "Ada perdebatan soal toko. Aku pengen expand, dia bilang pelan-pelan aja. Akhirnya diskusi panjang samai tengah malem. Solusi: coba cabang online dulu, gak usah fisik.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1707696000000,
+      "notes": "Suami ngasih surprise bunga mawar. Katanya: 'Makasih udah jadi istri yang kuat.' Nangis kejer di kamar mandi. Kadang aku lupa diriku juga butuh diapresiasi.",
+      "emoticon": "\ud83d\ude22"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1708473600000,
+      "notes": "Solat berjamaah subuh berdua. Setelah itu ngopi-ngopi cantik sambil diskusi rencana bisnis. Suami supportif banget. Alhamdulillah Allah kasih jodoh terbaik.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1708905600000,
+      "notes": "Suami marah karena aku kerjaan sampe lupa makan. Diomelin tapi sayang. Akhirnya dia yang masakin mie. Sweet banget sih, tapi lucu juga ngeliat dia masak.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1709510400000,
+      "notes": "Anniversary 5 tahun! Dinner mewah gak perlu, cukup makan di warung favorit berdua. Flashback awal nikah susah-seneng bareng. Semoga sampe kakek-nenek ya Allah.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1704412800000,
+      "notes": "Stok hijab premium habis! 50pcs sold out dalam 3 hari. Panik hubungin supplier, ternyata mereka juga kehabisan. Harus cari supplier alternatif cepet-cepet.",
+      "emoticon": "\ud83d\ude30"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1704844800000,
+      "notes": "Nemu supplier baru di Tanah Abang. Harganya lebih murah 10% tapi kualitas sama. Langsung deal buat jadi langganan. Networking itu penting banget ya.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1705104000000,
+      "notes": "Kirim barang ke customer tapi salah warna. Salahku gak ngecek double. Ngirim ulang ongkir tanggung sendiri. Rugi 50rb tapi pelajaran mahal.",
+      "emoticon": "\ud83d\ude30"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1707696000000,
+      "notes": "Supplier lama ngasih diskon khusus loyal customer. Seneng banget! Langsung order banyak buat persiapan Lebaran. Jadi inget: jaga relasi itu penting.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1708473600000,
+      "notes": "Rak toko di rumah udah penuh. Harus beli rak baru atau kurangi stok. Mikir-mikir dulu, soalnya space rumah juga terbatas. Emak-emak emang harus kreatif.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1708905600000,
+      "notes": "Kontrol kualitas barang baru datang. Ngecek satu-satu, ada 3 yang defect. Langsung komplain ke supplier, diganti yang baru. Gak bisa compromise soal kualitas.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1709251200000,
+      "notes": "Dapat info supplier dress pesta murah meriah. Harga modal 80rb bisa jual 150rb. Langsung serbu 100pcs. Semoga laku keras pas musim kondangan.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1704499200000,
+      "notes": "Gabung grup WhatsApp Emak-emak Pejuang Rupiah. Seru banget! Sharing-sharing soal bisnis, curhat, saling support. Akhirnya nemu temen yang ngerti perjuanganku.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1704844800000,
+      "notes": "Kajian online bareng komunitas. Tema: wanita sholehah dan ekonomi. Dapat ilmu baru soal financial planning islami. Besok mau praktekin di rumah.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1705104000000,
+      "notes": "Bantu emak-emak lain yang baru mulai bisnis. Sharing tips-tips dasar. Seneng rasanya bisa berbagi. Dulu aku juga dibantu orang, sekarang giliranku.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1707696000000,
+      "notes": "Reuni online sama alumni SMA. Banyak yang kaget aku sekarang jualan online. Dulu aku yang paling pemalu. Orang bisa berubah ya kalau sudah punya tanggung jawab.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1708473600000,
+      "notes": "Arisan online bareng temen-temen komunitas. Seru banget meskipun cuma virtual. Ngobrolin macem-macem dari resep sampe politik. Me time versi emak-emak.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1708905600000,
+      "notes": "Mentorin salah satu member yang baru mulai. Dari nol sampe dia dapet order pertama. Seneng banget ngeliat perkembangannya. Semoga sukses terus ya bunda.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1708905600000,
+      "notes": "Galungan bareng komunitas. Bukan yang heboh, cuma sharing session santai. Cerita suka duka jadi emak-emak pekerja. Dari pada curhat sendirian, mending bareng-bareng.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1704585600000,
+      "notes": "Spa day! Pergi sendirian ke salon, facial, pijat. 3 jam gak ngurusin siapa-siapa. Me time yang sebenarnya. Pulang-pulang langsung semangat lagi.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1705104000000,
+      "notes": "Nonton Netflix sampe subuh. Ih gak bermoral! Tapi seminggu sekali gak apa-apa lah ya. Nonton drakor favorit sambil ngemil. Hidup ini perlu balance.",
+      "emoticon": "\ud83d\ude0e"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1705536000000,
+      "notes": "Jalan-jalan sendirian ke mall. Gak beli apa-apa, cuma window shopping. Kadang perlu waktu sendiri buat recharge. Jangan sampe burnout.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1707696000000,
+      "notes": "Nyoba resep baru dari TikTok. Masak Korean spicy ramen. Enak sih tapi pedes banget! Suami dan anak pada keringetan. Lucu ngeliat reaksi mereka.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1708473600000,
+      "notes": "Baca buku self improvement. 'Atomic Habits' versi bahasa Indonesia. Dapet insight baru soal kebiasaan kecil. Mau aplikasiin di bisnis dan rumah tangga.",
+      "emoticon": "\ud83e\udd14"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1708905600000,
+      "notes": "Skincare routine malem. Maskeran sambil dengerin podcast. Lupa sebentar kalau aku udah jadi emak-emak. Dulu kan aku juga cewek yang suka grooming.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1709251200000,
+      "notes": "Olahraga pagi joging keliling komplek. 30 menit aja udah keringetan. Badan jadi lebih fit, stamina naik. Yang penting sehat biar bisa urus keluarga dan bisnis.",
+      "emoticon": "\ud83d\ude0a"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1709769600000,
+      "notes": "Lebaran sebentar lagi, stok baju lebaran udah siap 200pcs. Mudik ke kampung sambil bawa katalog buat tetangga. Semoga laku semua ya Allah.",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704499200000",
+      "dateAdded": 1709769600000,
+      "notes": "Bagi-bagi THR bareng komunitas. Bukan uang tapi voucher belanja. Seru! Semoga silaturahmi tetap terjaga meski sibuk berbisnis.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704585600000",
+      "dateAdded": 1709769600000,
+      "notes": "Pergi umroh bareng suami. Impian terwujud dari hasil toko online. Allah Maha Mendengar doa. Semoga bisa jadi travel rutin tiap tahun.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1710288000000,
+      "notes": "Buka cabang toko offline kecil di depan rumah. Bisa sambil jagain anak. Modal dari tabungan toko online. From zero to hero!",
+      "emoticon": "\ud83e\udd29"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1710288000000,
+      "notes": "Total aset: rumah sendiri, mobil, tabungan 100jt, emas 30 gram. Semua dari toko online yang awalnya iseng. Alhamdulillah ya Allah.",
+      "emoticon": "\ud83e\udd70"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1710288000000,
+      "notes": "Suami resign dari kantor, mau fokus bantu bisnis. Team work! Dulu aku yang nemenin dia, sekarang dia nemenin aku. Rezeki datang dari arah tak terduga.",
+      "emoticon": "\ud83e\udd29"
+    }
+  ]
+}
