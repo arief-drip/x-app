@@ -27,7 +27,7 @@
 
 ### 1. Buka Langsung di Browser
 ```
-Buka file: journaling-app.html
+Buka file: x-journal.html
 ```
 
 ### 2. Install sebagai Aplikasi (PWA)
@@ -77,7 +77,7 @@ Saat pertama kali membuka, pilih salah satu persona:
 
 ```
 repo/kimi/
-├── 📄 journaling-app.html      # Aplikasi utama (single file)
+├── 📄 x-journal.html           # Aplikasi utama (single file)
 ├── 📄 README.md                # Dokumentasi ini
 ├── 📊 dummy-data-mahasiswa.json   # Template: Mahasiswa
 ├── 📊 dummy-data-profesional.json # Template: Profesional
