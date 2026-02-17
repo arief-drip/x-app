@@ -1,5 +1,6 @@
 {
   "routes": [
-    { "src": "/x-journal", "dest": "/x-journal.html" }
+    { "src": "/x-journal", "dest": "/x-journal.html" },
+    { "src": "/x-journal-staging", "dest": "/x-journal-staging.html" }
   ]
 }
