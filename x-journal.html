@@ -399,6 +399,55 @@
         </div>
     </div>
 
+    <!-- Journaling Coach Modal -->
+    <div id="coachModal" class="fixed inset-0 z-[100] hidden" onclick="if(event.target === this) endCoach()">
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" id="coachOverlay"></div>
+        
+        <!-- Highlight box (will be positioned via JS) -->
+        <div id="coachHighlight" class="absolute pointer-events-none transition-all duration-300 ease-out">
+            <div class="absolute -inset-2 rounded-2xl border-2 border-emerald-400 shadow-[0_0_30px_rgba(52,211,153,0.5)] animate-pulse"></div>
+        </div>
+        
+        <!-- Tooltip -->
+        <div id="coachTooltip" class="absolute transition-all duration-300 ease-out z-10" style="max-width: 320px;">
+            <div class="glass rounded-2xl p-5 shadow-2xl border border-emerald-200/50 bg-white/95">
+                <!-- Progress dots -->
+                <div class="flex items-center justify-center gap-1.5 mb-4" id="coachProgress">
+                    <!-- Generated via JS -->
+                </div>
+                
+                <!-- Icon -->
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                </div>
+                
+                <!-- Title -->
+                <h3 id="coachTitle" class="text-lg font-bold text-slate-800 text-center mb-2">Welcome</h3>
+                
+                <!-- Content -->
+                <p id="coachContent" class="text-sm text-slate-600 text-center leading-relaxed mb-4">Let's explore X Journal together!</p>
+                
+                <!-- Navigation -->
+                <div class="flex items-center gap-3">
+                    <button onclick="prevCoachStep()" id="coachPrevBtn" class="flex-1 py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-xl transition-colors text-sm">
+                        Back
+                    </button>
+                    <button onclick="nextCoachStep()" id="coachNextBtn" class="flex-1 py-2.5 px-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-medium rounded-xl transition-all text-sm shadow-lg shadow-emerald-500/25">
+                        Next
+                    </button>
+                </div>
+                
+                <!-- Skip -->
+                <button onclick="endCoach()" class="w-full mt-3 text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                    Skip Tour
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Background Selector Modal -->
     <div id="bgModal" class="fixed inset-0 z-[60] hidden modal-overlay items-center justify-center p-3 md:p-4" onclick="if(event.target === this) closeBgModal()">
         <div class="glass rounded-3xl p-4 md:p-6 max-w-2xl w-full max-h-[85vh] flex flex-col" onclick="event.stopPropagation()">
@@ -502,6 +551,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                 </svg>
                                 Data Analysis
+                            </button>
+                            <button onclick="startJournalingCoach(); closeDropdown('dataMenu')" class="w-full px-4 py-3 text-left text-sm text-emerald-600 hover:bg-emerald-50 transition-colors flex items-center gap-2 border-t border-slate-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                                Journaling Coach
                             </button>
                             <button onclick="openResetModal(); closeDropdown('dataMenu')" class="w-full px-4 py-3 text-left text-sm text-red-600 hover:bg-red-50 transition-colors flex items-center gap-2 border-t border-slate-100">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1170,6 +1225,249 @@
                 showToast('Gagal mengambil data. Cek koneksi internet.');
             }
         }
+        
+        // ==================== JOURNALING COACH ====================
+        let currentCoachStep = 0;
+        let coachSteps = [];
+        
+        function initCoachSteps() {
+            coachSteps = [
+                {
+                    title: 'Selamat Datang! 🎉',
+                    content: 'X Journal adalah tempatmu mencatat pikiran, perasaan, dan momen penting. Semua data tersimpan lokal di device-mu.',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Buat Journal Baru 📝',
+                    content: 'Klik tombol ini untuk membuat journal baru. Journal bisa untuk topik apa saja: kerjaan, pribadi, proyek, atau diary harianmu.',
+                    target: '#newJournalBtn',
+                    position: 'bottom'
+                },
+                {
+                    title: 'Ganti Background 🎨',
+                    content: 'Pilih tema yang sesuai mood-mu! Ada gradient, nature, texture, dan abstract. Gratis semua.',
+                    target: '#bgMenuContainer button',
+                    position: 'bottom'
+                },
+                {
+                    title: 'Menu Database 💾',
+                    content: 'Ini tempat mengelola data: Import, Export, Data Analysis, Journaling Coach (ini!), dan Reset Data.',
+                    target: '#dataMenuContainer button',
+                    position: 'bottom'
+                },
+                {
+                    title: 'Import Data 📥',
+                    content: 'Punya backup? Import file JSON untuk memulihkan journal-mu. Data lama akan diganti.',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Export Data 📤',
+                    content: 'Backup journal-mu ke file JSON. Disarankan lakukan secara rutin untuk keamanan data.',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Data Analysis 📊',
+                    content: 'Lihat statistik journaling: streak, total entry, mood dominan, dan insight lainnya. Ada tips install PWA juga!',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Reset Data ⚠️',
+                    content: 'Hapus SEMUA data journal. Perlu konfirmasi checkbox dulu agar tidak accidental. Pastikan sudah export dulu!',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Journal Card 📓',
+                    content: 'Setiap journal punya cover emoji, judul, deskripsi, dan jumlah entry. Klik untuk buka/tutup.',
+                    target: '.journal-card',
+                    position: 'top'
+                },
+                {
+                    title: 'Tambah Entry ➕',
+                    content: 'Klik tombol + untuk scroll langsung ke form entry. Bisa pilih mood, upload gambar, dan tulis catatan!',
+                    target: '.new-entry-btn',
+                    position: 'left'
+                },
+                {
+                    title: 'Pilih Emoji Mood 😊',
+                    content: 'Wajib pilih emoji untuk setiap entry! Ini membaca track emosimu dan muncul di statistik.',
+                    target: '.emoji-btn',
+                    position: 'bottom'
+                },
+                {
+                    title: 'Upload Gambar 📸',
+                    content: 'Bisa tambahkan gambar ke entry. Gambar diupload ke ImgBB (never delete) dan URL tersimpan di entry.',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Tulis Catatan 📝',
+                    content: 'Tulis apa saja yang ingin kamu catat. Auto-detect link URL (akan jadi tombol klikabel).',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Tombol Add Entry ✨',
+                    content: 'Klik untuk menyimpan entry. Setelah itu, entry akan muncul di daftar dan auto-scroll ke entry baru.',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Entry Card 🎴',
+                    content: 'Entry menampilkan emoji mood, isi catatan (dengan link klikabel), gambar (kalau ada), dan timestamp.',
+                    target: '.entry-card',
+                    position: 'top'
+                },
+                {
+                    title: 'Tips Pro 💡',
+                    content: 'Gunakan persona template saat onboarding untuk langsung punya journal siap pakai. Bisa juga diakses lewat Reset → Template.',
+                    target: null,
+                    position: 'center'
+                },
+                {
+                    title: 'Siap Memulai! 🚀',
+                    content: 'Itu semua fitur X Journal. Mulai buat journal pertamamu dan happy journaling! Ingat: konsistensi adalah kunci.',
+                    target: null,
+                    position: 'center'
+                }
+            ];
+        }
+        
+        function startJournalingCoach() {
+            initCoachSteps();
+            currentCoachStep = 0;
+            document.getElementById('coachModal').classList.remove('hidden');
+            document.querySelector('header').classList.add('hidden');
+            showCoachStep();
+        }
+        
+        function endCoach() {
+            document.getElementById('coachModal').classList.add('hidden');
+            document.getElementById('coachHighlight').style.display = 'none';
+            document.querySelector('header').classList.remove('hidden');
+            showToast('Tour selesai! Semoga bermanfaat 🎉');
+        }
+        
+        function showCoachStep() {
+            const step = coachSteps[currentCoachStep];
+            const tooltip = document.getElementById('coachTooltip');
+            const highlight = document.getElementById('coachHighlight');
+            const progress = document.getElementById('coachProgress');
+            
+            // Update content
+            document.getElementById('coachTitle').textContent = step.title;
+            document.getElementById('coachContent').textContent = step.content;
+            
+            // Update progress dots
+            progress.innerHTML = coachSteps.map((_, i) => `
+                <div class="w-2 h-2 rounded-full transition-colors ${i === currentCoachStep ? 'bg-emerald-500' : 'bg-slate-300'}"></div>
+            `).join('');
+            
+            // Update buttons
+            document.getElementById('coachPrevBtn').style.visibility = currentCoachStep === 0 ? 'hidden' : 'visible';
+            document.getElementById('coachNextBtn').textContent = currentCoachStep === coachSteps.length - 1 ? 'Selesai' : 'Next';
+            
+            // Position tooltip
+            if (step.target) {
+                const targetEl = document.querySelector(step.target);
+                if (targetEl) {
+                    // Show highlight
+                    highlight.style.display = 'block';
+                    const rect = targetEl.getBoundingClientRect();
+                    highlight.style.left = rect.left + 'px';
+                    highlight.style.top = rect.top + 'px';
+                    highlight.style.width = rect.width + 'px';
+                    highlight.style.height = rect.height + 'px';
+                    
+                    // Position tooltip
+                    positionTooltip(tooltip, rect, step.position);
+                } else {
+                    // Target not found, center tooltip
+                    highlight.style.display = 'none';
+                    centerTooltip(tooltip);
+                }
+            } else {
+                // No target, center tooltip
+                highlight.style.display = 'none';
+                centerTooltip(tooltip);
+            }
+        }
+        
+        function positionTooltip(tooltip, targetRect, position) {
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const spacing = 16;
+            
+            let left, top;
+            
+            switch (position) {
+                case 'bottom':
+                    left = targetRect.left + (targetRect.width - Math.min(tooltipRect.width, 320)) / 2;
+                    top = targetRect.bottom + spacing;
+                    break;
+                case 'top':
+                    left = targetRect.left + (targetRect.width - Math.min(tooltipRect.width, 320)) / 2;
+                    top = targetRect.top - tooltipRect.height - spacing;
+                    break;
+                case 'left':
+                    left = targetRect.left - Math.min(tooltipRect.width, 320) - spacing;
+                    top = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
+                    break;
+                case 'right':
+                    left = targetRect.right + spacing;
+                    top = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
+                    break;
+                default:
+                    left = (window.innerWidth - Math.min(tooltipRect.width, 320)) / 2;
+                    top = (window.innerHeight - tooltipRect.height) / 2;
+            }
+            
+            // Keep within viewport
+            left = Math.max(16, Math.min(left, window.innerWidth - 320 - 16));
+            top = Math.max(16, Math.min(top, window.innerHeight - tooltipRect.height - 16));
+            
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+        
+        function centerTooltip(tooltip) {
+            tooltip.style.left = '50%';
+            tooltip.style.top = '50%';
+            tooltip.style.transform = 'translate(-50%, -50%)';
+        }
+        
+        function nextCoachStep() {
+            if (currentCoachStep < coachSteps.length - 1) {
+                currentCoachStep++;
+                showCoachStep();
+            } else {
+                endCoach();
+            }
+        }
+        
+        function prevCoachStep() {
+            if (currentCoachStep > 0) {
+                currentCoachStep--;
+                showCoachStep();
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('coachModal').classList.contains('hidden')) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextCoachStep();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevCoachStep();
+            } else if (e.key === 'Escape') {
+                endCoach();
+            }
+        });
         
         // ==================== PWA INSTALL ====================
         let deferredPrompt = null;
@@ -1966,7 +2264,7 @@
                             </div>
                             <div class="flex items-center gap-2">
                                 <button onclick="event.stopPropagation(); scrollToEntryForm('${parent.id}')" 
-                                    class="flex items-center justify-center w-8 h-8 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-all shadow-sm hover:shadow-md"
+                                    class="new-entry-btn flex items-center justify-center w-8 h-8 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-all shadow-sm hover:shadow-md"
                                     title="Add new entry">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
