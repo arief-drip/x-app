@@ -599,68 +599,172 @@
         <div id="journalsList" class="space-y-4"></div>
 
         <!-- Empty State / Onboarding -->
-        <div id="emptyState" class="hidden mt-4 mb-4">
+        <div id="emptyState" class="hidden mt-2">
             <!-- Card Empty State -->
-            <div class="glass rounded-3xl p-6 md:p-8 shadow-xl shadow-black/5 text-center relative z-10">
+            <div class="glass rounded-3xl p-5 shadow-xl shadow-black/5 text-center relative z-10">
                 <!-- Icon -->
-                <div class="w-20 h-20 mx-auto mb-5 relative">
+                <div class="w-16 h-16 mx-auto mb-3 relative">
                     <div class="absolute inset-0 bg-gradient-to-br from-violet-400 to-fuchsia-400 rounded-full opacity-20 blur-xl"></div>
                     <div class="relative w-full h-full bg-gradient-to-br from-violet-100 to-fuchsia-100 rounded-2xl flex items-center justify-center">
-                        <span class="text-4xl">📖</span>
+                        <span class="text-3xl">📖</span>
                     </div>
                 </div>
                 
                 <!-- Title & Subtitle -->
-                <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Mulai Perjalananmu</h3>
-                <p class="text-slate-500 max-w-sm mx-auto mb-6">Catat momen, pikiran, dan perjalanan hidupmu dalam satu aplikasi yang aman & privat.</p>
+                <h3 class="text-lg font-bold text-slate-800 mb-1">Belum Ada Jurnal</h3>
+                <p class="text-sm text-slate-500 max-w-sm mx-auto mb-4">Mulai dengan membuat jurnal baru atau ikuti tour singkat</p>
                 
-                <!-- Quick Tips Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 text-left">
-                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
-                        <div class="text-xl mb-1">📝</div>
-                        <p class="text-xs font-semibold text-slate-700">Buat Jurnal</p>
-                        <p class="text-[10px] text-slate-500">Kategori untuk setiap aspek hidup</p>
-                    </div>
-                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
-                        <div class="text-xl mb-1">😊</div>
-                        <p class="text-xs font-semibold text-slate-700">Pilih Mood</p>
-                        <p class="text-[10px] text-slate-500">Tracking emosi harianmu</p>
-                    </div>
-                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
-                        <div class="text-xl mb-1">📊</div>
-                        <p class="text-xs font-semibold text-slate-700">Lihat Statistik</p>
-                        <p class="text-[10px] text-slate-500">Analisis pola journaling</p>
-                    </div>
-                    <div class="bg-white/60 rounded-xl p-3 border border-white/40">
-                        <div class="text-xl mb-1">🔒</div>
-                        <p class="text-xs font-semibold text-slate-700">100% Privat</p>
-                        <p class="text-[10px] text-slate-500">Data tersimpan lokal</p>
-                    </div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-2 justify-center">
+                    <button onclick="startTour()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-colors inline-flex items-center justify-center gap-2">
+                        <span>🎯</span>
+                        <span>Lihat Cara Pakai</span>
+                    </button>
+                    <button onclick="showTemplateModal()" class="btn-primary px-5 py-2.5 text-white text-sm font-medium rounded-xl inline-flex items-center justify-center gap-2">
+                        <span>📦</span>
+                        <span>Lihat Contoh Template</span>
+                    </button>
                 </div>
-                
-                <!-- Divider -->
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="flex-1 h-px bg-slate-200"></div>
-                    <span class="text-xs text-slate-400 font-medium">ATAU MULAI DENGAN TEMPLATE</span>
-                    <div class="flex-1 h-px bg-slate-200"></div>
-                </div>
-                
-                <!-- CTA Button -->
-                <button onclick="showOnboardingModal()" class="w-full sm:w-auto btn-primary px-8 py-3.5 text-white font-semibold rounded-xl inline-flex items-center justify-center gap-2 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/40 transition-all hover:-translate-y-0.5">
-                    <span class="text-lg">📦</span>
-                    <span>Pilih Template Jurnal</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </button>
-                
-                <!-- Subtle hint -->
-                <p class="text-[11px] text-slate-400 mt-4">Bisa di-reset kapan saja via Menu Database</p>
             </div>
         </div>
 
-        <!-- Onboarding Modal -->
-        <div id="onboardingModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);" onclick="if(event.target === this) closeOnboardingModal()">
+        <!-- Tour Modal (Onboarding Step-by-Step) -->
+        <div id="tourModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3" style="background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);">
+            <div class="glass rounded-3xl p-6 max-w-md w-full relative">
+                <!-- Progress Bar -->
+                <div class="flex gap-1 mb-6">
+                    <div class="tour-progress h-1 bg-emerald-500 rounded-full transition-all" style="width: 25%"></div>
+                    <div class="tour-progress h-1 bg-slate-200 rounded-full transition-all" style="width: 25%"></div>
+                    <div class="tour-progress h-1 bg-slate-200 rounded-full transition-all" style="width: 25%"></div>
+                    <div class="tour-progress h-1 bg-slate-200 rounded-full transition-all" style="width: 25%"></div>
+                </div>
+                
+                <!-- Step 1: Welcome -->
+                <div id="tourStep1" class="tour-step text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex items-center justify-center text-4xl">
+                        📓
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Selamat Datang!</h2>
+                    <p class="text-slate-600 mb-6">X Journal adalah tempat aman untuk mencatat perjalanan hidupmu. Tanpa iklan, tanpa tracking, 100% milikmu.</p>
+                    <div class="bg-violet-50 rounded-xl p-4 mb-6 text-left">
+                        <p class="text-sm font-semibold text-violet-800 mb-2">🎯 Kenapa X Journal?</p>
+                        <ul class="text-xs text-violet-700 space-y-1">
+                            <li>• Data tersimpan lokal di perangkatmu</li>
+                            <li>• Bisa di-install seperti aplikasi native</li>
+                            <li>• Statistik untuk melihat perkembanganmu</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Step 2: How it Works -->
+                <div id="tourStep2" class="tour-step hidden text-center">
+                    <h2 class="text-xl font-bold text-slate-800 mb-4">Cara Pakai</h2>
+                    <div class="space-y-3 mb-6 text-left">
+                        <div class="flex items-start gap-3 bg-white/60 rounded-xl p-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-lg">1</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-800 text-sm">Buat Jurnal</p>
+                                <p class="text-xs text-slate-600">Buat kategori untuk setiap aspek hidupmu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white/60 rounded-xl p-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-lg">2</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-800 text-sm">Pilih Emoji + Tulis</p>
+                                <p class="text-xs text-slate-600">Tracking mood dan catat momenmu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white/60 rounded-xl p-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-lg">3</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-800 text-sm">Lihat Statistik</p>
+                                <p class="text-xs text-slate-600">Analisis pola journalingmu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Features -->
+                <div id="tourStep3" class="tour-step hidden text-center">
+                    <h2 class="text-xl font-bold text-slate-800 mb-4">Fitur Unggulan</h2>
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="bg-white/60 rounded-xl p-3 text-center">
+                            <div class="text-2xl mb-1">🔒</div>
+                            <p class="font-semibold text-slate-800 text-xs">Privat</p>
+                            <p class="text-[10px] text-slate-500">Data lokal, bukan cloud</p>
+                        </div>
+                        <div class="bg-white/60 rounded-xl p-3 text-center">
+                            <div class="text-2xl mb-1">😊</div>
+                            <p class="font-semibold text-slate-800 text-xs">Mood Tracker</p>
+                            <p class="text-[10px] text-slate-500">10 emoji berbeda</p>
+                        </div>
+                        <div class="bg-white/60 rounded-xl p-3 text-center">
+                            <div class="text-2xl mb-1">📊</div>
+                            <p class="font-semibold text-slate-800 text-xs">Statistik</p>
+                            <p class="text-[10px] text-slate-500">Insight journaling</p>
+                        </div>
+                        <div class="bg-white/60 rounded-xl p-3 text-center">
+                            <div class="text-2xl mb-1">📱</div>
+                            <p class="font-semibold text-slate-800 text-xs">PWA</p>
+                            <p class="text-[10px] text-slate-500">Install di homescreen</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Start Options -->
+                <div id="tourStep4" class="tour-step hidden text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center text-3xl">
+                        🚀
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800 mb-2">Siap Mulai?</h2>
+                    <p class="text-sm text-slate-600 mb-6">Pilih cara yang paling nyaman buatmu:</p>
+                    
+                    <div class="space-y-3">
+                        <button onclick="closeTour(); showTemplateModal();" class="w-full p-4 bg-gradient-to-r from-violet-50 to-fuchsia-50 border border-violet-200 rounded-xl hover:border-violet-300 transition-all text-left">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">📦</span>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Lihat Contoh Template</p>
+                                    <p class="text-xs text-slate-500">Pilih dari 4 persona berbeda</p>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button onclick="closeTour(); document.getElementById('newJournalTitle').focus();" class="w-full p-4 bg-white/60 border border-slate-200 rounded-xl hover:border-slate-300 transition-all text-left">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">✏️</span>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Mulai Dari Nol</p>
+                                    <p class="text-xs text-slate-500">Buat jurnal pertamamu sendiri</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-6">
+                    <button id="tourPrevBtn" onclick="prevTourStep()" class="px-4 py-2 text-slate-500 hover:text-slate-700 text-sm font-medium hidden">
+                        ← Kembali
+                    </button>
+                    <button id="tourNextBtn" onclick="nextTourStep()" class="flex-1 btn-primary px-6 py-2.5 text-white text-sm font-medium rounded-xl">
+                        Lanjut →
+                    </button>
+                    <button id="tourCloseBtn" onclick="closeTour()" class="hidden px-4 py-2 text-slate-500 hover:text-slate-700 text-sm font-medium">
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Modal -->
+        <div id="templateModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);" onclick="if(event.target === this) closeTemplateModal()">
             <div class="glass rounded-3xl p-5 md:p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative z-[101]" onclick="event.stopPropagation()">
                 <div class="text-center mb-6">
                     <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
@@ -769,7 +873,7 @@
                 </div>
 
                 <!-- Skip Button -->
-                <button onclick="closeOnboardingModal()" class="w-full py-3 text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors">
+                <button onclick="closeTemplateModal()" class="w-full py-3 text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors">
                     Lewati, buat jurnal sendiri →
                 </button>
             </div>
@@ -934,18 +1038,85 @@
             }
         }
         
-        // ==================== ONBOARDING ====================
-        function showOnboardingModal() {
-            document.getElementById('onboardingModal').classList.remove('hidden');
-            document.getElementById('onboardingModal').classList.add('flex');
-            // Hide header when modal is open
+        // ==================== ONBOARDING & TOUR ====================
+        let currentTourStep = 1;
+        const totalTourSteps = 4;
+        
+        function startTour() {
+            currentTourStep = 1;
+            document.getElementById('tourModal').classList.remove('hidden');
+            document.getElementById('tourModal').classList.add('flex');
+            document.querySelector('header').classList.add('hidden');
+            updateTourUI();
+        }
+        
+        function closeTour() {
+            document.getElementById('tourModal').classList.add('hidden');
+            document.getElementById('tourModal').classList.remove('flex');
+            document.querySelector('header').classList.remove('hidden');
+            // Reset to step 1 for next time
+            currentTourStep = 1;
+        }
+        
+        function nextTourStep() {
+            if (currentTourStep < totalTourSteps) {
+                currentTourStep++;
+                updateTourUI();
+            }
+        }
+        
+        function prevTourStep() {
+            if (currentTourStep > 1) {
+                currentTourStep--;
+                updateTourUI();
+            }
+        }
+        
+        function updateTourUI() {
+            // Hide all steps
+            document.querySelectorAll('.tour-step').forEach(el => el.classList.add('hidden'));
+            // Show current step
+            document.getElementById(`tourStep${currentTourStep}`).classList.remove('hidden');
+            
+            // Update progress bar
+            const progressBars = document.querySelectorAll('.tour-progress');
+            progressBars.forEach((bar, index) => {
+                if (index < currentTourStep) {
+                    bar.classList.remove('bg-slate-200');
+                    bar.classList.add('bg-emerald-500');
+                } else {
+                    bar.classList.add('bg-slate-200');
+                    bar.classList.remove('bg-emerald-500');
+                }
+            });
+            
+            // Update buttons
+            const prevBtn = document.getElementById('tourPrevBtn');
+            const nextBtn = document.getElementById('tourNextBtn');
+            
+            if (currentTourStep === 1) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+                nextBtn.textContent = 'Lanjut →';
+            } else if (currentTourStep === totalTourSteps) {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+                nextBtn.textContent = 'Lanjut →';
+            }
+        }
+        
+        function showTemplateModal() {
+            document.getElementById('templateModal').classList.remove('hidden');
+            document.getElementById('templateModal').classList.add('flex');
             document.querySelector('header').classList.add('hidden');
         }
         
-        function closeOnboardingModal() {
-            document.getElementById('onboardingModal').classList.add('hidden');
-            document.getElementById('onboardingModal').classList.remove('flex');
-            // Show header when modal is closed
+        function closeTemplateModal() {
+            document.getElementById('templateModal').classList.add('hidden');
+            document.getElementById('templateModal').classList.remove('flex');
             document.querySelector('header').classList.remove('hidden');
         }
         
@@ -991,7 +1162,7 @@
                     });
                 }
                 
-                closeOnboardingModal();
+                closeTemplateModal();
                 showToast(`Template ${templateName} berhasil diimport!`);
                 await renderJournals();
             } catch (error) {
