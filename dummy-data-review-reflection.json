@@ -1,0 +1,270 @@
+{
+  "parents": [
+    {
+      "id": "review-journal-001",
+      "title": "📅 Weekly Review",
+      "description": "Review mingguan buat bersih-bersih inbox, update progress project, dan nentuin prioritas buat minggu depan. Biar hidup tetap on track!",
+      "dateModified": 1734513600000,
+      "latestEmotion": "📊"
+    },
+    {
+      "id": "review-journal-002",
+      "title": "🗑️ Monthly Dump",
+      "description": "Tempat curhat dan tulis semua yang numpuk sepanjang bulan. Bukan diary biasa, ini dump session buat ngeluarin semua beban pikiran.",
+      "dateModified": 1735550400000,
+      "latestEmotion": "🗑️"
+    },
+    {
+      "id": "review-journal-003",
+      "title": "🔄 Quarterly Reset",
+      "description": "Evaluasi goals 3 bulanan. Apa yang uda tercapai? Apa yang masih stuck? Time to reset dan atur strategi baru!",
+      "dateModified": 1737192000000,
+      "latestEmotion": "🎯"
+    },
+    {
+      "id": "review-journal-004",
+      "title": "🎉 Year in Review",
+      "description": "Ngeliat balik setahun ke belakang. Highlight, lowlight, lessons learned. Waktunya bersyukur dan belajar dari pengalaman.",
+      "dateModified": 1738065600000,
+      "latestEmotion": "✨"
+    },
+    {
+      "id": "review-journal-005",
+      "title": "✉️ Letter to Future Self",
+      "description": "Surat buat diri sendiri 1 tahun lagi. Pesan, harapan, dan mimpi yang pengen dicapai. Siap-siap surprise pas baca lagi nanti!",
+      "dateModified": 1739102400000,
+      "latestEmotion": "💌"
+    },
+    {
+      "id": "review-journal-006",
+      "title": "📬 Letter from Past Self",
+      "description": "Baca tulisan lama dan lihat progress diri. Dulu pengen apa? Sekarang uda sampe mana? Selalu bikin terharu sih ini~",
+      "dateModified": 1739870400000,
+      "latestEmotion": "📖"
+    },
+    {
+      "id": "review-journal-007",
+      "title": "🎯 Life Audit",
+      "description": "Wheel of life: nilai 8 area kehidupan dari karir sampe relationship. Lihat mana yang balance, mana yang butuh perhatian ekstra.",
+      "dateModified": 1740907200000,
+      "latestEmotion": "🌟"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "review-journal-001",
+      "dateAdded": 1731652800000,
+      "notes": "Minggu ini chaos parah sih 🫠\n\nInbox email uda numpuk sampe 50+ unread. Project A masih stuck di phase design, deadline mepet banget minggu depan. Besok harus follow up vendor yang uda ghosting 3 hari.\n\nYang bagus: workout tetep konsisten 4x minggu ini 💪 Juga berhasil decline meeting yang gak penting. Progress!\n\nRencana minggu depan:\n- Senin: Clear inbox sampe 0\n- Selasa-Rabu: Push design project A\n- Kamis: Meeting sama client baru\n- Jumat: Planning buat bulan depan\n\nYuk bisa yuk! 🚀",
+      "emoticon": "💪"
+    },
+    {
+      "parentId": "review-journal-001",
+      "dateAdded": 1732257600000,
+      "notes": "Week 2 check-in! 📈\n\nAlhamdulillah minggu ini lebih produktif. Inbox akhirnya 0 lagi, rasanya lega banget! Project A design uda approved, tinggal masuk ke development.\n\nAda drama dikit sama vendor tapi uda solved. Ternyata cuma miss communication doang. Note to self: selalu double confirm via WhatsApp + email ya.\n\nWorkout masih on track, tapi diet agak off karena banyak meeting lunch 😅 Besok mulai lagi meal prep yang bener.\n\nHighlight minggu ini: closing deal sama client baru! Fee-nya bigger than expected 🎉\n\nGoals minggu depan:\n- Mulai development phase project A\n- Jogging 3x (bukan 4x, biar gak burnout)\n- Weekend digital detox 24 jam",
+      "emoticon": "🎉"
+    },
+    {
+      "parentId": "review-journal-001",
+      "dateAdded": 1732862400000,
+      "notes": "Productive week tapi capek juga 😮‍💨\n\nProject A development uda 60%. Tim dev bilang on track buat delivery minggu depan. Harusnya bisa lah ya, aman-aman aja.\n\nBad news: laptop mulai lemot, kayaknya uda waktunya reinstall atau ganti. Research dulu deh M3 Macbook vs yang lain. Budget sih ada tapi sayik juga duitnya 🤔\n\nGood news: workout 4x lagi minggu ini! Konsisten 3 minggu berturut-turut. Badan uda lebih enteng, stamina naik. Worth it banget sih.\n\nPersonal stuff: akhirnya nonton konser yang ditunggu-tunggu! Seru banget, recharge baterai sosial.\n\nTo-do minggu depan:\n- QA testing project A\n- Backup semua data laptop\n- Schedule call sama financial advisor\n- Visit mom & dad",
+      "emoticon": "⚡"
+    },
+    {
+      "parentId": "review-journal-001",
+      "dateAdded": 1733467200000,
+      "notes": "Project A DONE! 🎊\n\nAkhirnya deliver ke client dan mereka happy! Ada minor revision tapi nothing major. Bayaran masuk hari Senin, yeay!\n\nNgurusin laptop baru juga, akhirnya pesen M3 Air. Delivery diperkirakan minggu depan. Excited tapi sedih juga ditinggal si Macbook lama yang uda 5 tahun bareng.\n\nWorkout agak skip minggu ini karena sibuk ngejar deadline. Cuma 2x doang. Gapapa lah, compromise namanya. Besok balik lagi routine normal.\n\nLearnings minggu ini:\n1. Always add buffer time buat revision\n2. Client communication itu 70% kerjaan freelance\n3. Jangan takut negotiate rate\n\nGoals minggu depan:\n- Set up laptop baru\n- Mulai project B (yang lebih kecil, santai)\n- Reconnect sama temen yang lama gak ketemu\n- Spa day buat self reward 🧖‍♂️",
+      "emoticon": "🎊"
+    },
+    {
+      "parentId": "review-journal-001",
+      "dateAdded": 1734072000000,
+      "notes": "Last week before holiday vibes! 🎄\n\nLaptop baru uda sampe dan wow cepet banget 😍 Setup uda 80%, masih migrasi beberapa file lama. Worth every penny!\n\nProject B started slow but steady. Client-nya lebih relax, enak kerjanya gak diburu-buru. Jadi bisa balance sama personal stuff.\n\nWorkout 3x minggu ini, ada gym holiday schedule juga. Join class yoga buat pertama kali, seru tapi ngakak liat diri sendiri gak flexible 😂\n\nDecember reflection: tahun ini overall good sih. Banyak growth, beberapa setbacks, tapi masih on track sama goals. Proud of myself!\n\nRencana minggu depan:\n- Libur Natal, quality time sama keluarga\n- Finish migration laptop\n- Baca buku yang uda nganggur\n- Start planning 2026 🎯\n\nMerry Christmas and happy holidays! 🎅",
+      "emoticon": "🎄"
+    },
+    {
+      "parentId": "review-journal-002",
+      "dateAdded": 1733035200000,
+      "notes": "Dump pertama November 🔥\n\nGila sih bulan ini roller coaster banget. Dari high-nya closing project besar samai low-nya konflik sama temen deket. Capek pikirannya.\n\nYang numpuk:\n- Rasa bersalah karena ghosting orang (sorry really)\n- Overthinking soal karir path ke depan\n- FOMO liat orang-orang pada nikah, punya anak\n- Belanja online yang impulsif (tapi enak dipakenya sih)\n\nTapi ada yang bagus juga:\n+ Workout konsisten 3 bulan!\n+ Tabungan naik 20% dari target\n+ Berhasil bilang 'no' ke opportunity yang gak aligned\n\nRasanya lega banget bisa nulis ini. Dump session emang perlu ya, gak usah fancy-fancy, yang penting keluar dari kepala.\n\nBesok mau tidur seharian. Recharge dulu. 💤",
+      "emoticon": "😮‍💨"
+    },
+    {
+      "parentId": "review-journal-002",
+      "dateAdded": 1733121600000,
+      "notes": "Lanjut dump part 2 📝\n\nAbis nulis kemaren rasanya lebih tenang. Ternyata nge-dump beneran works!\n\nBaru inget beberapa hal lagi:\n\n- Stress sama perjalanan pulang kampung nanti. Tiket mahal, macet, tapi kangen juga sama keluarga. Mixed feelings.\n\n- Insecure liat LinkedIn orang-orang achievement-nya banyak banget. Padahal tau kalo social media itu curated, tapi tetep aja ngerasa 'behind in life'.\n\n- Project yang pending gara-gara client-nya gak jelas. Uda 2 minggu waiting for feedback. Mau ngejar takut dianggap pushy, gak ngejar stuck.\n\n- Keinginan beli kamera baru buat content creation. Rational brain bilang gak perlu, impulsive brain bilang 'treat yourself'. Battle terus tiap hari.\n\nTapi tau gak? Nulis ini jadi sadar kalo sebenernya hidupku baik-baik aja. Cuman otak yang suka overthinking aja.\n\nSelf-reminder: You're doing better than you think. 🌱",
+      "emoticon": "🌱"
+    },
+    {
+      "parentId": "review-journal-002",
+      "dateAdded": 1733208000000,
+      "notes": "November dump final 🍂\n\nIni entry terakhir buat bulan ini. Mau summarize apa aja yang uda lewat:\n\nKARIR:\n✅ Close 2 project besar\n⏳ 1 project pending\n❌ Gak sempet update portfolio\n\nKEUANGAN:\n✅ Tabungan on track\n⚠️ Spending di baju agak over\n✅ Investasi rutin tetep jalan\n\nKESEHATAN:\n✅ Workout konsisten\n⚠️ Tidur kurang 2 jam/hari\n❌ Skincare routine bolong-bolong\n\nRELATIONSHIP:\n⚠️ Konflik sama temen (resolved)\n✅ Quality time sama keluarga\n❌ Jarang kontekan temen lama\n\nPERSONAL GROWTH:\n✅ Baca 2 buku\n✅ Mulai journaling lagi\n⚠️ Meditation still inconsistent\n\nOverall: not bad lah ya. Banyak checkmark, beberapa warning. December bakal better!\n\nNext month mau fokus ke:\n- Tidur lebih awal\n- Reconnect sama temen lama\n- Update portfolio\n- Lebih banyak self-care\n\nBismillah 🌟",
+      "emoticon": "🍂"
+    },
+    {
+      "parentId": "review-journal-002",
+      "dateAdded": 1735377600000,
+      "notes": "Desember dump! The final month 🎄\n\nBulan ini hectic banget sih. Akhir tahun always crazy. Tapi ada vibes 'new beginnings' yang exciting juga.\n\nDUMP LIST:\n\n😤 FRUSTRASI:\n- End-year work pressure\n- Banyak yang pingin 'meeting before year ends' padahal tau-tau aja kan mau liburan\n- Macet everywhere\n- Harga barang naik lagi pas akhir tahun\n\n😔 SEDIH:\n- Dua temen resign dan pindah kota\n- Gak bisa ikut reunian SMA karena bentrok sama deadline\n- Knowing that 2025 is ending tapi some goals gak kesampean\n\n😊 SENANG:\n- Bonus tahunan! Alhamdulillah 🙏\n- Planning trip bareng keluarga\n- Banyak wedding invitations (love is in the air!)\n- Reflecting on how far I've come this year\n\n🤔 OVERWHELMED:\n- Planning 2026 feels pressure\n- Takut kalo tahun depan gak lebih baik\n- Too many options, analysis paralysis\n\nTapi gapapa. Feel the feelings, then let them go. That's what dumping is for.\n\nBring it on, 2026! 🚀",
+      "emoticon": "🎄"
+    },
+    {
+      "parentId": "review-journal-002",
+      "dateAdded": 1735723200000,
+      "notes": "Last dump of 2025 🎆\n\nHari ini, 1 Januari 2026. Semalem new year's eve dirumah aja, chill sama keluarga. Perfect.\n\nFinal dump untuk tahun kemarin:\n\nSEMUA YANG NGAKUSAH DIPIKIRIN LAGI DI 2026:\n🗑️ Komentar negatif orang yang gak kenal aku\n🗑️ Kesalahan kecil yang uda lewat\n🗑️ Perbandingan sama orang lain\n🗑️ 'What if' yang gak bakal terjadi\n🗑️ Ekspektasi yang terlalu tinggi\n🗑️ Toxic positivity\n🗑️ Orang-orang yang gak support aku\n🗑️ FOMO\n\nSEMUA YANG MAU DIBAWA KE 2026:\n✨ Lessons learned (even the painful ones)\n✨ Hubungan yang genuine\n✨ Self-love yang uda dibangun\n✨ Healthy habits\n✨ Financial discipline\n✨ Courage to say no\n✨ Growth mindset\n\nWriting this feels like closing a book. Good book, btw. Banyak plot twists, tapi ending-nya satisfying.\n\nThank you 2025, you taught me so much. 🙏\n\nWelcome 2026, let's write a new story! ✨",
+      "emoticon": "🎆"
+    },
+    {
+      "parentId": "review-journal-003",
+      "dateAdded": 1733035200000,
+      "notes": "Q4 2025 Evaluation 📊\n\nWaktu berlalu cepet banget, uda Q4 aja! Time to evaluasi goals yang dibuat 3 bulan lalu.\n\nGOAL 1: Naikin income 25%\nTarget: $5000/bulan → $6250/bulan\nRealita: $5800/bulan (16% increase)\nStatus: Almost there! 🟡\n\nYang works:\n- Naikin rate buat client baru\n- Upsell service ke client existing\n- Mulai passive income kecil-kecilan\n\nYang gak works:\n- Project sampingan yang gak jadi\n- Investasi yang underperform\n\nAction buat Q1 2026:\n- Lanjutin strategy yang works\n- Stop project yang gak profitable\n- Focus ke 2-3 client besar aja\n\nOverall, not bad. Gak 100% tapi progress is progress. Slow and steady wins the race 🐢",
+      "emoticon": "📊"
+    },
+    {
+      "parentId": "review-journal-003",
+      "dateAdded": 1733121600000,
+      "notes": "Q4 Goals Check - Bagian 2 🎯\n\nGOAL 2: Healthy lifestyle\nTarget: Gym 4x seminggu, meal prep, 8 jam tidur\nRealita:\n- Gym 3-4x seminggu ✅ (80% success)\n- Meal prep inconsistent 🟡\n- Tidur 6-7 jam ❌\n\nOverall: 60% completed\n\nYang bagus:\n+ Workout uda jadi habit\n+ Stamina naik signifikan\n+ Baju-baju lama muat lagi 😂\n\nYang perlu improvement:\n- Time management malem\n- Meal prep discipline\n- Screen time sebelum tidur\n\nGOAL 3: Personal growth\nTarget: Baca 6 buku, 1 course online, attend 2 workshop\nRealita:\n- Buku: 4/6 🟡\n- Course: 1/1 ✅\n- Workshop: 1/2 🟡\n\nStatus: 75% completed\n\nReflection: Q4 banyakan kerjaan daripda self-development. Q1 depan harus lebih balanced.\n\nReset strategy:\n- Block 'learning time' di calendar\n- Book workshop lebih awal\n- Join book club biar ada accountability\n\nOnwards! 🚀",
+      "emoticon": "🎯"
+    },
+    {
+      "parentId": "review-journal-003",
+      "dateAdded": 1733208000000,
+      "notes": "Quarterly Reset - Final Part 🔄\n\nGOAL 4: Social & Relationship\nTarget: Date night 2x/bulan, reconnect 5 temen lama, keluarga time seminggu sekali\nRealita:\n- Date night: 70% success 🟡\n- Reconnect: 2/5 orang ❌\n- Keluarga: 60% success 🟡\n\nStatus: Not great honestly 😅\n\nKenapa kurang:\n- Seringnya conflict schedule\n- Malas keluar kalo uda capek kerja\n- Social battery low frequently\n\nBut wait, ada improvement:\n+ Quality over quantity - yang ketemu meaningful banget\n+ Berhasil set boundaries sama toxic people\n+ Lebih appreciate alone time\n\nGOAL 5: Financial\nTarget: Emergency fund 6 bulan, mulai investasi property\nRealita:\n- Emergency fund: 5 bulan ✅ (almost there!)\n- Property: Research phase 🟡\n\nStatus: 80% completed\n\nQ1 2026 Strategy:\n\nWORD OF THE QUARTER: BALANCE\n\nMau fokus ke:\n1. Kesehatan (prioritas #1)\n2. Income stability\n3. Relationship quality\n4. Learning & growth\n\nLet go:\n1. Perfectionism\n2. Overcommitting\n3. Comparison\n\nNew quarter, new energy! 🌟",
+      "emoticon": "🔄"
+    },
+    {
+      "parentId": "review-journal-003",
+      "dateAdded": 1736500800000,
+      "notes": "Q1 2026 Planning - Fresh Start! 🌱\n\nUda Januari dan waktunya set goals buat 3 bulan ke depan. Dengan lessons dari Q4 kemarin, this time lebih realistic.\n\nQ1 2026 GOALS:\n\n💼 CAREER (Pragmatic approach):\n- Maintain current income level\n- Finish 3 ongoing projects dengan kualitas tinggi\n- Update portfolio website\n- Target: 1 new retainer client\n\n💪 HEALTH (Top priority):\n- Gym 3x seminggu (realistic, bukan 4x)\n- Tidur before 11PM (work in progress)\n- Meal prep minimal 3x seminggu\n- Annual health checkup\n\n💰 FINANCE:\n- Complete 6-month emergency fund\n- Mulai Rp 500rb/bulan ke reksadana baru\n- Review asuransi dan coverage\n\n❤️ RELATIONSHIP:\n- Date night minimal 1x/bulan\n- Hubungi 1 temen lama per bulan\n- Family dinner 2x/bulan\n\n📚 GROWTH:\n- Baca 2 buku\n- 1 online course\n- Attend 1 networking event\n\nWORD OF Q1: CONSISTENCY\n\nLet's make it happen! 💪",
+      "emoticon": "🌱"
+    },
+    {
+      "parentId": "review-journal-003",
+      "dateAdded": 1736846400000,
+      "notes": "Q1 Reset - Action Plan 📋\n\nHari ini deep dive ke action plan biar goals tadi gak cuman jadi wishful thinking.\n\nCAREER ACTION STEPS:\n\nMinggu 1-2:\n□ Audit semua ongoing projects\n□ Buat timeline realistic per project\n□ Communicate deadlines ke clients\n\nMinggu 3-4:\n□ Audit portfolio yang ada\n□ List 5 case study yang mau ditampilin\n□ Schedule photoshoot buat portfolio baru\n\nBulan 2:\n□ Draft new portfolio content\n□ Research potential retainer clients\n□ Network dengan agency 2x\n\nBulan 3:\n□ Launch portfolio baru\n□ Pitch ke 3 prospective clients\n□ Evaluate Q1 results\n\nHEALTH ACTION STEPS:\n\nSetiap Minggu:\n□ Meal prep hari Minggu\n□ Schedule 3 workout sessions di calendar\n□ Set bedtime reminder jam 10PM\n\nAccountability:\n- Partner workout sama temen gym\n- Share goals ke partner biar didiemin\n- Tracking pakai app\n\nFeel good about this plan! Structured tapi flexible. Ready to crush Q1! 🔥",
+      "emoticon": "📋"
+    },
+    {
+      "parentId": "review-journal-004",
+      "dateAdded": 1736078400000,
+      "notes": "2025 Year in Review - Part 1 ✨\n\nAkhirnya sempet duduk dan nge-reflect setahun ke belakang. What a year!\n\n🌟 HIGHLIGHTS 2025:\n\n1. CAREER MILESTONE\n- Income naik 40% dari tahun lalu!\n- Landed dream client yang uda diincer 2 tahun\n- Buka bisnis sampingan kecil-kecilan\n- Diundang jadi speaker di 2 events\n\n2. HEALTH WINS\n- Consistent workout selama 10 bulan!\n- Turun 8kg (bukan main-main lagi)\n- Lari 5K pertama kali seumur hidup\n- Bikin workout jadi habit, bukan chore\n\n3. PERSONAL GROWTH\n- Baca 15 buku (target 12 ✅)\n- Lulus course Data Analytics\n- Mulai therapy dan it's life-changing\n- Berani set boundaries\n\n4. RELATIONSHIP\n- Anniversary 3 tahun sama partner\n- Reconnect sama saudara yang lama lost contact\n- Make 2 new genuine friendships\n- Lebih deket sama parents\n\nFeeling grateful and proud 🙏",
+      "emoticon": "✨"
+    },
+    {
+      "parentId": "review-journal-004",
+      "dateAdded": 1736164800000,
+      "notes": "2025 Year in Review - Part 2 💭\n\nLanjutan dari kemaren. Sekarang bagian yang lebih reflective.\n\n😔 LOWLIGHTS 2025:\n\n1. HEALTH SETBACKS\n- Burnout di Q2, harus rest 3 minggu\n- COVID lagi dan recovery lama\n- Dental issues yang mahal dan menyakitkan\n- Skincare routine failed epically\n\n2. CAREER CHALLENGES\n- Kehilangan client besar karena miss communication\n- Project yang gagal dan rugi waktu/uang\n- Struggle dengan work-life balance\n- Prokrastinasi yang parah di Q3\n\n3. RELATIONSHIP HURDLES\n- Konflik besar sama sahabat\n- Ghosting temen yang toxic (necessary but hard)\n- FOMO social media yang bikin insecure\n- Rasa bersalah karena gak cukup quality time\n\n4. PERSONAL STRUGGLES\n- Existential crisis di ultah\n- Quarter-life crisis vibes\n- Overthinking yang mengganggu tidur\n- Perfectionism yang nahan progress\n\nTapi tau gak? Lowlights ini yang bikin aku lebih kuat. Setiap challenge ada lessons-nya.\n\nNo regrets, just lessons. 💪",
+      "emoticon": "💭"
+    },
+    {
+      "parentId": "review-journal-004",
+      "dateAdded": 1736251200000,
+      "notes": "2025 Year in Review - Part 3 🎓\n\nLESSONS LEARNED 2025:\n\n💡 TENTANG KARIR:\n1. Quality > Quantity - better dikit client tapi bayar well\n2. Underpromise, overdeliver - jangan sebaliknya\n3. Networking itu investasi, bukan waste of time\n4. It's okay to fire bad clients\n5. Document everything - you'll thank yourself later\n\n💡 TENTANG KESEHATAN:\n1. Health is wealth beneran, gak cuman quotes IG\n2. Rest is productive, bukan malas\n3. Small consistent actions > sporadic big efforts\n4. Listen to your body before it's too late\n5. Mental health is just as important as physical\n\n💡 TENTANG RELATIONSHIP:\n1. Quality time over quantity time\n2. It's okay to outgrow people\n3. Communication is everything (literally)\n4. Set boundaries early and firmly\n5. Show appreciation to loved ones regularly\n\n💡 TENTANG DIRI SENDIRI:\n1. Progress over perfection, always\n2. Comparison is the thief of joy\n3. It's okay to not have everything figured out\n4. Self-compassion is necessary\n5. You are enough, as you are\n\nBawa semua ini ke 2026! 🚀",
+      "emoticon": "🎓"
+    },
+    {
+      "parentId": "review-journal-004",
+      "dateAdded": 1737624000000,
+      "notes": "2025 Year in Review - Part 4 🙏\n\nGRATITUDE SECTION:\n\nThings I'm grateful for in 2025:\n\n🏠 BASIC NEEDS:\n- Punya atap dikepala yang aman dan nyaman\n- Makanan di meja setiap hari\n- Akses ke air bersih dan listrik\n- Bisa kerja dari rumah\n\n👨‍👩‍👧‍👦 RELATIONSHIPS:\n- Orang tua yang supportive\n- Partner yang understanding dan patient\n- Circle of friends yang genuine\n- Mentor yang guide karirku\n\n💼 CAREER:\n- Client yang value my work\n- Opportunities yang datang\n- Skills yang uda dikembangkan\n- Income yang cukup untuk needs dan wants\n\n🌱 PERSONAL:\n- Kesehatan yang membaik\n- Mental health awareness\n- Growth mindset yang berkembang\n- Courage untuk keluar dari comfort zone\n\n✨ LITTLE THINGS:\n- Morning coffee yang nikmat\n- Sunset sore hari\n- Good books\n- Music that heals\n- Memes that make me laugh\n\n2025, thank you for everything. The good, the bad, and everything in between. 🙏",
+      "emoticon": "🙏"
+    },
+    {
+      "parentId": "review-journal-004",
+      "dateAdded": 1737627600000,
+      "notes": "2025 Year in Review - Final 🎊\n\nOVERALL SCORE CARD:\n\nCareer: A- (40% income increase, dream client, new business)\nHealth: B+ (consistent workout, weight loss, tapi ada burnout)\nFinance: A (emergency fund on track, new investments)\nRelationship: B (good with partner, tapi could be better dengan teman)\nPersonal Growth: A (therapy, reading, courses)\nFun & Recreation: C+ (kurang liburan dan me-time)\n\nOVERALL GPA: 3.5/4.0 🎓\n\nONE WORD TO DESCRIBE 2025: TRANSFORMATION\n\n2025 was the year I:\n✨ Transformed my relationship with work\n✨ Transformed my body and health\n✨ Transformed my mindset\n✨ Transformed fear into courage\n✨ Transformed dreams into plans\n\nSETBACKS THAT BECAME SETUPS:\n- Burnout → Better boundaries\n- Failed project → Better client selection\n- Lost friendship → Better appreciation for real ones\n- Existential crisis → Clarity on values\n\nAs I close this chapter, I feel:\n- Proud of how far I've come\n- Grateful for everyone who supported me\n- Excited for what's coming\n- At peace with what didn't work out\n\nThank you, 2025. You were exactly what I needed. ❤️\n\nBring it on, 2026! I'm ready! 🚀",
+      "emoticon": "🎊",
+      "imageUrl": "https://images.pexels.com/photos/377235/pexels-photo-377235.jpeg"
+    },
+    {
+      "parentId": "review-journal-005",
+      "dateAdded": 1737624000000,
+      "notes": "Dear Future Me (Januari 2027) 💌\n\nHalo! Apa kabar di sana?\n\nAku nulis ini di awal 2026, pas lagi semangat-semangatnya sama new year vibes. Semoga sampe ketemu kamu nanti, semua yang aku tulis ini uda jadi kenyataan.\n\nPertanyaan buat kamu:\n\n1. Uda ke Jepang belum? Itu kan dream trip kita dari dulu. Kalo uda, gimana rasanya? Kalo belum, what's stopping you?\n\n2. Income uda 2x lipat belum? Aku yakin kamu bisa. Kalo belum juga gapapa, asal happy dan fulfilled.\n\n3. Masih workout consistently? Please tell me yes. Jangan sampe balik ke habits jelek dulu ya!\n\n4. Relationship sama [partner name] gimana? Uda married? Atau uda move on? Both are okay, yang penting you're happy.\n\n5. Uda beli rumah sendiri? Atau masih happy renting? No judgment either way.\n\n6. Masih journaling? Semoga masih. It's been therapeutic for us.\n\nThings I hope for you:\n- Lebih confident\n- Lebih tidak peduli sama judgment orang\n- Lebih sayang sama diri sendiri\n- Lebih daring to dream bigger\n\nI'll see you in 365 days. Make me proud! ✨",
+      "emoticon": "💌"
+    },
+    {
+      "parentId": "review-journal-005",
+      "dateAdded": 1737627600000,
+      "notes": "Letter to Future Self - Part 2 🌟\n\nLanjutan surat kemaren. Ada beberapa hal lagi yang pengen aku ingetin ke kamu.\n\nINGETIN DONG KALO:\n\n- Kamu lagi insecure, inget kalo kamu uda survive 100% of your bad days.\n\n- Kamu lagi ragu sama diri sendiri, inget semua achievement yang uda kamu raih.\n\n- Kamu lagi takut gagal, inget kalo failing means you're trying.\n\n- Kamu lagi overwork, inget burnout di 2025. Don't go there again.\n\n- Kamu lagi prokrastinate, inget gimana relieved-nya selesaiin sesuatu.\n\n- Kamu lagi compare diri sama orang, inget everyone has their own timeline.\n\n- Kamu lagi sedih, inget it's okay to not be okay. Feel it, then heal it.\n\n- Kamu lagi happy (which I hope you are), inget be grateful and savor it.\n\nREMINDERS FOR YOU:\n\n🌱 Growth is not linear. Ada naik turunnya, and that's normal.\n\n💪 You are stronger than you think. Look at everything you've overcome.\n\n❤️ You are worthy of love, success, and happiness. Don't ever forget that.\n\n🎯 Your dreams are valid. Chase them, even when it gets hard.\n\nI'm rooting for you, always. 🌟",
+      "emoticon": "🌟"
+    },
+    {
+      "parentId": "review-journal-005",
+      "dateAdded": 1737710400000,
+      "notes": "Letter to Future Self - Goals Check 📝\n\nOke ini bagian yang lebih konkrit. Goals yang pengen aku achieve sampe ketemu kamu nanti:\n\nCAREER GOALS (by Jan 2027):\n□ Income $8000+/bulan\n□ 3 retainer clients yang stabil\n□ Launch online course\n□ Speak di 5+ events\n□ Team of 2-3 people\n\nHEALTH GOALS:\n□ Maintain 75kg (current 78kg)\n□ Run half marathon\n□ Consistent workout 3x/week\n□ Annual health checkup\n□ No burnout (most important!)\n\nFINANCIAL GOALS:\n□ Emergency fund 12 bulan\n□ Property down payment ready\n□ Investment portfolio $50k+\n□ Zero debt (except mortgage kalo ada)\n\nPERSONAL GOALS:\n□ Trip ke 3 negara baru\n□ Baca 20 buku\n□ Publish 24 blog posts\n□ Meditate consistently\n□ Therapy on maintenance mode\n\nRELATIONSHIP GOALS:\n□ Weekly date night\n□ Monthly catch up dengan temen\n□ Quarterly family trip\n□ Set boundaries firmly\n\nFuture me, please check these boxes! Rooting for you! 💪",
+      "emoticon": "📝"
+    },
+    {
+      "parentId": "review-journal-005",
+      "dateAdded": 1737714000000,
+      "notes": "Letter to Future Self - Last Part 🎆\n\nIni entry terakhir dari surat ini. Mau ngomong beberapa hal yang lebih personal.\n\nFuture me,\n\nAku harap kamu uda:\n\n🌸 Forgive yourself untuk kesalahan masa lalu. You did the best you could with what you knew at the time.\n\n🌸 Let go of grudges. They're too heavy to carry.\n\n🌸 Made peace dengan hal-hal yang gak bisa kamu control.\n\n🌸 Learned to enjoy the present, not just chase the future.\n\n🌸 Found joy in small things - sunrise, good coffee, deep conversations.\n\n🌸 Surrounded yourself dengan orang-orang yang lift you up.\n\n🌸 Become someone yang younger you would be proud of.\n\n🌸 But most importantly, I hope you're happy. Genuinely, deeply happy.\n\nIf you're reading this and things didn't go as planned, that's okay too. Life rarely goes according to plan, and that's what makes it beautiful.\n\nWhatever happens, remember:\n\nYou are enough. You are worthy. You are loved. ❤️\n\nWith all my love,\nYou from 2026\n\nP.S. Jangan lupa baca ini lagi di 2028 ya! 🎆",
+      "emoticon": "🎆",
+      "imageUrl": "https://images.pexels.com/photos/3826676/pexels-photo-3826676.jpeg"
+    },
+    {
+      "parentId": "review-journal-005",
+      "dateAdded": 1737717600000,
+      "notes": "Letter to Future Self - Bonus 💫\n\nBonus round! Beberapa quotes yang pengen aku ingetin ke kamu:\n\n\"The only person you should try to be better than is the person you were yesterday.\"\n\n\"Don't compare your chapter 1 to someone else's chapter 20.\"\n\n\"You don't have to be perfect to be amazing.\"\n\n\"Your value doesn't decrease based on someone's inability to see your worth.\"\n\n\"It's okay to outgrow people. It's okay to change. It's okay to evolve.\"\n\n\"Rest is not a reward. It's a necessity.\"\n\n\"You are allowed to be both a masterpiece and a work in progress.\"\n\n\"The best investment you can make is in yourself.\"\n\nFuture me, kalo lagi down, baca ini lagi ya. Semoga bisa ngingetin kamu kalo kamu itu keren, kamu itu capable, dan kamu itu worthy.\n\nUntil we meet again! 💫",
+      "emoticon": "💫",
+      "imageUrl": "https://images.pexels.com/photos/376912/pexels-photo-376912.jpeg"
+    },
+    {
+      "parentId": "review-journal-006",
+      "dateAdded": 1739793600000,
+      "notes": "Reading Letter from Jan 2025 📖\n\nOmg baru baca surat yang aku tulis setahun lalu dan... wow. Banyak banget feelings yang muncul.\n\nIsi surat tahun lalu:\n- Worried banget tentang financial stability\n- Insecure soal career path\n- Pengen banget naikin income 30%\n- Hoping bisa konsisten workout\n- Dreaming of traveling ke Jepang\n- Scared of failing\n\nNow reading it in 2026:\n\nFinancial stability? Check! ✅ Income naik 40%, lebih dari target!\n\nCareer path? Clearer now. Masih ada doubts tapi lebih confident.\n\nWorkout consistency? Nailed it! 10 months strong baby! 💪\n\nJepang? Belum kesampean... tapi udah di planning Q2 2026!\n\nThe fear of failing? Still there, tapi uda belajar cara manage it.\n\nFeeling proud and emotional. Look how far we've come! 🥹\n\nLittle me would be so proud of current me. And that's what matters. 💕",
+      "emoticon": "📖"
+    },
+    {
+      "parentId": "review-journal-006",
+      "dateAdded": 1739797200000,
+      "notes": "Letter from Past - Part 2 🕰️\n\nLanjutan baca surat lama. Ada bagian yang lebih personal yang aku tulis tahun lalu.\n\nQuote from 2025 me:\n\"Aku lagi di fase yang bingung banget. Kerjaan hectic tapi gak fulfilling. Income oke tapi gak passionate. Semua orang bilang aku sukses tapi aku gak ngerasa happy.\"\n\nReading this now...\n\nI remember that feeling. The emptiness. The 'is this all there is?' feeling. The burnout that followed.\n\nBut look at us now. I found a way to make work fulfilling again. I rediscovered my passion. I learned to define success on my own terms.\n\nWhat changed?\n1. Started therapy - game changer!\n2. Set boundaries dengan kerjaan\n3. Made time for hobbies and fun\n4. Surrounded myself dengan people who get it\n5. Redefined what success means to ME\n\nPast me was brave enough to acknowledge the problem. Current me is proud to say we worked through it.\n\nThe journey wasn't easy, but it was worth it. 🌟",
+      "emoticon": "🕰️"
+    },
+    {
+      "parentId": "review-journal-006",
+      "dateAdded": 1739880000000,
+      "notes": "Letter from Past - Part 3 💭\n\nAda satu bagian lagi di surat lama yang bikin aku pause dan reflect.\n\nFrom 2025:\n\"Aku takut kalo 5 tahun lagi aku masih di tempat yang sama. Gak berkembang, gak growing, stuck. Aku gak mau jadi orang yang cuman exist, bukan live.\"\n\nReading this in 2026...\n\nHey past me, I have good news. We're not stuck. We're not just existing. We're LIVING.\n\nIn one year:\n✅ We grew 40% in income\n✅ We grew in health and fitness\n✅ We grew in confidence\n✅ We grew in self-awareness\n✅ We grew in relationships\n\nWe took risks. We failed. We learned. We got back up.\n\nThe fear of being stuck that you had? It pushed us to keep moving. To keep growing. To never settle.\n\nSo thank you, past me. Thank you for:\n- Being honest about your fears\n- Having the courage to want more\n- Not settling for 'good enough'\n- Believing that we could be better\n\nI promise to keep that fire alive. 🔥\n\nYour future self (who's very proud of you)",
+      "emoticon": "💭"
+    },
+    {
+      "parentId": "review-journal-006",
+      "dateAdded": 1739883600000,
+      "notes": "Letter from Past - Part 4 🌱\n\nBagian terakhir dari surat lama yang pengen aku reflect. Ini yang paling emotional.\n\nFrom 2025 me:\n\"Aku harap 2026 aku bisa:\n- Lebih sayang sama diri sendiri\n- Lebih berani bilang 'no'\n- Lebih gak peduli sama judgment orang\n- Lebih happy, genuinely happy\n- Lebih proud of myself\"\n\nChecking in on these hopes:\n\n💕 Lebih sayang sama diri sendiri?\nYes! Therapy helped a lot. Journaling juga. Belajar self-compassion step by step.\n\n🚫 Lebih berani bilang 'no'?\nYES! Uda berhasil decline opportunities yang gak aligned. Uda berhasil set boundaries. Itu empowering banget!\n\n🙉 Lebih gak peduli sama judgment?\nWork in progress. Better than before, tapi masih ada moments of doubt. Getting there!\n\n😊 Lebih genuinely happy?\nYes! Overall happiness level naik signifikan. Masih ada bad days, tapi baseline-nya lebih tinggi.\n\n🌟 Lebih proud of myself?\nAbsolutely! Look at everything we accomplished. I am PROUD.\n\n4 out of 5 fully achieved, 1 in progress. Not bad at all! 🎉",
+      "emoticon": "🌱"
+    },
+    {
+      "parentId": "review-journal-006",
+      "dateAdded": 1739887200000,
+      "notes": "Letter from Past - Final Reflection 💌\n\nHabis baca semua surat dari tahun lalu dan mau nulis closing thoughts.\n\nWhat surprised me:\n- Seberapa banyak aku uda lupa tentang struggles tahun lalu\n- Seberapa besar progress yang uda dibuat\n- Seberapa valid fears aku waktu itu, tapi ternyata bisa dihandle\n\nWhat stayed the same:\n- Masih worry tentang future (tapi less intense)\n- Masih insecure kadang (tapi lebih bisa manage)\n- Masih passionate tentang growth\n- Masih grateful untuk keluarga dan partner\n\nWhat changed for the better:\n- Confidence level\n- Ability to handle stress\n- Financial stability\n- Health habits\n- Self-awareness\n\nMessage to past me:\nThank you for trusting the process. Thank you for doing the work. Thank you for not giving up. You laid the foundation for where I am now.\n\nMessage to future me:\nI hope when you read this in 2027, you'll be just as proud of 2026 me as I am of 2025 me. Let's keep growing together.\n\nThis journaling practice? Priceless. 💎\n\nUntil next year! 💌",
+      "emoticon": "💌",
+      "imageUrl": "https://images.pexels.com/photos/267586/pexels-photo-267586.jpeg"
+    },
+    {
+      "parentId": "review-journal-007",
+      "dateAdded": 1737192000000,
+      "notes": "Life Audit Q4 2025 🎯\n\nWheel of Life evaluation untuk 8 area. Rate 1-10 secara jujur.\n\n1. 💼 CAREER (8/10)\nAlhamdulillah tahun ini career-nya oke banget. Income naik, client bagus, projects fulfilling. Minus 2 point karena work-life balance masih struggle dan kadang overwork.\n\n2. 💰 FINANCE (7/10)\nEmergency fund on track, investasi rutin, spending under control. Minus 3 point karena belom punya property dan lifestyle inflation masih ada.\n\n3. 💪 HEALTH (7/10)\nWorkout konsisten, berat badan turun, stamina naik. Minus 3 point karena tidur kurang, diet inconsistent, dan mental health masih roller coaster.\n\n4. ❤️ RELATIONSHIP (6/10)\nPartner dan keluarga good, tapi social life agak terabaikan. Minus 4 point karena beberapa friendships fade dan networking kurang.\n\n5. 🎨 CREATIVITY (5/10)\nThis is the lowest! Kepingin banget lebih kreatif tapi energi habis di kerjaan. Minus 5 point karena gak ada passion projects, jarang nulis/nge-dance/nge-gambar.\n\n6. 🌱 PERSONAL GROWTH (8/10)\nProud of this! Banyak baca, ikut course, therapy, journaling. Minus 2 point karena meditation inconsistent.\n\n7. 🏠 ENVIRONMENT (7/10)\nRumah nyaman, organized, tempat kerja oke. Minus 3 point karena pengen lebih minimalist dan declutter lebih banyak.\n\n8. 🎉 FUN & RECREATION (4/10)\nThis is concerning! Jarang liburan, hobbies terbengkalai, social battery low terus. Minus 6 point. Need to fix this!\n\nAVERAGE: 6.5/10\n\nAreas to focus: Fun, Creativity, Relationship 💡",
+      "emoticon": "🎯"
+    },
+    {
+      "parentId": "review-journal-007",
+      "dateAdded": 1737278400000,
+      "notes": "Life Audit - Action Plan 📋\n\nBerdasarkan hasil wheel of life kemaren, ini action plan buat improve areas yang lemah.\n\n🎉 FUN & RECREATION (4/10 → Target 7/10):\n□ Schedule 1 weekend getaway per quarter\n□ Block 'fun time' 1x seminggu di calendar\n□ List 10 hobbies yang pengen dicoba, cobain 1 per bulan\n□ Join social group (book club/sports club)\n□ Plan 1 big trip per year\n\n🎨 CREATIVITY (5/10 → Target 7/10):\n□ Morning pages - nulis 3 pages tiap pagi\n□ Schedule 'creative time' 2 jam seminggu\n□ Start passion project gak peduli hasilnya\n□ Visit museum/gallery 1x per bulan\n□ Limit screen time, ganti dengan creating\n\n❤️ RELATIONSHIP (6/10 → Target 8/10):\n□ Weekly call sama 1 temen lama\n□ Monthly social gathering\n□ Date night tanpa handphone\n□ Family dinner rutin\n□ Be more vulnerable dan open\n\nTimeline:\n- Month 1: Set up systems dan habits\n- Month 2: Evaluate progress, adjust\n- Month 3: Full evaluation\n\nLet's make life more balanced! ⚖️",
+      "emoticon": "📋"
+    },
+    {
+      "parentId": "review-journal-007",
+      "dateAdded": 1737364800000,
+      "notes": "Life Audit - Deep Dive 🔍\n\nMau ngulik lebih dalam ke setiap area dan identify root causes.\n\nWHY FUN & RECREATION IS LOW:\n\nRoot cause 1: Guilt\nTiap kali mau have fun, ngerasa guilty karena 'harusnya kerja'. Mindset toxic dari hustle culture.\n\nSolution: Reframe rest as productive. Schedule fun seperti schedule meeting.\n\nRoot cause 2: Decision fatigue\nUda capek mikir kerjaan, jadi malem/weekend cuman mau tidur/scroll.\n\nSolution: Plan fun activities in advance biar gak perlu mikir.\n\nRoot cause 3: Social anxiety\nUdah lama gak social, jadi makin awkward dan males.\n\nSolution: Start small. 1-on-1 coffee dulu sebelum big group.\n\nWHY CREATIVITY IS LOW:\n\nRoot cause 1: Perfectionism\nTakut bikin sesuatu yang 'gak bagus', jadi mending gak usah mulai.\n\nSolution: Embrace bad art. Create for the process, not the result.\n\nRoot cause 2: No energy left\nOtak uda drained di kerjaan, gak ada creative juice lagi.\n\nSolution: Create di pagi hari sebelum kerja. Morning pages!\n\nUnderstanding root causes makes solutions clearer. Let's fix this! 🔧",
+      "emoticon": "🔍"
+    },
+    {
+      "parentId": "review-journal-007",
+      "dateAdded": 1738574400000,
+      "notes": "Life Audit - Progress Check ✅\n\n1 bulan uda lewat sejak life audit pertama. Time to check progress!\n\n🎉 FUN & RECREATION: 4/10 → 6/10 (+2)\n✅ 1 weekend getaway done!\n✅ Cobain 2 hobbies baru (cooking class & hiking)\n✅ Block 'fun time' seminggu sekarang\n⚠️ Masih struggle dengan social group\n\n🎨 CREATIVITY: 5/10 → 6/10 (+1)\n✅ Morning pages 70% consistency\n✅ Mulai sketching lagi (jelek tapi fun!)\n⚠️ Passion project belom mulai\n⚠️ Museum visit belom kesampean\n\n❤️ RELATIONSHIP: 6/10 → 7/10 (+1)\n✅ Weekly call sama temen established\n✅ 2 family dinners sebulan\n✅ Date night tanpa HP berhasil!\n⚠️ Networking event belom keturutan\n\nOther areas stable:\n💼 Career: 8/10\n💰 Finance: 7/10 (emergency fund complete!)\n💪 Health: 7/10\n🌱 Personal Growth: 8/10\n🏠 Environment: 7/10\n\nNEW AVERAGE: 7/10 (up from 6.5!) 🎉\n\nProgress is progress! Keep going! 💪",
+      "emoticon": "✅"
+    },
+    {
+      "parentId": "review-journal-007",
+      "dateAdded": 1739880000000,
+      "notes": "Life Audit - 3 Month Review 🌟\n\nUda 3 bulan sejak life audit pertama. Time for final evaluation!\n\nFINAL WHEEL OF LIFE RATINGS:\n\n1. 💼 CAREER: 8/10 → 8/10 (stable)\nStill good, no major changes. Client baru mantap.\n\n2. 💰 FINANCE: 7/10 → 8/10 (+1)\nEmergency fund complete! Started property research.\n\n3. 💪 HEALTH: 7/10 → 8/10 (+1)\nWorkout still consistent, sleep improved, meal prep lebih regular.\n\n4. ❤️ RELATIONSHIP: 6/10 → 7/10 (+1)\nReconnect sama temen lama, quality time improved, tapi masih bisa better.\n\n5. 🎨 CREATIVITY: 5/10 → 7/10 (+2)\nMorning pages routine established, sketching regularly, passion project mulai!\n\n6. 🌱 PERSONAL GROWTH: 8/10 → 8/10 (stable)\nStill going strong with learning and therapy.\n\n7. 🏠 ENVIRONMENT: 7/10 → 8/10 (+1)\nDecluttered banyak stuff, room feels more peaceful.\n\n8. 🎉 FUN & RECREATION: 4/10 → 7/10 (+3)\nBIGGEST IMPROVEMENT! 2 trips done, hobbies explored, social life reviving!\n\nNEW AVERAGE: 7.6/10 (up from 6.5!) 🎊\n\nReflection:\nLife audit works! Focused effort di weak areas beneran bikin difference. Life feels more balanced and fulfilling now.\n\nNext audit: April 2026. Excited to see more growth! 🌱",
+      "emoticon": "🌟",
+      "imageUrl": "https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg"
+    }
+  ]
+}

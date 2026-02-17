@@ -1,0 +1,301 @@
+{
+  "parents": [
+    {
+      "id": "habit-001",
+      "title": "✅ Habit Tracker",
+      "description": "Grid visual konsistensi - tracking kebiasaan harian biar keliatan progressnya",
+      "dateModified": 1735689600000,
+      "latestEmotion": "📈"
+    },
+    {
+      "id": "routine-002",
+      "title": "🔍 Routine Audit",
+      "description": "Apa yang berhasil/perlu diubah - evaluasi rutinitas yang works dan yang ga",
+      "dateModified": 1735776000000,
+      "latestEmotion": "🤔"
+    },
+    {
+      "id": "friction-003",
+      "title": "⚡ Friction Log",
+      "description": "Hambatan kecil yang bikin malas - catet semua gesekan yang ngerem productivity",
+      "dateModified": 1735862400000,
+      "latestEmotion": "😤"
+    },
+    {
+      "id": "energy-004",
+      "title": "🔋 Energy Mapping",
+      "description": "Jam berapa produktivitas puncak - nemuin prime time buat kerja",
+      "dateModified": 1735948800000,
+      "latestEmotion": "⚡"
+    },
+    {
+      "id": "evening-005",
+      "title": "🌙 Evening Review",
+      "description": "3 win + 1 fokus besok - refleksi malam hari biar besok lebih on fire",
+      "dateModified": 1736035200000,
+      "latestEmotion": "🌟"
+    },
+    {
+      "id": "weekly-006",
+      "title": "🗓️ Weekly Reset",
+      "description": "Declutter mingguan - bersih-bersih fisik dan mental tiap minggu",
+      "dateModified": 1736121600000,
+      "latestEmotion": "🧹"
+    },
+    {
+      "id": "monthly-007",
+      "title": "📊 Monthly Reflection",
+      "description": "Progress big picture - liat sejauh mana perkembangan dari bird's eye view",
+      "dateModified": 1736294400000,
+      "latestEmotion": "🎯",
+      "imageUrl": "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "habit-001",
+      "dateAdded": 1734393600000,
+      "notes": "Hari pertama nyoba habit tracker nih ges! Jujur masih agak males nulis-nulis ginian tapi yaudahlah ya demi self improvement katanya.\n\nHari ini berhasil:\n- Minum air putih 2 liter ✅\n- Tidur jam 10 ✅ (ini miracle sih biasanya jam 1)\n- Bangun jam 6 ❌ (gagal total, tetep jam 8)\n\nGrid visualnya sih oke sih, jadi keliatan banget mana yang masih bolong-bolong. Besok coba lebih disiplin ah buat bangun paginya.",
+      "emoticon": "😅",
+      "imageUrl": null
+    },
+    {
+      "parentId": "habit-001",
+      "dateAdded": 1734480000000,
+      "notes": "Day 2 of tracking! Hari ini lumayan proud sama diri sendiri sih.\n\nProgress:\n- Bangun jam 6:15 ✅ (close enough lah ya dari target 6)\n- Morning workout 15 menit ✅\n- Meditasi 10 menit ✅\n- Baca buku 30 menit ❌ (ketiduran mulu gara-gara workout)\n\nYang rada susah tuh konsisten meditasi, pikiran masih suka kemana-mana. Tapi gapapa deh namanya juga latihan. Grid hari ini udah lebih ijo daripada kemarin!",
+      "emoticon": "💪",
+      "imageUrl": null
+    },
+    {
+      "parentId": "habit-001",
+      "dateAdded": 1734566400000,
+      "notes": "Hari ketiga dan udah ngerasa beda sih stamina-nya.\n\nChecklist hari ini:\n- Air putih 2L ✅ (udah biasa aja sekarang)\n- Tidur jam 10 ✅\n- Bangun jam 6 ✅ (akhirnya!)\n- Journaling ✅\n- No phone di kamar tidur ❌ (masih suka scroll reels sebelum tidur)\n\nSatu yang masih susah: ditinggalin hp di luar kamar. Kayanya besok harus taruh charger di ruang tamu deh biar ga gampang ngambil.",
+      "emoticon": "🌅"
+    },
+    {
+      "parentId": "habit-001",
+      "dateAdded": 1734652800000,
+      "notes": "Weekend tetep harus on track! Meski libur tetep disiplin.\n\nWeekend mode:\n- Bangun tetep jam 6:30 (gapapa lah 30 menit lebih santai)\n- Deep clean kamar ✅\n- Meal prep buat minggu depan ✅\n- Digital detox 4 jam ✅\n- Screen time check ❌ (masih 5 jam sehari, target 3 jam)\n\nScreen time emang susah banget dikurangin ya. Social media addiction is real. Next week coba pake app blocker kali ya.",
+      "emoticon": "📱",
+      "imageUrl": null
+    },
+    {
+      "parentId": "habit-001",
+      "dateAdded": 1734739200000,
+      "notes": "Seminggu udah lewat dan wow, grid visualku sekarang mostly ijo semua!\n\nWeekly recap:\n- 6/7 hari bangun jam 6 ✅\n- Air putih konsisten ✅\n- Workout 5x seminggu ✅\n- Meditasi 4x seminggu (masih perlu improvement)\n- Reading goal: 3/7 hari ❌\n\nYang paling kerasa sih energi pagi. Dulu bangun siang terus feel guilty seharian, sekarang jam 9 udah ngerasa produktif banget. Worth it sih ngeluangin waktu tracking ginian.",
+      "emoticon": "🎉",
+      "imageUrl": "https://images.pexels.com/photos/1226398/pexels-photo-1226398.jpeg"
+    },
+    {
+      "parentId": "routine-002",
+      "dateAdded": 1734566400000,
+      "notes": "First audit day! Mau evaluasi rutinitas yang udah jalan selama ini.\n\nRoutines yang works:\n- Morning skincare (udah auto pilot)\n- Ngopi sambil baca newsletter\n- Review to-do list malem sebelum tidur\n\nRoutines yang perlu di-fix:\n- Sarapan (sering skip karena buru-buru)\n- Evening wind down (terlalu hectic, kurang relaxing)\n- Weekend planning (biasanya cuma impromptu aja)\n\nKesimpulan sementara: butuh meal prep yang lebih serius dan night routine yang lebih calming.",
+      "emoticon": "📝",
+      "imageUrl": null
+    },
+    {
+      "parentId": "routine-002",
+      "dateAdded": 1734739200000,
+      "notes": "Evaluasi minggu kedua! Udah implement beberapa perubahan.\n\nPerubahan yang diimplement:\n- Siapkan overnight oats malem sebelumnya ✅\n- Evening routine ditambahin baca buku fiction (biar ga serius mulu)\n- Sunday planning session pake template baru\n\nHasilnya:\n- Sarapan konsisten 7/7 hari!\n- Tidur lebih nyenyak sejak baca novel\n- Minggu ini lebih terstruktur dengan planning\n\nYang masih struggling:\n- Workout routine masih inconsistent di weekday\n- Need better system buat handle ad-hoc tasks",
+      "emoticon": "✨",
+      "imageUrl": null
+    },
+    {
+      "parentId": "routine-002",
+      "dateAdded": 1734912000000,
+      "notes": "Mid-month audit nih. Udah jalan 2 minggu dan lumayan banyak insight.\n\nAudit deep dive:\n\nMorning Routine (Rating: 8/10)\nWorks: Bangun pagi, minum air, skincare\nGap: Butuh energi booster, kadang masih ngantuk\n\nWork Routine (Rating: 6/10)\nWorks: Deep work sessions\nGap: Terlalu banyak konteks switching, email checking too frequent\n\nEvening Routine (Rating: 7/10)\nWorks: Reading, journaling, early bedtime\nGap: Sometimws masih tempted buka social media\n\nAction items: Try Pomodoro 90/20 buat work, dan airplane mode after 9pm.",
+      "emoticon": "🔍",
+      "imageUrl": null
+    },
+    {
+      "parentId": "routine-002",
+      "dateAdded": 1735084800000,
+      "notes": "Audit setelah implementasi perubahan!\n\nPomodoro 90/20 result:\n- Lebih fokus dalam deep work\n- 20 menit break cukup buat recharge tanpa lose momentum\n- Produktivitas naik signifikan\n\nAirplane mode after 9pm:\n- Tidur lebih berkualitas\n- Morning energy lebih fresh\n- Less anxiety pas malem\n\nNew routine yang dicoba:\n- Batch cooking hari Minggu (life changing banget!)\n- Time blocking dengan buffer time\n- Evening digital sunset\n\nOverall satisfaction dengan routines sekarang: 8.5/10",
+      "emoticon": "🚀",
+      "imageUrl": null
+    },
+    {
+      "parentId": "routine-002",
+      "dateAdded": 1735344000000,
+      "notes": "Monthly audit sebelum ganti bulan! Full review semua routines.\n\nFinal Audit Desember 2025:\n\n⭐️ Best Performers:\n1. Morning routine - udah auto pilot, ga perlu effort\n2. Weekly meal prep - hemat waktu dan duit\n3. Digital sunset - sleep quality meningkat drastis\n\n📈 Needs Improvement:\n1. Afternoon slump handling - masih suka ngantuk jam 2-3\n2. Social media boundaries - kadang masih bleed ke work time\n3. Weekend routines - masih inconsistent\n\n💡 Insights:\n- Consistency >>> intensity\n- Small tweaks > big overhauls\n- Environment design matters banget\n\nBuat Januari: fokus ke afternoon energy management dan social media limits!",
+      "emoticon": "📊",
+      "imageUrl": "https://images.pexels.com/photos/2736499/pexels-photo-2736499.jpeg"
+    },
+    {
+      "parentId": "friction-003",
+      "dateAdded": 1734480000000,
+      "notes": "Mulai catet friction hari ini! Fokus ke hal-hal kecil yang bikin males/ngambat.\n\nFriction #1: Pakaian workout\nHambatannya: Harus cari-cari di drawer, kadang ga ketemu\nImpact: Jadi males workout, alasan 'ribet'\n\nFriction #2: Jurnal fisik\nHambatannya: Buku di meja kerja, kadar malas ambil kalau udah rebahan di kasur\nImpact: Skipping journaling malem\n\nFriction #3: Botol minum\nHambatannya: Kecil, harus isi ulang sering\nImpact: Kurang minum air\n\nKayanya solusinya: prepare workout clothes malam sebelumnya, pindah jurnal ke bedside table, dan beli botol gede 1L.",
+      "emoticon": "😩",
+      "imageUrl": null
+    },
+    {
+      "parentId": "friction-003",
+      "dateAdded": 1734652800000,
+      "notes": "Friction log day 2. Udah implement beberapa solusi dan ngaruh!\n\nUpdate solusi kemarin:\n- Workout clothes disiapin semalem ✅ (jadi lebih gampang mulai)\n- Jurnal dipindah ke nightstand ✅ (consistency naik 80%)\n- Botol 1L udah beli ✅ (minum air effortless now)\n\nFriction baru yang ketemu:\n\nFriction #4: Setup workspace\nMasalah: Laptop di tas, harus setup tiap pagi\nImpact: Delay start work time 15-30 menit\nSolusi: Docking station permanent di meja?\n\nFriction #5: Healthy snack\nMasalah: Nyari snack sehat ribet, jadinya ngemil yang ada aja (junk)\nImpact: Pola makan jebol tiap sore\nSolusi: Prep snack box seminggu sekali di kulkas?",
+      "emoticon": "🧐",
+      "imageUrl": null
+    },
+    {
+      "parentId": "friction-003",
+      "dateAdded": 1734825600000,
+      "notes": "Lanjut friction hunting! Sekarang lebih aware sama micro-frictions.\n\nFriction #6: Buku bacaan\nMasalah: Buku yang lagi dibaca di ruang tamu, kamar, atau tas\nKadang mau baca tapi buku ada di tempat lain\nImpact: Reading session jadi inconsistent\n\nFriction #7: To-do list app\nMasalah: Buka app-nya lama, loadingnya annoying\nImpact: Jadi males ngecek dan update tasks\n\nFriction #8: Charger laptop\nMasalah: Satu charger, pindah-pindah antara meja dan sofa\nImpact: Kadang work terhambat karena low batt\n\nSolusi yang dipikirin:\n- Beli multiple copy buku? (radikal sih) atau selalu taruh di bedside\n- Coba to-do app yang lebih ringan\n- Beli charger kedua buat meja permanen",
+      "emoticon": "🤯",
+      "imageUrl": null
+    },
+    {
+      "parentId": "friction-003",
+      "dateAdded": 1734998400000,
+      "notes": "Friction log setelah seminggu implementasi solusi!\n\nReview solusi yang udah jalan:\n\n✅ Works banget:\n- Permanent workspace setup (nambah produktivitas 30%)\n- Prep workout clothes semalem (workout consistency naik)\n- Snack box mingguan (ngemil lebih sehat)\n\n⚠️ Partially works:\n- Multiple charger (helpful tapi masih suka lupa colok)\n- Bedside journal (bagus tapi kadar masih bolong)\n\n❌ Ga works:\n- To-do app baru (ternyata bukan app-nya, tapi habit-nya)\n- Multiple book copies (ribet ngaturnya, balik ke satu aja)\n\nFriction baru ketemu lagi:\n- Email checking ga ada batasannya\n- Meeting kadang overlap\n\nNext: bikin email schedule dan calendar boundaries!",
+      "emoticon": "💡",
+      "imageUrl": null
+    },
+    {
+      "parentId": "friction-003",
+      "dateAdded": 1735257600000,
+      "notes": "Final friction log untuk tahun ini! Banyak banget insights.\n\nTop 5 Frictions yang paling ngaruh ke productivity:\n\n1. Decision fatigue di pagi hari\n   - Solusi: Prep semua malam sebelumnya (baju, bekal, to-do)\n   - Impact: Morning jadi smooth, start day dengan energi tinggi\n\n2. Notification distractions\n   - Solusi: Do not disturb mode, batch checking\n   - Impact: Deep work sessions lebih fokus\n\n3. Environmental setup\n   - Solusi: Dedicated spaces untuk tiap aktivitas\n   - Impact: Brain automatically switch mode\n\n4. Friction dalam access tools\n   - Solusi: Organized, always-ready setup\n   - Impact: Less procrastination\n\n5. Energy management (bukan cuma time)\n   - Solusi: Match tasks sama energy levels\n   - Impact: More done with less effort\n\nLesson learned: Friction kecil numpuk jadi besar. Fix yang kecil-kecil dulu!",
+      "emoticon": "🎯",
+      "imageUrl": "https://images.pexels.com/photos/3299/postit-scrabble-to-do.jpg"
+    },
+    {
+      "parentId": "energy-004",
+      "dateAdded": 1734652800000,
+      "notes": "Mulai tracking energi hari ini! Mau nemuin prime timeku.\n\nEnergy log Day 1:\n\n06:00-09:00: 🔋🔋🔋🔋🔋 (Peak!)\nBrain fresh, fokus tinggi, best buat deep work\n\n09:00-12:00: 🔋🔋🔋🔋 (High)\nMasih on fire, bisa handle complex tasks\n\n12:00-14:00: 🔋🔋 (Low)\nLunch + food coma, ngantuk parah\n\n14:00-17:00: 🔋🔋🔋 (Medium)\nRecovery pelan-pelan, bisa meeting dan email\n\n17:00-19:00: 🔋🔋 (Dip lagi)\nMental fatigue, mending workout atau break\n\n19:00-22:00: 🔋🔋🔋 (Medium-High)\nSecond wind! Cocok buat creative work atau baca\n\nInsight: Morning emang golden time, harus dimaksimalin!",
+      "emoticon": "⚡",
+      "imageUrl": null
+    },
+    {
+      "parentId": "energy-004",
+      "dateAdded": 1734739200000,
+      "notes": "Energy tracking day 2. Patternnya mirip sih, tapi ada nuansa.\n\nEnergy log Day 2:\n\n06:00-09:00: 🔋🔋🔋🔋🔋 (PEAK)\nSama kayak kemarin, otak tajem banget\nSelesain strategic planning dengan lancar\n\n09:00-12:00: 🔋🔋🔋🔋 (HIGH)\nCoding session produktif, few bugs\n\n12:00-14:00: 🔋 (CRASH)\nParahnya lunch siang, ngantuk berat\nCoba power nap 20 menit\n\n14:00-17:00: 🔋🔋🔋 (MEDIUM)\nPost-nap better tapi ga sefresh morning\nGood for admin tasks\n\n19:00-21:00: 🔋🔋🔋 (MEDIUM-HIGH)\nSempet turun jam 17-18, naik lagi setelah workout\n\nHypothesis: Exercise boost energy di evening!",
+      "emoticon": "📉",
+      "imageUrl": null
+    },
+    {
+      "parentId": "energy-004",
+      "dateAdded": 1734825600000,
+      "notes": "Day 3 tracking, mulai keliatan pola yang konsisten.\n\nPattern yang consistent:\n- Morning: Always peak (6-9 AM)\n- Post-lunch: Always crash\n- Evening: Second wind after exercise\n\nExperiments hari ini:\n- Coba kerja 6-9 tanpa distraction (amazing results)\n- Light lunch untuk avoid crash (helped a bit)\n- Walking meeting jam 2-3 (kepikiran, better daripada duduk)\n\nRealisasi: Selama ini match task-nya salah sama energi!\n\nTask demanding aku taro pas low energy, jadinya struggle.\nTask gampang malah dikerjain pas peak energy, waste potential.\n\nRealignment plan:\n- 6-9 AM: Creative work, writing, strategic thinking\n- 9-12 PM: Technical work, problem solving\n- 12-2 PM: Break, light tasks\n- 2-5 PM: Meetings, collaboration\n- 5-7 PM: Exercise, personal\n- 7-9 PM: Learning, reading, light work",
+      "emoticon": "🧠",
+      "imageUrl": null
+    },
+    {
+      "parentId": "energy-004",
+      "dateAdded": 1734912000000,
+      "notes": "Setelah seminggu tracking, ini energy map finalku!\n\n🌅 PRIME TIME (6:00 - 9:30 AM)\nEnergy: 95-100%\nBest for: Deep work, writing, strategic planning, complex problem solving\nNotes: Golden hours, protect at all costs!\n\n🔥 HIGH GEAR (9:30 AM - 12:00 PM)\nEnergy: 80-90%\nBest for: Technical work, coding, detailed tasks\nNotes: Masih tajam, tapi mulai ada distractions dari tim\n\n😴 RECHARGE ZONE (12:00 - 2:00 PM)\nEnergy: 40-50%\nBest for: Light admin, email, break, nap\nNotes: Food coma is real, jangan meeting penting di sini\n\n🔄 RECOVERY MODE (2:00 - 5:00 PM)\nEnergy: 60-70%\nBest for: Meetings, collaboration, routine tasks\nNotes: Good enough buat social interaction\n\n⚡ SECOND WIND (7:00 - 10:00 PM)\nEnergy: 75-85%\nBest for: Creative work, learning, passion projects\nNotes: Post-exercise boost, otak fresh lagi",
+      "emoticon": "🗺️",
+      "imageUrl": null
+    },
+    {
+      "parentId": "energy-004",
+      "dateAdded": 1735171200000,
+      "notes": "Final energy mapping setelah implement optimal schedule!\n\nHASIL IMPLEMENTASI:\n\nProduktivitas NAIK SIGNIFIKAN! 📈\n\nBefore:\n- Deep work tercerai-berai seharian\n- Meeting di jam ngantuk = hasil jelek\n- Sore struggle dengan task berat\n\nAfter:\n- Morning sacred untuk important work\n- Meeting di recovery mode (masih oke)\n- Sore fokus ke task yang gak butuh banyak brainpower\n\nDaily routine sekarang:\n5:30 - Wake up, hydration\n6:00-9:00 - Deep work (undisturbed)\n9:00-12:00 - Technical work, calls\n12:00-2:00 - Lunch, walk, light admin\n2:00-5:00 - Meetings, collaboration\n5:00-7:00 - Workout, dinner\n7:00-9:00 - Creative work, learning\n9:00-10:00 - Wind down, reading\n10:00 - Sleep\n\nEnergy management >>> Time management!",
+      "emoticon": "🌊",
+      "imageUrl": "https://images.pexels.com/photos/3604314/pexels-photo-3604314.jpeg"
+    },
+    {
+      "parentId": "evening-005",
+      "dateAdded": 1734912000000,
+      "notes": "First evening review! 3 win + 1 focus besok.\n\n🎉 3 WINS HARI INI:\n\n1. Selesain project yang udah ditunda 2 minggu\n   Finally! Ngerasa beban berat ilang dari pundak.\n   Yang ngebantu: time blocking di morning peak hours.\n\n2. Hadapi conversation yang difficult dengan tenang\n   Biasanya avoidance, hari ini ngadepin.\n   Hasilnya malah constructive dan positive.\n\n3. Workout despite feeling tired\n   Mental battle yang dimenangkan!\n   Setelah workout malah energy naik lagi.\n\n🎯 1 FOKUS BESOK:\n\nMulai draft untuk presentasi Jumat.\nGa usah perfect, yang penting first draft jadi.\nBlock 6-9 AM untuk ini, jangan ada distraction!\n\nMood hari ini: puas dan legowo. Besok bisa lebih baik!",
+      "emoticon": "🌙",
+      "imageUrl": null
+    },
+    {
+      "parentId": "evening-005",
+      "dateAdded": 1734998400000,
+      "notes": "Evening review Day 2. Hari ini challenging tapi worth it.\n\n✨ 3 WINS HARI INI:\n\n1. Presentasi draft selesai (ahead of schedule!)\n   Targetnya cuma outline, tapi jadi full draft.\n   Flow state di pagi tadi was real.\n\n2. Bantu colleague dengan problem mereka\n   Padahal lagi sibuk sendiri, tapi tetep luangin waktu.\n   Good karma points + building relationships.\n\n3. No social media seharian\n   Digital detox experiment berhasil!\n   Fokus meningkat drastis, less anxiety.\n\n🔭 FOKUS BESOK:\n\nReview dan refine presentasi draft.\nPractice run minimal 2 kali.\nTarget: bisa present tanpa liat notes.\n\nCatatan: Digital detox mau dilanjutin!",
+      "emoticon": "⭐",
+      "imageUrl": null
+    },
+    {
+      "parentId": "evening-005",
+      "dateAdded": 1735084800000,
+      "notes": "Review malam setelah presentasi!\n\n🏆 3 WINS HARI INI:\n\n1. Presentasi berjalan SUPER SMOOTH!\n   Feedback dari tim sangat positif.\n   Semua preparation worth it.\n   Confidence boost yang besar.\n\n2. Handle Q&A dengan confident\n   Pertanyaan tricky bisa dijawab dengan tenang.\n   Shows mastery terhadap materi.\n\n3. Celebrate kecil-kecilan setelah presentasi\n   Ice cream dan Netflix tanpa guilty!\n   Self reward penting buat motivation.\n\n🌅 FOKUS BESOK:\n\nMulai research untuk project baru.\nJangan buru-buru execution, fokus ke understanding dulu.\nBaca dokumentasi dan best practices.\n\nHari ini one of those days yang memorable!",
+      "emoticon": "🎊",
+      "imageUrl": null
+    },
+    {
+      "parentId": "evening-005",
+      "dateAdded": 1735171200000,
+      "notes": "Evening review biasa setelah hari produktif.\n\n🌟 3 WINS HARI INI:\n\n1. Deep research untuk project baru\n   Banyak insights yang ngebuka perspektif.\n   Jadi keliatan potential challenges dan solutions.\n\n2. Connect dengan stakeholder baru\n   Networking yang natural, ga dipaksakan.\n   Bisa jadi collaboration opportunity ke depan.\n\n3. Maintained healthy boundaries\n   Ga overtime padahal ada pressure.\n   Prioritaskan well-being, work tetep bisa selesai besok.\n\n📌 FOKUS BESOK:\n\nBuat project roadmap berdasarkan research hari ini.\nBreak down jadi milestones yang achievable.\nShare dengan team untuk alignment.\n\nGrateful untuk hari ini. Sleep well!",
+      "emoticon": "💫",
+      "imageUrl": null
+    },
+    {
+      "parentId": "evening-005",
+      "dateAdded": 1735344000000,
+      "notes": "Last evening review 2025! Looking back at growth.\n\n✨ 3 WINS MALAM INI (tahun ini):\n\n1. Established consistent morning routine\n   Dari night owl jadi morning person.\n   Life changing banget, feel more in control.\n\n2. Implemented energy-based scheduling\n   Work smarter, not harder.\n   Produktivitas naik, burnout turun.\n\n3. Built evening review habit\n   Refleksi harian yang ngebantu growth.\n   Ngerasa lebih mindful dan intentional.\n\n🎯 FOKUS AWAL 2026:\n\nLanjutin semua good habits yang udah dibangun.\nTambahin: monthly goal setting lebih strukrur.\nLess perfectionism, more progress.\n\nTerima kasih 2025 untuk semua lessons.\nReady for bigger things in 2026!",
+      "emoticon": "🌠",
+      "imageUrl": "https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg"
+    },
+    {
+      "parentId": "weekly-006",
+      "dateAdded": 1734393600000,
+      "notes": "Weekly reset pertama! Time to declutter.\n\n🧹 FISIK DECLUTTER:\n\nMeja kerja:\n- Bersihin debu dan tumpukan kertas\n- Organize cables (akhirnya!)\n- Empty trash bin\n- Sisa 3 item di desk: laptop, lamp, plant\n\nKamar tidur:\n- Ganti sprei dan sarung bantal\n- Laundry basket di kosongkan\n- Rapihin lemari (buang yang ga dipake)\n- Vacuum floor\n\n📱 DIGITAL DECLUTTER:\n\n- Clear downloads folder\n- Archive old emails\n- Uninstall apps ga dipake\n- Organize desktop icons\n- Clear browser tabs (dari 47 jadi 5)\n\nPerasaan setelahnya: RINGAN BANGET! Kayanya baru sadar seberapa cluttered hidupku.",
+      "emoticon": "🧽",
+      "imageUrl": null
+    },
+    {
+      "parentId": "weekly-006",
+      "dateAdded": 1734998400000,
+      "notes": "Reset minggu kedua. Makin enjoy ritual ini!\n\n🗑️ WEEKLY RESET CHECKLIST:\n\nPhysical space:\n☑️ Deep clean kitchen\n☑️ Organize fridge (buang expired food)\n☑️ Clean bathroom\n☑️ Water plants\n☑️ Take out trash\n\nDigital space:\n☑️ Clear notification badges\n☑️ Update apps\n☑️ Backup important files\n☑️ Review and cancel unnecessary subscriptions\n☑️ Clean camera roll (delete duplicates)\n\nMental space:\n☑️ Review goals minggu ini\n☑️ Plan priorities minggu depan\n☑️ Brain dump semua yang worrying\n☑️ Set intentions untuk minggu baru\n\n🎁 REWARD:\n\nSetelah reset, treat diri dengan:\n- Long bath dengan essential oil\n- Face mask dan self-care\n- Watch movie tanpa guilty\n\nSunday reset = Monday yang lebih siap!",
+      "emoticon": "🛁",
+      "imageUrl": null
+    },
+    {
+      "parentId": "weekly-006",
+      "dateAdded": 1735603200000,
+      "notes": "Reset minggu ketiga. Udah jadi habit yang ditunggu-tunggu.\n\n🌿 EXTENDED RESET ROUTINE:\n\nMorning (9-11 AM):\n- Light cleaning dan organizing\n- Breakfast yang proper\n- Slow morning tanpa rush\n\nMidday (11-2 PM):\n- Weekly review meeting (sendiri)\n  → Apa yang berhasil minggu ini?\n  → Apa yang perlu adjustment?\n  → Lessons learned apa?\n\nAfternoon (2-5 PM):\n- Planning session\n  → Prioritas minggu depan\n  → Schedule blocks\n  → Meal prep untuk seminggu\n\nEvening (5-8 PM):\n- Physical reset (gym atau walk)\n- Social time atau alone time\n- Early bedtime preparation\n\nInsight: Reset bukan cuma bersih-bersih, tapi closure dan fresh start.",
+      "emoticon": "🌸",
+      "imageUrl": null
+    },
+    {
+      "parentId": "weekly-006",
+      "dateAdded": 1735689600000,
+      "notes": "Reset minggu keempat. Nemuin formula yang works!\n\n🏆 PERFECT SUNDAY RESET FORMULA:\n\nPhase 1: RELEASE (9-11 AM)\n- Clean physical space\n- Clear digital clutter\n- Process emotions (journal)\n→ Goal: Empty cup\n\nPhase 2: REVIEW (11-1 PM)\n- Celebrate wins (ga peduli sekecil apa)\n- Learn dari failures\n- Acknowledge progress\n→ Goal: Gratitude dan insight\n\nPhase 3: RESET (1-3 PM)\n- Plan minggu depan\n- Set 3 main priorities\n- Prep environment untuk sukses\n→ Goal: Clear direction\n\nPhase 4: RECHARGE (3 PM onwards)\n- Do something enjoyable\n- Connect dengan orang terdekat\n- Sleep early\n→ Goal: Full battery\n\nThis formula bikin Monday exciting, bukan scary!",
+      "emoticon": "✨",
+      "imageUrl": null
+    },
+    {
+      "parentId": "weekly-006",
+      "dateAdded": 1735948800000,
+      "notes": "Last weekly reset 2025! Makna banget hari ini.\n\n🎆 YEAR-END WEEKLY RESET:\n\nPhysical deep clean:\n- Major declutter (donate 3 kardus baju)\n- Deep clean seluruh apartemen\n- Organize storage\n- Set up cozy corners untuk 2026\n\nDigital major reset:\n- Clean all devices\n- Reorganize file system\n- Set up 2026 folder structure\n- Review dan optimize all tools\n\nMental year-end reset:\n- Extended journaling (2 jam!)\n- Letter to my future self\n- Vision board untuk 2026\n- Forgive myself untuk semua shortcomings\n\n🌅 CLOSING RITUAL:\n\nLight a candle, play calming music, write:\n\"Thank you 2025 for everything.\nI'm ready to receive all the good things 2026 has to offer.\nI am enough. I am growing. I am grateful.\"\n\nReset complete. New chapter loading...",
+      "emoticon": "🕯️",
+      "imageUrl": "https://images.pexels.com/photos/3060939/pexels-photo-3060939.jpeg"
+    },
+    {
+      "parentId": "monthly-007",
+      "dateAdded": 1734393600000,
+      "imageUrl": "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg",
+      "notes": "Monthly reflection pertama! Review Desember dari bird's eye view.\n\n📊 BIG PICTURE DESEMBER:\n\nHealth & Wellness:\n⭐⭐⭐⭐☆ (4/5)\n- Workout 15/31 hari (target: 20)\n- Sleep avg 7 jam (improvement!)\n- Eating: 70% clean, 30% indulgence\n\nCareer & Growth:\n⭐⭐⭐⭐⭐ (5/5)\n- Selesain 3 major projects\n- Learning new skill (in progress)\n- Networking: 5 new meaningful connections\n\nRelationships:\n⭐⭐⭐☆☆ (3/5)\n- Quality time dengan keluarga kurang\n- Friends: 2 catch-up sessions\n- Need more intentional connection\n\nPersonal Development:\n⭐⭐⭐⭐☆ (4/5)\n- Reading: 2 books selesai\n- Habits: morning routine established\n- Mindfulness: getting better\n\nOverall December: 4/5 - Solid finish!",
+      "emoticon": "📈"
+    },
+    {
+      "parentId": "monthly-007",
+      "dateAdded": 1735689600000,
+      "imageUrl": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+      "notes": "Refleksi pertengahan bulan. Pattern dan insights.\n\n🔍 MID-MONTH INSIGHTS:\n\nWhat's Working:\n✅ Energy-based scheduling (game changer!)\n✅ Morning routine (consistency paying off)\n✅ Weekly reset ritual (mental clarity)\n✅ Saying no to things ga aligned\n\nWhat's Challenging:\n⚠️ Afternoon productivity masih struggle\n⚠️ Social media boundaries masih bolong\n⚠️ Work-life balance pas deadline\n⚠️ Consistency di weekend routines\n\nAdjustments untuk bulan depan:\n- Block afternoon untuk low-energy tasks\n- Set app limits dengan accountability partner\n- Buffer days sebelum deadline\n- Simplified weekend minimums\n\n🎯 Progress terhadap yearly goals:\n\n- Financial: 80% on track\n- Health: 70% on track\n- Career: 90% on track\n- Learning: 60% (need to catch up)\n- Relationships: 50% (priority untuk Q1)\n\nOverall: Moving in the right direction!",
+      "emoticon": "🎯"
+    },
+    {
+      "parentId": "monthly-007",
+      "dateAdded": 1736294400000,
+      "imageUrl": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+      "notes": "Final monthly reflection 2025! Closing a transformative year.\n\n🏆 DESEMBER 2025 FINAL REVIEW:\n\nAccomplishments:\n✨ 3 major work projects delivered with excellence\n✨ Established consistent morning routine\n✨ Improved sleep quality significantly\n✨ Read 4 books (surpassing target)\n✨ Started meditation practice\n✨ Deepened 2 important friendships\n\nChallenges Faced:\n💢 One week of burnout (recovered well)\n💢 Conflict with colleague (resolved)\n💢 Missed some self-imposed deadlines\n💢 Health goals slipped during busy periods\n\nKey Learnings:\n💡 Progress > perfection\n💡 Rest is productive\n💡 Boundaries protect energy\n💡 Small consistent actions compound\n💡 Self-compassion is essential\n\n🎆 GRATITUDE LIST:\n\nGrateful for:\n- Health yang stabil\n- Supportive family dan friends\n- Opportunities untuk grow\n- Lessons dari failures\n- Progress yang udah dibuat\n\nDecember rating: 4.2/5\n2025 overall: 4.0/5 - A year of growth!",
+      "emoticon": "🙏"
+    },
+    {
+      "parentId": "monthly-007",
+      "dateAdded": 1736380800000,
+      "imageUrl": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+      "notes": "Bonus entry: Reflection on the whole year!\n\n🌟 2025 YEAR IN REVIEW:\n\nTHEME: Foundation Building\n\nMajor Milestones:\n🎯 Promoted at work\n🎯 Moved to new apartment\n🎯 Paid off one debt\n🎯 Completed certification course\n🎯 Traveled to 3 new places\n\nPersonal Growth:\n🌱 Dari reactive jadi proactive\n🌱 Better emotional regulation\n🌱 Improved communication skills\n🌱 More comfortable dengan discomfort\n🌱 Learned to ask for help\n\nRelationships Evolution:\n💕 Let go of toxic friendship\n💕 Deeper connections dengan fewer people\n💕 Better boundaries\n💕 More quality time dengan family\n💕 New mentor relationship\n\nHealth Journey:\n🏃 Dari 0 ke consistent exercise\n🏥 Health check-ups lebih regular\n🧘 Mindfulness jadi daily practice\n😴 Sleep hygiene improved\n\n2025 was the year of laying groundwork.\n2026 will be the year of building on it!",
+      "emoticon": "🌅",
+      "imageUrl": null
+    },
+    {
+      "parentId": "monthly-007",
+      "dateAdded": 1736467200000,
+      "notes": "January 2026 preview! Setting the tone untuk tahun baru.\n\n🚀 JANUARI 2026 INTENTIONS:\n\nTheme: Momentum Building\n\nFocus Areas:\n\n1. Career Growth\n   - Take on stretch project\n   - Develop leadership skills\n   - Build visibility di organisasi\n\n2. Health Optimization\n   - Level up workout routine\n   - Experiment dengan nutrition\n   - Prioritize recovery\n\n3. Deepening Relationships\n   - Weekly quality time dengan orang terdekat\n   - Rekonsiliasi dengan yang perlu diperbaiki\n   - Join community baru\n\n4. Learning Acceleration\n   - Start online course (udah enroll)\n   - Reading: 1 book per minggu\n   - Skill practice: daily deliberate practice\n\n5. Creative Expression\n   - Start writing project\n   - Explore new hobby\n   - Document journey\n\n💫 Mantra untuk 2026:\n\"I am capable. I am worthy. I am ready.\nEvery day is a fresh start.\nProgress is inevitable dengan konsistensi.\"\n\nLet's make 2026 extraordinary!",
+      "emoticon": "🔥",
+      "imageUrl": "https://images.pexels.com/photos/2021394/pexels-photo-2021394.jpeg"
+    }
+  ]
+}
