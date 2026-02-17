@@ -729,16 +729,16 @@
                             </div>
                             <div>
                                 <p class="font-semibold text-slate-800 text-sm">Pilih Emoji + Tulis</p>
-                                <p class="text-xs text-slate-500">Tracking mood membuatmu sadar: "Ternyata minggu ini banyak hal baik"</p>
+                                <p class="text-xs text-slate-500">Pilih emoji (atau ketik custom!) + catat momen. Mood-mu tersimpan rapi.</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-3 bg-white/60 rounded-xl p-3 border border-slate-100">
+                        <div class="flex items-start gap-3 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-3 border border-amber-200">
                             <div class="w-9 h-9 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
                                 <span class="text-white font-bold text-sm">3</span>
                             </div>
                             <div>
-                                <p class="font-semibold text-slate-800 text-sm">Lihat Pola Dirimu</p>
-                                <p class="text-xs text-slate-500">Statistik membantumu: "Kenapa saya stuck? Ah, 3 hari nggak nulis"</p>
+                                <p class="font-semibold text-slate-800 text-sm">Lihat Data Analysis ⭐</p>
+                                <p class="text-xs text-slate-500">Menu Database → Data Analysis: lihat streak, mood dominan, dan pola journalingmu!</p>
                             </div>
                         </div>
                     </div>
@@ -756,12 +756,12 @@
                         <div class="bg-white/60 rounded-xl p-3 text-center">
                             <div class="text-2xl mb-1">😊</div>
                             <p class="font-semibold text-slate-800 text-xs">Mood Tracker</p>
-                            <p class="text-[10px] text-slate-500">10 emoji berbeda</p>
+                            <p class="text-[10px] text-slate-500">10+ emoji (bisa custom!)</p>
                         </div>
-                        <div class="bg-white/60 rounded-xl p-3 text-center">
+                        <div class="bg-gradient-to-br from-violet-50 to-fuchsia-50 rounded-xl p-3 text-center border border-violet-200">
                             <div class="text-2xl mb-1">📊</div>
-                            <p class="font-semibold text-slate-800 text-xs">Statistik</p>
-                            <p class="text-[10px] text-slate-500">Insight journaling</p>
+                            <p class="font-semibold text-violet-800 text-xs">Data Analysis ⭐</p>
+                            <p class="text-[10px] text-violet-600">Lihat di menu Database!</p>
                         </div>
                         <div class="bg-white/60 rounded-xl p-3 text-center">
                             <div class="text-2xl mb-1">📱</div>
@@ -1268,10 +1268,10 @@
                     position: 'center'
                 },
                 {
-                    title: 'Data Analysis 📊',
-                    content: 'Lihat statistik journaling: streak, total entry, mood dominan, dan insight lainnya. Ada tips install PWA juga!',
-                    target: null,
-                    position: 'center'
+                    title: 'Data Analysis 📊 [PENTING!]',
+                    content: 'Ini fitur tersembunyi yang powerful! Klik menu Database → Data Analysis untuk lihat: streak journaling, mood dominan, aktivitas rate, dan insight. Ada tips install PWA juga!',
+                    target: '#dataMenuContainer button',
+                    position: 'bottom'
                 },
                 {
                     title: 'Reset Data ⚠️',
@@ -1292,8 +1292,8 @@
                     position: 'left'
                 },
                 {
-                    title: 'Pilih Emoji Mood 😊',
-                    content: 'Wajib pilih emoji untuk setiap entry! Ini membaca track emosimu dan muncul di statistik.',
+                    title: 'Pilih Emoji Mood 😊 [BISA CUSTOM!]',
+                    content: 'Pilih emoji default atau ketik emoji custom (klik "+ Tambah"). Mood-mu akan tercatat dan muncul di Data Analysis sebagai statistik mood dominan!',
                     target: '.emoji-btn',
                     position: 'bottom'
                 },
@@ -2303,7 +2303,16 @@
                             <div id="entriesList_${parent.id}" class="mb-5">${childrenHtml}</div>
                             <div id="entryForm_${parent.id}" class="bg-slate-50/80 rounded-2xl p-5 border border-slate-100">
                                 <p class="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-3">New Entry</p>
-                                <div class="flex flex-wrap gap-2 mb-3" id="emojiContainer_${parent.id}">${emoticonButtons}</div>
+                                <div class="flex flex-wrap gap-2 mb-2" id="emojiContainer_${parent.id}">${emoticonButtons}</div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <input type="text" id="customEmoji_${parent.id}" placeholder="⌨️ Emoji lain..." maxlength="2" 
+                                        class="w-28 px-3 py-1.5 text-sm bg-white/50 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors"
+                                        onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomEmoji('${parent.id}')}">
+                                    <button onclick="addCustomEmoji('${parent.id}')" 
+                                        class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-emerald-100 text-slate-600 hover:text-emerald-700 rounded-lg transition-colors">
+                                        + Tambah
+                                    </button>
+                                </div>
                                 <p id="emojiWarning_${parent.id}" class="hidden text-xs text-red-500 mb-2 flex items-center gap-1">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" strokeLinejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -2375,6 +2384,38 @@
         function selectEmoticon(parentId, emoji, btn) {
             document.querySelectorAll(`[data-parent="${parentId}"]`).forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
+        }
+        
+        function addCustomEmoji(parentId) {
+            const input = document.getElementById(`customEmoji_${parentId}`);
+            const emoji = input.value.trim();
+            
+            if (!emoji) {
+                showToast('Masukkan emoji terlebih dahulu');
+                return;
+            }
+            
+            // Remove previous selection
+            document.querySelectorAll(`[data-parent="${parentId}"]`).forEach(b => b.classList.remove('selected'));
+            
+            // Create new emoji button
+            const container = document.getElementById(`emojiContainer_${parentId}`);
+            const btn = document.createElement('button');
+            btn.innerHTML = emoji;
+            btn.setAttribute('data-parent', parentId);
+            btn.className = 'emoji-btn w-11 h-11 text-xl rounded-xl bg-white/50 hover:bg-white flex items-center justify-center shadow-sm selected';
+            btn.onclick = function() { selectEmoticon(parentId, emoji, this); };
+            
+            // Insert before the input area
+            container.appendChild(btn);
+            
+            // Clear input
+            input.value = '';
+            
+            // Scroll to show the new button
+            container.scrollLeft = container.scrollWidth;
+            
+            showToast('Emoji ditambahkan!');
         }
         
         function escapeHtml(text) {
