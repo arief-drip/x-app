@@ -399,51 +399,47 @@
         </div>
     </div>
 
-    <!-- Journaling Coach Modal -->
-    <div id="coachModal" class="fixed inset-0 z-[100] hidden" onclick="if(event.target === this) endCoach()">
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" id="coachOverlay"></div>
-        
-        <!-- Highlight box (will be positioned via JS) -->
-        <div id="coachHighlight" class="absolute pointer-events-none transition-all duration-300 ease-out">
-            <div class="absolute -inset-2 rounded-2xl border-2 border-emerald-400 shadow-[0_0_30px_rgba(52,211,153,0.5)] animate-pulse"></div>
-        </div>
+    <!-- Journaling Coach Tooltip -->
+    <div id="coachContainer" class="fixed inset-0 z-[100] hidden pointer-events-none">
+        <!-- SVG Overlay dengan cutout -->
+        <svg class="absolute inset-0 w-full h-full" id="coachSvgOverlay">
+            <defs>
+                <mask id="coachMask">
+                    <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+                    <rect id="coachCutout" x="0" y="0" width="0" height="0" rx="12" fill="black"/>
+                </mask>
+            </defs>
+            <rect x="0" y="0" width="100%" height="100%" fill="rgba(15, 23, 42, 0.75)" mask="url(#coachMask)" class="pointer-events-auto"/>
+        </svg>
         
         <!-- Tooltip -->
-        <div id="coachTooltip" class="absolute transition-all duration-300 ease-out z-10" style="max-width: 320px;">
-            <div class="glass rounded-2xl p-5 shadow-2xl border border-emerald-200/50 bg-white/95">
-                <!-- Progress dots -->
-                <div class="flex items-center justify-center gap-1.5 mb-4" id="coachProgress">
-                    <!-- Generated via JS -->
+        <div id="coachTooltip" class="absolute pointer-events-auto" style="max-width: 300px;">
+            <div class="glass rounded-2xl p-4 shadow-2xl border border-emerald-200/50 bg-white/95">
+                <!-- Progress -->
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-medium text-slate-400" id="coachStepNumber">Step 1/18</span>
+                    <div class="flex items-center gap-1" id="coachProgressDots">
+                        <!-- Generated via JS -->
+                    </div>
                 </div>
-                
-                <!-- Icon -->
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-3">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                    </svg>
-                </div>
-                
-                <!-- Title -->
-                <h3 id="coachTitle" class="text-lg font-bold text-slate-800 text-center mb-2">Welcome</h3>
                 
                 <!-- Content -->
-                <p id="coachContent" class="text-sm text-slate-600 text-center leading-relaxed mb-4">Let's explore X Journal together!</p>
+                <h3 id="coachTitle" class="text-base font-bold text-slate-800 mb-1.5">Welcome</h3>
+                <p id="coachContent" class="text-sm text-slate-600 leading-relaxed mb-3">Let's explore X Journal together!</p>
                 
                 <!-- Navigation -->
-                <div class="flex items-center gap-3">
-                    <button onclick="prevCoachStep()" id="coachPrevBtn" class="flex-1 py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-xl transition-colors text-sm">
+                <div class="flex items-center gap-2">
+                    <button onclick="endCoach()" class="px-3 py-1.5 text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                        Skip
+                    </button>
+                    <div class="flex-1"></div>
+                    <button onclick="prevCoachStep()" id="coachPrevBtn" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium rounded-lg transition-colors text-xs">
                         Back
                     </button>
-                    <button onclick="nextCoachStep()" id="coachNextBtn" class="flex-1 py-2.5 px-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-medium rounded-xl transition-all text-sm shadow-lg shadow-emerald-500/25">
+                    <button onclick="nextCoachStep()" id="coachNextBtn" class="px-4 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition-all text-xs shadow-sm">
                         Next
                     </button>
                 </div>
-                
-                <!-- Skip -->
-                <button onclick="endCoach()" class="w-full mt-3 text-xs text-slate-400 hover:text-slate-600 transition-colors">
-                    Skip Tour
-                </button>
             </div>
         </div>
     </div>
@@ -1340,80 +1336,101 @@
         function startJournalingCoach() {
             initCoachSteps();
             currentCoachStep = 0;
-            document.getElementById('coachModal').classList.remove('hidden');
-            document.querySelector('header').classList.add('hidden');
+            document.getElementById('coachContainer').classList.remove('hidden');
             showCoachStep();
+            
+            // Update on resize/scroll
+            window.addEventListener('resize', updateCoachPosition);
+            window.addEventListener('scroll', updateCoachPosition, true);
         }
         
         function endCoach() {
-            document.getElementById('coachModal').classList.add('hidden');
-            document.getElementById('coachHighlight').style.display = 'none';
-            document.querySelector('header').classList.remove('hidden');
+            document.getElementById('coachContainer').classList.add('hidden');
+            window.removeEventListener('resize', updateCoachPosition);
+            window.removeEventListener('scroll', updateCoachPosition, true);
             showToast('Tour selesai! Semoga bermanfaat 🎉');
+        }
+        
+        function updateCoachPosition() {
+            if (document.getElementById('coachContainer').classList.contains('hidden')) return;
+            showCoachStep();
         }
         
         function showCoachStep() {
             const step = coachSteps[currentCoachStep];
             const tooltip = document.getElementById('coachTooltip');
-            const highlight = document.getElementById('coachHighlight');
-            const progress = document.getElementById('coachProgress');
+            const cutout = document.getElementById('coachCutout');
+            const stepNumber = document.getElementById('coachStepNumber');
+            const progressDots = document.getElementById('coachProgressDots');
             
             // Update content
             document.getElementById('coachTitle').textContent = step.title;
             document.getElementById('coachContent').textContent = step.content;
             
-            // Update progress dots
-            progress.innerHTML = coachSteps.map((_, i) => `
-                <div class="w-2 h-2 rounded-full transition-colors ${i === currentCoachStep ? 'bg-emerald-500' : 'bg-slate-300'}"></div>
-            `).join('');
+            // Update progress
+            stepNumber.textContent = `Step ${currentCoachStep + 1}/${coachSteps.length}`;
+            
+            // Show max 8 dots
+            const visibleDots = Math.min(coachSteps.length, 8);
+            const startIdx = Math.max(0, Math.min(currentCoachStep - 4, coachSteps.length - 8));
+            progressDots.innerHTML = Array.from({length: visibleDots}, (_, i) => {
+                const idx = startIdx + i;
+                const isActive = idx === currentCoachStep;
+                const isPast = idx < currentCoachStep;
+                return `<div class="w-1.5 h-1.5 rounded-full transition-colors ${isActive ? 'bg-emerald-500' : isPast ? 'bg-emerald-200' : 'bg-slate-200'}"></div>`;
+            }).join('');
             
             // Update buttons
             document.getElementById('coachPrevBtn').style.visibility = currentCoachStep === 0 ? 'hidden' : 'visible';
             document.getElementById('coachNextBtn').textContent = currentCoachStep === coachSteps.length - 1 ? 'Selesai' : 'Next';
             
-            // Position tooltip
+            // Position tooltip and cutout
             if (step.target) {
                 const targetEl = document.querySelector(step.target);
                 if (targetEl) {
-                    // Show highlight
-                    highlight.style.display = 'block';
                     const rect = targetEl.getBoundingClientRect();
-                    highlight.style.left = rect.left + 'px';
-                    highlight.style.top = rect.top + 'px';
-                    highlight.style.width = rect.width + 'px';
-                    highlight.style.height = rect.height + 'px';
+                    const padding = 8;
+                    
+                    // Update SVG cutout
+                    cutout.setAttribute('x', rect.left - padding);
+                    cutout.setAttribute('y', rect.top - padding);
+                    cutout.setAttribute('width', rect.width + padding * 2);
+                    cutout.setAttribute('height', rect.height + padding * 2);
                     
                     // Position tooltip
-                    positionTooltip(tooltip, rect, step.position);
+                    positionCoachTooltip(tooltip, rect, step.position);
                 } else {
-                    // Target not found, center tooltip
-                    highlight.style.display = 'none';
-                    centerTooltip(tooltip);
+                    // Target not found, hide cutout and center tooltip
+                    cutout.setAttribute('width', '0');
+                    cutout.setAttribute('height', '0');
+                    centerCoachTooltip(tooltip);
                 }
             } else {
-                // No target, center tooltip
-                highlight.style.display = 'none';
-                centerTooltip(tooltip);
+                // No target, hide cutout and center tooltip
+                cutout.setAttribute('width', '0');
+                cutout.setAttribute('height', '0');
+                centerCoachTooltip(tooltip);
             }
         }
         
-        function positionTooltip(tooltip, targetRect, position) {
+        function positionCoachTooltip(tooltip, targetRect, position) {
             const tooltipRect = tooltip.getBoundingClientRect();
-            const spacing = 16;
+            const spacing = 12;
+            const padding = 16;
             
             let left, top;
             
             switch (position) {
                 case 'bottom':
-                    left = targetRect.left + (targetRect.width - Math.min(tooltipRect.width, 320)) / 2;
+                    left = targetRect.left + (targetRect.width - tooltipRect.width) / 2;
                     top = targetRect.bottom + spacing;
                     break;
                 case 'top':
-                    left = targetRect.left + (targetRect.width - Math.min(tooltipRect.width, 320)) / 2;
+                    left = targetRect.left + (targetRect.width - tooltipRect.width) / 2;
                     top = targetRect.top - tooltipRect.height - spacing;
                     break;
                 case 'left':
-                    left = targetRect.left - Math.min(tooltipRect.width, 320) - spacing;
+                    left = targetRect.left - tooltipRect.width - spacing;
                     top = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
                     break;
                 case 'right':
@@ -1421,19 +1438,20 @@
                     top = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
                     break;
                 default:
-                    left = (window.innerWidth - Math.min(tooltipRect.width, 320)) / 2;
+                    left = (window.innerWidth - tooltipRect.width) / 2;
                     top = (window.innerHeight - tooltipRect.height) / 2;
             }
             
             // Keep within viewport
-            left = Math.max(16, Math.min(left, window.innerWidth - 320 - 16));
-            top = Math.max(16, Math.min(top, window.innerHeight - tooltipRect.height - 16));
+            left = Math.max(padding, Math.min(left, window.innerWidth - tooltipRect.width - padding));
+            top = Math.max(padding, Math.min(top, window.innerHeight - tooltipRect.height - padding));
             
             tooltip.style.left = left + 'px';
             tooltip.style.top = top + 'px';
+            tooltip.style.transform = 'none';
         }
         
-        function centerTooltip(tooltip) {
+        function centerCoachTooltip(tooltip) {
             tooltip.style.left = '50%';
             tooltip.style.top = '50%';
             tooltip.style.transform = 'translate(-50%, -50%)';
@@ -1457,7 +1475,7 @@
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (document.getElementById('coachModal').classList.contains('hidden')) return;
+            if (document.getElementById('coachContainer').classList.contains('hidden')) return;
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
                 nextCoachStep();
