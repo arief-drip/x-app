@@ -4,382 +4,385 @@
     {
       "id": "parent_1704067200000",
       "title": "Creation & Editing Product",
-      "dateModified": 1710288000000,
-      "latestEmoticon": "\ud83e\udd29"
+      "dateModified": 1737312000000,
+      "latestEmoticon": "🤩",
+      "imageUrl": "https://images.pexels.com/photos/1181325/pexels-photo-1181325.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "id": "parent_1704153600000",
       "title": "Lynk.id Analytics & Sales",
-      "dateModified": 1710028800000,
-      "latestEmoticon": "\ud83e\udd70"
+      "dateModified": 1737225600000,
+      "latestEmoticon": "🥰"
     },
     {
       "id": "parent_1704240000000",
       "title": "Content & Marketing",
-      "dateModified": 1709769600000,
-      "latestEmoticon": "\ud83d\ude0e"
+      "dateModified": 1737139200000,
+      "latestEmoticon": "😎"
     },
     {
       "id": "parent_1704326400000",
       "title": "Customer & Testimoni",
-      "dateModified": 1709510400000,
-      "latestEmoticon": "\ud83e\udd70"
+      "dateModified": 1737052800000,
+      "latestEmoticon": "🥰"
     },
     {
       "id": "parent_1704412800000",
       "title": "Ide & Research Pasar",
-      "dateModified": 1709251200000,
-      "latestEmoticon": "\ud83e\udd14"
+      "dateModified": 1736966400000,
+      "latestEmoticon": "🤔"
     },
     {
       "id": "parent_1704499200000",
       "title": "Komunitas Creator",
-      "dateModified": 1708905600000,
-      "latestEmoticon": "\ud83e\udd29"
+      "dateModified": 1736880000000,
+      "latestEmoticon": "🤩"
     },
     {
       "id": "parent_1704585600000",
       "title": "Work Life Balance",
-      "dateModified": 1708473600000,
-      "latestEmoticon": "\ud83d\ude0a"
+      "dateModified": 1736793600000,
+      "latestEmoticon": "😊"
     }
   ],
   "children": [
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1704067200000,
+      "dateAdded": 1737312000000,
       "notes": "Selesai bikin template Instagram Feed 50 slide! Design di Canva Pro sampe mata berkunang. Worth it sih, warnanya aesthetic semua. Siap upload ke Lynk.id besok.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩",
+      "imageUrl": "https://images.pexels.com/photos/1181325/pexels-photo-1181325.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1704153600000,
+      "dateAdded": 1737297600000,
       "notes": "Ngedit ebook 'Cuan dari Konten'. Nulis 50 halaman dari pengalaman pribadi. Sempet stuck writer's block, akhirnya minum kopi 3 gelas. Semoga laku keras ya Allah.",
-      "emoticon": "\ud83d\ude30"
+      "emoticon": "😰",
+      "imageUrl": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1704672000000,
+      "dateAdded": 1737283200000,
       "notes": "Recording voice over untuk video course. Suara serak gara-gara ngomong 4 jam nonstop. Besok mau lanjut lagi, semoga suara udah balik normal.",
-      "emoticon": "\ud83d\ude34"
+      "emoticon": "😴"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1737268800000,
       "notes": "Bikin mockup produk di Photoshop. Tampilannya jadi lebih professional. Belajar dari YouTube, ternyata gak sesusah yang dibayangkan. Modal niat aja.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1737254400000,
       "notes": "Update template lama jadi versi 2.0. Nambahin fitur baru berdasar request buyer. Customer retention itu penting, biar mereka beli lagi.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1737240000000,
       "notes": "Upload 3 produk baru ke Lynk.id dalam satu hari. Capek banget tpu puas. Dari template feed, story template, sampe ebook. Bismillah yang terbaik.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1737225600000,
       "notes": "Riset harga kompetitor. Harga aku masih bersaing sih. Template sejenis dijual 100rb, aku jual 50rb. Kualitas sama tapi lebih terjangkau.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1710288000000,
+      "dateAdded": 1737211200000,
       "notes": "Bikin bonus content buat buyer. Checklist konten 30 hari. Semoga mereka suka dan kasih testimoni bagus. Bonus itu nilai tambah yang penting.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1704153600000,
+      "dateAdded": 1737225600000,
       "notes": "First sale! Alhamdulillah, ada yang beli template Instagram. Cuan 50rb pertama dari digital product. Meskipun kecil tapi rasanya luar biasa.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1704672000000,
+      "dateAdded": 1737211200000,
       "notes": "Cek analytics Lynk.id: 1.000 profile views minggu ini! Naik 200% dari minggu lalu. Kelihatannya konten TikTok-ku mulai efektif ngarahin traffic.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1737196800000,
       "notes": "10 sales dalam sehari! Rekor pribadi. Dari yang biasanya 2-3 per hari, sekarang tembus 10. Semoga bukan cuma hoki tapi konsisten.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1737182400000,
       "notes": "Hitung penghasilan bulan ini: 5jt! Dari yang dulu 0, sekarang bisa nambahin buat belanja. Semoga terus naik ya Allah. Aamiin.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1737168000000,
       "notes": "Analisis produk paling laris: Instagram Template Feed. 70% penjualan dari situ. Harus bikin variasi lebih banyak. Market demand-nya tinggi.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1737153600000,
       "notes": "Refund request pertama. Customer bilang gak sesuai ekspektasi. Sedih sih tapi yaudah direfund. Pelajaran: deskripsi produk harus lebih detail.",
-      "emoticon": "\ud83d\ude22"
+      "emoticon": "😢"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1737139200000,
       "notes": "Withdraw pertama ke rekening! 3jt masuk. Rasanya beda banget sama gaji suami. Ini hasil keringat sendiri, dari otak dan kreativitas.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1710028800000,
+      "dateAdded": 1737124800000,
       "notes": "Minggu terbaik: 25 sales! Total revenue 1.2jt dalam 7 hari. Trendnya naik terus. Harus siapin produk baru biar buyer balik lagi.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1704240000000,
+      "dateAdded": 1737139200000,
       "notes": "Ngonten tips design di TikTok. Viewnya viral! 100k views dalam sehari. Langsung rame yang cek bio dan klik link Lynk. Konten value itu powerful.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1704844800000,
+      "dateAdded": 1737124800000,
       "notes": "Bikin carousel Instagram: '5 Kesalahan Konten Pemula'. Design 10 slide, caption panjang. Engagement bagus, banyak save dan share. Konten edukasi memang oke.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1737110400000,
       "notes": "Live TikTok ngasih tips bikin konten. 200 orang nonton, banyak yang nanya. Di akhir promosiin produkku. Langsung ada yang beli 3 orang setelah live.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1737096000000,
       "notes": "Collaboration sama creator lain. Aku promosiin produk dia, dia promosiin punyaku. Win-win! Followers kami beda niche tapi sama-sama emak-emak.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1737081600000,
       "notes": "Email marketing ke buyer lama. Ngenalin produk baru. Open rate 40%, lumayan! Dari 100 email, 40 dibaca, 5 beli lagi. Retention is cheaper.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1737067200000,
       "notes": "Bikin freebie magnet: 10 Template Story. Gratis buat yang subscribe email. Strategi list building. Dapat 50 subscriber baru dalam sehari.",
-      "emoticon": "\ud83d\ude0e"
+      "emoticon": "😎"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1709769600000,
+      "dateAdded": 1737052800000,
       "notes": "SEO untuk Lynk.id: optimasi judul dan deskripsi. Riset keyword yang sering dicari. Hasilnya muncul di pencarian Lynk! Organic traffic naik 50%.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1704326400000,
+      "dateAdded": 1737052800000,
       "notes": "Dapet DM testimoni dari buyer. Templateku bantu dia dapat 1000 followers! Seneng banget ngeliat impact produkku. Langsung screenshot buat testimoni.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1704844800000,
+      "dateAdded": 1737038400000,
       "notes": "Nanya-nanya ke buyer: apa yang bisa ditingkatkan? Banyak kasih saran konstruktif. Dari fitur sampe harga. Feedback itu emas buat improvement.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1737024000000,
       "notes": "Bikin grup eksklusif buat buyer. Sharing tips tambahan, Q&A. Dari pada cuma transaksi, mending bangun komunitas. Mereka jadi loyal.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1737009600000,
       "notes": "Handle komplain dengan sabar. Buyer gak bisa download, aku bantu step by step. Lama tpu puas. Service excellence itu penting banget.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1736995200000,
       "notes": "Kirim thank you note personal ke buyer besar. Yang beli banyak item. Dikasih bonus template tambahan. Personal touch bikin mereka merasa dihargai.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736980800000,
       "notes": "Testimoni video dari buyer! Dia rekam unboxing dan review templateku. Boleh aku pake buat promosi. Social proof yang powerful banget.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1709510400000,
+      "dateAdded": 1736966400000,
       "notes": "Repeat buyer beli lagi! Kali ini order 3x lipat dari pertama. Bukti kualitas produk dan service memuaskan. Customer lifetime value itu penting.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1704412800000,
+      "dateAdded": 1736966400000,
       "notes": "Riset trend design 2024. Warna-warna earthy dan minimalist lagi naik. Harus update koleksi template sesuai tren. Biar gak ketinggalan zaman.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1704844800000,
+      "dateAdded": 1736952000000,
       "notes": "Survey ke follower: produk apa yang mereka butuhkan? Banyak yang request template TikTok. Ide bagus! Market belum banyak yang bikin.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1736937600000,
       "notes": "Studi kompetitor yang sukses. Analisis produk, harga, strategi marketingnya. Banyak insight baru. Competitor bukan enemy, tapi teacher.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1736923200000,
       "notes": "Ide baru: bundle produk! 3 template jadi 1 paket hemat. Harga lebih murah 30%. Strategy buat naikin average order value. Semoga jalan.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1736908800000,
       "notes": "Riset keyword di TikTok. Apa yang sering dicari emak-emak soal konten. Banyak yang nyari 'template aesthetic gratis'. Oportunitas buat freemium model.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736894400000,
       "notes": "Brainstorming sama suami soal produk fisik. Print on demand mungkin? T-shirt dengan quote motivasi. Tapi fokus ke digital dulu aja deh, satu-satu.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1736880000000,
       "notes": "Validasi ide: tanya di grup komunitas. Respon positif! Banyak yang minat sama template TikTok. Yaudah fix, mulai kerjain minggu depan.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1704499200000,
+      "dateAdded": 1736880000000,
       "notes": "Gabung grup Facebook Emak-emak Digitalpreneur. Sharing banyak ilmu dari creator lain. Networking itu penting banget, gak usah kerja sendirian.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1704844800000,
+      "dateAdded": 1736865600000,
       "notes": " webinar bareng komunitas: 'Scale Your Digital Product'. Speaker-nya udah cuan puluhan juta per bulan. Mindset-ku langsung kebuka lebar.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1736851200000,
       "notes": "Mastermind group mingguan. 5 creator, sharing progress dan kendala. Dapat accountability partner. Gak bisa males-malesan kalau udah janji sama mereka.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1736836800000,
       "notes": "Bantu creator baru yang stuck. Sharing pengalamanku. Dari 0 sampe sekarang. Seneng rasanya bisa inspire orang lain. Give more than you take.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1736822400000,
       "notes": "Collaborative product launch bareng komunitas. Kita bundle produk masing-masing. Revenue naik 3x lipat! Power of collaboration emang real.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736808000000,
       "notes": "Mentoring satu-on-one dari creator senior. Diajarin strategi pricing dan upsell. Ilmu mahal yang dibagi gratis. Beruntung banget punya mentor.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736793600000,
       "notes": "Offline meetup komunitas creator! Akhirnya ketemu di dunia nyata. Ngobrolin bisnis sampe malam. Dari stranger jadi sahabat karena visi yang sama.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1704585600000,
+      "dateAdded": 1736793600000,
       "notes": "Libur dari sosmed seharian. Gak cek notif, gak post konten. Mindfulness time. Butuh banget recharge energy biar gak burnout.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1736779200000,
       "notes": "Quality time sama anak tanpa pegang HP. Main monopoly, ngobrol, ketawa-ketawa. Dari pada cuma fisik ada tapi mental di toko online. Presence itu penting.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1705536000000,
+      "dateAdded": 1736764800000,
       "notes": "Self-care day: facial, hair treatment, manicure. Dari pagi sampe sore. Pulang langsung glowing! Investasi ke diri sendiri itu penting juga.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1736750400000,
       "notes": "Nonton Netflix sama suami. Drakor favorit yang udah ditunggu-tunggu. Me time berdua. Jangan sampe bisnis ngambil alih semua waktu.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1736736000000,
       "notes": "Olahraga pagi: yoga 30 menit. Badan lebih lentur, pikiran lebih jernih. Emak-emak juga butuh jaga kesehatan fisik biar produktivitas tetap oke.",
-      "emoticon": "\ud83d\ude0a"
+      "emoticon": "😊"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736721600000,
       "notes": "Baca buku 'The Psychology of Money'. Mindset soal uang langsung berubah. Digital product ini bukan cuma cuan, tapi freedom dan fulfillment.",
-      "emoticon": "\ud83e\udd14"
+      "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1736707200000,
       "notes": "Dinner date sama suami. Ngerayain 10k sales! Prestasi kecil yang berarti. Dia bangga banget sama perkembanganku. Support system terbaik.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1709769600000,
+      "dateAdded": 1736865600000,
       "notes": "Launch produk baru: Template TikTok Viral. 100 sales dalam 3 hari! Riset pasar ternyata efektif banget. Buyer pada suka.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704499200000",
-      "dateAdded": 1709769600000,
+      "dateAdded": 1736779200000,
       "notes": "Diundang jadi speaker di event creator. Sharing dari 0 sampe 100jt pertama. Nervous tapi proud. Dulu yang nonton webinar, sekarang yang ngisi.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704585600000",
-      "dateAdded": 1709769600000,
+      "dateAdded": 1736692800000,
       "notes": "Liburan ke Bali 5 hari tanpa pegang laptop. Bisnis tetap jalan, sales tetap masuk. Passive income emang the best! Quality time sama keluarga.",
-      "emoticon": "\ud83e\udd70"
+      "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1710288000000,
+      "dateAdded": 1737196800000,
       "notes": "Total produk: 50 items di Lynk.id. Dari template, ebook, sampe video course. Library lengkap. Target: 100 produk akhir tahun.",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1710288000000,
+      "dateAdded": 1737038400000,
       "notes": "Cuan 100jt pertama dari digital product! 8 bulan kerja keras. Semua orang bisa asalkan konsisten dan mau belajar. Next target: 1 milyar!",
-      "emoticon": "\ud83e\udd29"
+      "emoticon": "🤩"
     }
   ]
 }

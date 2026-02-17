@@ -4,182 +4,190 @@
     {
       "id": "parent_1704067200000",
       "title": "Karir & Pengembangan Diri",
-      "dateModified": 1709251200000,
-      "latestEmotion": "😎"
+      "dateModified": 1737312000000,
+      "latestEmotion": "😎",
+      "description": "Jurnal pengembangan karir dan milestone pekerjaan",
+      "imageUrl": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "id": "parent_1704153600000",
       "title": "Keluarga & Pernikahan",
-      "dateModified": 1709510400000,
-      "latestEmotion": "🥰"
+      "dateModified": 1737225600000,
+      "latestEmotion": "🥰",
+      "description": "Catatan perjalanan rumah tangga dan keluarga"
     },
     {
       "id": "parent_1704240000000",
       "title": "Investasi & Keuangan Syariah",
-      "dateModified": 1709769600000,
-      "latestEmotion": "🤔"
+      "dateModified": 1737139200000,
+      "latestEmotion": "🤔",
+      "description": "Investasi syariah dan perencanaan keuangan"
     },
     {
       "id": "parent_1704326400000",
       "title": "Dakwah & Komunitas",
-      "dateModified": 1710028800000,
-      "latestEmotion": "🤩"
+      "dateModified": 1737052800000,
+      "latestEmotion": "🤩",
+      "description": "Aktivitas dakwah dan pengabdian masyarakat"
     },
     {
       "id": "parent_1704412800000",
       "title": "Kesehatan & Work-Life Balance",
-      "dateModified": 1710288000000,
-      "latestEmotion": "😊"
+      "dateModified": 1736966400000,
+      "latestEmotion": "😊",
+      "description": "Keseimbangan hidup dan kesehatan"
     }
   ],
   "children": [
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1704067200000,
+      "dateAdded": 1737312000000,
       "notes": "Naik jabatan jadi Senior Manager! Alhamdulillah, 3 tahun kerja keras akhirnya membuahkan hasil. Tapi inget kata umi: jabatan itu amanah, bukan untuk bangga-banggaan.",
-      "emoticon": "😎"
+      "emoticon": "😎",
+      "imageUrl": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1704326400000,
+      "dateAdded": 1737279600000,
       "notes": "Meeting sama client sampe larut malam. Dilema banget, maghrib di kantor. Akhirnya sholat di ruangan kosong. Semoga Allah terima dan berkahin kerjaanku ya.",
-      "emoticon": "🤔"
+      "emoticon": "🤔",
+      "imageUrl": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1737204000000,
       "notes": "Daftar sertifikasi PMP. Biayanya 7jt tapi yakin ini investasi. Selama halal dan berguna, gapapa keluar uang banyak. Target: finish dalam 3 bulan.",
       "emoticon": "😊"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1708473600000,
+      "dateAdded": 1737117600000,
       "notes": "Presentasi di depan board of directors. Deg-degan sih, tapi inget: tawakkal aja. Hasilnya: approved! Besoknya langsung sholat syukur 2 rakaat.",
       "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704067200000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1737031200000,
       "notes": "Refleksi: sekarang gaji 3x lipat dari pertama kerja. Tapi hematnya malah lebih parah dulu 😅 Umi bilang: makin banyak rezeki, makin banyak sedekahnya. Note to self.",
       "emoticon": "😎"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1704153600000,
+      "dateAdded": 1737225600000,
       "notes": "Lamaran diterima! Setelah 2 tahun taaruf, akhirnya fix sama Sarah. Anaknya baik, keluarganya soleh. Doain lancar sampe hari H ya Allah 🤲",
       "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1704585600000,
+      "dateAdded": 1737163200000,
       "notes": "Ngobrol serius sama calon mertua. Bapaknya nanya soal visi misi pernikahan. Jawab: pengen bangun keluarga sakinah yang jadi ladang amal. Bapaknya senyum lebar.",
       "emoticon": "😊"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1737100800000,
       "notes": "Persiapan nikah: ngurusin venue, catering, undangan. Ribet sih tapi excited! Budget udah fix, target ngutang 0 rupiah. Semoga Allah mudahkan semuanya.",
       "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1737038400000,
       "notes": "Prewedding shoot. Awalnya males karena mau simple, tapi Sarah pengen kenang-kenangan. Yaudah ikutin aja, yang penting tetep syari dan gak berlebihan.",
       "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704153600000",
-      "dateAdded": 1709510400000,
+      "dateAdded": 1736976000000,
       "notes": "3 bulan jadi suami. Ternyata berat ya jadi imam 😅 Salut sama bapak yang bisa nabung anak 3. Aku baru 1 istri aja kadang pusing mikirin nafkah. Tapi semangat!",
       "emoticon": "😰"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1704240000000,
+      "dateAdded": 1737139200000,
       "notes": "Mulai serius belajar soal saham syariah. Dulu nyangka riba itu cuma bunga bank, ternyata lebih kompleks. Baca buku Ustadz Yusuf Mansur sampe begadang.",
       "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1737076800000,
       "notes": "First time beli saham syariah. Coba-coba dulu 5jt, masih deg-degan. Target: portofolio 100jt dalam 2 tahun. Bismillah, yang penting halal.",
       "emoticon": "😊"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1737014400000,
       "notes": "Dividen pertama cair! Cuma 200rb tapi rasanya beda banget. Ini hasil kerja keras dan ilmu yang halal. Beda sama bonus kantor dulu yang kadang ragu.",
       "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1736952000000,
       "notes": "Nabung emas di Tamasia. Tiap gajian auto debit 2jt. Sekarang udah 20 gram. Sarah bilang ini tabungan darurat dan hari tanti kita. Smart wife!",
       "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704240000000",
-      "dateAdded": 1709769600000,
+      "dateAdded": 1736889600000,
       "notes": "Ikut webinar perencanaan keuangan islami. Speaker-nya bang Fenny Suryady. Mind blowing banget! Ternyata kita harus punya 6 jenis tabungan: zakat, haji, darurat, dll.",
       "emoticon": "🤔"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1704326400000,
+      "dateAdded": 1737052800000,
       "notes": "Mulai mentoring anak magang di kantor. Ngenalin dunia kerja dan sekaligus ajarin akhlak. Mereka muda-muda banget, bikin kangen masa kuliah.",
       "emoticon": "😊"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1736990400000,
       "notes": "Ikut kajian rutin di masjid dekat kantor. Sekarang jadi bagi-bagi materi tentang adab bekerja dalam islam. Siapa sangka dari audiens jadi pembicara.",
       "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736928000000,
       "notes": "Buka group mentoring online buat fresh graduate. Isinya sharing soal karir dan agama. Gratis, purely karena Allah. Udah 50+ member dalam sebulan.",
       "emoticon": "🤩"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1709251200000,
+      "dateAdded": 1736865600000,
       "notes": "Sedekah jariyah: patungan bangun sumur di pedalaman. Target 10jt, kumpulnya 3 bulan. Sekarang udah 60% progress. Semoga jadi amal yang terus ngalir.",
       "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704326400000",
-      "dateAdded": 1710028800000,
+      "dateAdded": 1736803200000,
       "notes": "Hari ini full ngajar temen kantor yang mualaf. Dia nanya basic-basic: cara wudhu, bacaan sholat. Ikhlas banget ngebantu. Dulu aku juga diajarin orang, sekarang giliranku.",
       "emoticon": "🥰"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1704412800000,
+      "dateAdded": 1736966400000,
       "notes": "Cek kesehatan rutin. Kolesterol naik dikit, dokter bilang kurang olahraga. Padahal dulu rajim futsal, sekarang cuma rapat dan meeting. Harus mulai gerak lagi nih.",
       "emoticon": "😰"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1705104000000,
+      "dateAdded": 1736904000000,
       "notes": "Mulai gym lagi setelah 2 tahun vakum. Badan pegel-pegel, kayak orang abis disetrum. Tapi inget: badan yang kuat = ibadah lebih lancar. Semangat!",
       "emoticon": "😎"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1707696000000,
+      "dateAdded": 1736841600000,
       "notes": "Digital detox weekend: no email, no WA kerja, no linkedin. Cuma quality time sama Sarah dan ngaji. Rasanya hati tenang banget. Harus rutinin sebulan sekali.",
       "emoticon": "😊"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1708905600000,
+      "dateAdded": 1736779200000,
       "notes": "Burnout tipis-tipis. Kerjaan numpuk, kurang tidur, mood swing. Istighfar banyak-banyak, istirahat sebentar. Allah gak pernah kasih ujian melebihi kemampuan hamba-Nya.",
       "emoticon": "😰"
     },
     {
       "parentId": "parent_1704412800000",
-      "dateAdded": 1710288000000,
+      "dateAdded": 1736716800000,
       "notes": "3 bulan jaga pola hidup sehat. Turun 4kg, energi lebih, fokus kerja meningkat. Ternyata investasi ke kesehatan itu penting. Mau lanjut sampe tua!",
       "emoticon": "😊"
     }
