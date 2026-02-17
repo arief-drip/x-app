@@ -50,33 +50,76 @@
             filter: blur(100px) !important;
         }
         
-        /* Gradient Variants - Mature & Sophisticated */
+        /* Gradient Variants - Vibrant & Animated */
         .gradient-purple {
-            background: linear-gradient(160deg, #1a1b3a 0%, #2d2b55 30%, #4a4068 60%, #6b5b7a 100%);
+            background: linear-gradient(-45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
         }
         
         .gradient-black-red {
-            background: linear-gradient(160deg, #0d0d0d 0%, #1a1418 25%, #2d1f24 50%, #4a2c33 75%, #6b3a42 100%);
+            background: linear-gradient(-45deg, #ff0844 0%, #ffb199 25%, #ff512f 50%, #dd2476 75%, #ff6b6b 100%);
+            background-size: 400% 400%;
         }
         
         .gradient-ocean {
-            background: linear-gradient(160deg, #0f2027 0%, #203a43 35%, #2c5364 70%, #3d7a8c 100%);
+            background: linear-gradient(-45deg, #2193b0 0%, #6dd5ed 25%, #00d2ff 50%, #3a7bd5 75%, #00d2ff 100%);
+            background-size: 400% 400%;
         }
         
         .gradient-sunset {
-            background: linear-gradient(160deg, #2c1810 0%, #4a2c24 30%, #6b4237 60%, #8b5a4d 100%);
+            background: linear-gradient(-45deg, #f12711 0%, #f5af19 25%, #ff512f 50%, #f09819 75%, #ff6a00 100%);
+            background-size: 400% 400%;
         }
         
         .gradient-forest {
-            background: linear-gradient(160deg, #0d1f12 0%, #1a3322 30%, #2d4a35 60%, #3d5f45 100%);
+            background: linear-gradient(-45deg, #11998e 0%, #38ef7d 25%, #00b09b 50%, #96c93d 75%, #56ab2f 100%);
+            background-size: 400% 400%;
         }
         
         .gradient-cosmic {
-            background: linear-gradient(160deg, #0f0c29 0%, #1a1a40 30%, #2d2b55 60%, #3d3b6b 100%);
+            background: linear-gradient(-45deg, #330867 0%, #30cfd0 25%, #a8edea 50%, #fed6e3 75%, #ff9a9e 100%);
+            background-size: 400% 400%;
         }
         
         .gradient-midnight {
-            background: linear-gradient(160deg, #0a0a0f 0%, #151520 30%, #20202e 60%, #2d2d3d 100%);
+            background: linear-gradient(-45deg, #2c3e50 0%, #3498db 25%, #6c5ce7 50%, #a29bfe 75%, #fd79a8 100%);
+            background-size: 400% 400%;
+        }
+        
+        /* Extra vibrant gradients */
+        .gradient-candy {
+            background: linear-gradient(-45deg, #ff9a9e 0%, #fecfef 25%, #fecfef 50%, #fad0c4 75%, #ffecd2 100%);
+            background-size: 400% 400%;
+        }
+        
+        .gradient-aurora {
+            background: linear-gradient(-45deg, #00c9ff 0%, #92fe9d 25%, #00d2ff 50%, #3a7bd5 75%, #00c6ff 100%);
+            background-size: 400% 400%;
+        }
+        
+        .gradient-neon {
+            background: linear-gradient(-45deg, #f093fb 0%, #f5576c 25%, #4facfe 50%, #00f2fe 75%, #43e97b 100%);
+            background-size: 400% 400%;
+        }
+        
+        .gradient-gold {
+            background: linear-gradient(-45deg, #f5af19 0%, #f12711 25%, #fddb92 50%, #d1fdff 75%, #f5af19 100%);
+            background-size: 400% 400%;
+        }
+        
+        .gradient-berry {
+            background: linear-gradient(-45deg, #8e2de2 0%, #4a00e0 25%, #da22ff 50%, #9733ee 75%, #8e2de2 100%);
+            background-size: 400% 400%;
+        }
+        
+        .gradient-sherbet {
+            background: linear-gradient(-45deg, #ff9a9e 0%, #fecfef 25%, #ffecd2 50%, #fcb69f 75%, #ff9a9e 100%);
+            background-size: 400% 400%;
+        }
+        
+        .gradient-oceanic {
+            background: linear-gradient(-45deg, #2193b0 0%, #6dd5ed 25%, #2e3192 50%, #1cb5e0 75%, #000851 100%);
+            background-size: 400% 400%;
         }
         
         .glass {
@@ -463,22 +506,36 @@
             <div class="overflow-y-auto flex-1 pr-1 -mr-1" style="scrollbar-width: thin;">
                 <!-- Gradient Options -->
                 <div class="mb-4 md:mb-6">
-                    <h3 class="text-xs md:text-sm font-semibold text-slate-600 uppercase tracking-wider mb-2 md:mb-3">Gradient Themes</h3>
+                    <h3 class="text-xs md:text-sm font-semibold text-slate-600 uppercase tracking-wider mb-2 md:mb-3">✨ Animated Gradients</h3>
                     <div class="grid grid-cols-4 sm:grid-cols-7 gap-2">
                         <div onclick="setBackground('gradient', 'purple', 'g-purple')" id="bg-g-purple" 
-                             class="bg-option selected h-12 sm:h-16 rounded-xl gradient-purple shadow-md cursor-pointer border border-slate-200" title="Deep Navy"></div>
+                             class="bg-option selected h-12 sm:h-16 rounded-xl gradient-purple shadow-md cursor-pointer border-2 border-white" title="Neon Purple"></div>
                         <div onclick="setBackground('gradient', 'black-red', 'g-black-red')" id="bg-g-black-red" 
-                             class="bg-option h-12 sm:h-16 rounded-xl gradient-black-red shadow-md cursor-pointer border border-slate-200" title="Dark Crimson"></div>
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-black-red shadow-md cursor-pointer border-2 border-white" title="Hot Coral"></div>
                         <div onclick="setBackground('gradient', 'ocean', 'g-ocean')" id="bg-g-ocean" 
-                             class="bg-option h-12 sm:h-16 rounded-xl gradient-ocean shadow-md cursor-pointer border border-slate-200" title="Deep Ocean"></div>
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-ocean shadow-md cursor-pointer border-2 border-white" title="Ocean Blue"></div>
                         <div onclick="setBackground('gradient', 'sunset', 'g-sunset')" id="bg-g-sunset" 
-                             class="bg-option h-12 sm:h-16 rounded-xl gradient-sunset shadow-md cursor-pointer border border-slate-200" title="Burnt Sienna"></div>
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-sunset shadow-md cursor-pointer border-2 border-white" title="Tropical Sunset"></div>
                         <div onclick="setBackground('gradient', 'forest', 'g-forest')" id="bg-g-forest" 
-                             class="bg-option h-12 sm:h-16 rounded-xl gradient-forest shadow-md cursor-pointer border border-slate-200" title="Deep Forest"></div>
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-forest shadow-md cursor-pointer border-2 border-white" title="Fresh Mint"></div>
                         <div onclick="setBackground('gradient', 'cosmic', 'g-cosmic')" id="bg-g-cosmic" 
-                             class="bg-option h-12 sm:h-16 rounded-xl gradient-cosmic shadow-md cursor-pointer border border-slate-200" title="Royal Purple"></div>
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-cosmic shadow-md cursor-pointer border-2 border-white" title="Cosmic Dreams"></div>
                         <div onclick="setBackground('gradient', 'midnight', 'g-midnight')" id="bg-g-midnight" 
-                             class="bg-option h-12 sm:h-16 rounded-xl gradient-midnight shadow-md cursor-pointer border border-slate-200" title="Charcoal"></div>
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-midnight shadow-md cursor-pointer border-2 border-white" title="Midnight Magic"></div>
+                        <div onclick="setBackground('gradient', 'candy', 'g-candy')" id="bg-g-candy" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-candy shadow-md cursor-pointer border-2 border-white" title="Cotton Candy"></div>
+                        <div onclick="setBackground('gradient', 'aurora', 'g-aurora')" id="bg-g-aurora" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-aurora shadow-md cursor-pointer border-2 border-white" title="Aurora Borealis"></div>
+                        <div onclick="setBackground('gradient', 'neon', 'g-neon')" id="bg-g-neon" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-neon shadow-md cursor-pointer border-2 border-white" title="Cyber Neon"></div>
+                        <div onclick="setBackground('gradient', 'gold', 'g-gold')" id="bg-g-gold" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-gold shadow-md cursor-pointer border-2 border-white" title="Golden Hour"></div>
+                        <div onclick="setBackground('gradient', 'berry', 'g-berry')" id="bg-g-berry" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-berry shadow-md cursor-pointer border-2 border-white" title="Berry Burst"></div>
+                        <div onclick="setBackground('gradient', 'sherbet', 'g-sherbet')" id="bg-g-sherbet" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-sherbet shadow-md cursor-pointer border-2 border-white" title="Orange Sherbet"></div>
+                        <div onclick="setBackground('gradient', 'oceanic', 'g-oceanic')" id="bg-g-oceanic" 
+                             class="bg-option h-12 sm:h-16 rounded-xl gradient-oceanic shadow-md cursor-pointer border-2 border-white" title="Deep Oceanic"></div>
                     </div>
                 </div>
                 
@@ -1832,7 +1889,7 @@
             document.getElementById('analyticsQuote').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
         }
         
-        const GRADIENT_CLASSES = ['gradient-purple', 'gradient-black-red', 'gradient-ocean', 'gradient-sunset', 'gradient-forest', 'gradient-cosmic', 'gradient-midnight'];
+        const GRADIENT_CLASSES = ['gradient-purple', 'gradient-black-red', 'gradient-ocean', 'gradient-sunset', 'gradient-forest', 'gradient-cosmic', 'gradient-midnight', 'gradient-candy', 'gradient-aurora', 'gradient-neon', 'gradient-gold', 'gradient-berry', 'gradient-sherbet', 'gradient-oceanic'];
         
         function setBackground(type, gradientVariant, elementId) {
             const body = document.body;
