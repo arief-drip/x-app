@@ -322,7 +322,61 @@
                 transform: scale(1) translateY(0);
             }
         }
+        
+        /* Milestone Notification */
+        .milestone-toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 90;
+            animation: milestoneSlide 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .milestone-toast:hover {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .milestone-toast.hiding {
+            animation: milestoneHide 0.3s ease forwards;
+        }
+        
+        @keyframes milestoneSlide {
+            from {
+                opacity: 0;
+                transform: translateX(100%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0);
+            }
+        }
+        
+        @keyframes milestoneHide {
+            to {
+                opacity: 0;
+                transform: translateX(100%) translateY(20px);
+            }
+        }
+        
+        .milestone-pulse {
+            animation: milestonePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes milestonePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 20px 8px rgba(99, 102, 241, 0); }
+        }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XETKYGZYT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0XETKYGZYT');
+    </script>
 </head>
 <body class="bg-gradient antialiased gradient-purple">
     <!-- Ambient Background Elements (hidden when using image bg) -->
@@ -654,6 +708,12 @@
                                             <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.152 7.164 1.432 1.781 3.632 2.695 6.542 2.717 4.408-.03 7.202-2.055 8.305-6.016l2.04.57c-.651 2.337-1.832 4.177-3.51 5.467-1.783 1.373-4.08 2.078-6.826 2.098h-.097zm6.627-8.042l-.971-1.144 1.536-1.303.973 1.144-1.538 1.303zm-3.417 2.508l-1.038-1.09 1.467-1.396 1.037 1.089-1.466 1.397zm-4.186 1.312l-.924-1.193 1.605-1.242.924 1.192-1.605 1.243zm-3.465-2.102l-.825-1.261 1.698-1.111.825 1.261-1.698 1.111z"/>
                                         </svg>
                                         <span>Threads</span>
+                                    </a>
+                                    <a href="https://saweria.co/ariefdrip" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-sm text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 px-2 py-2 rounded-lg transition-all mt-1">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                        </svg>
+                                        <span>Dukung X Journal</span>
                                     </a>
                                 </div>
                             </div>
@@ -1118,6 +1178,40 @@
 
     </main>
 
+    <!-- Milestone Notification (Small, Bottom Right) -->
+    <div id="milestoneToast" class="milestone-toast hidden" onclick="handleMilestoneClick()">
+        <div class="glass-dark rounded-2xl px-4 py-3 shadow-2xl border border-white/10 milestone-pulse flex items-center gap-3">
+            <span id="milestoneIcon" class="text-xl">🎉</span>
+            <span id="milestoneText" class="text-sm font-medium text-white">5 entries! Tap me</span>
+            <svg class="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Milestone Modal -->
+    <div id="milestoneModal" class="fixed inset-0 z-[90] hidden modal-overlay items-center justify-center p-3" onclick="if(event.target === this) closeMilestoneModal()">
+        <div class="glass rounded-3xl p-6 max-w-md w-full max-h-[85vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="text-center mb-6">
+                <div id="milestoneModalIcon" class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-3xl shadow-lg">
+                    🎉
+                </div>
+                <h2 id="milestoneModalTitle" class="text-xl font-bold text-slate-800 mb-2">Milestone Reached!</h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-violet-100 rounded-full">
+                    <span class="text-xs font-semibold text-violet-700">Entry #<span id="milestoneNumber">5</span></span>
+                </div>
+            </div>
+            
+            <div id="milestoneModalContent" class="space-y-4">
+                <!-- Content will be injected here -->
+            </div>
+            
+            <button onclick="closeMilestoneModal()" class="w-full mt-6 py-3 btn-primary text-white font-medium rounded-xl">
+                Lanjut Menulis ✨
+            </button>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="fixed top-24 right-4 z-50 transform translate-x-full opacity-0 transition-all duration-300">
         <div class="glass-dark text-slate-100 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
@@ -1268,6 +1362,10 @@
                 
                 closeResetModal();
                 showToast('Semua data telah dihapus');
+                
+                // Reset milestone tracking
+                MILESTONES.forEach(m => localStorage.removeItem(`milestone_shown_${m}`));
+                
                 await renderJournals();
             } catch (error) {
                 console.error('Error resetting data:', error);
@@ -1661,6 +1759,20 @@
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close milestone modal if open
+                const milestoneModal = document.getElementById('milestoneModal');
+                if (!milestoneModal.classList.contains('hidden')) {
+                    closeMilestoneModal();
+                    return;
+                }
+                // End coach if active
+                if (!document.getElementById('coachContainer').classList.contains('hidden')) {
+                    endCoach();
+                    return;
+                }
+            }
+            
             if (document.getElementById('coachContainer').classList.contains('hidden')) return;
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
@@ -1668,8 +1780,6 @@
             } else if (e.key === 'ArrowLeft') {
                 e.preventDefault();
                 prevCoachStep();
-            } else if (e.key === 'Escape') {
-                endCoach();
             }
         });
         
@@ -2284,6 +2394,9 @@
             showToast('Entry added successfully');
             await renderJournals();
             
+            // Check for milestone
+            await checkAndShowMilestone();
+            
             // Scroll to the newest entry with animation
             setTimeout(() => {
                 const content = document.getElementById(`content_${parentId}`);
@@ -2646,6 +2759,275 @@
             toastMessage.textContent = message;
             toast.classList.remove('translate-x-full', 'opacity-0');
             setTimeout(() => { toast.classList.add('translate-x-full', 'opacity-0'); }, 3000);
+        }
+        
+        // ==================== MILESTONE NOTIFICATIONS ====================
+        // Pattern: edu (+5), edu (+5), donation (+15), repeat... until 175
+        const MILESTONES = [5, 10, 25, 30, 35, 50, 55, 60, 75, 80, 85, 100, 105, 110, 125, 130, 135, 150, 155, 160, 175];
+        
+        // Education content - 12 items for rotation (2 per cycle, 6 cycles until 175)
+        const EDUCATION_CONTENTS = [
+            {
+                icon: '💡',
+                title: 'The Power of Consistent Journaling',
+                color: 'from-amber-400 to-orange-500',
+                paragraphs: [
+                    'Journaling bukan sekadar mencatat—itu adalah <strong>investasi mental</strong> yang membayar dividen sepanjang hidup. Setiap entry yang kamu tulis membantu otak memproses emosi, mengurangi stres, dan meningkatkan self-awareness.',
+                    'Studi menunjukkan orang yang menjurnal secara teratur memiliki <strong>42% lebih sedikit stres</strong> dan <strong>25% lebih bahagia</strong>. Kamu sedang membangun kebiasaan yang akan mengubah hidupmu. Keep going! ✨'
+                ]
+            },
+            {
+                icon: '🧠',
+                title: 'Mengapa X Journal 100% Lokal?',
+                color: 'from-emerald-400 to-teal-500',
+                paragraphs: [
+                    'X Journal menggunakan IndexedDB—semua data tersimpan <strong>di device-mu sendiri</strong>, bukan di cloud. Ini artinya privasimu 100% terjaga. Tidak ada yang bisa membaca jurnalmu, bahkan pembuat aplikasi ini sekalipun.',
+                    'Namun, ini juga berarti kamu bertanggung jawab atas data sendiri. Rajin-rajinlah export backup via menu Database. Ingat: <strong>kepemilikan data = kekuatan</strong>. Kamu punya kendali penuh atas cerita hidupmu. 🔒'
+                ]
+            },
+            {
+                icon: '🎯',
+                title: 'Morning Pages: Rutinitas Pagi yang Mengubah Hidup',
+                color: 'from-blue-400 to-indigo-500',
+                paragraphs: [
+                    '<strong>Morning Pages</strong> adalah teknik menulis 3 halaman penuh setiap pagi tanpa filter. Tidak perlu dipikir, tidak perlu diedit—tulis apa saja yang ada di pikiran. Ini membersihkan "mental clutter" sebelum memulai hari.',
+                    'Banyak penulis, CEO, dan kreator sukses menggunakan teknik ini. Kamu bisa membuat journal khusus "Morning Pages" di X Journal. Coba konsisten selama 30 hari dan rasakan perbedaannya. 🌅'
+                ]
+            },
+            {
+                icon: '📊',
+                title: 'Mood Tracking: Mengenali Pola Emosimu',
+                color: 'from-violet-400 to-purple-500',
+                paragraphs: [
+                    'Setiap kali kamu memilih emoji mood, X Journal mencatatnya. Dari data ini, kamu bisa melihat <strong>pola emosi</strong> selama berminggu-minggu. Apakah hari Senin selalu berat? Apakah minggu ketiga bulan selalu produktif?',
+                    'Data Analysis di menu Database bisa menunjukkan mood dominanmu. Ini alat yang powerful untuk memahami diri sendiri. Jadi, jangan skip memilih emoji—itu adalah data berharga! 📈'
+                ]
+            },
+            {
+                icon: '🔗',
+                title: 'Linkify Feature: Jurnal Interaktifmu',
+                color: 'from-cyan-400 to-blue-500',
+                paragraphs: [
+                    'Tahu nggak? X Journal otomatis mendeteksi URL di catatanmu dan mengubahnya jadi <strong>tombol klikabel</strong>. Ini berguna banget untuk menyimpan referensi artikel, video, atau playlist yang terkait dengan entry-mu.',
+                    'Tips pro: Simpan link lagu yang sedang kamu dengar saat menulis. Nanti, saat kamu baca ulang entry lama, kamu bisa klik dan merasakan kembali vibes-nya. Musik + memori = time travel! 🎵'
+                ]
+            },
+            {
+                icon: '🎨',
+                title: 'Background Customization: Mood = Ruang',
+                color: 'from-pink-400 to-rose-500',
+                paragraphs: [
+                    'Lingkungan visual mempengaruhi kreativitas. Makanya X Journal menyediakan <strong>27+ pilihan background</strong>—dari gradient animasi sampai foto alam dan kota. Ganti background sesuai mood atau topik journal.',
+                    'Sedang curhat? Coba background gelap. Sedang merencanakan impian? Pilih sunset atau aurora. Sedang fokus kerja? Forest atau ocean cocok. Ruang digitalmu, atur sesukamu! 🌈'
+                ]
+            },
+            {
+                icon: '⚡',
+                title: 'Streak Power: Jangan Putus Rantai!',
+                color: 'from-orange-400 to-red-500',
+                paragraphs: [
+                    'Data Analysis menampilkan <strong>streak journaling</strong>-mu—berapa hari berturut-turut kamu menulis. Streak adalah motivator psikologis yang powerful. Semakin panjang streak, semakin kuat keinginan untuk menjaganya.',
+                    'Tapi ingat: satu hari bolong tidak berarti gagal. Jangan terjebak "all or nothing thinking". Jika streak putus, mulai lagi dari 1. Yang penting adalah <strong>consistency over perfection</strong>. 🔥'
+                ]
+            },
+            {
+                icon: '🔐',
+                title: 'Export Data: Backup Adalah Kekuatan',
+                color: 'from-slate-400 to-gray-500',
+                paragraphs: [
+                    'X Journal menyimpan data secara lokal, tapi device bisa rusak, hilang, atau di-reset. Makanya fitur <strong>Export</strong> sangat penting. Satu klik, semua journal-mu tersimpan dalam file JSON yang bisa di-import kapan saja.',
+                    'Saran: export setiap minggu atau bulan. Simpan file-nya di cloud storage (Google Drive, Dropbox) atau kirim ke email. Ini adalah arsip hidupmu—jaga dengan baik! 📦'
+                ]
+            },
+            {
+                icon: '📱',
+                title: 'Install sebagai PWA: Akses Instan',
+                color: 'from-indigo-400 to-violet-500',
+                paragraphs: [
+                    'X Journal adalah <strong>Progressive Web App (PWA)</strong>. Kamu bisa "install" di homescreen, terlihat seperti app native, dan berfungsi offline. Tidak perlu download dari App Store!',
+                    'Caranya: di Chrome/Android, tap menu ⋮ → "Install". Di iOS, tap Share → "Add to Home Screen". Setelah install, X Journal bisa dibuka tanpa browser chrome, lebih cepat, dan lebih immersive. Cobain! 🚀'
+                ]
+            },
+            {
+                icon: '🌙',
+                title: 'Evening Reflection: Tutup Hari dengan Bersyukur',
+                color: 'from-indigo-500 to-blue-600',
+                paragraphs: [
+                    'Sebelum tidur, luangkan 5 menit untuk menulis <strong>3 hal yang kamu syukuri hari ini</strong>. Bisa sekecil secangkir kopi yang enak, bisa sebesar promosi kerja. Latihan sederhana ini secara ilmiah meningkatkan kebahagiaan.',
+                    'Buat journal khusus "Gratitude" atau "Evening Reflection". Tidur dengan pikiran positif meningkatkan kualitas istirahat dan mempersiapkanmu untuk hari yang lebih baik besok. 🌟'
+                ]
+            },
+            {
+                icon: '🎭',
+                title: 'Persona Template: Mulai dari Contoh',
+                color: 'from-fuchsia-400 to-pink-500',
+                paragraphs: [
+                    'Bingung mau nulis apa? X Journal menyediakan <strong>10+ persona template</strong>—dari Mahasiswa, Profesional, sampai Mindmap Declutter. Setiap template punya struktur journal yang siap pakai.',
+                    'Kamu bisa import template saat pertama kali pakai, atau reset data lalu pilih template lain untuk eksplorasi. Tidak harus cocok 100%—modifikasi sesuai kebutuhanmu. Template adalah batu loncatan, bukan aturan baku! 🎨'
+                ]
+            },
+            {
+                icon: '💪',
+                title: 'Kebiasaan Kecil, Dampak Besar',
+                color: 'from-lime-400 to-green-500',
+                paragraphs: [
+                    'Atomic Habits karya James Clear mengajarkan: <strong>1% better every day</strong> akan membuatmu 37x lebih baik dalam setahun. Journaling adalah kebiasaan kecil yang compound effect-nya luar biasa.',
+                    'Setiap entry adalah brick kecil dalam fondasi pemahaman diri. Dari 5 entry, jadi 25, jadi 175, jadi ribuan. Suatu hari nanti, kamu akan membaca ulang dan terkejut betapa jauhnya kamu sudah berkembang. 🌱'
+                ]
+            }
+        ];
+        
+        // Donation content (same for all donation milestones)
+        const DONATION_CONTENT = {
+            icon: '💚',
+            title: 'Dukung X Journal Tetap Hidup',
+            color: 'from-emerald-500 to-green-500',
+            paragraphs: [
+                'X Journal dibuat dengan penuh cinta dan <strong>100% gratis</strong> tanpa iklan. Tapi server, domain, dan waktu pengembangan butuh biaya. Setiap donasi, sekecil apapun, sangat berarti untuk menjaga aplikasi ini tetap berjalan.',
+                'Jika X Journal membantu harimu lebih baik, pertimbangkan untuk <strong>buy me a coffee</strong>. Dukunganmu membuat saya bisa terus menambah fitur dan menjaga kualitas. Terima kasih sudah menjadi bagian dari perjalanan ini! 🙏'
+            ],
+            cta: {
+                text: 'Dukung X Journal 💚',
+                url: 'https://saweria.co/ariefdrip'
+            }
+        };
+        
+        let currentMilestone = null;
+        
+        function getMilestoneContent(entryCount) {
+            const milestoneIndex = MILESTONES.indexOf(entryCount);
+            const cyclePosition = milestoneIndex % 3; // 0, 1 = education, 2 = donation
+            
+            if (cyclePosition === 2) {
+                // Every 3rd milestone (index 2, 5, 8, 11, 14, 17, 20) is donation
+                return { type: 'donation', content: DONATION_CONTENT };
+            } else {
+                // Map education milestones to content array
+                // Milestone 0,1 -> edu 0,1 | 3,4 -> edu 2,3 | 6,7 -> edu 4,5 | etc.
+                const eduIndex = Math.floor(milestoneIndex / 3) * 2 + cyclePosition;
+                // Use modulo to cycle through education contents if we run out
+                const safeEduIndex = eduIndex % EDUCATION_CONTENTS.length;
+                return { type: 'education', content: EDUCATION_CONTENTS[safeEduIndex] };
+            }
+        }
+        
+        async function checkAndShowMilestone() {
+            // Get total entries count
+            const transaction = db.transaction([CHILD_STORE], 'readonly');
+            const store = transaction.objectStore(CHILD_STORE);
+            const count = await new Promise((resolve, reject) => {
+                const request = store.count();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+            
+            // Check if this is a milestone and hasn't been shown
+            if (MILESTONES.includes(count)) {
+                const shownKey = `milestone_shown_${count}`;
+                if (!localStorage.getItem(shownKey)) {
+                    showMilestoneNotification(count);
+                    localStorage.setItem(shownKey, 'true');
+                }
+            }
+        }
+        
+        function showMilestoneNotification(entryCount) {
+            currentMilestone = entryCount;
+            const content = getMilestoneContent(entryCount);
+            const isDonation = content.type === 'donation';
+            
+            // Small toast notification (5-6 words)
+            const toastMessages = [
+                `${entryCount} entries! Keren banget 🎉`,
+                `Wah, udah ${entryCount} cerita! ✨`,
+                `${entryCount} entries! Lihat ini 👆`,
+                `Milestone ${entryCount}! Tap aku 💡`,
+                `${entryCount}x menulis! Ada hadiah 🎁`
+            ];
+            const randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
+            
+            document.getElementById('milestoneIcon').textContent = content.content.icon;
+            document.getElementById('milestoneText').textContent = randomMessage;
+            
+            const toast = document.getElementById('milestoneToast');
+            toast.classList.remove('hidden');
+            
+            // Auto-hide after 10 seconds if not clicked
+            setTimeout(() => {
+                if (!toast.classList.contains('hidden') && !document.getElementById('milestoneModal').classList.contains('flex')) {
+                    hideMilestoneNotification();
+                }
+            }, 10000);
+        }
+        
+        function hideMilestoneNotification() {
+            const toast = document.getElementById('milestoneToast');
+            toast.classList.add('hiding');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('hiding');
+            }, 300);
+        }
+        
+        function handleMilestoneClick() {
+            hideMilestoneNotification();
+            if (currentMilestone) {
+                showMilestoneModal(currentMilestone);
+            }
+        }
+        
+        function showMilestoneModal(entryCount) {
+            const content = getMilestoneContent(entryCount);
+            const data = content.content;
+            
+            // Update icon
+            document.getElementById('milestoneModalIcon').textContent = data.icon;
+            document.getElementById('milestoneModalIcon').className = `w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${data.color} flex items-center justify-center text-3xl shadow-lg`;
+            
+            // Update title and number
+            document.getElementById('milestoneModalTitle').textContent = data.title;
+            document.getElementById('milestoneNumber').textContent = entryCount;
+            
+            // Build content
+            let contentHtml = '';
+            data.paragraphs.forEach(para => {
+                contentHtml += `<p class="text-sm text-slate-600 leading-relaxed">${para}</p>`;
+            });
+            
+            // Add CTA for donation
+            if (content.type === 'donation' && DONATION_CONTENT.cta) {
+                contentHtml += `
+                    <a href="${DONATION_CONTENT.cta.url}" target="_blank" rel="noopener noreferrer"
+                       class="block mt-4 p-4 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl hover:border-emerald-300 transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-lg shadow-md group-hover:scale-110 transition-transform">
+                                💚
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold text-slate-800 text-sm">${DONATION_CONTENT.cta.text}</p>
+                                <p class="text-xs text-slate-500">via Saweria (secure)</p>
+                            </div>
+                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </div>
+                    </a>
+                `;
+            }
+            
+            document.getElementById('milestoneModalContent').innerHTML = contentHtml;
+            
+            // Show modal
+            const modal = document.getElementById('milestoneModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function closeMilestoneModal() {
+            const modal = document.getElementById('milestoneModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            currentMilestone = null;
         }
         
         // Dropdown menu functions
