@@ -1,0 +1,271 @@
+{
+  "parents": [
+    {
+      "id": "journal-001",
+      "title": "💡 Idea Capture",
+      "description": "Tangkap ide liar sebelum hilang",
+      "dateModified": 1735689600000,
+      "latestEmotion": "🤯"
+    },
+    {
+      "id": "journal-002",
+      "title": "🌅 Morning Pages",
+      "description": "3 halaman tulis bebas pas baru bangun",
+      "dateModified": 1735776000000,
+      "latestEmotion": "☕"
+    },
+    {
+      "id": "journal-003",
+      "title": "🕸️ Mind Mapping",
+      "description": "Visualisasi hubungan antar ide",
+      "dateModified": 1735862400000,
+      "latestEmotion": "🧠"
+    },
+    {
+      "id": "journal-004",
+      "title": "❓ What If Questions",
+      "description": "Eksplorasi tanpa batasan",
+      "dateModified": 1735948800000,
+      "latestEmotion": "🚀"
+    },
+    {
+      "id": "journal-005",
+      "title": "🥚 Idea Incubator",
+      "description": "Simpen ide mentah",
+      "dateModified": 1736035200000,
+      "latestEmotion": "🐣"
+    },
+    {
+      "id": "journal-006",
+      "title": "🚀 Creative Block Buster",
+      "description": "Tulis apapun sampai mentok ilang",
+      "dateModified": 1736121600000,
+      "latestEmotion": "🔥"
+    },
+    {
+      "id": "journal-007",
+      "title": "🔗 Connection Making",
+      "description": "Hubungin ide yang unrelated",
+      "dateModified": 1736294400000,
+      "latestEmotion": "✨",
+      "imageUrl": "https://images.pexels.com/photos/1181325/pexels-photo-1181325.jpeg"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "journal-001",
+      "dateAdded": 1735017600000,
+      "notes": "Guys, tadi malem pas mau tidur tiba-tiba kepikiran ide gila!\n\nGimana kalau kita bikin aplikasi yang bisa nangkep mimpi kita terus convert jadi storyboard? Bayangin aja, bangun tidur langsung punya konsep film dari mimpi semalam!\n\nTeknologinya mungkin pake AI yang integrasi sama smartwatch buat detect REM sleep phase, terus pas kita lagi mimpi paling vivid, dia bakal trigger subtle vibration yang bakal ngebantu kita inget mimpi pas bangun.\n\nIni sih bisa jadi goldmine buat filmmaker, writer, atau creative people yang sering dapet inspirasi dari mimpi. Nama aplikasinya 'DreamFrame' gimana? Kece ga sih?",
+      "emoticon": "🌙"
+    },
+    {
+      "parentId": "journal-001",
+      "dateAdded": 1735104000000,
+      "notes": "Ide random lagi nih pas lagi di toilet wkwk\n\nJadi kepikiran, kenapa sih kita gak bisa 'bookmark' pikiran kita kayak bookmark web? Sometimes kan lagi shower tiba-tiba insight muncul, tapi pas mau nyatet udah lupa!\n\nSolusinya: Voice-activated thought catcher yang always listening tapi cuma record pas kita ngomong keyword khusus. Misalnya 'Hey Brain, catet...' terus kita ngomong ide kita.\n\nYang kerennya, dia bisa auto-organize berdasarkan context (lagi di mana, lagi ngapain, mood kita gimana). Jadi pas kita butuh inspirasi, tinggal search 'ide pas lagi jogging' atau 'insight pas lagi mandi'.\n\nIni bakal ngebantu banget buat yang suka overthinking tapi suka lupa ide-ide bagusnya!",
+      "emoticon": "🚿"
+    },
+    {
+      "parentId": "journal-001",
+      "dateAdded": 1735190400000,
+      "notes": "Wah ini ide baru banget barusan muncul pas liat anak kecil main!\n\nGimana kalau kita bikin 'Playground for Adults'? Bukan yang aneh-aneh ya, tapi tempat dimana adults bisa eksplorasi creativity tanpa judgment, kayak anak kecil main pasir aja.\n\nIsinya ada:\n- Giant Lego wall yang bisa dibangun berbulan-bulan sama komunitas\n- Finger painting corner buat yang mau melukis tanpa mikir teknik\n- Sandbox dengan hidden treasure yang tiap hari berubah\n- Building blocks room yang acoustics-nya bikin suara satisfying\n\nKonsepnya adalah 'serious play' - dimana kita belajar dan berkreasi sambil have fun tanpa pressure hasil harus perfect. Research kan bilang play itu penting banget buat creativity!\n\nTempatnya harus colorful dan Instagrammable juga sih biar rame",
+      "emoticon": "🎨"
+    },
+    {
+      "parentId": "journal-001",
+      "dateAdded": 1735276800000,
+      "notes": "Ngeliat antrian panjang di coffee shop tadi bikin kepikiran...\n\nWhat if we gamify waiting time? Bayangin ada platform yang bikin 'Queue Quest' dimana sambil nunggu antrian, kita bisa main mini-games, solve puzzles, atau bahkan colab sama stranger lain yang juga lagi nunggu!\n\nRewardsnya bisa berupa:\n- Diskon di tempat yang kita tuju\n- Free upgrade size\n- Loyalty points\n- Atau bahkan mystery gift yang random!\n\nYang serunya, kita bisa unlock 'achievements' kayak 'Queue Warrior' (nunggu 10x tanpa complaint), 'Social Butterfly' (chat sama stranger), atau 'Puzzle Master' (solve puzzle pas nunggu).\n\nBisa juga integrasi sama business analytics biar owner tau peak hours dan bisa manage antrian lebih baik. Ini win-win solution sih!",
+      "emoticon": "⏳"
+    },
+    {
+      "parentId": "journal-001",
+      "dateAdded": 1735363200000,
+      "notes": "Random thought pas lagi stuck di traffic jam:\n\nKenapa sih kita gak punya 'Commute Creative Hour'? 1-2 jam di jalan tiap hari itu kan waktu yang sayang banget kalau cuma dipake scroll social media doang!\n\nIde: Buat app yang khusus didesign buat dipake pas commuting. Features:\n- Audio storytelling yang bisa kita contribute (crowdsourced stories!)\n- Voice journaling yang auto-transcribe\n- Language learning yang context-aware (misalnya kita lagi di area Chinatown, dia ajarin Mandarin phrases)\n- Audio brainstorming buddy - AI yang nanya provoking questions pas kita lagi driving\n\nYang penting: hands-free semua! Safety first. Tapi bayangin berapa banyak ide dan pembelajaran yang bisa kita dapetin dari waktu yang tadinya 'wasted' jadi productive creative time!\n\nNama app-nya 'CommuteCreate' atau 'TransitThink' ya?",
+      "emoticon": "🚗"
+    },
+    {
+      "parentId": "journal-002",
+      "dateAdded": 1735050000000,
+      "notes": "Morning Pages Day 1 - 17 Des 2025\n\nJam 6 pagi, mata masih ngantuk banget tapi yaudah langsung gas aja nulis. Masih berasa aneh sih nulis tanpa mikir, tapi kata Julia Cameron ini therapeutic banget.\n\nPagi ini pikiran gue campur aduk. Ada excitement soal project baru di kantor, tapi juga ada anxiety yang gak jelas dari mana. Rasanya kayak ada awan gelap yang ngikutin mulu. Tapi yaudahlah ya, gue tulis aja semuanya tanpa filter.\n\nTadi malem mimpi aneh. Gue lagi di pantai tapi airnya warna ungu. Ada orang asing ngasih gue kunci emas. Gue gak tau artinya apa tapi rasanya meaningful banget. Mungkin subconscious gue lagi ngasih signal kali ya?\n\nAnyway, 3 halaman ternyata cepet juga selesainya. Rasanya lebih 'light' di kepala sekarang. Besok coba lagi!",
+      "emoticon": "📝"
+    },
+    {
+      "parentId": "journal-002",
+      "dateAdded": 1735136400000,
+      "notes": "Morning Pages Day 2 - 18 Des 2025\n\nKenapa sih alarm selalu bunyi pas tidur paling nyenyak? Sakit banget bangun pagi ini tapi gue paksa diri buat tetep nulis. Commitment is key katanya.\n\nHari ini otak gue fokusnya ke satu hal: kenapa gue selalu nunda-nunda hal yang sebenernya gue pengen banget lakuin? Kayak gue punya list 'someday projects' yang panjang banget tapi gak pernah ke-sentuh.\n\nFear of failure kali ya? Atau perfectionism? Gue sadar gue sering banget nunggu 'perfect moment' atau 'perfect conditions' sebelum mulai. Padahal gak ada yang namanya perfect timing!\n\nOke, challenge buat diri sendiri: mulai SATU project hari ini, gak peduli seberapa jelek hasilnya. Progress over perfection!\n\nBtw, kopi pagi ini enak banget. Small joys matter 💕",
+      "emoticon": "☕"
+    },
+    {
+      "parentId": "journal-002",
+      "dateAdded": 1735222800000,
+      "notes": "Morning Pages Day 3 - 19 Des 2025\n\nPagi ini rasanya beda. Bangun dengan energi yang lebih fresh. Mungkin karena semalem tidur lebih awal? Atau karena journaling dua hari terakhir beneran ngebantu?\n\nHari ini gue mikirin tentang 'enough'. Kenapa sih kita selalu merasa gak cukup? Gak cukup kerjaan yang kelar, gak cukup uang yang dapet, gak cukup achievement yang diraih.\n\nSocial media makin parahin ini sih. Scroll 5 menit aja udah ngerasa 'gagal' liat orang-orang achieve things. Padahal kita gak tau behind the scenes-nya kan?\n\nGue mau practice gratitude lebih sering. Mulai dari hal kecil: grateful bisa bangun sehat, grateful ada kopi enak, grateful punya waktu 30 menit buat diri sendiri sebelum dunia minta perhatian.\n\nOke nulisnya udah 3 halaman. Now let's conquer the day! 💪",
+      "emoticon": "🌤️"
+    },
+    {
+      "parentId": "journal-002",
+      "dateAdded": 1735309200000,
+      "notes": "Morning Pages Day 4 - 20 Des 2025\n\nSialan, semalem begadang gara-gra Netflix. Muka puffy, mata sembab, tapi janji is janji. Morning pages tetep jalan!\n\nHari ini gue ngerasa stuck creatively. Dulu gue sering gambar, nulis cerita, main musik. Sekarang? Scroll TikTok sampe mata sakit. What happened to me?\n\nGue rasa adulthood killed my creativity. Semua jadi soal productivity, efficiency, ROI. Kapan terakhir kali gue create something just for fun? Bukan buat post, buat portfolio, buat likes. Just for the joy of creating?\n\nSedih sih mikirinnya. Tapi gue glad gue sadar. Minggu ini gue mau allocate 'creative play time' - 2 jam tiap minggu buat create tanpa pressure. Gambar jelek? Gapapa. Nulis nonsense? It's okay. Main piano false? Who cares!\n\nCreativity is a muscle. Kalo gak dilatih, atrofi. Let's rebuild that muscle! 🎨",
+      "emoticon": "😴"
+    },
+    {
+      "parentId": "journal-002",
+      "dateAdded": 1735395600000,
+      "notes": "Morning Pages Day 5 - 21 Des 2025\n\nWeekend! Bangun lebih siang dari biasanya tapi gapapa, ini self-care time. Rasanya liberation banget gak ada meeting, gak ada deadline.\n\nGue dulu punya hobby yang udah lama ditinggal: collecting interesting words. Dulu gue punya buku kecil yang isinya kata-kata aneh dari berbagai bahasa yang gak ada equivalent-nya di Indonesia atau English.\n\nContohnya:\n- 'Saudade' (Portuguese): longing for something that might never return\n- 'Komorebi' (Japanese): sunlight filtering through trees\n- 'Hiraeth' (Welsh): homesickness for a home you can't return to\n\nMungkin gue bakal restart hobby ini. Bahasa itu beautiful banget, tiap kata adalah window ke culture dan worldview orang.\n\nOke 3 halaman done. Sekarang mau lanjut tidur lagi atau actually do something productive? 😂",
+      "emoticon": "🛏️"
+    },
+    {
+      "parentId": "journal-003",
+      "dateAdded": 1735104000000,
+      "notes": "Mind Map Session: Career Crossroads\n\nGue lagi di titik dimana gue harus decide: stay di corporate yang stable tapi draining, atau take leap of faith ke freelance yang risky tapi exciting.\n\nMind map yang gue bikin:\n\n[CENTER: Career Decision]\n├── Stay Corporate\n│   ├── Pros: Stable income, health insurance, career ladder jelas\n│   ├── Cons: Burnout, gak meaningful, golden handcuffs\n│   └── Fear: Regret ga coba hal lain, wasted potential\n│\n├── Go Freelance\n│   ├── Pros: Freedom, pilih project yang aligned sama values, unlimited earning potential\n│   ├── Cons: Inconsistent income, no safety net, self-doubt monster\n│   └── Fear: Gagal, balik ke 0, malu sama orang tua\n│\n└── Third Option (Gap Year)\n    ├── Sabbatical buat eksplor\n    ├── Build portfolio sambil tetep ada emergency fund\n    └── Test waters tanpa fully commit\n\nLiat mind map ini jadi lebih clear. Mungkin gue gak harus binary thinking. Ada middle ground!",
+      "emoticon": "🌳"
+    },
+    {
+      "parentId": "journal-003",
+      "dateAdded": 1735190400000,
+      "notes": "Mind Map Session: Book Project\n\nGue pengen nulis buku tapi selalu overwhelmed sama scope-nya. Mind mapping beneran ngebantu breakdown jadi manageable chunks!\n\n[TITLE: The Creative Reset]\n├── Part 1: The Problem\n│   ├── Why adults lose creativity\n│   ├── The 'productivity trap'\n│   └── Case studies: burnout creatives\n│\n├── Part 2: The Science\n│   ├── How brain works in creative mode\n│   ├── Neuroplasticity and creativity\n│   └── Research on 'play' in adulthood\n│\n├── Part 3: The Framework\n│   ├── Exercise 1: Morning Pages (based on Julia Cameron)\n│   ├── Exercise 2: Artist Dates\n│   ├── Exercise 3: Permission to be bad\n│   └── Exercise 4: Creative community building\n│\n├── Part 4: Real Stories\n│   ├── Interviews with 'reclaimed' creatives\n│   ├── Before/after transformations\n│   └── Practical tips\n│\n└── Appendix: Resources, templates, worksheets\n\nJadi lebih achievable kan? 20 halaman per section, done in 6 months. Let's go!",
+      "emoticon": "📚"
+    },
+    {
+      "parentId": "journal-003",
+      "dateAdded": 1735276800000,
+      "notes": "Mind Map Session: Side Hustle Ideas\n\nOtak gue tuh isinya ide terus tapi gak pernah terorganisir. Hari ini gue mind map semua side hustle yang pernah kepikiran:\n\n[IDEA CENTRAL]\n├── Digital Products\n│   ├── Notion templates (productivity, creative planning)\n│   ├── E-books (short guides, focused topics)\n│   ├── Presets (photo/video editing)\n│   └── Digital planners & journals\n│\n├── Content Creation\n│   ├── YouTube: Behind the creative process\n│   ├── Newsletter: Weekly creative inspiration\n│   ├── Podcast: Interviews with artists\n│   └── TikTok: Quick creative tips\n│\n├── Services\n│   ├── Creative consulting for brands\n│   ├── Workshop facilitation\n│   ├── 1-on-1 creative coaching\n│   └── Ghostwriting\n│\n├── Physical Products\n│   ├── Art prints (limited edition)\n│   ├── Zines and small publications\n│   └── Creative kits/supplies\n│\n└── Passive Income\n    ├── Affiliate (creative tools)\n    ├── Stock photos/graphics\n    └── Online courses\n\nGue circle 3 yang paling feasible buat mulai: Newsletter, Notion templates, dan Creative coaching. Fokus dulu!",
+      "emoticon": "💰"
+    },
+    {
+      "parentId": "journal-003",
+      "dateAdded": 1735363200000,
+      "notes": "Mind Map Session: Relationship Dynamics\n\nGue notice pattern di relationship gue yang berulang. Mind mapping buat understand root cause:\n\n[MY RELATIONSHIP PATTERNS]\n├── Communication Style\n│   ├── Avoidant when conflict\n│   ├── Over-explaining when anxious\n│   ├── Expect mind-reading (toxic trait lol)\n│   └── Shut down when overwhelmed\n│\n├── Triggers\n│   ├── Feeling ignored → childhood neglect wound\n│   ├── Criticism → perfectionism defense\n│   ├── Abandonment → fear from past relationship\n│   └── Comparison → insecurity monster\n│\n├── Needs (that I rarely voice)\n│   ├── Quality time without phones\n│   ├── Words of affirmation\n│   ├── Physical touch (non-sexual)\n│   └── Partner who challenges me to grow\n│\n├── What I Bring\n│   ├── Loyalty & commitment\n│   ├── Deep conversations\n│   ├── Supportive of partner's goals\n│   └── Creativity in relationship\n│\n└── Growth Areas\n    ├── Vulnerability practice\n    ├── Conflict resolution skills\n    └── Self-soothing techniques\n\nIntrospection is hard work tapi necessary!",
+      "emoticon": "💭"
+    },
+    {
+      "parentId": "journal-003",
+      "dateAdded": 1735449600000,
+      "notes": "Mind Map Session: Health & Wellness Goals 2026\n\nBukan 'new year new me' yang unrealistic, tapi sustainable changes:\n\n[HEALTHY ME 2026]\n├── Physical\n│   ├── Move 30 min daily (walk, yoga, dance - apapun!)\n│   ├── Sleep 7-8 hours (consistency matters)\n│   ├── Water intake: 2L minimum\n│   └── Reduce processed sugar (gak harus zero, just less)\n│\n├── Mental\n│   ├── Morning pages (udah jalan!)\n│   ├── Therapy 2x/month\n│   ├── Digital detox: Sundays offline\n│   └── Meditation 10 min daily\n│\n├── Social\n│   ├── 1 deep hangout per week (no phones)\n│   ├── Set boundaries with energy vampires\n│   └── Join 1 community (creative/writing group?)\n│\n├── Creative\n│   ├── Artist dates monthly\n│   ├── Create something weekly (gak peduli quality)\n│   └── Visit museums/galleries quarterly\n│\n└── Career\n    ├── Work max 45 hours/week\n    ├── No work messages after 7pm\n    └── Use all PTO days (gak usah hero-heroan)\n\nIni feasible dan realistic. Gue save mind map ini buat review tiap bulan!",
+      "emoticon": "🌱"
+    },
+    {
+      "parentId": "journal-004",
+      "dateAdded": 1735140000000,
+      "notes": "What If Questions #1 - Transportation\n\nWhat if we could teleport tapi cuma 3x dalam seumur hidup?\n\nGue bakal pake untuk:\n1. Emergency (keluarga sakit parah di negara lain)\n2. Experience yang gak mungkin otherwise (misalnya: witness aurora borealis dengan orang tersayang)\n3. Escape dari situasi life-threatening\n\nTapi ini bikin gue mikir: kita bakal lebih appreciate travel gak ya kalau teleportasi ada? Mungkin perjalanan itu sendiri yang bikin destination lebih meaningful. The anticipation, the obstacles, the unexpected encounters.\n\nWhat if semua transportasi jadi free?\n\nDunia bakal lebih connected, inequality berkurang karena mobility gak jadi barrier. Tapi juga bakal overcrowded parah di tempat-tempat populer. Mungkin kita butuh 'quota system' atau lottery untuk visit certain places.\n\nWhat if kita bisa freeze time tapi tetep bisa gerak?\n\nGue bakal gunain buat: tidur extra, finish deadlines tanpa stress, observe dunia dalam slow motion, atau cuma duduk di tengah keramaian dan enjoy the silence.\n\nSeru juga ya ngeksplor 'what ifs'!",
+      "emoticon": "🌀"
+    },
+    {
+      "parentId": "journal-004",
+      "dateAdded": 1735226400000,
+      "notes": "What If Questions #2 - Human Abilities\n\nWhat if everyone bisa baca pikiran orang lain?\n\nDrama level: MAXIMUM 😂 Tapi sebenernya ini scary sih. Gue gak yakin kita siap tau semua thoughts orang lain. Banyak yang messy, judgmental, atau dark.\n\nTapi di sisi lain, empathy bakal meningkat drastis karena kita beneran ngerti apa yang orang rasain. Deception gak akan ada lagi. Politicians, salespeople, anyone with agenda gak bisa manipulasi.\n\nWhat if kita bisa download skills kayak di Matrix?\n\nGue langsung download: piano playing, martial arts, fluent in 5 languages, cooking Michelin-level, public speaking master, dan masih banyak lagi!\n\nTapi ini juga scary - kalau semua orang bisa jadi expert in everything, what's special anymore? The journey of learning, the struggle, the 'aha moments' - itu semua experience yang berharga. Mungkin kita bakal jadi less appreciative of skills kalau gak ada effort-nya.\n\nWhat if kita bisa see through walls?\n\nGue bisa: find lost items instantly, tau kalau ada orang in danger, atau... jadi creepy neighbor yang selalu tau apa yang terjadi di rumah sebelah. Ethical concerns gede banget untuk ability ini!\n\nWhat if kita bisa survive without sleep?\n\n24 hours productive time?! Gue bakal: learn everything, create more, travel more, spend more time dengan loved ones. Tapi tubuh kita designed untuk rest. Mungkin kita bakal burnout worse tanpa forced downtime dari tidur.",
+      "emoticon": "🦸"
+    },
+    {
+      "parentId": "journal-004",
+      "dateAdded": 1735312800000,
+      "notes": "What If Questions #3 - Society & Culture\n\nWhat if uang gak ada?\n\nSistem barter balik lagi? Atau resource-based economy? Gue bayangin community yang lebih tight-knit karena kita bergantung sama each other. Tapi juga bisa jadi chaos karena scarcity mindset.\n\nWhat if semua orang harus jujur 100%?\n\nNo white lies, no social pretense. Greeting 'how are you' bakal dapet jawaban beneran, bukan 'fine thanks.' Kita bakal save so much time karena gak perlu decode what people really mean.\n\nTapi social harmony mungkin jebol. Kadang white lies itu grease yang bikin social interaction smooth. 'I love this gift' (padahal gak) itu sometimes kinder than the truth.\n\nWhat if semua borders di dunia dihapus?\n\nPeople could live anywhere they want! Cultural exchange bakal massive, understanding between nations meningkat. Tapi juga challenges: who manage resources? What about overpopulation di certain areas?\n\nWhat if education gratis unlimited untuk semua orang?\n\nKnowledge gak jadi privilege lagi. Everyone has equal opportunity to learn anything. Innovation bakal meledak karena talent dari anywhere bisa develop their potential. Dream banget sih ini!",
+      "emoticon": "🌍"
+    },
+    {
+      "parentId": "journal-004",
+      "dateAdded": 1735399200000,
+      "notes": "What If Questions #4 - Technology\n\nWhat if AI bisa baca dan understand semua data di otak manusia?\n\nIni kombinasi amazing dan terrifying. Kita bisa:\n- Backup memories (gak pernah lupa lagi!)\n- Transfer knowledge directly\n- Understand mental illness dari dalam\n- Cure dementia dan memory-related diseases\n\nTapi juga:\n- Privacy completely gone\n- Thoughts bisa di-hack\n- Government/corporation bisa control kita\n- Free will dipertanyakan\n\nWhat if virtual reality jadi indistinguishable dari real life?\n\nGue bayangin 'vacation' ke Mars tanpa leave room, atau lunch sama orang tua yang udah meninggal. Therapeutic potential massive!\n\nTapi addiction bakal real problem. Kenapa deal dengan real life yang messy kalau bisa stay di perfect virtual world? The Matrix vibes banget.\n\nWhat if kita bisa upload consciousness?\n\nDigital immortality! Tapi philosophical question: is the uploaded 'me' really me? Or just a copy with my memories?\n\nWhat if internet gak pernah existed?\n\nGue gak bisa bayangin hidup tanpa instant access to information. Tapi mungkin kita lebih present, deeper relationships, less comparison, more mystery in life. Nostalgic tapi gak mau balik sih 😅",
+      "emoticon": "💻"
+    },
+    {
+      "parentId": "journal-004",
+      "dateAdded": 1735485600000,
+      "notes": "What If Questions #5 - Personal Life\n\nWhat if gue dulu ambil jurusan yang berbeda?\n\nGue bayangin alternate universe dimana gue ambil art school bukan business. Mungkin gue sekarang struggling artist di studio kecil, tapi happy creating everyday. Atau mungkin gue udah give up dan balik ke corporate juga.\n\nNo way to know sih. Tapi gue learn: kita selalu romanticize the path not taken. Reality-nya, every path ada struggle-nya masing-masing. Yang penting adalah what we do dengan path yang kita pilih sekarang.\n\nWhat if gue confess feeling ke crush waktu SMA?\n\nMungkin relationship pertama gue lebih early, mungkin heartbreak lebih early juga. Mungkin gue jadi completely different person sekarang. Small decisions create ripple effects yang massive!\n\nWhat if gue gak pindah kota tahun lalu?\n\nGue gak akan ketemu circle sekarang, gak akan discover coffee shop favorit, gak akan experience growth yang dipaksa oleh being in new environment. Scary to think about tapi juga makes me grateful for the move.\n\nWhat if gue mulai creative pursuits lebih early?\n\nMungkin gue udah expert sekarang, punya body of work yang massive. Tapi juga mungkin gue burnout dan hate it. Timing is everything. Gue trust that sekarang adalah waktu yang tepat untuk restart.\n\nWhat if questions bikin grateful sih. Life unfolds as it should 💫",
+      "emoticon": "🔮"
+    },
+    {
+      "parentId": "journal-005",
+      "dateAdded": 1735140000000,
+      "notes": "Raw Idea #1: Emotional Weather App\n\nStatus: MENTAH BANGET\n\nGue kepikiran app yang kayak weather forecast tapi untuk emotions. Instead of 'sunny' atau 'rainy', dia forecast 'high anxiety probability' atau 'good day for deep work'.\n\nBased on:\n- Sleep quality\n- Calendar density\n- Historical mood patterns\n- Hormonal cycle (kalau apply)\n- Even moon phases (why not?)\n\nBisa kasih suggestions: 'Hari ini forecast-nya stormy, better jangan schedule difficult conversations' atau 'Clear skies ahead, perfect untuk start new project!'\n\nGak tau ini scientifically valid atau gak, tapi concept-nya menarik. Maybe just a fun app, maybe actually helpful untuk emotional awareness.\n\nNote: Research dulu emotional forecasting models. Jangan sampai jadi pseudoscience woo-woo stuff.",
+      "emoticon": "🌦️"
+    },
+    {
+      "parentId": "journal-005",
+      "dateAdded": 1735226400000,
+      "notes": "Raw Idea #2: Museum of Failed Ideas\n\nStatus: HALF-BAKED\n\nBayangin museum yang display semua produk, inventions, dan ideas yang gagal total. Failed startup ideas, products yang flop, books yang gak laku.\n\nWhy? Because failure is educational! Kita terlalu fokus sama success stories tapi banyak banget lessons dari failures.\n\nExhibits bisa include:\n- New Coke (Classic failure case)\n- Google Glass (ahead of its time?)\n- Segway (gak sesuai hype)\n- Quibi (remember that?)\n\nPlus interactive section: 'Submit Your Failure' dimana visitors bisa share their own failed projects dan what they learned.\n\nCould be physical museum atau digital archive.\n\nNote: Need to frame this positively, gak boleh jadi mockery. It's about learning, not laughing at people.",
+      "emoticon": "🏛️"
+    },
+    {
+      "parentId": "journal-005",
+      "dateAdded": 1735312800000,
+      "notes": "Raw Idea #3: Reverse Bucket List\n\nStatus: SEDANG DIGODOG\n\nEveryone punya bucket list (things to do before die). What about 'already done list'? Things we've accomplished, experiences we've had, things we're proud of.\n\nApp-nya bisa:\n- Help reflect on how far we've come\n- Combat imposter syndrome\n- See patterns in what actually makes us happy\n- Archive achievements yang sering kita lupakan\n\nFeatures:\n- Categories: Professional, Personal, Adventure, Relationships, Skills\n- Photos and stories untuk tiap item\n- 'This time last year' flashbacks\n- Exportable 'Life Story' format\n\nPsychological benefit: Gratitude practice + confidence building.\n\nNote: Market research dulu, mungkin udah ada similar apps. Differentiation key-nya apa?\n\nPossible angle: Focus on the story/reflection behind each achievement, not just listing.",
+      "emoticon": "✅"
+    },
+    {
+      "parentId": "journal-005",
+      "dateAdded": 1735399200000,
+      "notes": "Raw Idea #4: Silence Subscription\n\nStatus: RANDOM THOUGHT\n\nDi dunia yang noisy banget, what if ada subscription service yang deliver... silence?\n\nBisa berupa:\n- Access to soundproof pods di kota\n- Silent retreat recommendations\n- Noise-cancelling experiences\n- Guided silent meditation (ironic, tapi ya begitu)\n\nAtau lebih abstract: 'Digital silence' - service yang block all notifications, emails, messages untuk set period. Complete disconnect.\n\nTarget market: Burned out professionals, introverts yang desperate untuk solitude, creatives yang butuh quiet untuk work.\n\nBusiness model:\n- Monthly membership untuk pod access\n- One-time silent retreat packages\n- Corporate wellness programs\n\nNote: Ini lebih service-based daripada product. Execution-nya gimana? Partnership dengan co-working spaces yang underutilized?\n\nCrazy idea but might work di kota besar yang hectic!",
+      "emoticon": "🤫"
+    },
+    {
+      "parentId": "journal-005",
+      "dateAdded": 1735485600000,
+      "notes": "Raw Idea #5: Randomized Learning\n\nStatus: CONCEPT STAGE\n\nGue notice kita sering stuck di filter bubble - baca yang kita suka, learn yang familiar. What if ada platform yang force us to learn completely random things?\n\n'Learn Something Random' button yang kasih:\n- Article tentang topik yang gak pernah kita sentuh\n- Skill dari discipline berbeda\n- Historical event yang obscure\n- Scientific concept yang complex\n- Art form yang kita gak ngerti\n\nThe twist: Ada 'connect the dots' challenge dimana kita harus find connection antara random thing yang kita learn dengan our field/expertise.\n\nThis forces creative thinking and cross-pollination of ideas!\n\nGamification:\n- Streaks for daily random learning\n- Badges untuk categories yang dikuasai\n- Community challenges: 'How does quantum physics relate to baking?'\n\nNote: Curated content quality penting. Gak mau jadi 'useless trivia' app. Content harus substantial tapi accessible.",
+      "emoticon": "🎲"
+    },
+    {
+      "parentId": "journal-006",
+      "dateAdded": 1735200000000,
+      "notes": "Writer's Block Busting Session #1\n\nGue stuck total. Blank page syndrome parah. Yaudah gue paksa nulis apapun yang muncul di kepala, gak peduli seberapa nonsense.\n\nLanjutkan kalimat ini:\n\n'Kalau gue bisa terbang, gue bakal...'\n...terbang ke tempat yang gak ada WiFi jadi gak ada distraction dan bisa nulis dengan tenang. Terus bakal mendarat di puncak gunung dengan view bagus sambil minum kopi panas.\n\n'Hari ini gue benci...'\n...alarm gue yang suara annoying-nya bikin trauma. Terus gue benci juga kursi kantor gue yang ergonomics-nya questionable. Badan gue sakit semua.\n\n'Rahasia yang gak pernah gue ceritain...'\n...gue pernah nyolong permen pas SD dan sampe sekarang masih guilty. Gue gak pernah confess ke siapapun. Itu permen orange flavor dan enak banget.\n\n'Kalau dunia ini simulation...'\n...gue mau speak to the manager. Gue punya banyak complaint: kenapa kopi bisa habis? Kenapa deadline selalu datang bertiga? Kenapa rambut gue rontok?\n\nOke ini random banget tapi kepala gue agak lebih clear sekarang. Progress!",
+      "emoticon": "📝"
+    },
+    {
+      "parentId": "journal-006",
+      "dateAdded": 1735286400000,
+      "notes": "Writer's Block Busting Session #2\n\nMasih stuck tapi gak menyerah. Trying different technique: describe surroundings in extreme detail.\n\nMeja kerja gue:\n\nAda mug kopi yang udah setengah dingin.Warna mug-nya navy blue dengan chip kecil di handle yang reminder gue harus beli baru. Kopi-nya hitam pekat, permukaannya ada oil sheen yang rainbow kalau kena sinar.\n\nDi sebelahnya ada notebook yang cover-nya kulit sintetis. Halaman depan penuh scribbles yang gak jelas - some numbers, some doodles, some words yang gue gak inget kapan nulisnya. Bookmark-nya sticky note kuning yang udah kotor.\n\nKeyboard gue mechanical, suara clicky-nya satisfying. Beberapa keycaps udah faded - WASD paling parah karena gaming. Ada debu di antara keys yang gue malas bersihin.\n\nMonitor gue 27 inch, wallpaper-nya landscape gunung yang gue gak tau nama gunungnya. Gue pilih karena warna biru-nya calming. Ada fingerprints di bezel yang reminder gue kalo gue serakah sentuh screen padahal gak perlu.\n\nLampu di ruangan ini warm white. Jam dinding ticking terus tapi gue baru notice sekarang. Ada suara mobil lewat di jalan. AC hum pelan.\n\nWait, gue baru notice gue udah nulis 200+ words. Block-nya ilang!",
+      "emoticon": "👀"
+    },
+    {
+      "parentId": "journal-006",
+      "dateAdded": 1735372800000,
+      "notes": "Writer's Block Busting Session #3\n\nTeknik hari ini: Write the worst version possible. Permission to be terrible.\n\nJudul yang gue pikirin: 'The Art of Procrastination'\n\nDraft terrible:\n\nProcrastination itu jelek. Jangan dilakuin. Tapi semua orang lakuin. Gue sering procrastinate. Kemarin gue harusnya kerja tapi gue malah nonton video kucing selama 2 jam. Kucingnya lucu sih.\n\nAda banyak cara procrastinate. Bisa scroll social media. Bisa bersihin meja padahal gak kotor. Bisa ngemil. Bisa tidur. Apapun selain kerja yang seharusnya.\n\nKenapa kita procrastinate? Karena kerja itu susah. Karena kita takut gagal. Karena kita malas. Semua alasan valid.\n\nSolusinya? Ya kerja aja sih. Gak ada tips magic. Discipline aja. Tapi discipline itu susah. Jadi ya balik lagi ke procrastinate.\n\nIni siklus endless. Gue stuck di sini. Help.\n\n......\n\nOke ini objectively terrible tapi gue sekarang punya outline yang bisa diimprove:\n1. Define procrastination dengan lebih nuansa\n2. Psychology behind it (fear-based, not laziness-based)\n3. Practical strategies yang evidence-based\n4. Self-compassion approach\n5. Long-term habit building\n\nFrom terrible to workable!",
+      "emoticon": "💩"
+    },
+    {
+      "parentId": "journal-006",
+      "dateAdded": 1735459200000,
+      "notes": "Writer's Block Busting Session #4\n\nTeknik: Dialogue dengan inner critic gue.\n\nInner Critic (IC): Lu gak bisa nulis.\nGue: Bisa lah, gue lagi nulis sekarang.\nIC: Ini bukan 'real' writing. Ini cuma journal yang gak penting.\nGue: Journal juga valid form of writing. Julia Cameron approved.\nIC: Tapi lu gak productive. Lu wasting time.\nGue: Rest dan creative play itu part of the process.\nIC: Orang lain lebih jago. Lu mediocre.\nGue: Comparison is the thief of joy. Gue di journey gue sendiri.\nIC: Lu bakal gagal.\nGue: Maybe. Tapi gue bakal learn something. Failure is data.\nIC: Siapapun yang baca bakal judge lu.\nGue: Gue gak nulis untuk haters. Gue nulis untuk orang yang resonate dengan message gue.\nIC: Lu gak punya message yang original.\nGue: Gue punya perspective yang unique karena lived experience gue unique.\nIC: ...\nGue: Still there?\nIC: Whatever. Do whatever you want.\nGue: Thanks for your concern, but I got this.\n\nBoom. Inner critic dimute. Block cleared! 🎯",
+      "emoticon": "🥊"
+    },
+    {
+      "parentId": "journal-006",
+      "dateAdded": 1735545600000,
+      "notes": "Writer's Block Busting Session #5\n\nFinal technique: Write a letter to my future self.\n\nDear Future Me,\n\nGue gak tau kapan lu baca ini - could be months from now, could be years. Tapi gue mau lu tau kalo saat ini, di moment gue nulis ini, gue struggling. Gue rasa gue gak cukup, gue rasa gue fake, gue rasa gue bakal gagal.\n\nTapi gue tetep nulis.\n\nKarena gue tau lu exist berarti gue gak menyerah. Lu proof kalo gue bisa lewatin ini. Lu proof kalo yang gue rasa sekarang - self-doubt, fear, overwhelm - itu temporary.\n\nGue harap lu lagi di tempat yang lebih baik. Gue harap lu udah achieve hal-hal yang sekarang cuma gue bayangin. Gue harap lu lebih kind ke diri sendiri. Gue harap lu masih creating, masih dreaming, masih growing.\n\nKalau lu lagi struggle lagi pas baca ini, inget: lu pernah survive 100% dari bad days lu. Lu kuat. Lu capable. Lu enough.\n\nKeep going. Don't stop. The world butuh apa yang lu punya untuk offer.\n\nWith love,\nPast You\n\n\nP.S. Lu masih suka kopi kan? Atau sekarang udah switch ke matcha? 🤔\n\nP.P.S. Gue proud of you. Always.\n\nThat hit different. Creative block officially BUSTED! 🔥",
+      "emoticon": "💌"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1736121600000,
+      "notes": "Connection Making #1 - Coffee + Sleep Research\n\nHari ini gue connect dua hal yang seemingly unrelated: coffee culture dan sleep science.\n\nInsight: Kenapa coffee shops jadi tempat productive work?\n\nBukan cuma karena caffeine. Ada deeper connection:\n\n1. Optimal noise level (70dB) = sweet spot untuk creativity. Too quiet = mind wanders. Too loud = distracted. Coffee shop noise perfectly in the middle.\n\n2. Presence of others (without interaction) = social facilitation effect. Kita perform better knowing others are around, even strangers.\n\n3. Ritual element - the process of ordering, waiting, sipping - ini mini breaks yang actually improve focus (pomodoro principle!).\n\n4. Change of environment dari 'work' space = cognitive refresh. Brain associate different places dengan different modes.\n\nJadi coffee shop effect itu bukan placebo - it's backed by science!\n\nApplication: We could design workspaces yang replicate these elements without requiring actual coffee shop. Noise level control, communal seating, ritual elements.\n\nMind = blown 🤯",
+      "emoticon": "☕",
+      "imageUrl": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1736143200000,
+      "notes": "Connection Making #2 - Gardening + Creative Process\n\nGue baru connect kalau gardening dan creative process itu MIRIP BANGET!\n\nParallels:\n\n🌱 SEEDS = IDEAS\n- Gak semua seed tumbuh\n- Butuh kondisi yang tepat\n- Some need time, some fail immediately\n- You plant many, harvest few\n\n🌿 GROWING = DEVELOPMENT\n- Gak bisa di-rush\n- Need consistent care (watering = showing up)\n- Too much attention (overwatering) kills it\n- Weeds (distractions) must be removed\n\n🌻 HARVEST = CREATIVE OUTPUT\n- Timing matters - too early/too late = ruined\n- Some seasons better than others\n- Weather (external factors) affect results\n- But process still valuable regardless of outcome\n\n🔄 CYCLES = CREATIVE RHYTHMS\n- Winter (rest) necessary for spring growth\n- Fallow periods important\n- Perennials vs annuals = some projects long-term, some one-time\n\nLesson gue: Stop forcing creativity. Nurture it like a garden. Trust the seasons. Trust the process. 🌻\n\nIni bikin gue lebih gentle sama diri sendiri pas lagi 'fallow period'.",
+      "emoticon": "🌱",
+      "imageUrl": "https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1736164800000,
+      "notes": "Connection Making #3 - Jazz Improvisation + Team Collaboration\n\nGue baru denger podcast tentang jazz dan tiba-tiba insight: jazz principles apply banget untuk team collaboration!\n\nJazz Principles → Team Application:\n\n1. 'YES, AND...'\nJazz: Accept what other musicians play, build on it\nTeam: Accept ideas without immediate judgment, add to them\n\n2. LISTENING > PLAYING\nJazz: Great improvisers listen more than they play\nTeam: Understanding others lebih penting dari pushing own agenda\n\n3. STRUCTURE ENABLES FREEDOM\nJazz: Chord progressions = boundaries yang membantu creativity\nTeam: Clear goals/process = freedom to experiment within boundaries\n\n4. MISTAKES = OPPORTUNITIES\nJazz: 'Wrong' notes bisa di-resolve jadi something beautiful\nTeam: Errors bisa lead to innovation kalau gak di-punish\n\n5. SOLO VS COMPING\nJazz: Everyone gets spotlight, everyone supports\nTeam: Rotate leadership, everyone plays supporting role juga\n\n6. SILENCE MATTERS\nJazz: Space between notes = music\nTeam: Pause, reflection, not everyone needs speak all the time\n\nGue bakal apply ini di next team meeting. Jazz approach to collaboration! 🎷",
+      "emoticon": "🎷",
+      "imageUrl": "https://images.pexels.com/photos/210922/pexels-photo-210922.jpeg"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1736186400000,
+      "notes": "Connection Making #4 - Stargazing + Goal Setting\n\nMalam ini gue liat langit dan kepikiran: stargazing itu metaphor yang perfect untuk goal setting!\n\nParallels:\n\n✨ DIFFERENT TIMESCALES\nBintang yang kita liat mungkin udah mati ribuan tahun lalu (light travel time).\nGoals juga - hasil yang kita lihatin sekarang adalah effort dari years ago. Trust delayed results.\n\n🌌 VASTNESS = POSSIBILITY\nLihat galaxy lain reminder kalo dunia ini besar, opportunities endless. Don't limit yourself.\n\n🔭 FOCUS = CLARITY\nNebula yang fuzzy jadi clear dengan telescope.\nGoals yang vague jadi achievable dengan specific planning. Tools matter.\n\n⭐ CONSTELLATIONS = PATTERNS\nBintang random jadi meaningful dengan connect the dots.\nLife events yang seemingly random bisa jadi narrative yang meaningful dengan reflection.\n\n🌠 SHOOTING STARS = MOMENTUM\nBrief tapi powerful. Momentum penting untuk goals.\n\n🌑 DARK SKY = CONTRAST\nButuh kegelapan untuk bintang shine.\nButuh struggle/sadness untuk appreciate achievements.\n\nThis reframes goal setting dari 'chasing' jadi 'observing and navigating.' Lebih gentle, lebih aligned dengan natural rhythms.\n\nGue bakal 'stargaze' my goals dari sekarang 🌟",
+      "emoticon": "🌌",
+      "imageUrl": "https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1736208000000,
+      "notes": "Connection Making #5 - Cooking + Creative Projects\n\nGue masak dinner dan sadar: managing creative projects itu sama kayak masak complex meal!\n\n🥘 MISE EN PLACE (Prep dulu)\nCooking: Siapin semua ingredients sebelum mulai masak\nCreative: Research, references, tools ready sebelum start project\n\n⏱️ TIMING IS EVERYTHING\nCooking: Each ingredient masuk pada waktu yang tepat\nCreative: Sequence matters - gak bisa edit sebelum nulis, gak bisa design sebelum research\n\n🔥 HEAT MANAGEMENT\nCooking: Too high = burnt, too low = no progress\nCreative: Intensity management - sprint vs marathon pacing\n\n🧂 SEASONING = REFINEMENT\nCooking: Season gradually, taste frequently\nCreative: Iterative improvement, test frequently, jangan wait until 'done' untuk evaluate\n\n🍽️ PRESENTATION\nCooking: Even simple food looks better dengan plating\nCreative: Packaging/delivery matters, gak cuma content\n\n🍲 LEFTOVERS\nCooking: Sisa ingredients bisa jadi new dish\nCreative: Scraps, cut content, failed attempts bisa di-repurpose\n\n👨‍🍳 RECIPE VS IMPROV\nCooking: Learn rules first, then break them\nCreative: Master fundamentals, then find your voice\n\nGue sekarang liat creative projects sebagai 'cooking sessions.' Lebih fun, less pressure! 👨‍🍳✨",
+      "emoticon": "🍳",
+      "imageUrl": "https://images.pexels.com/photos/2284166/pexels-photo-2284166.jpeg"
+    }
+  ]
+}

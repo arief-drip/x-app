@@ -1,0 +1,224 @@
+{
+  "exportDate": "2026-02-20T10:00:00.000Z",
+  "parents": [
+    {
+      "id": "parent_entrepreneur_1",
+      "title": "Business Operations",
+      "dateModified": 1740000000000,
+      "latestEmotion": "😊",
+      "description": "Daily operations, logistics, and business processes"
+    },
+    {
+      "id": "parent_entrepreneur_2",
+      "title": "Marketing & Growth",
+      "dateModified": 1739900000000,
+      "latestEmotion": "🤩",
+      "description": "Marketing strategies, campaigns, and customer acquisition"
+    },
+    {
+      "id": "parent_entrepreneur_3",
+      "title": "Financial Management",
+      "dateModified": 1739800000000,
+      "latestEmotion": "🤔",
+      "description": "Cash flow, profit/loss, and financial planning"
+    },
+    {
+      "id": "parent_entrepreneur_4",
+      "title": "Product Development",
+      "dateModified": 1739700000000,
+      "latestEmotion": "💡",
+      "description": "Product ideas, improvements, and innovation"
+    },
+    {
+      "id": "parent_entrepreneur_5",
+      "title": "Team & Leadership",
+      "dateModified": 1739600000000,
+      "latestEmotion": "🥰",
+      "description": "Team management, hiring, and leadership growth"
+    },
+    {
+      "id": "parent_entrepreneur_6",
+      "title": "Work-Life Balance",
+      "dateModified": 1739500000000,
+      "latestEmotion": "😰",
+      "description": "Personal wellbeing, family, and boundaries"
+    },
+    {
+      "id": "parent_entrepreneur_7",
+      "title": "Industry Networking",
+      "dateModified": 1739400000000,
+      "latestEmotion": "🤩",
+      "description": "Partnerships, collaborations, and community"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_entrepreneur_1",
+      "dateAdded": 1740000000000,
+      "notes": "Streamlined the order fulfillment process today. Cut delivery time by 20%. Small improvements compound! 🚚",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_1",
+      "dateAdded": 1739950000000,
+      "notes": "Supplier meeting went well. Negotiated better terms. Building strong relationships is key to business success 🤝",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_1",
+      "dateAdded": 1739900000000,
+      "notes": "Inventory management stress! Need to find a better system. Too many manual processes taking up time 📦",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_2",
+      "dateAdded": 1739900000000,
+      "notes": "New Instagram campaign launched! Engagement is up 40%. Content is finally resonating with our audience 📱",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_2",
+      "dateAdded": 1739850000000,
+      "notes": "Email marketing A/B test results: subject lines with emojis have 15% higher open rates. Data-driven decisions! 📊",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_2",
+      "dateAdded": 1739800000000,
+      "notes": "Customer testimonial video received! Nothing beats social proof. These stories are gold for marketing 🎬",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_3",
+      "dateAdded": 1739800000000,
+      "notes": "Monthly P&L review: profit margins improved by 8%. Cost-cutting measures working. Sustainable growth > rapid growth 💰",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_3",
+      "dateAdded": 1739750000000,
+      "notes": "Tax season prep started. Keeping organized records throughout the year makes this so much easier. Lesson learned 📋",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_3",
+      "dateAdded": 1739700000000,
+      "notes": "Cash flow is tight this month. Seasonal fluctuations are real. Need to build a stronger emergency fund 🏦",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_4",
+      "dateAdded": 1739700000000,
+      "notes": "Product brainstorming session! 3 new ideas for Q2. Innovation keeps us ahead of competition. Excited to prototype 💡",
+      "emoticon": "💡",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_4",
+      "dateAdded": 1739650000000,
+      "notes": "Customer feedback incorporated into V2. Listening to users is the best product strategy. They know what they need 🎯",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_4",
+      "dateAdded": 1739600000000,
+      "notes": "Packaging redesign complete! Eco-friendly materials + beautiful unboxing experience. Details matter 🎁",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_5",
+      "dateAdded": 1739600000000,
+      "notes": "Team lunch today! Celebrating our Q1 wins together. Culture is built in these small moments. Grateful for this team 💙",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_5",
+      "dateAdded": 1739550000000,
+      "notes": "Difficult conversation with underperforming team member. Leadership isn't always easy, but necessary. Fair but firm 🎯",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_5",
+      "dateAdded": 1739500000000,
+      "notes": "Hired our 5th team member! Scaling brings new challenges but also new energy. Onboarding plan ready 🚀",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_6",
+      "dateAdded": 1739500000000,
+      "notes": "Burnout warning signs! Working 12-hour days isn't sustainable. Setting boundaries: no emails after 7pm. Self-care first 🧘",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_6",
+      "dateAdded": 1739450000000,
+      "notes": "Weekend getaway with family! Recharged and ready for the week ahead. Balance makes me a better founder 🌿",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_6",
+      "dateAdded": 1739400000000,
+      "notes": "Gym routine back on track! Physical health = mental clarity. Can't pour from an empty cup 💪",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_7",
+      "dateAdded": 1739400000000,
+      "notes": "Industry conference today! Met potential collaborators. Community over competition. So much to learn from peers 🌐",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_7",
+      "dateAdded": 1739350000000,
+      "notes": "Partnership discussion with complementary business. Win-win collaborations scale faster than going alone. Excited! 🤝",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_7",
+      "dateAdded": 1739300000000,
+      "notes": "Mentorship session with a successful founder. Their journey gives me perspective. Every overnight success was years in the making 🎓",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_1",
+      "dateAdded": 1739250000000,
+      "notes": "System automation complete! Saved 10 hours per week. Time is our most valuable asset. Invest in systems that scale ⚙️",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_3",
+      "dateAdded": 1739200000000,
+      "notes": "First 6-figure revenue month! 🎉 Hard work paying off, but staying humble. This is just the beginning 📈",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_entrepreneur_5",
+      "dateAdded": 1739150000000,
+      "notes": "Team retrospective. What worked, what didn't. Continuous improvement mindset. Proud of how far we've come together 🚀",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "exportDate": "2026-02-20T10:00:00.000Z",
+  "parents": [
+    {
+      "id": "parent_creator_1",
+      "title": "Content Strategy",
+      "dateModified": 1740000000000,
+      "latestEmotion": "💡",
+      "description": "Content planning, ideas, and editorial calendar"
+    },
+    {
+      "id": "parent_creator_2",
+      "title": "Audience Growth",
+      "dateModified": 1739900000000,
+      "latestEmotion": "📈",
+      "description": "Follower analytics, engagement, and community building"
+    },
+    {
+      "id": "parent_creator_3",
+      "title": "Monetization",
+      "dateModified": 1739800000000,
+      "latestEmotion": "💰",
+      "description": "Revenue streams, sponsorships, and products"
+    },
+    {
+      "id": "parent_creator_4",
+      "title": "Brand Partnerships",
+      "dateModified": 1739700000000,
+      "latestEmotion": "🤝",
+      "description": "Collaborations, sponsorships, and business deals"
+    },
+    {
+      "id": "parent_creator_5",
+      "title": "Creative Process",
+      "dateModified": 1739600000000,
+      "latestEmotion": "🎨",
+      "description": "Creation workflow, inspiration, and creative blocks"
+    },
+    {
+      "id": "parent_creator_6",
+      "title": "Skills & Learning",
+      "dateModified": 1739500000000,
+      "latestEmotion": "📚",
+      "description": "New tools, techniques, and personal development"
+    },
+    {
+      "id": "parent_creator_7",
+      "title": "Creator Life Balance",
+      "dateModified": 1739400000000,
+      "latestEmotion": "⚖️",
+      "description": "Mental health, boundaries, and sustainability"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_creator_1",
+      "dateAdded": 1740000000000,
+      "notes": "Q2 content calendar drafted! Theme: 'Behind the Scenes' - audience loves authenticity. 12 videos planned 📅",
+      "emoticon": "💡",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_1",
+      "dateAdded": 1739950000000,
+      "notes": "Content batching day! Shot 5 videos in one session. Efficiency is everything when you're a solo creator ⚡",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_1",
+      "dateAdded": 1739900000000,
+      "notes": "Running low on ideas... creative drought hits hard sometimes. Taking a break to refill the inspiration tank 🎨",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_2",
+      "dateAdded": 1739900000000,
+      "notes": "Hit 50K followers! 🎉 From 0 to here in 18 months. Consistency really is the secret sauce. Thank you everyone! 🙏",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_2",
+      "dateAdded": 1739850000000,
+      "notes": "Analytics deep dive: Reels performing 3x better than static posts. Algorithm favors video. Time to pivot strategy 📊",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_2",
+      "dateAdded": 1739800000000,
+      "notes": "Replying to DMs and comments for 2 hours. Community building is not optional—it's everything. Real connections matter 💬",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_3",
+      "dateAdded": 1739800000000,
+      "notes": "First digital product launched! E-book sales coming in. Diversifying income beyond brand deals. Scalable revenue! 💰",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_3",
+      "dateAdded": 1739750000000,
+      "notes": "Affiliate income hit $2K this month! Passive income while I sleep. Multiple revenue streams = stability 📈",
+      "emoticon": "💰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_3",
+      "dateAdded": 1739700000000,
+      "notes": "Thinking about launching a course. Knowledge is valuable—time to package what I've learned. Fear of 'who am I to teach?' creeping in 🎓",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_4",
+      "dateAdded": 1739700000000,
+      "notes": "Brand partnership proposal received! Dream brand reaching out. Rate negotiation time—know your worth 💎",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_4",
+      "dateAdded": 1739650000000,
+      "notes": "Turned down a sponsorship. Values alignment > paycheck. Audience trust is more valuable than any brand deal 🙅",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_4",
+      "dateAdded": 1739600000000,
+      "notes": "Long-term brand ambassadorship signed! 6-month partnership. Stability in the unpredictable creator economy 🤝",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_5",
+      "dateAdded": 1739600000000,
+      "notes": "Editing flow state! 4 hours disappeared. When creativity strikes, ride the wave. Best work happens in these moments 🌊",
+      "emoticon": "🎨",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_5",
+      "dateAdded": 1739550000000,
+      "notes": "Creative block is real... Staring at blank screen for an hour. Going for a walk to reset. Inspiration comes from living, not forcing 🚶",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_5",
+      "dateAdded": 1739500000000,
+      "notes": "New editing software mastered! Learning curve was steep but worth it. Quality upgrade noticeable. Never stop leveling up 🎬",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_6",
+      "dateAdded": 1739500000000,
+      "notes": "Online course on SEO completed! Knowledge investment paying off. Organic growth up 40% since implementing 🎓",
+      "emoticon": "📚",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_6",
+      "dateAdded": 1739450000000,
+      "notes": "Learning TikTok strategy. New platform, new rules. Adapt or become irrelevant. Always be learning 📱",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_6",
+      "dateAdded": 1739400000000,
+      "notes": "Workshop on storytelling techniques. Great content is great storytelling. Applied learnings to latest video—engagement doubled 📖",
+      "emoticon": "📚",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_7",
+      "dateAdded": 1739400000000,
+      "notes": "Comparison trap is real today. Someone hit 1M in 6 months while I'm at 50K in 18. But my journey is my journey. Focus on my lane 🛣️",
+      "emoticon": "⚖️",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_7",
+      "dateAdded": 1739350000000,
+      "notes": "Social media detox weekend! No posting, no scrolling. Mental health reset. Come back stronger after rest 🧘",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_7",
+      "dateAdded": 1739300000000,
+      "notes": "Dealing with negative comments today. Thick skin is a creator's superpower. Not everyone will like you—and that's okay 💪",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_2",
+      "dateAdded": 1739250000000,
+      "notes": "Community milestone: 1M total views! Numbers don't define success, but they do validate the effort. Grateful 📊",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_5",
+      "dateAdded": 1739200000000,
+      "notes": "Behind-the-scenes content performing best! People connect with realness, not perfection. Note to self: keep it authentic ✨",
+      "emoticon": "🎨",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_6",
+      "dateAdded": 1739150000000,
+      "notes": "Networking with fellow creators. Community > Competition. We all rise together. Collaboration ideas flowing 🌐",
+      "emoticon": "🤝",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_3",
+      "dateAdded": 1739100000000,
+      "notes": "First 5-figure month! $12K revenue. From side hustle to full-time income. Dreams do come true with consistency 💰",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_7",
+      "dateAdded": 1739050000000,
+      "notes": "Remembering why I started: to help people and express creativity. Sometimes numbers make you forget. Back to basics 🎯",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_1",
+      "dateAdded": 1739000000000,
+      "notes": "2024 content themes mapped out! Purposeful creation beats random posting. Strategy + authenticity = growth 🚀",
+      "emoticon": "💡",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_creator_4",
+      "dateAdded": 1738950000000,
+      "notes": "Media kit updated with latest stats. Professional presentation matters. First impressions count in brand deals 📋",
+      "emoticon": "😊",
+      "imageUrl": ""
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "parents": [
+    {
+      "id": "parent_braindump_001",
+      "title": "🧠 Brain Dump Harian",
+      "description": "Tuang semua pikiran yang mengganggu",
+      "dateModified": 1737312000000,
+      "latestEmotion": "😮‍💨"
+    },
+    {
+      "id": "parent_thoughts_002",
+      "title": "💭 Thought Download",
+      "description": "Coretan pikiran ngantri di kepala",
+      "dateModified": 1737225600000,
+      "latestEmotion": "🤔"
+    },
+    {
+      "id": "parent_worry_003",
+      "title": "😰 Worry List",
+      "description": "Daftar kekhawatiran yang perlu dikelola",
+      "dateModified": 1737139200000,
+      "latestEmotion": "😰"
+    },
+    {
+      "id": "parent_mindsweep_004",
+      "title": "🧹 Mind Sweep",
+      "description": "Kategoriin tugas dan reminder",
+      "dateModified": 1737052800000,
+      "latestEmotion": "📝"
+    },
+    {
+      "id": "parent_decisions_005",
+      "title": "⚡ Decision Queue",
+      "description": "Keputusan yang pending",
+      "dateModified": 1736966400000,
+      "latestEmotion": "⚖️"
+    },
+    {
+      "id": "parent_openloop_006",
+      "title": "🔄 Open Loop",
+      "description": "Urutan yang belum selesai",
+      "dateModified": 1736880000000,
+      "latestEmotion": "🤯"
+    },
+    {
+      "id": "parent_inboxzero_007",
+      "title": "📭 Mental Inbox Zero",
+      "description": "Proses semua jadi action plan",
+      "dateModified": 1736793600000,
+      "latestEmotion": "✅"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_braindump_001",
+      "dateAdded": 1737312000000,
+      "notes": "Pikiran berantakan hari ini:\n- Deadline proyek minggu depan\n- Belum balas email klien\n- Mau workout tapi mager\n- Besok meeting penting\n- Cicilan rumah bulan ini\n\nSemua numpuk di kepala bikin pusing. Harus di-breakdown satu-satu.",
+      "emoticon": "😮‍💨",
+      "imageUrl": "https://images.pexels.com/photos/3777565/pexels-photo-3777565.jpeg"
+    },
+    {
+      "parentId": "parent_braindump_001",
+      "dateAdded": 1737279600000,
+      "notes": "Brain dump pagi:\n- Banyak ide bisnis tapi bingung mulai dari mana\n- Temen nanya nikah kapan (stress)\n- Mau pindah kerja tapi takut\n- Tabungan belum cukup target\n- Orang tua mulai sakit-sakitan\n\nNulisnya aja udah bikin sedikit lega.",
+      "emoticon": "😔"
+    },
+    {
+      "parentId": "parent_braindump_001",
+      "dateAdded": 1737204000000,
+      "notes": "Before sleep dump:\n- Besok harus bangun jam 5\n- Presentation deck belum kelar\n- Janji ketemu temen lama lupa\n- Bayar tagihan listrik\n- Mobil bau apek perlu cuci\n\nSemoga besok lebih tenang.",
+      "emoticon": "😴"
+    },
+    {
+      "parentId": "parent_braindump_001",
+      "dateAdded": 1737117600000,
+      "notes": "Weekend brain dump:\n- Bersihin kamar berantakan\n- Laundry menumpuk\n- Belanja bulanan belum\n- Harus nge-gym minimal 3x\n- Baca buku yang belum kelar\n\nWeekend tapi otak masih hectic.",
+      "emoticon": "😩"
+    },
+    {
+      "parentId": "parent_braindump_001",
+      "dateAdded": 1737031200000,
+      "notes": "Monday dump:\n- Meeting kickoff jam 9\n- Laporan mingguan belum siap\n- Tim ada yang resign\n- Client complaint kemarin\n- Target Q1 belum 50%\n\nMonday blues banget.",
+      "emoticon": "😵"
+    },
+    {
+      "parentId": "parent_thoughts_002",
+      "dateAdded": 1737225600000,
+      "notes": "Thought download session:\n\nKenapa ya gue selalu ngerasa kurang?\nPadahal achievement udah banyak.\nMungkin karena bandingin diri sama orang lain terus.\nSocial media bikin minder.\nHarus lebih grateful sih.",
+      "emoticon": "🤔"
+    },
+    {
+      "parentId": "parent_thoughts_002",
+      "dateAdded": 1737153600000,
+      "notes": "Random thoughts pagi:\n\nBulan depan udah 2026 aja.\nResolusi 2025 banyak yang nggak tercapai.\nTapi gapapa, progress > perfection.\nYang penting konsisten.\nSelf-improvement is a journey.",
+      "emoticon": "🌅"
+    },
+    {
+      "parentId": "parent_thoughts_002",
+      "dateAdded": 1737081600000,
+      "notes": "Overthinking malam:\n\nDia bales chat lama, apa gue salah ngomong?\nAtau cuma sibuk aja?\nTapi kenapa read doang?\nAh elah, capek overthinking.\nMending tidur.",
+      "emoticon": "😶‍🌫️"
+    },
+    {
+      "parentId": "parent_thoughts_002",
+      "dateAdded": 1737009600000,
+      "notes": "Ide-ide liar:\n\nKalo bikin podcast gimana ya?\nTopiknya tentang mental health.\nAtau mending newsletter dulu?\nBisa monetize gak sih?\nSo many ideas, so little time.",
+      "emoticon": "💡"
+    },
+    {
+      "parentId": "parent_thoughts_002",
+      "dateAdded": 1736937600000,
+      "notes": "Inner voice:\n\nGue bisa gak sih?\nPasti banyak yang lebih capable.\nImpostor syndrome lagi.\nTapi dulu juga berhasil.\nTrust yourself more.",
+      "emoticon": "🦋"
+    },
+    {
+      "parentId": "parent_worry_003",
+      "dateAdded": 1737139200000,
+      "notes": "Worry list hari ini:\n\n🔴 Bisa dikontrol:\n- Persiapan presentasi\n- Menyelesaikan deadline\n- Pola makan yang berantakan\n\n🟡 Tidak bisa dikontrol:\n- Cuaca besok\n- Opini orang lain\n- Traffic macet\n\nFokus ke yang merah aja.",
+      "emoticon": "😰"
+    },
+    {
+      "parentId": "parent_worry_003",
+      "dateAdded": 1737076800000,
+      "notes": "What if scenarios:\n\nWhat if gue gagal?\nWhat if mereka nggak suka?\nWhat if gue make mistake?\n\nReality check: Semua itu belum terjadi.\nWorrying doesn't prevent, it just steals joy.",
+      "emoticon": "😓"
+    },
+    {
+      "parentId": "parent_worry_003",
+      "dateAdded": 1737004800000,
+      "notes": "Financial worries:\n\nCicilan mobil masih 2 tahun.\nDana darurat belum cukup 6 bulan.\nInvestasi merah terus.\nTabungan pendidikan anak.\n\nHarus bikin financial plan yang lebih detail.",
+      "emoticon": "💸"
+    },
+    {
+      "parentId": "parent_worry_003",
+      "dateAdded": 1736932800000,
+      "notes": "Health anxiety:\n\nKepala pusing terus akhir-akhir ini.\nJantung kadang berdebar kencang.\nApa gue kenapa-kenapa?\nCek Google malah makin panik.\n\nKayaknya emang harus ke dokter deh.",
+      "emoticon": "🏥"
+    },
+    {
+      "parentId": "parent_worry_003",
+      "dateAdded": 1736860800000,
+      "notes": "Relationship worries:\n\nKita makin jarang komunikasi.\nDia beda attitude.\nApa ada yang salah?\nHarus confront atau biarin?\n\nCommunication is key, tapi susah juga ya.",
+      "emoticon": "💔"
+    },
+    {
+      "parentId": "parent_mindsweep_004",
+      "dateAdded": 1737052800000,
+      "notes": "Mind sweep categories:\n\n📋 URGENT:\n- Balas email client (jam 3 sore)\n- Submit laporan ke bos\n- Beli obat untuk mama\n\n📅 SCHEDULED:\n- Meeting tim (besok pagi)\n- Dental appointment (Jumat)\n- Gym session (Sore ini)\n\n💡 IDEAS:\n- Konten IG tentang productivity\n- Research tools baru\n- Baca buku atomic habits\n\nSemua sudah tercatat rapi!",
+      "emoticon": "📝"
+    },
+    {
+      "parentId": "parent_mindsweep_004",
+      "dateAdded": 1736985600000,
+      "notes": "Workspace sweep:\n\nMeja berantakan:\n- Kertas-kertas perlu difile\n- Botol minum lupa dibawa pulang\n- Charger berantakan\n- Sticky notes kemana-mana\n\nBersihin meja = bersihin pikiran.",
+      "emoticon": "🧹"
+    },
+    {
+      "parentId": "parent_mindsweep_004",
+      "dateAdded": 1736918400000,
+      "notes": "Digital sweep:\n\n📧 Email inbox: 47 unread\n💬 WA: 12 grup yang mute\n📱 Apps: Banyak yang jarang dipake\n☁️ Drive: File berantakan\n\nDigital decluttering juga penting.",
+      "emoticon": "📱"
+    },
+    {
+      "parentId": "parent_mindsweep_004",
+      "dateAdded": 1736851200000,
+      "notes": "Commitment sweep:\n\nOngoing commitments:\n- Proyek A (deadline: 2 minggu)\n- Kursus online (progress 40%)\n- Side hustle bikin konten\n- Komunitas volunteer\n\nKayaknya kebanyakan. Harus prioritas.",
+      "emoticon": "📊"
+    },
+    {
+      "parentId": "parent_mindsweep_004",
+      "dateAdded": 1736784000000,
+      "notes": "End of year sweep:\n\n2025 sebentar lagi kelar.\nApa yang masih pending?\n- Renew passport\n- Service AC\n- Update CV\n- Beli kado natal\n\nSelesaikan sebelum tahun baru!",
+      "emoticon": "📅"
+    },
+    {
+      "parentId": "parent_decisions_005",
+      "dateAdded": 1736966400000,
+      "notes": "Decision queue:\n\n1. Pindah kerja atau stay? (Deadline: Jan 2026)\n2. Mulai investasi saham atau reksadana?\n3. Ikut bootcamp atau self-taught?\n4. Beli motor baru atau nabung dulu?\n5. Cuti panjang atau jatah tahunan dikit-dikit?\n\nPerlu pro-con list untuk masing-masing.",
+      "emoticon": "⚖️"
+    },
+    {
+      "parentId": "parent_decisions_005",
+      "dateAdded": 1736899200000,
+      "notes": "Career decision:\n\nTawaran kerja baru:\n- Gaji 30% lebih tinggi ✅\n- Tapi WFH policy kurang fleksibel ❌\n- Learning opportunity bagus ✅\n- Commute lebih jauh ❌\n\nMasih bingung. Minta waktu mikir seminggu.",
+      "emoticon": "🤔"
+    },
+    {
+      "parentId": "parent_decisions_005",
+      "dateAdded": 1736832000000,
+      "notes": "Relationship decision:\n\nLDR udah 2 tahun.\nDia mau nikah tahun depan.\nGue masih ngerasa belum siap.\nTapi sayang buat lepasin.\n\nHarus komunikasiin expectation.",
+      "emoticon": "💭"
+    },
+    {
+      "parentId": "parent_decisions_005",
+      "dateAdded": 1736764800000,
+      "notes": "Financial decision:\n\nDapat THR + bonus:\n- Option A: Lunasin CC debt\n- Option B: Tambah emergency fund\n- Option C: Investasi jangka panjang\n- Option D: Upgrade laptop\n\nPriority: A > B > C. Laptop bisa ditunda.",
+      "emoticon": "💰"
+    },
+    {
+      "parentId": "parent_decisions_005",
+      "dateAdded": 1736697600000,
+      "notes": "Lifestyle decision:\n\nTinggal di apartemen:\n- Nyaman, deket kantor\n- Tapi mahal, space kecil\n\nAtau pindah ke rumah:\n- Lebih luas, ada taman\n- Tapi commute 1 jam\n\nQuality of life vs convenience.",
+      "emoticon": "🏠"
+    },
+    {
+      "parentId": "parent_openloop_006",
+      "dateAdded": 1736880000000,
+      "notes": "Open loops yang mengganggu:\n\n1. Janji bantuin temen pindahan (belum dikerjain)\n2. Refund dari e-commerce masih pending\n3. Kursus online bayar tapi belum mulai\n4. Pinjem buku dari perpus (telat 2 minggu)\n5. Project freelance setengah jalan\n\nSemua bikin unconscious stress.",
+      "emoticon": "🤯"
+    },
+    {
+      "parentId": "parent_openloop_006",
+      "dateAdded": 1736817600000,
+      "notes": "Unfinished conversations:\n\n- Diskusi serius sama pasangan (tertunda)\n- Feedback untuk tim member (ditunda-tunda)\n- Minta maaf ke temen (masih malu)\n- Konfrontasi toxic family member\n\nClosure itu penting buat mental health.",
+      "emoticon": "😶"
+    },
+    {
+      "parentId": "parent_openloop_006",
+      "dateAdded": 1736755200000,
+      "notes": "Projects on hold:\n\n📌 Personal:\n- Blog yang abandoned\n- Hobby photography\n- Learn to code\n\n📌 Work:\n- Side project dengan temen\n- Sertifikasi yang pending\n\nMau dilanjutin atau dilepasin?",
+      "emoticon": "⏸️"
+    },
+    {
+      "parentId": "parent_openloop_006",
+      "dateAdded": 1736692800000,
+      "notes": "Waiting for:\n\n⏳ Response dari HR\n⏳ Hasil medical checkup\n⏳ Delivery paket penting\n⏳ Approval dari bos\n⏳ Uang kembalian dari temen\n\nThe waiting game is exhausting.",
+      "emoticon": "⏰"
+    },
+    {
+      "parentId": "parent_openloop_006",
+      "dateAdded": 1736630400000,
+      "notes": "Closure needed:\n\n- Ending toxic friendship gracefully\n- Quitting committee yang nggak produktif\n- Return stuff yang dipinjem\n- Cancel subscription yang nggak dipake\n\nClean closure = clean mind.",
+      "emoticon": "🚪"
+    },
+    {
+      "parentId": "parent_inboxzero_007",
+      "dateAdded": 1736793600000,
+      "notes": "Mental inbox zero achieved! 🎉\n\nSemua to-do sudah diproses:\n✅ Di-action (yang bisa dikerjain sekarang)\n📅 Di-delegate (yang bisa diserahkan)\n📆 Di-schedule (yang perlu waktu tertentu)\n🗑️ Di-delete (yang nggak penting)\n\nOtak feels so light!",
+      "emoticon": "✅",
+      "imageUrl": "https://images.pexels.com/photos/3066951/pexels-photo-3066951.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "parentId": "parent_inboxzero_007",
+      "dateAdded": 1736731200000,
+      "notes": "Weekly processing:\n\nSetiap Minggu malam:\n1. Review semua yang masuk\n2. Kategorikan ke project list\n3. Jadwalkan next action\n4. Archive yang sudah selesai\n5. Review goals minggu depan\n\nRitual yang bikin tenang.",
+      "emoticon": "📋"
+    },
+    {
+      "parentId": "parent_inboxzero_007",
+      "dateAdded": 1736668800000,
+      "notes": "Email zero inbox:\n\nDari 200+ unread jadi 0!\n\nStrategi:\n- Unsubscribe newsletter yang nggak dibaca\n- Archive yang nggak butuh action\n- Reply yang < 2 menit langsung\n- Sisanya masuk to-do list\n\nFeels amazing!",
+      "emoticon": "📧"
+    },
+    {
+      "parentId": "parent_inboxzero_007",
+      "dateAdded": 1736606400000,
+      "notes": "Next action list:\n\nDari semua yang masuk, ini yang perlu dikerjain:\n\n🔥 TODAY:\n- Submit report\n- Call mom\n\n📅 THIS WEEK:\n- Gym 3x\n- Finish presentation\n\n📆 THIS MONTH:\n- Renew passport\n- Research courses\n\nSudah terorganisir rapi.",
+      "emoticon": "📝"
+    },
+    {
+      "parentId": "parent_inboxzero_007",
+      "dateAdded": 1736544000000,
+      "notes": "Reflection on the process:\n\nInbox zero bukan cuma tentang bersih.\nIni tentang trust system:\n- Kalau masukin to-do, pasti dikerjain\n- Kalau di-calendar, pasti dihadiri\n- Nggak ada yang terlewat\n\nMind like water. Clear and ready.",
+      "emoticon": "🧘"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "parents": [
+    {
+      "id": "parent_emodump_001",
+      "title": "💭 Emotional Dump",
+      "description": "Tulis perasaan tanpa sensor",
+      "dateModified": 1737312000000,
+      "latestEmotion": "😢"
+    },
+    {
+      "id": "parent_anger_002",
+      "title": "😤 Anger Release",
+      "description": "Lepaskan amarah dengan tulisan",
+      "dateModified": 1737225600000,
+      "latestEmotion": "😠"
+    },
+    {
+      "id": "parent_anxiety_003",
+      "title": "😰 Anxiety Mapping",
+      "description": "Bedakan takut vs cemas",
+      "dateModified": 1737139200000,
+      "latestEmotion": "😰"
+    },
+    {
+      "id": "parent_gratitude_004",
+      "title": "🙏 Gratitude Reset",
+      "description": "Counter negative spiral",
+      "dateModified": 1737052800000,
+      "latestEmotion": "🥰"
+    },
+    {
+      "id": "parent_forgive_005",
+      "title": "🕊️ Forgiveness Log",
+      "description": "Lepaskan beban dendam",
+      "dateModified": 1736966400000,
+      "latestEmotion": "🌸"
+    },
+    {
+      "id": "parent_sadness_006",
+      "title": "🌧️ Sadness Processing",
+      "description": "Izinkan diri untuk sedih",
+      "dateModified": 1736880000000,
+      "latestEmotion": "😔"
+    },
+    {
+      "id": "parent_emotiontrack_007",
+      "title": "📊 Emotion Tracker",
+      "description": "Pola mood harian",
+      "dateModified": 1736793600000,
+      "latestEmotion": "📈"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_emodump_001",
+      "dateAdded": 1737312000000,
+      "notes": "Gue capek. Beneran capek.\n\nKerjaan numpuk, bos nyalah-nyalahin,\ntemen toxic nge-chat mulu,\npacar cuek,\ntabungan habis.\n\nSemua numpuk bareng jadi satu.\nGue ngerasa sendirian.\n\nYa Allah, when will this get better?",
+      "emoticon": "😢",
+      "imageUrl": "https://images.pexels.com/photos/8386736/pexels-photo-8386736.jpeg"
+    },
+    {
+      "parentId": "parent_emodump_001",
+      "dateAdded": 1737256800000,
+      "notes": "Hari yang berat banget.\n\nPresentasi gagal total.\nGue stutter di depan client.\nMereka lihat gue kayak orang bodoh.\n\nMau nangis di kantor tapi harus tahan.\nGue failure.\nGue nggak cukup baik.\n\nNulis ini sambil nangis.",
+      "emoticon": "😭"
+    },
+    {
+      "parentId": "parent_emodump_001",
+      "dateAdded": 1737201600000,
+      "notes": "Mixed feelings hari ini.\n\nSeneng karena dapet compliment.\nTapi insecure karena ngerasa nggak deserve it.\nTakut orang tau gue sebenernya impostor.\n\nHappy but scared.\nGrateful but anxious.\n\nEmosi itu kompleks ya.",
+      "emoticon": "😕"
+    },
+    {
+      "parentId": "parent_emodump_001",
+      "dateAdded": 1737146400000,
+      "notes": "Nggak tau kenapa moodnya flat aja.\n\nBukan sedih, bukan seneng.\nCuma... kosong?\n\nKayak robot yang jalanin rutinitas.\nBangun, kerja, makan, tidur.\nRepeat.\n\nMana passion gue dulu?",
+      "emoticon": "😐"
+    },
+    {
+      "parentId": "parent_emodump_001",
+      "dateAdded": 1737091200000,
+      "notes": "Hari ini gue marah sama diri sendiri.\n\nKenapa gue nggak bisa lebih disiplin?\nKenapa gue procrastinate terus?\nKenapa gue bandingin diri sama orang lain?\n\nSelf-criticism level 1000.\n\nHarus lebih kind ke diri sendiri.",
+      "emoticon": "😤"
+    },
+    {
+      "parentId": "parent_anger_002",
+      "dateAdded": 1737225600000,
+      "notes": "GUE MARAH BANGET!!!\n\nTemen gue cancel LAST MINUTE.\nPadahal gue udah booking restoran mahal.\nUdah siap-siap 2 jam.\nAlasannya: 'lupa ada acara lain'\n\nINI KE 3 KALINYA DALAM SEBULAN!\n\nGue ngerasa nggak dihargai.\nNggak di-respect.\n\n*robek kertas*\n\nUdah lega dikit.",
+      "emoticon": "😠"
+    },
+    {
+      "parentId": "parent_anger_002",
+      "dateAdded": 1737163200000,
+      "notes": "Workplace anger:\n\nAda yang steal credit gue.\nIde gue, dia yang present.\nDia yang dipuji.\nGue cuma diem aja.\n\nGue marah sama dia,\ntapi lebih marah sama diri gue sendiri\nkarena nggak speak up.\n\nNext time, gue akan defend myself.",
+      "emoticon": "😡"
+    },
+    {
+      "parentId": "parent_anger_002",
+      "dateAdded": 1737100800000,
+      "notes": "Family anger:\n\nOrtu selalu compare gue sama sepupu.\n'Dia udah nikah, lu kapan?'\n'Dia gajinya 2 digit'\n'Dia udah punya rumah'\n\nGue capek jadi disappointment.\nGue udah berusaha keras.\nTapi nggak pernah cukup.\n\nSetelah nulis ini, gue burning the paper.\nLetting go.",
+      "emoticon": "🔥"
+    },
+    {
+      "parentId": "parent_anger_002",
+      "dateAdded": 1737038400000,
+      "notes": "Traffic rage:\n\nMacet 3 jam pulang kerja.\nAda motor serobot jalur.\nBikin tambah macet.\n\nGue teriakin dia (di dalam mobil).\nJari tengah ke angin.\n\nSetelah tenang, gue sadar:\nItu nggak solve apa-apa.\nCuma bikin gue lebih stres.\n\nBreathing exercise helps.",
+      "emoticon": "🚗"
+    },
+    {
+      "parentId": "parent_anger_002",
+      "dateAdded": 1736976000000,
+      "notes": "Processing the anger:\n\nAnger itu secondary emotion.\nBiasanya ada fear atau hurt di baliknya.\n\nGue marah = gue ngerasa disakiti/disrespect\nAtau gue takut kehilangan control\n\nUnderstanding this helps me\nprocess anger better.\n\nNggak ada tulisan yang gue robek hari ini.\nJust acceptance.",
+      "emoticon": "🧘"
+    },
+    {
+      "parentId": "parent_anxiety_003",
+      "dateAdded": 1737139200000,
+      "notes": "Anxiety mapping:\n\n🔴 FEAR (nyata, ada bahaya):\n- Takut kehilangan pekerjaan (performa turun)\n- Takut sakit (gejala yang muncul)\n\n🟡 ANXIETY (khayalan, what-if):\n- What if gue gagal?\n- What if mereka nggak suka gue?\n- What if something bad happens?\n\nFocus ke yang merah aja.\nYang kuning, coba challenge.",
+      "emoticon": "😰"
+    },
+    {
+      "parentId": "parent_anxiety_003",
+      "dateAdded": 1737076800000,
+      "notes": "Health anxiety attack:\n\nDada gue sesak.\nNapas gue pendek.\nApa gue kenapa-kenapa?\nJantung gue? Paru-paru?\n\nReality check:\n- Gue baru aja minum kopi 2 cup\n- Gue kurang tidur seminggu ini\n- Gue stres deadline\n\nProbably just anxiety.\nBut I'll check with doctor to be sure.",
+      "emoticon": "🏥"
+    },
+    {
+      "parentId": "parent_anxiety_003",
+      "dateAdded": 1737014400000,
+      "notes": "Social anxiety:\n\nUndangan kondangan.\nBanyak orang gue nggak kenal.\nSmall talk.\nPenilaian orang.\n\nAnxiety level: 8/10\n\nTapi ini khayalan kan?\nNggak ada bukti orang akan judge gue.\nGue cuma mind-reading.\n\nI'll go. Just 1 hour.\nBaby steps.",
+      "emoticon": "👥"
+    },
+    {
+      "parentId": "parent_anxiety_003",
+      "dateAdded": 1736952000000,
+      "notes": "Future anxiety:\n\nGue overthink masa depan:\n- Kerjaan gue relevan 10 tahun lagi?\n- AI bakal gantiin gue?\n- Ekonomi krisis lagi?\n- Gue bisa pensiun nggak?\n\nTruth: Nobody knows the future.\nWorrying doesn't change it.\nPreparation does.\n\nFocus on what I can control TODAY.",
+      "emoticon": "🔮"
+    },
+    {
+      "parentId": "parent_anxiety_003",
+      "dateAdded": 1736889600000,
+      "notes": "Anxiety toolkit:\n\nWhat works for me:\n✅ Box breathing (4-4-4-4)\n✅ 5-4-3-2-1 grounding technique\n✅ Journaling (like this)\n✅ Physical exercise\n✅ Limit caffeine\n\nWhat doesn't work:\n❌ Doom scrolling\n❌ Asking 'what if' repeatedly\n❌ Isolating myself\n\nSelf-awareness is progress.",
+      "emoticon": "🧰"
+    },
+    {
+      "parentId": "parent_gratitude_004",
+      "dateAdded": 1737052800000,
+      "notes": "Gratitude reset 🙏\n\nHari ini gue grateful untuk:\n\n1. Bangun dalam kondisi sehat\n2. Masih punya pekerjaan\n3. Sempat sarapan bareng keluarga\n4. Cuaca cerah pas commute\n5. Dapet email appreciation dari klien\n\nFokus ke yang positif\nbikin mindset beda banget.\n\nThank you, Universe.",
+      "emoticon": "🥰",
+      "imageUrl": "https://images.pexels.com/photos/573294/pexels-photo-573294.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "parentId": "parent_gratitude_004",
+      "dateAdded": 1736990400000,
+      "notes": "3 Good Things today:\n\n1. Bisa tidur 8 jam (langka!)\n2. Temen ngajak lunch gratis\n3. Nemu uang 50rb di jaket lama\n\nSmall wins matter.\n\nKadang kita terlalu fokus\nke yang kurang (scarcity mindset)\nPadahal yang udah ada banyak banget.",
+      "emoticon": "✨"
+    },
+    {
+      "parentId": "parent_gratitude_004",
+      "dateAdded": 1736928000000,
+      "notes": "Gratitude for struggles:\n\nGue grateful juga untuk:\n- Kegagalan yang ngajarin gue humility\n- Orang toxic yang ngajarin boundaries\n- Masalah yang bikin gue stronger\n- Waktu sulit yang ngebentuk karakter\n\nEverything serves a purpose.\nEven the pain.",
+      "emoticon": "🌱"
+    },
+    {
+      "parentId": "parent_gratitude_004",
+      "dateAdded": 1736865600000,
+      "notes": "People gratitude:\n\nSeseorang yang gue grateful:\nMama - yang selalu support gue\nDia nggak ngerti kerjaan gue\nTapi dia selalu dengerin curhat\nSelalu masakin makanan kesukaan\nSelalu percaya gue bisa\n\nI don't say this enough:\nThank you, Ma. Love you.",
+      "emoticon": "❤️"
+    },
+    {
+      "parentId": "parent_gratitude_004",
+      "dateAdded": 1736803200000,
+      "notes": "Gratitude when everything sucks:\n\nHari ini banyak yang salah:\n- Kerjaan error\n- Motor mogok\n- Banjir di jalan\n\nTapi gue masih grateful:\n✅ Gue selamat\n✅ Ada asuransi\n✅ Ada temen yang bantu dorong motor\n✅ Punya rumah buat berteduh\n\nSelalu ada sesuatu untuk disyukuri.",
+      "emoticon": "🌈"
+    },
+    {
+      "parentId": "parent_forgive_005",
+      "dateAdded": 1736966400000,
+      "notes": "Forgiving myself 🕊️\n\nGue forgive myself untuk:\n- Kegagalan di masa lalu\n- Keputusan yang salah\n- Waktu yang terbuang sia-sia\n- Orang yang gue sakiti\n- Diri yang nggak sempurna\n\nGue udah berusaha terbaik\ndengan apa yang gue punya\nwaktu itu.\n\nI release the guilt.\nI choose compassion.",
+      "emoticon": "🌸"
+    },
+    {
+      "parentId": "parent_forgive_005",
+      "dateAdded": 1736904000000,
+      "notes": "Forgiving others:\n\nGue forgive:\n- Ex yang nyakitin gue\n- Temen yang nge-betray gue\n- Bos yang nggak appreciate gue\n- Stranger yang rude\n\nForgiveness bukan buat mereka.\nIni buat gue.\nBiar gue nggak bawa beban dendam.\n\nGue lepasin.\nGue bebas.",
+      "emoticon": "🕊️"
+    },
+    {
+      "parentId": "parent_forgive_005",
+      "dateAdded": 1736841600000,
+      "notes": "The weight of unforgiveness:\n\nNggak forgive itu kayak\nminum racun terus expect\norang lain yang sakit.\n\nDendam itu berat.\nNgebawa energi negatif.\nNge-block joy.\n\nForgiveness adalah act of self-love.\nBukan berarti approve perilaku mereka.\nCuma lepasin attachment ke situasi itu.",
+      "emoticon": "⚖️"
+    },
+    {
+      "parentId": "parent_forgive_005",
+      "dateAdded": 1736779200000,
+      "notes": "Letter of forgiveness (ngga dikirim):\n\nDear _____,\n\nGue udah lama marah sama lo.\nLo nyakitin gue.\nTapi gue capek bawa-bawa ini.\n\nGue forgive lo.\nGue release the anger.\nGue minta maaf juga\nkalau gue pernah nyakitin lo.\n\nSemoga lo baik-baik aja.\n\nWith peace,\nGue\n\n*Letting go*",
+      "emoticon": "✉️"
+    },
+    {
+      "parentId": "parent_forgive_005",
+      "dateAdded": 1736716800000,
+      "notes": "Self-forgiveness journey:\n\nIni proses. Bukan instant.\n\nSetiap hari gue reminder:\n'I am doing my best with what I have'\n'I am learning and growing'\n'I am worthy of love and compassion'\n\nBe kind to yourself.\nYou deserve your own forgiveness.",
+      "emoticon": "💝"
+    },
+    {
+      "parentId": "parent_sadness_006",
+      "dateAdded": 1736880000000,
+      "notes": "Allowing myself to feel sad 🌧️\n\nHari ini gue sedih.\nDan gapapa.\n\nGue nggak perlu 'positive vibes only'\nGue nggak perlu 'cheer up'\nGue nggak perlu deny this feeling.\n\nIt's okay to not be okay.\n\nGue izinkan diri gue\nuntuk ngerasain ini sepenuhnya.\nTanpa judgment.",
+      "emoticon": "😔"
+    },
+    {
+      "parentId": "parent_sadness_006",
+      "dateAdded": 1736817600000,
+      "notes": "Grieving:\n\nGue kehilangan seseorang tahun ini.\nHari ini anniversarry kematiannya.\n\nGue kangen.\nGue nangis.\nGue ngerasa empty.\n\nGrief is love with no place to go.\n\nGue akan selalu sayang sama lo.\nWherever you are now,\nhope you're at peace.",
+      "emoticon": "💔"
+    },
+    {
+      "parentId": "parent_sadness_006",
+      "dateAdded": 1736755200000,
+      "notes": "Sadness vs Depression:\n\nSadness = normal emotion, temporary\nDepression = clinical, persistent\n\nGue ngerasa sad beberapa hari ini.\nBut I can still function.\nMasih bisa nikmatin hal-hal kecil.\n\nThis is sadness.\nAnd it's valid.\n\nBut if it lasts weeks + nggak bisa function,\nthat's when I need professional help.",
+      "emoticon": "🌧️"
+    },
+    {
+      "parentId": "parent_sadness_006",
+      "dateAdded": 1736692800000,
+      "notes": "Sadness triggers:\n\nApa yang bikin gue sedih akhir-akhir ini:\n- Nostalgia masa lalu\n- Lihat temen sukses\n- Musik-musik galau\n- Hujan + stay di rumah\n- The state of the world\n\nNggak semua bisa di-control.\nTapi awareness helps.\nGue bisa prepare coping mechanisms.",
+      "emoticon": "🎭"
+    },
+    {
+      "parentId": "parent_sadness_006",
+      "dateAdded": 1736630400000,
+      "notes": "Sadness toolkit:\n\nWhat helps when I'm sad:\n✅ Nonton comfort movie\n✅ Peluk bantal/blanket\n✅ Nulis (like this)\n✅ Walk di alam\n✅ Accepting the sadness (not fighting it)\n\nWhat doesn't help:\n❌ Doom scrolling\n❌ Isolasi total\n❌ Ngelukai diri\n❌ Ngehindar dengan substances\n\nFeel to heal.",
+      "emoticon": "🌱"
+    },
+    {
+      "parentId": "parent_emotiontrack_007",
+      "dateAdded": 1736793600000,
+      "notes": "Week in review:\n\n📊 Mood tracker minggu ini:\n\nSenin: 😰 (Anxious - banyak meeting)\nSelasa: 😊 (Happy - projek selesai)\nRabu: 😴 (Tired - kurang tidur)\nKamis: 😠 (Frustrated - conflict)\nJumat: 🥳 (Excited - weekend plans)\nSabtu: 😌 (Relaxed - self care)\nMinggu: 🤔 (Reflective - journaling)\n\nPattern: Weekday stressful, weekend recover.",
+      "emoticon": "📈",
+      "imageUrl": "https://images.pexels.com/photos/1181311/pexels-photo-1181311.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "parentId": "parent_emotiontrack_007",
+      "dateAdded": 1736731200000,
+      "notes": "Monthly mood summary:\n\nMost frequent emotions:\n1. 😊 Happy - 40%\n2. 😰 Anxious - 25%\n3. 😴 Tired - 20%\n4. 🤔 Reflective - 10%\n5. 😢 Sad - 5%\n\nDominant mood: Positive\nTapi anxiety masih perlu di-manage.\n\nAction plan:\n- More mindfulness practice\n- Better sleep hygiene\n- Set boundaries di kerjaan",
+      "emoticon": "📊"
+    },
+    {
+      "parentId": "parent_emotiontrack_007",
+      "dateAdded": 1736668800000,
+      "notes": "Emotion patterns discovered:\n\nGue notice:\n- Mood paling bagus: Pagi hari (8-10 AM)\n- Mood paling jelek: Sore jam pulang kerja\n- Senin paling anxious\n- Jumat paling happy\n- Cuaca cerah = better mood\n- Kurang tidur = irritable\n\nData ini ngebantu gue\nplan aktivitas dan self-care.",
+      "emoticon": "🔍"
+    },
+    {
+      "parentId": "parent_emotiontrack_007",
+      "dateAdded": 1736606400000,
+      "notes": "Triggers vs Responses:\n\nGue analyze:\n\n🔴 TRIGGERS:\n- Criticism (even constructive)\n- Crowded places\n- Uncertainty\n- Social comparison\n\n🟢 RESPONSES:\n- Journaling (like this!)\n- Breathing exercises\n- Physical activity\n- Talk to trusted friend\n\nKnowing my patterns = power.",
+      "emoticon": "🎯"
+    },
+    {
+      "parentId": "parent_emotiontrack_007",
+      "dateAdded": 1736544000000,
+      "notes": "Emotional growth:\n\nCompare to 6 months ago:\n\nBefore:\n- Suppress emotions\n- Explode randomly\n- Nggak aware apa yang gue rasain\n- Numpuk sampai burnout\n\nNow:\n- Regular emotional check-in\n- Healthy expression\n- Name the emotion\n- Journaling helps SO MUCH\n\nProgress, not perfection.",
+      "emoticon": "📈"
+    }
+  ]
+}

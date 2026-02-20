@@ -1,0 +1,159 @@
+{
+  "exportDate": "2026-02-13T10:00:00.000Z",
+  "parents": [
+    {
+      "id": "parent_1704067200000",
+      "title": "Refleksi Ramadan",
+      "dateModified": 1737312000000,
+      "latestEmotion": "🥰",
+      "description": "Catatan ibadah dan refleksi Ramadhan",
+      "imageUrl": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": "parent_1704153600000",
+      "title": "Catatan Kampus & Skripsi",
+      "dateModified": 1737225600000,
+      "latestEmotion": "😰",
+      "description": "Progress skripsi dan perjalanan akademik"
+    },
+    {
+      "id": "parent_1704240000000",
+      "title": "Perjalanan Hijrah",
+      "dateModified": 1737139200000,
+      "latestEmotion": "🤔",
+      "description": "Perjalanan hijrah dan perubahan diri"
+    },
+    {
+      "id": "parent_1704326400000",
+      "title": "Uang Bulanan & Keuangan",
+      "dateModified": 1737052800000,
+      "latestEmotion": "😊",
+      "description": "Manajemen uang bulanan dan keuangan"
+    },
+    {
+      "id": "parent_1704412800000",
+      "title": "Relasi & Sahabat Dakwah",
+      "dateModified": 1736966400000,
+      "latestEmotion": "🤩",
+      "description": "Relasi pertemanan dan sahabat dakwah"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1737312000000,
+      "notes": "Hari pertama puasa di kosan sendiri. Rindu banget sama masakan mama. Tapi Alhamdulillah, tetap semangat! Target: khatam 1x selama Ramadan. Bismillah 💪",
+      "emoticon": "😊",
+      "imageUrl": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1737279600000,
+      "notes": "Tadi malam tarawih berjamaah di masjid kampus. Suasana ramai banget, cowok-cowok kosan pada kompak pergi bareng. Semoga istiqomah sampe akhir ya Allah",
+      "emoticon": "🥰",
+      "imageUrl": "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1737204000000,
+      "notes": "Ngerjakan tugas DAA sampe imsak. Agak males sahur tapi tetep makan nasi goreng instan. Hari ini lemes banget di kelas, dosennya ngomong kayak gak ada puasanya 😂",
+      "emoticon": "😴"
+    },
+    {
+      "parentId": "parent_1704067200000",
+      "dateAdded": 1737117600000,
+      "notes": "Idul Fitri! Akhirnya pulang kampung. Mama nangis liat aku turun 3kg. Tapi yang penting hatimu bahagia kan ma? 😭🙏",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1737225600000,
+      "notes": "Dosen pembimbing bilang bab 2ku banyak revisi. Rasanya pengen nangis di perpustakaan. Tapi inget kata ustadz: sabar itu ada batasnya, tapi Allah gak pernah salah kasih ujian.",
+      "emoticon": "😢"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1737163200000,
+      "notes": "Progress skripsi 40%. Hari ini nemu jurnal yang pas banget buat referensi. Alhamdulillah, Allah kasih jalan pas lagi buntu. Semangat!!!",
+      "emoticon": "😊"
+    },
+    {
+      "parentId": "parent_1704153600000",
+      "dateAdded": 1737100800000,
+      "notes": "Sidang proposal besok. Udah prepare slide, baju, dan doa. Tapi tetep deg-degan. Ya Allah mudahkanlah, jadikan ini amal shaleh untuk masa depan hamba-Mu 🤲",
+      "emoticon": "😰"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1737139200000,
+      "notes": "Mulai konsisten sholat dhuha setelah subuh. Rasanya hati lebih tenang, walau tugas masih banyak. Kecintaan kepada Allah itu healing terbaik.",
+      "emoticon": "🤔"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1737076800000,
+      "notes": "Nonton ceramah Ustadz Adi Hidayat tentang hijrah. Ngenes banget nangis di kamar. Kayaknya aku harus lebih serius nih, gak bisa main-main sama agama lagi.",
+      "emoticon": "😢"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1737014400000,
+      "notes": "Berani nolak job part time yang riba. Temen pada bilang gak realistis, tapi aku percaya rezeki Allah lebih luas. Semoga Allah ganti dengan yang lebih baik.",
+      "emoticon": "🤔"
+    },
+    {
+      "parentId": "parent_1704240000000",
+      "dateAdded": 1736952000000,
+      "notes": "Satu semester berlalu. Banyak banget perubahan, dari yang dulu jarang masjid sekarang jadi pengurus rohis. Allah Maha Baik sama hamba-Nya yang mau berubah.",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1737052800000,
+      "notes": "Uang dari mama masuk! Langsung bagi-bagi: 50% kebutuhan, 30% tabungan, 20% sedekah. Jangan sampai boncos sebelum akhir bulan ya Allah 😅",
+      "emoticon": "😊"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1736990400000,
+      "notes": "Minggu ketiga: uang tinggal 200rb. Makan mie instan 3 hari berturut-turut. Tapi tetep bayar UKT tepat waktu. Prioritas itu penting! 💪",
+      "emoticon": "😰"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1736928000000,
+      "notes": "Coba jualan pulsa di kosan. Untung receh tapi lumayan buat jajan. Belajar entrepreneurship dari nol. Bismillah jadi pengusaha sukses yang soleh.",
+      "emoticon": "😎"
+    },
+    {
+      "parentId": "parent_1704326400000",
+      "dateAdded": 1736865600000,
+      "notes": "Akhirnya bisa nabung 1jt! Target semester depan 2jt. Pengen beli laptop baru buat skripsi. Semoga Allah berikan kemudahan rezeki.",
+      "emoticon": "🤩"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1736966400000,
+      "notes": "Kenal temen baru di kajian akhwat. Namanya Aisyah, anak psikologi. Kita langsung klik karena sama-sama suka ngopi dan ngaji. Alhamdulillah Allah kirim sahabat shalehah 🤗",
+      "emoticon": "🥰"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1736904000000,
+      "notes": "Rohis kampus bagi-bagi takjil. Seru banget! Dari yang dulu cuma pengikut, sekarang jadi panitia. Rasanya beda banget ikut aktif dakwah.",
+      "emoticon": "🤩"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1736841600000,
+      "notes": "Dapet mentor baru dari alumni. Bang Arief, dia kerja di unicorn tapi tetep istiqomah ngaji. Role model banget! Aku juga pengen kayak dia suatu saat nanti.",
+      "emoticon": "🤩"
+    },
+    {
+      "parentId": "parent_1704412800000",
+      "dateAdded": 1736779200000,
+      "notes": "Ngobrol sampe pagi sama temen-temen rohis. Bahasanya mulai dari skripsi sampe akhirat. Kumpul sama orang-orang yang bikin kamu kangen surga itu nikmat banget.",
+      "emoticon": "🥰"
+    }
+  ]
+}

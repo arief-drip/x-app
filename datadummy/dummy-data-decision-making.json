@@ -1,0 +1,275 @@
+{
+  "parents": [
+    {
+      "id": "procon-001",
+      "title": "⚖️ Pro-Con List",
+      "description": "Tulis plus minus untuk keputusan besar",
+      "dateModified": 1767278400000,
+      "latestEmotion": "🤔"
+    },
+    {
+      "id": "worstcase-002",
+      "title": "😰 Worst Case Scenario",
+      "description": "Apa yang paling buruk? Bisa handle tidak?",
+      "dateModified": 1767192000000,
+      "latestEmotion": "😱"
+    },
+    {
+      "id": "bestcase-003",
+      "title": "🌟 Best Case Vision",
+      "description": "Gambarkan hasil ideal",
+      "dateModified": 1767105600000,
+      "latestEmotion": "✨"
+    },
+    {
+      "id": "values-004",
+      "title": "💎 Values Check",
+      "description": "Sesuai dengan nilai saya yang mana?",
+      "dateModified": 1767019200000,
+      "latestEmotion": "🙏"
+    },
+    {
+      "id": "tenten-005",
+      "title": "⏰ 10-10-10 Rule",
+      "description": "Perasaan 10 menit/bulan/tahun lagi?",
+      "dateModified": 1766932800000,
+      "latestEmotion": "⏳"
+    },
+    {
+      "id": "opinion-006",
+      "title": "👥 Second Opinion",
+      "description": "Argumen seolah kasih saran ke teman",
+      "dateModified": 1766846400000,
+      "latestEmotion": "💭"
+    },
+    {
+      "id": "journal-007",
+      "title": "📓 Decision Journal",
+      "description": "Lacak keputusan & hasilnya",
+      "dateModified": 1766760000000,
+      "latestEmotion": "📝"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "procon-001",
+      "dateAdded": 1767278400000,
+      "notes": "Oke, jadi lagi mikir-mikir banget nih tentang resign dari kantor sekarang. Udah 3 tahun lebih kerja di sini, stabil sih, tapi rasanya makin hari makin gak growth.\n\nPlusnya:\n- Gaji masuk tepat waktu tiap bulan\n- Temen kantor pada asik-asik\n- Kerjaan udah familiar, gak perlu belajar dari nol\n- Jarak rumah deket, cuma 30 menit\n\nMinusnya:\n- Gaji stuck di situ aja, naik tipis banget\n- Bos toxic parah, suka marah-marin gak jelas\n- Gak ada challenge baru, bosenin\n- Skill makin stuck, kalau di-cut gak siap cari kerjaan baru\n\nHmm, kalo diliat dari listnya sih minusnya lebih berat ya. Tapi takut aja gitu sama yang namanya uncertainty. Tapi gak usaha gak bakal tahu juga sih.",
+      "emoticon": "😵‍💫",
+      "imageUrl": "https://images.pexels.com/photos/1181311/pexels-photo-1181311.jpeg"
+    },
+    {
+      "parentId": "procon-001",
+      "dateAdded": 1767192000000,
+      "notes": "Lagi galau mau ambil S2 atau kerja dulu nih. Umur udah 25, rasanya waktu berjalan cepet banget.\n\nPro S2:\n- Bisa deepening knowledge di bidang yang bener-bener diminati\n- Networking sama orang-orang hebat\n- Opportunity kerjaan lebih bagus nantinya\n- Pencapaian personal yang keren\n\nContra S2:\n- Biaya gak murah, tabungan bakal habis\n- 2 tahun lagi gak punya income\n- Orang tua udah tua, pengen mereka lihat gak mandiri dulu\n- Takut ternyata akademik bukan jalan yang tepat\n\nGimana ya? Kalo kerja dulu nanti bisa ngumpulin duit buat S2. Tapi kalo S2 sekarang energi masih banyak... Dilema abis.",
+      "emoticon": "🤯",
+      "imageUrl": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+    },
+    {
+      "parentId": "procon-001",
+      "dateAdded": 1767105600000,
+      "notes": "Dilema: Pindah ke apartemen sendiri atau tetep tinggal sama ortu?\n\nStay sama ortu:\n+ Hemat banget, bisa nabung lebih banyak\n+ Makan gratis, cucian gratis, semua serba free\n+ Gak usah pusing urus rumah tangga\n+ Quality time sama keluarga\n\n- Privasi minim\n- Gak bisa begadang seenaknya\n- Gak bisa bawa temen main\n- Suasana kadang bikin stress\n- Gak merasa independent\n\nNge-kost/apartemen:\n+ Freedom total, hidup sesuai aturan sendiri\n+ Bisa belajar adulting\n+ Space untuk fokus dan introvert time\n+ Ngerasa jadi diri sendiri\n\n- Biaya gede, Jakarta mahal coy\n- Harus urus semua sendiri\n- Kadang lonely banget\n\nKeputusan: Mungkin coba apartemen dulu 6 bulan, kalo gak cocok balik lagi ya?",
+      "emoticon": "🏠"
+    },
+    {
+      "parentId": "procon-001",
+      "dateAdded": 1767019200000,
+      "notes": "Bingung mau beli motor baru atau mobil bekas. Budget cukup buat salah satu.\n\nMotor baru:\n+ Murah, sisa duit banyak buat investasi\n+ Praktis, gak macet-macetan\n+ Parkir gampang di mana-mana\n+ Irit bensin\n\n- Hujan kehujanan, panas kepanasan\n- Gak bisa bawa keluarga rame-rame\n- Kurang prestigious kalo di Indonesia\n\nMobil bekas:\n+ Bisa bawa keluarga kemana-mana\n+ Aman kalo hujan\n+ Bisa buat jalan-jalan luar kota\n+ Gampang bawa barang banyak\n\n- Mahal maintenance\n+ Macet Jakarta bikin stress\n+ Parkir susah dan mahal\n+ Depresiasi tinggi\n\nHmm, mungkin motor dulu aja kali ya. Tabung sisanya buat property atau investasi.",
+      "emoticon": "🛵"
+    },
+    {
+      "parentId": "procon-001",
+      "dateAdded": 1766932800000,
+      "notes": "Lagi mikir buat investasi properti di luar kota atau saham. Duit tabungan udah lumayan gede.\n\nProperti:\n+ Aset nyata, bisa dilihat dan dipakai\n+ Harga tend to naik tiap tahun\n+ Bisa disewain, passive income\n+ Gak volatile kaya saham\n\n- Modal gede banget\n- Illiquid, jualnya lama\n- Harus urus maintenance\n- Lokasi salah bisa stuck\n\nSaham:\n+ Likuid, jual beli gampang\n+ Modal fleksibel, bisa mulai kecil\n+ Return bisa gede kalo pintar pilih\n+ Gak perlu urus fisik\n\n- Volatile, bisa turun drastis\n- Butuh knowledge dan research\n- Emosi sering ikut campur\n+ Ada biaya admin\n\nMungkin 50:50 aja kali ya? Diversify buat safety.",
+      "emoticon": "💰"
+    },
+    {
+      "parentId": "worstcase-002",
+      "dateAdded": 1767192000000,
+      "notes": "Okay, let's face the worst case kalo gue resign sekarang.\n\nScenario paling buruk:\nGue resign, gak dapet kerjaan 6 bulan. Tabungan habis. Harus minjem ke ortu atau temen. Malu banget sih. Mental down karena merasa gagal. Temen-temen pada nanya 'kenapa resign sih?' dan gue gak bisa jawab dengan bangga.\n\nTapi bisa gue handle gak?\n\nSebenernya bisa. Gue punya emergency fund 6 bulan. Skill gue masih marketable - bisa ngelamar kerjaan lain. Kalo bener-bener desperate, bisa freelance dulu atau part-time. Ortu juga supportive kalo sampai minta bantuan.\n\nPlus, kalo gue gak resign sekarang, yang ada stagnan terus dan makin gak confident.\n\nJadi worst casenya manageable sih. Jangan terlalu takut. Sometimes kita overthinking tentang hal-hal yang belum tentu terjadi.",
+      "emoticon": "😰",
+      "imageUrl": "https://images.pexels.com/photos/5408818/pexels-photo-5408818.jpeg"
+    },
+    {
+      "parentId": "worstcase-002",
+      "dateAdded": 1767105600000,
+      "notes": "Ngebatin worst case kalo gue mulai bisnis sendiri dan gagal total.\n\nBayangin ya:\nGue keluarin semua tabungan buat bisnis. 1 tahun kemudian bangkrut. Duit 200jt hilang. Ortu kecewa karena gue gak jadi 'pns yang mapan'. Temen-temen pada bilang 'kan gue bilang juga apa'. Gue jadi insecure banget. Harus kerja lagi dari nol.\n\nBisa handle gak?\n\nYa gue masih muda, 26 tahun. Masih banyak waktu buat recovery. Gue masih punya skill yang bisa dijual. Kegagalan juga belajar kan. Orang sukses rata-rata pernah gagal berkali-kali. Yang penting gue gak nyerah dan tetep adapt.\n\nLagi paling bisnis gak harus langsung all-in kan. Bisa mulai side hustle dulu sambil tetep kerja. Minimalisir risk.\n\nOkay, worst case analyzed. Bisa dihandle. Let's do this!",
+      "emoticon": "💪",
+      "imageUrl": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+    },
+    {
+      "parentId": "worstcase-002",
+      "dateAdded": 1767019200000,
+      "notes": "Worst case kalo gue pindah ke kota baru sendirian.\n\nScenario:\nGue pindah ke Jakarta (dari Bandung). Gak punya temen. Apartemen sempit dan mahal. Kerjaan ternyata toxic juga. Gue lonely parah, nangis tiap malem. Kena Jakarta syndrome. Akhirnya homesick banget pengen balik tapi malu.\n\nTapi yakin gak bisa handle?\n\nBandung-Jakarta cuma 2 jam. Bisa pulang tiap weekend kalo mau. Bisa cari komunitas baru - gym, coworking space, hobby group. Bisa video call keluarga tiap hari. Dan kalo bener-bener gak kuat, balik aja gak ada yang melarang.\n\nLagi pindah bukan permanent. Trial and error aja. Kalo gak coba gak bakal tahu. Lebih baik nyesel pernah coba daripada nyesel gak pernah coba sama sekali.\n\nWorst case prepared. Let's go!",
+      "emoticon": "🌆"
+    },
+    {
+      "parentId": "worstcase-002",
+      "dateAdded": 1766932800000,
+      "notes": "Worst case scenario kalo gue confess ke crush dan ditolak.\n\nBayangin:\nGue confess dengan speech yang udah dipersiapkan seminggu. Terus dia bilang 'maaf, gue cuma lihat lo sebagai temen'. Awkward abis. Temen-temen pada tahu. Gue jadi bahan gibah. Confidence hancur. Tiap ketemu dia jadi awkward dan akhirnya drift apart.\n\nBisa handle gak sih?\n\nYa bisa lah. Ditolak itu normal. Semua orang pernah ditolak. Paling cuma awkward beberapa minggu, lama-lama biasa aja. Kalo emang jodoh, ya tetep jadi temen baik. Kalo emang gak jodoh, ya move on.\n\nLebih buruk mana: ditolak atau gak tahu jawabannya selamanya? Regret of not trying itu lebih sakit sih sebenernya. Paling ntar bisa ketawa-ketawa cerita 'dulu gue pernah naksir lo tau'.\n\nOkay, bisa handle. Yaudah confess aja. Kalo ditolak ya udah, move on. Dunia gak berhenti.",
+      "emoticon": "💔"
+    },
+    {
+      "parentId": "worstcase-002",
+      "dateAdded": 1766846400000,
+      "notes": "Worst case kalo gue invest semua duit di crypto dan market crash.\n\nScenario:\nGue all-in 100jt ke crypto. Ternyata bear market panjang. Duit tinggal 30jt. 70jt lenyap. Gue depresi. Gak bisa tidur. Nyesel kenapa gak ditaro deposito aja.\n\nBisa handle gak?\n\nInvestasi emang risk-return. Gue udah big boy, harus tanggung jawab sama keputusan sendiri. 70jt memang gede, tapi gue masih bisa kerja dan nabung lagi. Belajar dari kesalahan: jangan all-in, diversify. Ini mahal tapi berharga.\n\nPlus, crypto market siklikal. Kalo gak panic sell dan hold, bisa recovery. Yang penting gak invest duit yang gak sanggup hilang.\n\nLesson: Invest responsibly. Never all-in. Always DYOR.\n\nWorst case bisa dihandle. Tapi harus lebih wise next time.",
+      "emoticon": "📉"
+    },
+    {
+      "parentId": "bestcase-003",
+      "dateAdded": 1767105600000,
+      "notes": "Best case vision kalo gue resign dan mulai bisnis sendiri.\n\nBayangin tahun 2028:\nGue punya bisnis digital agency kecil tapi profitable. Tim 10 orang yang solid. Klien dari startup sampe korporasi. Revenue 100jt per bulan. Gue kerja dari mana aja - kadang di Bali, kadang di Jogja.\n\nSetiap hari bangun tanpa alarm. Kerja karena mau, bukan karena harus. Bisa quality time sama keluarga kapan aja. Bisa belajar hal baru terus. Badan sehat karena gak stress commute.\n\nMentally fulfilled. Gue bantu bisnis klien grow. Gue create value. Gue proud sama apa yang gue bangun dari nol.\n\nFinancial freedom pelan-pelan kegapai. Investasi jalan. Passive income mulai ada. Retirement plan on track.\n\nIni worth fighting for. Ini kenapa gue harus brave enough to start.",
+      "emoticon": "✨",
+      "imageUrl": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+    },
+    {
+      "parentId": "bestcase-003",
+      "dateAdded": 1767019200000,
+      "notes": "Best case kalo gue ambil S2 dan berhasil.\n\nVisualize this:\nGue lulus S2 dengan IPK cumlaude. Thesis gue dipublikasikan di jurnal internasional. Dapet network profesor dan temen-temen hebat dari seluruh dunia.\n\nAbis lulus, dapet offer kerjaan dari company impian dengan gaji 3x dari sekarang. Posisi strategis. Bisa kontribusi ke research dan development.\n\nNama gue mulai dikenal di komunitas akademik dan industri. Diundang jadi speaker di konferensi. Bisa mentoring anak-anak muda yang mau belajar.\n\nOrtu bangga. Mereka lihat anaknya jadi sarjana pascasarjana. Bisa kasih mereka kenyamanan finansial.\n\nPersonal growth luar biasa. Gue jadi critical thinker. Bisa lihat problem dari berbagai sudut pandang. Lebih wise, lebih mature.\n\nIni worth the 2 years of hard work.",
+      "emoticon": "🎓",
+      "imageUrl": "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg"
+    },
+    {
+      "parentId": "bestcase-003",
+      "dateAdded": 1766932800000,
+      "notes": "Best case scenario kalo gue pindah ke apartemen sendiri.\n\nBayangin:\nStudio apartment yang cozy. Dekor sesuai selera gue. Meja kerja di deket jendela dengan city view. Tanaman hias di sudut-sudut. Ambience calming banget.\n\nSetiap pagi bangun dengan energi positif. Bikin kopi sendiri sambil dengerin playlist favorit. Kerja dari rumah dengan fokus maksimal. Gak ada yang ganggu.\n\nWeekend invite temen-temen main. Movie night. Cooking session. Deep conversation sampe malem. Punya space sendiri buat healing.\n\nGue belajar jadi independen. Masak sendiri, cuci sendiri, urus diri sendiri. Gue jadi appreciate diri gue lebih. Gue jadi lebih dewasa.\n\nMental health improve. Introvert time tercukupi. Bisa recharge kapan aja gue butuh.\n\nThis is the self-love journey yang gue butuhkan.",
+      "emoticon": "🏡"
+    },
+    {
+      "parentId": "bestcase-003",
+      "dateAdded": 1766846400000,
+      "notes": "Best case kalo gue confess dan dia terima.\n\nVisualize:\nGue confess dengan jujur dan brave. Dia senyum dan bilang 'gue juga suka sama lo dari lama'. Momen magical. Butterflies in stomach.\n\nMulai dating. Deep conversation sampe subuh. Jalan-jalan bareng. Support each other's goals. Grow together jadi versi terbaik masing-masing.\n\nSetahun kemudian, hubungan makin serius. Kenalan sama keluarga masing-masing. Build future plans together.\n\nTiga tahun kemudian, komitmen. Build life together. Saling support di suka dan duka. Punya partner buat through thick and thin.\n\nEven kalo emang gak jadi forever, gue belajar banyak tentang love dan relationship. Gue gak akan regret kenal dia.\n\nTapi yang pasti, gak akan ada cerita ini kalo gue gak confess. So just do it!",
+      "emoticon": "💖"
+    },
+    {
+      "parentId": "bestcase-003",
+      "dateAdded": 1766760000000,
+      "notes": "Best case kalo investasi gue sukses besar.\n\nImagine:\nGue invest di saham tech company saat IPO. 5 tahun kemudian jadi unicorn. Harga saham naik 10x. Portfolio gue dari 50jt jadi 500jt.\n\nAtau property gue di lokasi strategis. Harga tanah naik drastis karena ada infrastruktur baru. Value naik 3x dalam 10 tahun.\n\nAtau bisnis sampingan gue sukses. Jadi passive income yang sustainable. Bisa cover living expenses. Financial freedom tercapai.\n\nGue bisa early retirement kalo mau. Atau kerja karena passion, bukan karena uang. Bisa travel the world. Bisa bantu keluarga dan orang yang gue sayang.\n\nBisa donasi ke charity. Create impact ke society. Give back to community.\n\nIni kenapa financial literacy penting. Invest early, invest consistently, invest wisely. Future me will thank present me.",
+      "emoticon": "💎"
+    },
+    {
+      "parentId": "values-004",
+      "dateAdded": 1767019200000,
+      "notes": "Values check: Apakah keputusan ini sesuai sama nilai-nilai gue?\n\nNilai gue yang paling penting:\n\n1. Growth and Learning\nKeputusan ini bikin gue grow atau stuck? Kalo resign dan bisnis sendiri, gue bakal belajar banyak banget tentang entrepreneurship. Skillset baru tiap hari. Sesuai nilai growth.\n\n2. Freedom and Independence\nBisnis sendiri = freedom pilih client, freedom pilih jam kerja, freedom kerja dari mana aja. Very aligned dengan nilai freedom.\n\n3. Impact and Contribution\nDengan bisnis sendiri, gue bisa pilih project yang meaningful. Bantu UMKM grow. Create job opportunities. Positive impact.\n\n4. Financial Security\nIni yang tricky. Bisnis = unstable di awal. Tapi long-term bisa lebih secure karena multiple income streams. Need to prepare emergency fund dulu.\n\n5. Family and Relationship\nWaktu lebih flexible = lebih banyak quality time sama keluarga. Tapi income unstable bisa bikin stress. Need balance.\n\nOverall, keputusan ini mostly aligned sama values gue. Yang perlu di-mitigate cuma financial security di awal.",
+      "emoticon": "🙏",
+      "imageUrl": "https://images.pexels.com/photos/1149019/pexels-photo-1149019.jpeg"
+    },
+    {
+      "parentId": "values-004",
+      "dateAdded": 1766932800000,
+      "notes": "Check values buat keputusan S2 vs kerja.\n\nCore values gue:\n\n🎯 Excellence\nS2 bisa deepen expertise gue. Jadi thought leader di bidang ini. Tapi kerja langsung juga bisa excellence through experience.\n\n🌱 Continuous Learning\nS2 = learning environment intensif. Tapi kerja juga bisa learning on the job. S2 lebih terstruktur.\n\n👨‍👩‍👧 Family Responsibility\nOrtu udah tua. Mereka lebih senang gue kerja dulu (stabil). Tapi mereka juga bangga kalo gue S2. Dilema.\n\n💰 Financial Prudence\nS2 = expensive, tapi ROI bisa bagus long-term. Kerja = income sekarang, tapi ceiling bisa lebih rendah.\n\n🏆 Achievement\nS2 = prestigious achievement. Tapi achievement di karir juga valuable.\n\nSetelah dipikir, keduanya aligned sama values gue. Cuma beda path aja. Yang penting komitmen di jalan yang dipilih.\n\nMungkin hybrid: kerja dulu 1-2 tahun, nabung, baru S2. Best of both worlds?",
+      "emoticon": "⚖️"
+    },
+    {
+      "parentId": "values-004",
+      "dateAdded": 1766846400000,
+      "notes": "Values check: Pindah dari ortu vs stay.\n\nValues yang relevan:\n\n🎭 Independence and Autonomy\nPindah = aligned. Gue jadi independent, self-sufficient. Belajar adulting. Take full responsibility of my life.\n\n💝 Family Connection\nStay = aligned. Quality time dengan ortu tiap hari. Bantu mereka. Gak lonely.\n\n🏠 Comfort vs Challenge\nStay = comfort zone. Pindah = challenge yang bikin grow. Sesuai nilai personal growth, challenge lebih aligned.\n\n💵 Financial Wisdom\nStay = hemat uang. Pindah = investasi buat pengalaman dan growth.\n\n🧘 Mental Health\nPindah = bisa introvert time kapan aja. Tapi bisa lonely. Stay = gak lonely tapi gak privacy.\n\nDilema banget ini. Values gue conflict. Tapi mungkin bisa dicompromise: pindah tapi tetep visit sering. Atau stay tapi cari cara dapet privacy.\n\nIntinya: gak ada keputusan yang perfect. Pilih yang paling aligned sama priority values saat ini.",
+      "emoticon": "🏠"
+    },
+    {
+      "parentId": "values-004",
+      "dateAdded": 1766760000000,
+      "notes": "Values check: Confess perasaan atau gak.\n\nNilai-nilai yang berperan:\n\n🦁 Courage and Authenticity\nConfess = butuh courage. Being authentic with my feelings. Not hiding who I am.\n\n🎯 Honesty and Transparency\nConfess = jujur sama perasaan sendiri dan dia. Gak main-mainan. Mature way of handling feelings.\n\n🛡️ Self-Respect\nConfess = respect diri sendiri. Gue berhak tahu jawabannya. Gak deserve untuk terus-terusan bertanya-tanya.\n\n🎲 Risk-Taking\nConfess = risk. Tapi no risk no reward. Sesuai nilai gue yang suka calculated risk.\n\n💫 Hope and Optimism\nConfess = hopeful. Positive mindset. Believe that good things can happen.\n\nGak confess = gak aligned sama nilai courage, authenticity, honesty.\n\nKeputusan: Harus confess. Values gue demand it. Hasilnya gimana itu urusan nanti. Yang penting gue jadi diri sendiri.",
+      "emoticon": "💝"
+    },
+    {
+      "parentId": "values-004",
+      "dateAdded": 1766673600000,
+      "notes": "Values check: Investasi strategy gue.\n\nPrinciples yang gue pegang:\n\n🧠 Wisdom and Research\nGak asal invest. Research dulu. Paham fundamental. Jangan ikut-ikutan FOMO.\n\n⚖️ Balance and Diversification\nGak all-in satu tempat. Spread risk. Property, saham, reksadana, cash.\n\n📊 Long-term Thinking\nInvest buat 10-20 tahun ke depan. Bukan trading harian. Patient capital.\n\n🛡️ Security First\nEmergency fund aman dulu baru invest. Gak invest duit yang gak sanggup hilang.\n\n🌱 Ethical Investing\nInvest di company yang values-nya aligned sama gue. Gak invest di rokok, judi, yang harmful.\n\n💰 Financial Independence\nUltimate goal: financial freedom. Invest adalah tool buat achieve that.\n\nStrategi gue saat ini aligned sama values. Diversified portfolio. Long-term horizon. Ethical companies. Emergency fund intact.\n\nKeep it up. Stay disciplined. Don't get greedy.",
+      "emoticon": "📈"
+    },
+    {
+      "parentId": "tenten-005",
+      "dateAdded": 1766932800000,
+      "notes": "10-10-10 Rule buat keputusan resign.\n\n10 MENIT dari sekarang:\nPerasaan: Deg-degan, excited, nervous campur aduk. Pasti langsung kirim email resign begitu submit. Rasanya lega sekaligus was-was.\n\n10 BULAN dari sekarang:\nPerasaan: Udah adaptasi sama routine baru. Mungkin lagi struggle cari client, mungkin udah dapet traction. Pasti ada ups and downs. Tapi proud karena udah brave. Mungkin income belum stabil tapi mental lebih tenang. Gak commute, gak toxic boss.\n\n10 TAHUN dari sekarang:\nPerasaan: Either bisnis sukses dan gue financially free, atau balik kerja tapi dengan experience berharga. Apapun hasilnya, gue gak akan regret pernah coba. Gue akan proud sama diri sendiri yang berani keluar dari comfort zone.\n\nInsight: Short-term scary, long-term rewarding. Yang penting survive the first 6 months.\n\nVerdict: DO IT.",
+      "emoticon": "⏳",
+      "imageUrl": "https://images.pexels.com/photos/39396/pexels-photo-39396.jpeg"
+    },
+    {
+      "parentId": "tenten-005",
+      "dateAdded": 1766846400000,
+      "notes": "10-10-10 buat keputusan S2.\n\n10 MENIT:\nNgasih tau ortu keputusan gue. Reaksi mereka gimana? Relief karena gue mau lanjut sekolah? Atau worry karena biaya? Gue sendiri deg-degan nunggu reaksi mereka.\n\n10 BULAN:\nUdah jalan semster 2. Tugas menumpuk, research intensif. Mungkin nyesel sebentar karena sibuk banget. Tapi juga excited belajar hal baru. Network sama temen-temen asik. Gak ngerasa 'stuck' lagi.\n\n10 TAHUN:\nUdah jadi expert di bidang ini. Karir advanced. Gaji tinggi. Atau jadi dosen/peneliti. Orang manggil 'Master' atau 'Doctor'. Gak bakal ada penyesalan 'dulu kenapa gak lanjut S2 ya'.\n\nTapi kalopun gak S2 dan kerja:\n10 tahun jadi manager/executive dengan experience kaya. Gak kalah sukses.\n\nKesimpulan: Dua-duanya oke. Tinggal pilih path mana yang lebih sesuai passion.",
+      "emoticon": "📅"
+    },
+    {
+      "parentId": "tenten-005",
+      "dateAdded": 1766760000000,
+      "notes": "10-10-10 kalo pindah apartemen.\n\n10 MENIT:\nBarang-barang baru masuk. Mengeliat-ngeliat apartment sendiri. Feeling of independence. Senang tapi juga 'wah gue sendirian nih'.\n\n10 BULAN:\nUdah betah banget. Dekor udah sesuai selera. Routine udah settle. Mungkin sempet homesick beberapa kali. Tapi overall happy punya space sendiri. Bisa invite temen-temen. Bisa introvert time kapan aja.\n\n10 TAHUN:\nIni jadi chapter 'independent years' yang berharga. Experience yang gak bisa dibeli. Gue jadi orang yang beda - lebih mature, lebih self-sufficient. Mungkin udah move on ke fase berikutnya (nikah/punya anak) dan bisa bilang 'gue udah independent living dulu'.\n\nAtau kalo stay:\n10 menit: sama aja\n10 bulan: sama aja\n10 tahun: 'kenapa gue gak pernah coba independent ya?'\n\nClear winner: Pindah.",
+      "emoticon": "🔮"
+    },
+    {
+      "parentId": "tenten-005",
+      "dateAdded": 1766673600000,
+      "notes": "10-10-10 confess perasaan.\n\n10 MENIT:\nAbis confess. Jantung berdebar kenceng. Either senang banget kalo diterima, atau sedih tapi lega kalo ditolak. Yang pasti: beban di dada hilang. Gak ada lagi 'what if'.\n\n10 BULAN:\nKalo diterima: lagi dating, kenal satu sama lain, excited masa-masa baru. Kalo ditolak: mungkin masih sedikit awkward, tapi udah move on. Mungkin udah deket sama orang lain. Either way, life goes on.\n\n10 TAHUN:\nKalo diterima: either jadi partner hidup atau jadi pelajaran berharga. Kalo ditolak: either jadi temen baik atau kenangan lucu 'dulu gue pernah naksir lo'. Apapun hasilnya, gak ada penyesalan gak pernah coba.\n\nKalo gak confess:\n10 menit: biasa aja\n10 bulan: masih nanya-nanya 'kenapa gue gak coba ya'\n10 tahun: 'regret of not trying' yang gak bisa diubah. What could have been...\n\nClear answer: CONFESS.",
+      "emoticon": "💫"
+    },
+    {
+      "parentId": "tenten-005",
+      "dateAdded": 1766587200000,
+      "notes": "10-10-10 investasi besar.\n\n10 MENIT:\nAbis transfer duit besar buat invest. Jantung berdebar. 'Ini bener gak sih?' Takut tapi excited. Duit tabungan berkurang signifikan.\n\n10 BULAN:\nKalo investasi saham: mungkin lagi volatile. Kadang untung kadang rugi. Emosi ikut naik turun. Kalo property: lagi proses, mungkin udah disewain. Cash flow mulai masuk.\n\n10 TAHUN:\nKalo pilihan bener: portfolio udah berkembang signifikan. Compound interest jalan. Financially much better off. Kalo pilihan salah: lesson learned. Masih bisa recover karena masih muda. Experience berharga.\n\nEither way, 10 tahun dari sekarang gue bakal lebih financially literate. Lebih wise. Lebih prepared buat keputusan berikutnya.\n\nYang penting: start now. Waktu adalah teman buat investasi. Semakin cepat mulai, semakin besar compound effectnya.\n\nDon't wait for perfect timing. Time in the market beats timing the market.",
+      "emoticon": "🕐"
+    },
+    {
+      "parentId": "opinion-006",
+      "dateAdded": 1766846400000,
+      "notes": "Kalo gue kasih saran ke temen yang lagi di posisi gue sekarang (mau resign), gue bakal bilang:\n\n'Bruh, gue ngerti perasaan lo. Stuck, unappreciated, pengen keluar. Tapi sebelum lo resign, cek ini dulu:\n\n1. Emergency fund cukup 6 bulan gak? Kalo belum, tabung dulu. Jangan desperate cari kerjaan.\n\n2. Exit plan jelas gak? Resign buat ngapain? Bisnis? Kerjaan baru? Nganggur? Harus ada plan yang concrete.\n\n3. Skill masih marketable gak? Coba apply-apply dulu liat respons. Kalo gak dapet-dapet, mungkin upskill dulu.\n\n4. Mental preparation? Resign itu bukan magic solution. Stress bakal ada, cuma beda jenis. Siap gak?\n\nKalo semua checklist diatas oke, then go for it bro. Lo gak akan pernah siap 100%. Kadang harus lompat dulu, baru tangan yang ngegampar.\n\nTapi kalo cuma running away dari problem, bukan running toward something better, mendingan pikir lagi. Fix the root cause, not just the symptom.\n\nLo udah dewasa. Lo bisa make this decision. Trust yourself.'",
+      "emoticon": "💭",
+      "imageUrl": "https://images.pexels.com/photos/3184464/pexels-photo-3184464.jpeg"
+    },
+    {
+      "parentId": "opinion-006",
+      "dateAdded": 1766760000000,
+      "notes": "Saran gue ke temen yang galau S2 vs kerja:\n\n'Dek, gue tau lo lagi bingung. Dua-duanya appealing. Ini gimana cara mikirnya:\n\nTanya diri lo: lo belajar buat apa? Kalo lo emang passionate sama bidang akademik, research, jadi expert - S2 is the way. Kalo lo belajar buat dapet kerjaan bagus, experience kerja juga bisa sampe sana, kadang lebih cepet.\n\nCek financial situation. S2 mahal. Kalo ortu support atau ada beasiswa, gas. Kalo harus ngutang banyak, pikir mateng-mateng. ROI-nya worth gak?\n\nCek timeline goals lo. Kalo lo pengen settle down cepet, nikah muda, punya anak - kerja dulu mungkin better. Kalo lo pengen jadi academic atau researcher, S2 sooner is better.\n\nGak ada jawaban universal yang bener. Yang ada cuma jawaban yang bener buat lo. Dan lo yang paling tau lo.\n\nJangan dengerin pressure dari orang lain. Dengerin diri lo sendiri. Trust your gut.\n\nApapun pilihan lo, commit 100%. Jangan setengah-setengah. Dua-duanya bisa sukses kalo lo serius.'",
+      "emoticon": "🗣️"
+    },
+    {
+      "parentId": "opinion-006",
+      "dateAdded": 1766673600000,
+      "notes": "Saran gue buat temen yang galau pindah atau stay sama ortu:\n\n'Nih ya, gue ngerti lo. Di satu sisi pengen merdeka, di sisi lain sayang keluarga. Normal kok.\n\nTapi lo harus paham: ada fase hidup dimana lo harus pisah buat grow. Bird has to leave the nest. Bukan berarti lo gak sayang ortu, tapi lo harus jadi diri lo sendiri dulu.\n\nCoba pindah 1 tahun. Experience it. Kalo gak cocok, balik lagi. Gak ada yang rugi. Tapi kalo gak pernah coba, lo akan selalu bertanya-tanya.\n\nOrtu lo sayang lo. Mereka pengen yang terbaik buat lo. Kalo lo jelasin kalo ini buat pertumbuhan lo, mereka akan mengerti. Mereka juga pernah muda.\n\nJarak gak akan mengurangi cinta. Justru kalo ketemu jadi lebih quality time. LDR sama ortu itu bisa jadi healthy.\n\nLo udah cukup besar. Lo deserve privacy. Lo deserve punya space sendiri. Lo deserve merasakan apa artinya independent.\n\nGo for it. Try it. You'll thank yourself later.'",
+      "emoticon": "👋"
+    },
+    {
+      "parentId": "opinion-006",
+      "dateAdded": 1766587200000,
+      "notes": "Kalo gue kasih saran ke temen yang suka sama someone:\n\n'Bruh. Lo suka sama dia? Lo ngerasa ada chemistry? Lo pengen lebih dari temen? Then tell them.\n\nGue tau takut. Gue tau risk-nya. Tapi lo tau gak apa yang lebih buruk dari ditolak? Penyesalan. 'What if' yang ngeganggu pikiran lo selamanya.\n\nConfessing itu bukan tentang diterima atau ditolak. It's about respecting yourself. Lo berhak tahu jawabannya. Lo gak deserve untuk terus-terusan bertanya-tanya.\n\nPrepare yourself untuk dua kemungkinan. Kalo diterima, great! Kalo ditolak, it's not the end of the world. Lo akan survive. Lo akan move on. Dan lo akan proud karena lo brave.\n\nCara lo confess juga penting. Jangan lewat chat. Face to face. Jujur. Respectful. Gak pressure. 'Gue suka sama lo, gak apa kalo lo gak feel the same. Gue cuma pengen lo tau.'\n\nLo gak akan pernah tahu kalo gak coba. And you miss 100% of the shots you don't take.\n\nGo get 'em, tiger.'",
+      "emoticon": "💘"
+    },
+    {
+      "parentId": "opinion-006",
+      "dateAdded": 1766500800000,
+      "notes": "Saran investasi buat temen gue:\n\n'De, lo mau invest? Bagus. Tapi jangan asal. Ini basic rules:\n\n1. Emergency fund dulu. 6 bulan expenses. Keep it liquid. Jangan sentuh.\n\n2. Understand what you invest in. Kalo gak ngerti, jangan masuk. Crypto, saham, property - pahamin dulu.\n\n3. Diversify. Jangan all-in satu tempat. Spread the risk.\n\n4. Think long-term. Invest buat 10-20 tahun. Bukan trading harian.\n\n5. Don't follow the crowd. FOMO is real. Kalo semua orang bilang 'ini pasti naik', biasanya udah terlambat.\n\n6. Start small. Gak usah langsung gede-gede. Belajar dulu dengan duit yang lo sanggup hilang.\n\n7. Consistent. Nabung rutin tiap bulan. Dollar-cost averaging. Jadi kebiasaan.\n\n8. Don't panic. Market naik turun normal. Kalo lo panic sell, rugi. Hold. Trust the process.\n\n9. Review periodically. Gak set and forget. Cek portfolio tiap kuartal. Rebalance kalo perlu.\n\n10. Invest in yourself too. Skill, knowledge, health. ROI terbesar dari situ.\n\nWealth building is a marathon, not a sprint. Be patient. Be disciplined. You'll get there.'",
+      "emoticon": "📊"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1766760000000,
+      "notes": "DECISION LOG #1\n================\n\nDate: 26 Desember 2025\nDecision: Resign dari kantor sekarang\nContext: Sudah 3 tahun, gak growth, boss toxic\n\nAlternatives considered:\n- Stay dan cari internal transfer\n- Stay sambil apply kerjaan lain\n- Resign dan rest dulu\n- Resign dan langsung bisnis\n\nFinal decision: Resign untuk bisnis sendiri\n\nReasoning:\n- Emergency fund cukup 8 bulan\n- Network client sudah ada\n- Skill masih marketable kalo gagal\n- Umur masih muda, waktu recovery panjang\n- Values aligned (freedom, growth, impact)\n\nExpected outcome:\nShort-term: struggle cari client, income unstable\nLong-term: bisnis profitable, freedom, fulfillment\n\nRisks:\n- Gak dapet client cukup\n- Financial stress\n- Isolasi kerja sendiri\n\nMitigation:\n- Freelance platform aktif\n- Networking event rutin\n- Join community founder\n\nDeadline: Submit resign letter 2 Januari 2026\n\nFeeling: Excited (70%), Scared (30%)\n\nWill review: 26 Maret 2026 (3 bulan)",
+      "emoticon": "📝",
+      "imageUrl": "https://images.pexels.com/photos/669986/pexels-photo-669986.jpeg"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1766673600000,
+      "notes": "DECISION LOG #2\n================\n\nDate: 25 Desember 2025\nDecision: Ambil S2 di luar negeri (Australia)\nContext: Dapet beasiswa parsial, pengalaman internasional\n\nAlternatives:\n- S2 lokal (ITB/UI)\n- Kerja dulu 2 tahun\n- S2 online/part-time\n- Gak S2 sama sekali\n\nFinal decision: Terima beasiswa, S2 di Australia\n\nReasoning:\n- Beasiswa 70%, tinggal bayar living cost\n- Experience hidup di luar negeri\n- Networking internasional\n- Degree lebih dihargai\n- Challenge diri sendiri\n\nExpected outcome:\n- 2 tahun experience berharga\n- Degree Master\n- Network global\n- Independence level up\n\nRisks:\n- Living cost mahal\n- Homesick\n- Adaptasi budaya\n- Kalo gak lulus?\n\nMitigation:\n- Part-time job allowed\n- Support group Indonesians\n- Intensive English prep\n- Academic advisor\n\nDeadline: Konfirmasi 15 Januari 2026\n\nFeeling: Antusias (80%), Anxious (20%)\n\nReview: Setelah semester 1",
+      "emoticon": "✈️"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1766587200000,
+      "notes": "DECISION LOG #3\n================\n\nDate: 24 Desember 2025\nDecision: Pindah ke apartemen studio\nContext: Udah 27 tahun, butuh space sendiri\n\nAlternatives:\n- Stay di rumah ortu (gratis)\n- Ngekost (lebih murah)\n- Apartemen sharing (lebih murah)\n- Apartemen studio (mahal tapi private)\n\nFinal decision: Apartemen studio di area yang strategis\n\nReasoning:\n- Privacy untuk fokus kerja\n- Adulting experience\n- Mental health (introvert time)\n- Bisa invite temen\n- Deket coworking space\n\nExpected outcome:\n- Independence\n- Focus improvement\n- Social life lebih aktif\n- Adulting skills\n\nRisks:\n- Biaya signifikan\n- Loneliness\n- Safety\n- Maintenance sendiri\n\nMitigation:\n- Pilih apartment dengan security\n- Join komunitas sekitar\n- Schedule visit ortu rutin\n- Hire cleaning service bulanan\n\nDeadline: Kontrak mulai 1 Februari 2026\n\nFeeling: Liberated (75%), Nervous (25%)\n\nReview: Setelah 3 bulan tinggal",
+      "emoticon": "🔑"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1766500800000,
+      "notes": "DECISION LOG #4\n================\n\nDate: 23 Desember 2025\nDecision: Confess perasaan ke crush\nContext: Sudah 6 bulan kenal, chemistry bagus, tapi gak yakin dia feel the same\n\nAlternatives:\n- Keep silent, jadi temen aja\n- Hint-hint pelan-pelan\n- Confess langsung\n- Move on tanpa confess\n\nFinal decision: Confess face-to-face dengan jujur dan respectful\n\nReasoning:\n- Self-respect (gue berhak tahu)\n- Courage (aligned dengan values)\n- Gak mau regret 'what if'\n- Hidup cuma sekali\n- Kalo ditolak, at least gue tau\n\nExpected outcome:\nPositive: Dia feel the same, start dating\nNegative: Ditolak, awkward, move on\n\nRisks:\n- Ditolak\n- Friendship ruined\n- Social circle awkward\n- Confidence drop\n\nMitigation:\n- Choose private place\n- Clear communication\n- Respect her decision\n- Give space kalo ditolak\n- Don't take it personally\n\nDeadline: Weekend ini, 27 Desember 2025\n\nFeeling: Brave (60%), Scared (40%)\n\nReview: Regardless of outcome, proud of myself",
+      "emoticon": "💌"
+    },
+    {
+      "parentId": "journal-007",
+      "dateAdded": 1766414400000,
+      "notes": "DECISION LOG #5\n================\n\nDate: 22 Desember 2025\nDecision: Rebalance portfolio investasi\nContext: Market volatile, perlu diversifikasi lebih\n\nPrevious allocation:\n- Saham: 60% (too high)\n- Reksadana: 20%\n- Crypto: 10%\n- Cash: 10%\n\nNew allocation:\n- Saham: 40%\n- Property (REITs): 20%\n- Reksadana: 20%\n- Crypto: 5%\n- Cash/Emergency: 15%\n\nReasoning:\n- Reduce volatility\n- Add property exposure\n- More liquid emergency fund\n- Reduce crypto risk\n- Long-term stability\n\nExpected outcome:\n- Lower volatility\n- Better risk-adjusted return\n- More peace of mind\n- Diversified exposure\n\nRisks:\n- Transaction costs\n- Tax implications\n- Timing the market?\n- Miss crypto bull run?\n\nMitigation:\n- Gradual rebalancing (6 months)\n- Consult tax advisor\n- Focus on allocation, not timing\n- Accept FOMO as part of process\n\nDeadline: Complete by 31 Maret 2026 (gradual)\n\nFeeling: Prudent (80%), FOMO (20%)\n\nReview: 6 bulan kemudian",
+      "emoticon": "📒"
+    }
+  ]
+}

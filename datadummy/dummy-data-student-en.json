@@ -1,0 +1,175 @@
+{
+  "exportDate": "2026-02-20T10:00:00.000Z",
+  "parents": [
+    {
+      "id": "parent_student_1",
+      "title": "University Life & Studies",
+      "dateModified": 1740000000000,
+      "latestEmotion": "😊",
+      "description": "Academic journey, assignments, and campus experiences"
+    },
+    {
+      "id": "parent_student_2",
+      "title": "Personal Growth Journey",
+      "dateModified": 1739900000000,
+      "latestEmotion": "🤔",
+      "description": "Self-improvement, habits, and life changes"
+    },
+    {
+      "id": "parent_student_3",
+      "title": "Social Life & Friendships",
+      "dateModified": 1739800000000,
+      "latestEmotion": "🥰",
+      "description": "Building relationships and social experiences"
+    },
+    {
+      "id": "parent_student_4",
+      "title": "Budget & Finances",
+      "dateModified": 1739700000000,
+      "latestEmotion": "😰",
+      "description": "Managing monthly budget and expenses"
+    },
+    {
+      "id": "parent_student_5",
+      "title": "Career Planning",
+      "dateModified": 1739600000000,
+      "latestEmotion": "🤩",
+      "description": "Internships, skills, and future goals"
+    }
+  ],
+  "children": [
+    {
+      "parentId": "parent_student_1",
+      "dateAdded": 1740000000000,
+      "notes": "First day of the new semester! Excited but nervous about the advanced courses. Goal: Maintain GPA above 3.5 this term. Let's do this! 💪",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_1",
+      "dateAdded": 1739950000000,
+      "notes": "Research project is going well. Staying late at the library but making progress. Coffee is my best friend right now ☕",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_1",
+      "dateAdded": 1739900000000,
+      "notes": "Group presentation done! We nailed it. So relieved it's over. Time to celebrate with the team 🎉",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_2",
+      "dateAdded": 1739900000000,
+      "notes": "Started morning routine: 6am wake up, meditation, and reading. Day 5 and feeling more focused already 🌅",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_2",
+      "dateAdded": 1739850000000,
+      "notes": "Reflecting on who I want to become. Small steps every day lead to big changes. Proud of my consistency so far ✨",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_3",
+      "dateAdded": 1739800000000,
+      "notes": "Met amazing people at the campus event today. Quality over quantity when it comes to friendships. Grateful for my circle 💙",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_3",
+      "dateAdded": 1739750000000,
+      "notes": "Movie night with friends! Sometimes you need to take a break and just enjoy the moment 🎬",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_4",
+      "dateAdded": 1739700000000,
+      "notes": "Monthly budget review: spent too much on food delivery this month. Need to meal prep more. Saving for spring break trip! 💰",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_4",
+      "dateAdded": 1739650000000,
+      "notes": "Got a part-time job at the campus cafe! Extra income will help with books and savings. Proud of myself 💪",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_5",
+      "dateAdded": 1739600000000,
+      "notes": "Applied for summer internship at my dream company! Fingers crossed. Prepared my portfolio for weeks 🚀",
+      "emoticon": "🤩",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_5",
+      "dateAdded": 1739550000000,
+      "notes": "Learning Python and data analysis skills. Online courses are a game changer. Investing in myself always pays off 📚",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_5",
+      "dateAdded": 1739500000000,
+      "notes": "Career fair tomorrow! Updated my resume and practiced my pitch. Opportunity meets preparation ✨",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_1",
+      "dateAdded": 1739450000000,
+      "notes": "Midterms are stressful but I'm managing. Study groups are helping a lot. We rise by lifting others 📖",
+      "emoticon": "😰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_2",
+      "dateAdded": 1739400000000,
+      "notes": "Journaling has become my therapy. Looking back at old entries shows how much I've grown. Keep moving forward 🌱",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_3",
+      "dateAdded": 1739350000000,
+      "notes": "Deep conversation with roommate until 2am. These moments of genuine connection matter most 💭",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_4",
+      "dateAdded": 1739300000000,
+      "notes": "Sold some old textbooks online. Decluttering and making extra cash. Win-win! 📚💵",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_5",
+      "dateAdded": 1739250000000,
+      "notes": "Mentorship session with professor was eye-opening. Learning from those ahead of you accelerates growth 🎯",
+      "emoticon": "🤔",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_1",
+      "dateAdded": 1739200000000,
+      "notes": "Library study session with coffee. Productive day! Thesis proposal coming along nicely ☕",
+      "emoticon": "😊",
+      "imageUrl": ""
+    },
+    {
+      "parentId": "parent_student_2",
+      "dateAdded": 1739150000000,
+      "notes": "30-day gratitude challenge complete! Noticing the small joys has shifted my perspective. Thankful 🙏",
+      "emoticon": "🥰",
+      "imageUrl": ""
+    }
+  ]
+}
